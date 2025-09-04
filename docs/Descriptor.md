@@ -1,0 +1,42 @@
+# Descriptor
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**index** | **int** |  | [optional] 
+**proto** | [**DescriptorProto**](DescriptorProto.md) |  | [optional] 
+**full_name** | **str** |  | [optional] 
+**file** | [**FileDescriptor**](FileDescriptor.md) |  | [optional] 
+**containing_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
+**nested_types** | [**List[Descriptor]**](Descriptor.md) |  | [optional] 
+**enum_types** | [**List[EnumDescriptor]**](EnumDescriptor.md) |  | [optional] 
+**fields** | [**List[FieldDescriptor]**](FieldDescriptor.md) |  | [optional] 
+**extensions** | [**List[FieldDescriptor]**](FieldDescriptor.md) |  | [optional] 
+**oneofs** | [**List[OneofDescriptor]**](OneofDescriptor.md) |  | [optional] 
+**real_oneofs** | [**List[OneofDescriptor]**](OneofDescriptor.md) |  | [optional] 
+**extendable** | **bool** |  | [optional] 
+**name** | **str** |  | [optional] 
+**options** | [**MessageOptions**](MessageOptions.md) |  | [optional] 
+
+## Example
+
+```python
+from buybtcpay.models.descriptor import Descriptor
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of Descriptor from a JSON string
+descriptor_instance = Descriptor.from_json(json)
+# print the JSON string representation of the object
+print(Descriptor.to_json())
+
+# convert the object into a dict
+descriptor_dict = descriptor_instance.to_dict()
+# create an instance of Descriptor from a dict
+descriptor_from_dict = Descriptor.from_dict(descriptor_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
