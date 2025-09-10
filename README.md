@@ -50,33 +50,47 @@ Execute `pytest` to run the tests.
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
-
-import buybtcpay
-from buybtcpay.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost:9030
-# See configuration.py for a list of all supported configuration parameters.
-configuration = buybtcpay.Configuration(
-    host = "http://localhost:9030"
-)
+from buybtcpay.api.open_payout_api import OpenPayoutApi, OpenPayoutRequestDto
+from buybtcpay.app.buybtc_api_client import BuyBtcApiClient
+from buybtcpay.app.buybtc_payment_config import BuyBtcPaymentConfig
+from buybtcpay.app.buybtc_sign_util import BuyBtcRequestBodyBase
+from sonyflake import Sonyflake
+import datetime
 
 
+if __name__ == '__main__':
+    start_time = datetime.datetime(2025, 1, 1, 0, 0, 0, 0, datetime.UTC)
+    sf = Sonyflake(start_time=start_time, machine_id=1)
 
-# Enter a context with an instance of the API client
-with buybtcpay.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = buybtcpay.ExchangeRateApi(api_client)
-    rate_list_request_query = buybtcpay.RateListRequestQuery() # RateListRequestQuery | 
+    PrivateKey = "your merchant private key"
+    PublicKey = "your merchant public key"
+    BuyBtcPublickKey = "buybtc payment public key"
 
-    try:
-        # 分页查询汇率列表
-        api_response = api_instance.get_rate_list(rate_list_request_query)
-        print("The response of ExchangeRateApi->get_rate_list:\n")
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ExchangeRateApi->get_rate_list: %s\n" % e)
+    config = BuyBtcPaymentConfig(
+        base_url="https://pay.api.dev.buybtc.com",
+        merchant_id="your merchant id",
+        private_key=PrivateKey,
+        buy_btc_pay_public_key=BuyBtcPublickKey
+    )
+    api_client = BuyBtcApiClient(config)
+    api = OpenPayoutApi(api_client)
+    payload = BuyBtcRequestBodyBase.attach({
+        "orderId": str(sf.next_id()),
+        "title": "test payout",
+        "description": "test payout",
+        "payeeName": "zhang san",
+        "payeeBankCode": "01050000",
+        "payeeBankAccNo": "6217000000000000018",
+        "amount": "100",
+        "currency": "NGN",
+        "notifyUrl": None,
+        "remark": "test"
+    }, True)
+    dto = OpenPayoutRequestDto.from_dict(payload)
 
+    if dto is not None:
+        resp = api.payout1(dto)
+        print(resp)
 ```
 
 ## Documentation for API Endpoints
