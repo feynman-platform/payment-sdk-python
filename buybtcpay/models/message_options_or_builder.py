@@ -28,7 +28,6 @@ class MessageOptionsOrBuilder(BaseModel):
     MessageOptionsOrBuilder
     """ # noqa: E501
     map_entry: Optional[StrictBool] = Field(default=None, alias="mapEntry")
-    message_set_wire_format: Optional[StrictBool] = Field(default=None, alias="messageSetWireFormat")
     no_standard_descriptor_accessor: Optional[StrictBool] = Field(default=None, alias="noStandardDescriptorAccessor")
     deprecated_legacy_json_field_conflicts: Optional[StrictBool] = Field(default=None, alias="deprecatedLegacyJsonFieldConflicts")
     features_or_builder: Optional[FeatureSetOrBuilder] = Field(default=None, alias="featuresOrBuilder")
@@ -37,13 +36,14 @@ class MessageOptionsOrBuilder(BaseModel):
     uninterpreted_option_count: Optional[StrictInt] = Field(default=None, alias="uninterpretedOptionCount")
     features: Optional[FeatureSet] = None
     deprecated: Optional[StrictBool] = None
+    message_set_wire_format: Optional[StrictBool] = Field(default=None, alias="messageSetWireFormat")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["mapEntry", "messageSetWireFormat", "noStandardDescriptorAccessor", "deprecatedLegacyJsonFieldConflicts", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "features", "deprecated", "defaultInstanceForType", "initializationErrorString", "unknownFields", "descriptorForType", "allFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["mapEntry", "noStandardDescriptorAccessor", "deprecatedLegacyJsonFieldConflicts", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "features", "deprecated", "messageSetWireFormat", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,12 +107,12 @@ class MessageOptionsOrBuilder(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -126,7 +126,6 @@ class MessageOptionsOrBuilder(BaseModel):
 
         _obj = cls.model_validate({
             "mapEntry": obj.get("mapEntry"),
-            "messageSetWireFormat": obj.get("messageSetWireFormat"),
             "noStandardDescriptorAccessor": obj.get("noStandardDescriptorAccessor"),
             "deprecatedLegacyJsonFieldConflicts": obj.get("deprecatedLegacyJsonFieldConflicts"),
             "featuresOrBuilder": FeatureSetOrBuilder.from_dict(obj["featuresOrBuilder"]) if obj.get("featuresOrBuilder") is not None else None,
@@ -135,11 +134,12 @@ class MessageOptionsOrBuilder(BaseModel):
             "uninterpretedOptionCount": obj.get("uninterpretedOptionCount"),
             "features": FeatureSet.from_dict(obj["features"]) if obj.get("features") is not None else None,
             "deprecated": obj.get("deprecated"),
+            "messageSetWireFormat": obj.get("messageSetWireFormat"),
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

@@ -35,7 +35,7 @@ class ApprovalEntity(BaseModel):
     approval_time: Optional[datetime] = Field(default=None, alias="approvalTime")
     approver_id: Optional[StrictStr] = Field(default=None, alias="approverId")
     approval_comment: Optional[StrictStr] = Field(default=None, alias="approvalComment")
-    approval_type: Optional[StrictInt] = Field(default=None, description="0: Platform Recharge, 1: Merchant Recharge, 11: Virtual Account Recharge, 12: Merchant Self Service Recharge, 13: Virtual Account Self Service Recharge, 14: Merchant Self Service Recharge by PalmPay Virtual Account, 15: Virtual erchant Self Service Recharge by PalmPay Virtual Account, 2: Refund, 3: Frozen, 4: Unfrozen, 100: Reversal platform to merchant, 101: Reversal merchant to platform, 102: Reversal merchant to merchant", alias="approvalType")
+    approval_type: Optional[StrictInt] = Field(default=None, description="0: Platform Recharge, 1: Merchant Recharge, 11: Virtual Account Recharge, 12: Merchant Self Service Recharge, 13: Virtual Account Self Service Recharge, 14: Merchant Self Service Recharge by PalmPay Virtual Account, 15: Virtual merchant Self Service Recharge by PalmPay Virtual Account, 2: Refund, 3: Frozen, 4: Unfrozen, 100: Reversal platform to merchant, 101: Reversal merchant to platform, 102: Reversal merchant to merchant", alias="approvalType")
     business_id: Optional[StrictStr] = Field(default=None, alias="businessId")
     apply_content: Optional[StrictStr] = Field(default=None, alias="applyContent")
     bill_ids: Optional[List[StrictInt]] = Field(default=None, alias="billIds")

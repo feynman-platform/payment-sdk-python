@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**debug_redact** | **bool** |  | [optional] 
 **features_or_builder** | [**FeatureSetOrBuilder**](FeatureSetOrBuilder.md) |  | [optional] 
 **uninterpreted_option_list** | [**List[UninterpretedOption]**](UninterpretedOption.md) |  | [optional] 
 **uninterpreted_option_or_builder_list** | [**List[UninterpretedOptionOrBuilder]**](UninterpretedOptionOrBuilder.md) |  | [optional] 
 **uninterpreted_option_count** | **int** |  | [optional] 
+**debug_redact** | **bool** |  | [optional] 
 **features** | [**FeatureSet**](FeatureSet.md) |  | [optional] 
 **deprecated** | **bool** |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

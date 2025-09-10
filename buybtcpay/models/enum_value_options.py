@@ -28,11 +28,11 @@ class EnumValueOptions(BaseModel):
     EnumValueOptions
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    debug_redact: Optional[StrictBool] = Field(default=None, alias="debugRedact")
     features_or_builder: Optional[FeatureSetOrBuilder] = Field(default=None, alias="featuresOrBuilder")
     uninterpreted_option_list: Optional[List[UninterpretedOption]] = Field(default=None, alias="uninterpretedOptionList")
     uninterpreted_option_or_builder_list: Optional[List[UninterpretedOptionOrBuilder]] = Field(default=None, alias="uninterpretedOptionOrBuilderList")
     uninterpreted_option_count: Optional[StrictInt] = Field(default=None, alias="uninterpretedOptionCount")
+    debug_redact: Optional[StrictBool] = Field(default=None, alias="debugRedact")
     features: Optional[FeatureSet] = None
     initialized: Optional[StrictBool] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
@@ -44,7 +44,7 @@ class EnumValueOptions(BaseModel):
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "debugRedact", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "features", "initialized", "serializedSize", "deprecated", "parserForType", "defaultInstanceForType", "allFields", "allFieldsRaw", "initializationErrorString", "descriptorForType", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "debugRedact", "features", "initialized", "serializedSize", "deprecated", "parserForType", "defaultInstanceForType", "allFields", "allFieldsRaw", "initializationErrorString", "descriptorForType", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -127,11 +127,11 @@ class EnumValueOptions(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "debugRedact": obj.get("debugRedact"),
             "featuresOrBuilder": FeatureSetOrBuilder.from_dict(obj["featuresOrBuilder"]) if obj.get("featuresOrBuilder") is not None else None,
             "uninterpretedOptionList": [UninterpretedOption.from_dict(_item) for _item in obj["uninterpretedOptionList"]] if obj.get("uninterpretedOptionList") is not None else None,
             "uninterpretedOptionOrBuilderList": [UninterpretedOptionOrBuilder.from_dict(_item) for _item in obj["uninterpretedOptionOrBuilderList"]] if obj.get("uninterpretedOptionOrBuilderList") is not None else None,
             "uninterpretedOptionCount": obj.get("uninterpretedOptionCount"),
+            "debugRedact": obj.get("debugRedact"),
             "features": FeatureSet.from_dict(obj["features"]) if obj.get("features") is not None else None,
             "initialized": obj.get("initialized"),
             "serializedSize": obj.get("serializedSize"),

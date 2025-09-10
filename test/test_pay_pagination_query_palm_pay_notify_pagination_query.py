@@ -46,6 +46,7 @@ class TestPayPaginationQueryPalmPayNotifyPaginationQuery(unittest.TestCase):
                     order_id = '', 
                     order_no = '', 
                     app_id = '', 
+                    currency = 'NGN', 
                     order_status = 56, 
                     complete_time = [
                         ''

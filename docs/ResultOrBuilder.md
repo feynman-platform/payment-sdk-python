@@ -5,6 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ret_value** | **int** |  | [optional] 
+**contract_ret_value** | **int** |  | [optional] 
+**contract_ret** | **str** |  | [optional] 
+**order_id** | [**ByteString**](ByteString.md) |  | [optional] 
+**fee** | **int** |  | [optional] 
+**exchange_id** | **int** |  | [optional] 
 **ret** | **str** |  | [optional] 
 **asset_issue_id** | **str** |  | [optional] 
 **asset_issue_id_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
@@ -21,17 +27,11 @@ Name | Type | Description | Notes
 **cancel_unfreeze_v2_amount_count** | **int** |  | [optional] 
 **cancel_unfreeze_v2_amount** | **Dict[str, int]** |  | [optional] 
 **cancel_unfreeze_v2_amount_map** | **Dict[str, int]** |  | [optional] 
-**ret_value** | **int** |  | [optional] 
-**contract_ret_value** | **int** |  | [optional] 
-**contract_ret** | **str** |  | [optional] 
-**order_id** | [**ByteString**](ByteString.md) |  | [optional] 
-**fee** | **int** |  | [optional] 
-**exchange_id** | **int** |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

@@ -27,16 +27,16 @@ class SourceCodeInfoOrBuilder(BaseModel):
     """
     SourceCodeInfoOrBuilder
     """ # noqa: E501
-    location_list: Optional[List[Location]] = Field(default=None, alias="locationList")
     location_count: Optional[StrictInt] = Field(default=None, alias="locationCount")
     location_or_builder_list: Optional[List[LocationOrBuilder]] = Field(default=None, alias="locationOrBuilderList")
+    location_list: Optional[List[Location]] = Field(default=None, alias="locationList")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["locationList", "locationCount", "locationOrBuilderList", "initializationErrorString", "unknownFields", "defaultInstanceForType", "descriptorForType", "allFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["locationCount", "locationOrBuilderList", "locationList", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,13 +77,6 @@ class SourceCodeInfoOrBuilder(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in location_list (list)
-        _items = []
-        if self.location_list:
-            for _item_location_list in self.location_list:
-                if _item_location_list:
-                    _items.append(_item_location_list.to_dict())
-            _dict['locationList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in location_or_builder_list (list)
         _items = []
         if self.location_or_builder_list:
@@ -91,15 +84,22 @@ class SourceCodeInfoOrBuilder(BaseModel):
                 if _item_location_or_builder_list:
                     _items.append(_item_location_or_builder_list.to_dict())
             _dict['locationOrBuilderList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in location_list (list)
+        _items = []
+        if self.location_list:
+            for _item_location_list in self.location_list:
+                if _item_location_list:
+                    _items.append(_item_location_list.to_dict())
+            _dict['locationList'] = _items
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -112,14 +112,14 @@ class SourceCodeInfoOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "locationList": [Location.from_dict(_item) for _item in obj["locationList"]] if obj.get("locationList") is not None else None,
             "locationCount": obj.get("locationCount"),
             "locationOrBuilderList": [LocationOrBuilder.from_dict(_item) for _item in obj["locationOrBuilderList"]] if obj.get("locationOrBuilderList") is not None else None,
+            "locationList": [Location.from_dict(_item) for _item in obj["locationList"]] if obj.get("locationList") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

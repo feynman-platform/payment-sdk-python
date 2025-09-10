@@ -62,8 +62,12 @@ class TestPayPaginationQueryMerchantBillQuery(unittest.TestCase):
                     direction = [
                         1
                         ], 
-                    bill_status = 0, 
-                    currency = 'NGN', 
+                    bill_status = [
+                        0
+                        ], 
+                    currency = [
+                        'NGN'
+                        ], 
                     amount = [
                         ''
                         ], )

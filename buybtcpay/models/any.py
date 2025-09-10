@@ -30,8 +30,8 @@ class Any(BaseModel):
     Any
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    type_url: Optional[StrictStr] = Field(default=None, alias="typeUrl")
     type_url_bytes: Optional[ByteString] = Field(default=None, alias="typeUrlBytes")
+    type_url: Optional[StrictStr] = Field(default=None, alias="typeUrl")
     initialized: Optional[StrictBool] = None
     value: Optional[ByteString] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
@@ -41,7 +41,7 @@ class Any(BaseModel):
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "typeUrl", "typeUrlBytes", "initialized", "value", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "typeUrlBytes", "typeUrl", "initialized", "value", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,8 +110,8 @@ class Any(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "typeUrl": obj.get("typeUrl"),
             "typeUrlBytes": ByteString.from_dict(obj["typeUrlBytes"]) if obj.get("typeUrlBytes") is not None else None,
+            "typeUrl": obj.get("typeUrl"),
             "initialized": obj.get("initialized"),
             "value": ByteString.from_dict(obj["value"]) if obj.get("value") is not None else None,
             "serializedSize": obj.get("serializedSize"),

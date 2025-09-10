@@ -18,8 +18,9 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from buybtcpay.models.verification import Verification
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,6 +28,7 @@ class MerchantToMerchantParams(BaseModel):
     """
     商户间支付参数
     """ # noqa: E501
+    verification: Optional[Verification] = None
     request_time: Annotated[str, Field(min_length=13, strict=True, max_length=2147483647)] = Field(description="请注意，此处是字符类型，不是数值", alias="requestTime")
     version: Annotated[str, Field(strict=True)] = Field(description="保留字段，暂时无用")
     nonce: Annotated[str, Field(min_length=32, strict=True, max_length=32)] = Field(description="最大32位，用于防止重放攻击")
@@ -34,7 +36,7 @@ class MerchantToMerchantParams(BaseModel):
     payee: StrictStr = Field(description="收款方，邮箱或merchantId")
     time_id: StrictStr = Field(description="汇率timeId，交易发生时使用的汇率记录", alias="timeId")
     currency: StrictStr = Field(description="货币类型")
-    __properties: ClassVar[List[str]] = ["requestTime", "version", "nonce", "payer", "payee", "timeId", "currency"]
+    __properties: ClassVar[List[str]] = ["verification", "requestTime", "version", "nonce", "payer", "payee", "timeId", "currency"]
 
     @field_validator('request_time')
     def request_time_validate_regular_expression(cls, value):
@@ -103,6 +105,9 @@ class MerchantToMerchantParams(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of verification
+        if self.verification:
+            _dict['verification'] = self.verification.to_dict()
         return _dict
 
     @classmethod
@@ -115,6 +120,7 @@ class MerchantToMerchantParams(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "verification": Verification.from_dict(obj["verification"]) if obj.get("verification") is not None else None,
             "requestTime": obj.get("requestTime"),
             "version": obj.get("version"),
             "nonce": obj.get("nonce"),

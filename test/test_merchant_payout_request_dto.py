@@ -47,6 +47,7 @@ class TestMerchantPayoutRequestDto(unittest.TestCase):
                 payee_bank_code = '',
                 payee_bank_acc_no = '',
                 amount = '',
+                currency = 'NGN',
                 remark = '',
         )
         """

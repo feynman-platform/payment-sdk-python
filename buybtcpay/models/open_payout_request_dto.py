@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from buybtcpay.models.verification import Verification
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,21 +28,22 @@ class OpenPayoutRequestDto(BaseModel):
     """
     OpenPayoutRequestDto
     """ # noqa: E501
+    verification: Optional[Verification] = None
     request_time: Annotated[str, Field(min_length=13, strict=True, max_length=2147483647)] = Field(description="请注意，此处是字符类型，不是数值", alias="requestTime")
     version: Annotated[str, Field(strict=True)] = Field(description="保留字段，暂时无用")
     nonce: Annotated[str, Field(min_length=32, strict=True, max_length=32)] = Field(description="最大32位，用于防止重放攻击")
     order_id: Annotated[str, Field(min_length=8, strict=True, max_length=32)] = Field(description="商户唯一订单号，可用于查询交易结果", alias="orderId")
     title: StrictStr = Field(description="订单标题")
     description: Optional[StrictStr] = Field(default=None, description="订单描述")
-    payee_name: Optional[StrictStr] = Field(default=None, description="收款方姓名（如果不传，默认为值是'unknow'）", alias="payeeName")
+    payee_name: Optional[StrictStr] = Field(default=None, description="收款方姓名（如果不传，默认为值是'unknown'）", alias="payeeName")
     payee_bank_code: StrictStr = Field(description="收款方银行或MMO编码", alias="payeeBankCode")
     payee_bank_acc_no: StrictStr = Field(description="为纯数字，不能带空格或特殊符号，取值见系统中的银行列表", alias="payeeBankAccNo")
     amount: StrictStr = Field(description="交易金额(标准单位计量)")
     notify_url: Optional[StrictStr] = Field(default=None, description="接收代付结果通知url", alias="notifyUrl")
     remark: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = Field(default=None, description="备注信息")
-    currency: Optional[StrictStr] = Field(default=None, description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
+    currency: StrictStr = Field(description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
     merchant_id: Optional[StrictStr] = Field(default=None, description="如果不传，就用Api-Token中的商户", alias="merchantId")
-    __properties: ClassVar[List[str]] = ["requestTime", "version", "nonce", "orderId", "title", "description", "payeeName", "payeeBankCode", "payeeBankAccNo", "amount", "notifyUrl", "remark", "currency", "merchantId"]
+    __properties: ClassVar[List[str]] = ["verification", "requestTime", "version", "nonce", "orderId", "title", "description", "payeeName", "payeeBankCode", "payeeBankAccNo", "amount", "notifyUrl", "remark", "currency", "merchantId"]
 
     @field_validator('request_time')
     def request_time_validate_regular_expression(cls, value):
@@ -67,9 +69,6 @@ class OpenPayoutRequestDto(BaseModel):
     @field_validator('currency')
     def currency_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['NGN', 'GHS', 'ETH', 'BTC', 'USDT']):
             raise ValueError("must be one of enum values ('NGN', 'GHS', 'ETH', 'BTC', 'USDT')")
         return value
@@ -113,6 +112,9 @@ class OpenPayoutRequestDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of verification
+        if self.verification:
+            _dict['verification'] = self.verification.to_dict()
         return _dict
 
     @classmethod
@@ -125,6 +127,7 @@ class OpenPayoutRequestDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "verification": Verification.from_dict(obj["verification"]) if obj.get("verification") is not None else None,
             "requestTime": obj.get("requestTime"),
             "version": obj.get("version"),
             "nonce": obj.get("nonce"),

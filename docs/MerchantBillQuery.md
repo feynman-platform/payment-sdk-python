@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **account_no** | **str** | 账户号码 | [optional] 
 **counterparty_account_no** | **str** | 交易对方账户号码 | [optional] 
 **direction** | **List[int]** | 交易方向 | [optional] 
-**bill_status** | **int** | 0: Initiated, 1: Processing, 2: Success, 3: Failed, 4: Canceled, 5: Closed, 6: Refunded | [optional] 
-**currency** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | [optional] 
+**bill_status** | **List[int]** | 交易状态 | [optional] 
+**currency** | **List[str]** | 币种 | [optional] 
 **amount** | **List[str]** | 金额，需要与币种一起使用 | [optional] 
 
 ## Example

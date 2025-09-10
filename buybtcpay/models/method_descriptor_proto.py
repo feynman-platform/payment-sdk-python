@@ -29,7 +29,6 @@ class MethodDescriptorProto(BaseModel):
     MethodDescriptorProto
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
     options_or_builder: Optional[MethodOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
     input_type_bytes: Optional[ByteString] = Field(default=None, alias="inputTypeBytes")
     output_type_bytes: Optional[ByteString] = Field(default=None, alias="outputTypeBytes")
@@ -43,11 +42,12 @@ class MethodDescriptorProto(BaseModel):
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[MethodDescriptorProto] = Field(default=None, alias="defaultInstanceForType")
+    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "nameBytes", "optionsOrBuilder", "inputTypeBytes", "outputTypeBytes", "clientStreaming", "serverStreaming", "outputType", "inputType", "initialized", "name", "options", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "optionsOrBuilder", "inputTypeBytes", "outputTypeBytes", "clientStreaming", "serverStreaming", "outputType", "inputType", "initialized", "name", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,9 +91,6 @@ class MethodDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of name_bytes
-        if self.name_bytes:
-            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of options_or_builder
         if self.options_or_builder:
             _dict['optionsOrBuilder'] = self.options_or_builder.to_dict()
@@ -109,6 +106,9 @@ class MethodDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of name_bytes
+        if self.name_bytes:
+            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
@@ -125,7 +125,6 @@ class MethodDescriptorProto(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
             "optionsOrBuilder": MethodOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
             "inputTypeBytes": ByteString.from_dict(obj["inputTypeBytes"]) if obj.get("inputTypeBytes") is not None else None,
             "outputTypeBytes": ByteString.from_dict(obj["outputTypeBytes"]) if obj.get("outputTypeBytes") is not None else None,
@@ -139,6 +138,7 @@ class MethodDescriptorProto(BaseModel):
             "serializedSize": obj.get("serializedSize"),
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": MethodDescriptorProto.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
+            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

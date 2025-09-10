@@ -5,22 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**aggregate_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **name_list** | [**List[NamePart]**](NamePart.md) |  | [optional] 
 **name_or_builder_list** | [**List[NamePartOrBuilder]**](NamePartOrBuilder.md) |  | [optional] 
 **identifier_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **positive_int_value** | **int** |  | [optional] 
 **negative_int_value** | **int** |  | [optional] 
 **aggregate_value** | **str** |  | [optional] 
-**aggregate_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **double_value** | **float** |  | [optional] 
 **name_count** | **int** |  | [optional] 
 **string_value** | [**ByteString**](ByteString.md) |  | [optional] 
 **identifier_value** | **str** |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

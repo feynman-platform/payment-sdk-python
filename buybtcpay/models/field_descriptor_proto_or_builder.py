@@ -28,40 +28,30 @@ class FieldDescriptorProtoOrBuilder(BaseModel):
     """
     FieldDescriptorProtoOrBuilder
     """ # noqa: E501
-    label: Optional[StrictStr] = None
-    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
+    options_or_builder: Optional[FieldOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
     json_name: Optional[StrictStr] = Field(default=None, alias="jsonName")
     proto3_optional: Optional[StrictBool] = Field(default=None, alias="proto3Optional")
     oneof_index: Optional[StrictInt] = Field(default=None, alias="oneofIndex")
     extendee: Optional[StrictStr] = None
-    options_or_builder: Optional[FieldOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
-    type_name_bytes: Optional[ByteString] = Field(default=None, alias="typeNameBytes")
     extendee_bytes: Optional[ByteString] = Field(default=None, alias="extendeeBytes")
-    default_value_bytes: Optional[ByteString] = Field(default=None, alias="defaultValueBytes")
     json_name_bytes: Optional[ByteString] = Field(default=None, alias="jsonNameBytes")
+    default_value_bytes: Optional[ByteString] = Field(default=None, alias="defaultValueBytes")
+    type_name_bytes: Optional[ByteString] = Field(default=None, alias="typeNameBytes")
     name: Optional[StrictStr] = None
     type_name: Optional[StrictStr] = Field(default=None, alias="typeName")
     type: Optional[StrictStr] = None
     default_value: Optional[StrictStr] = Field(default=None, alias="defaultValue")
     number: Optional[StrictInt] = None
     options: Optional[FieldOptions] = None
+    label: Optional[StrictStr] = None
+    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["label", "nameBytes", "jsonName", "proto3Optional", "oneofIndex", "extendee", "optionsOrBuilder", "typeNameBytes", "extendeeBytes", "defaultValueBytes", "jsonNameBytes", "name", "typeName", "type", "defaultValue", "number", "options", "initializationErrorString", "unknownFields", "defaultInstanceForType", "descriptorForType", "allFields", "initialized"]
-
-    @field_validator('label')
-    def label_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['LABEL_OPTIONAL', 'LABEL_REPEATED', 'LABEL_REQUIRED']):
-            raise ValueError("must be one of enum values ('LABEL_OPTIONAL', 'LABEL_REPEATED', 'LABEL_REQUIRED')")
-        return value
+    __properties: ClassVar[List[str]] = ["optionsOrBuilder", "jsonName", "proto3Optional", "oneofIndex", "extendee", "extendeeBytes", "jsonNameBytes", "defaultValueBytes", "typeNameBytes", "name", "typeName", "type", "defaultValue", "number", "options", "label", "nameBytes", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -71,6 +61,16 @@ class FieldDescriptorProtoOrBuilder(BaseModel):
 
         if value not in set(['TYPE_DOUBLE', 'TYPE_FLOAT', 'TYPE_INT64', 'TYPE_UINT64', 'TYPE_INT32', 'TYPE_FIXED64', 'TYPE_FIXED32', 'TYPE_BOOL', 'TYPE_STRING', 'TYPE_GROUP', 'TYPE_MESSAGE', 'TYPE_BYTES', 'TYPE_UINT32', 'TYPE_ENUM', 'TYPE_SFIXED32', 'TYPE_SFIXED64', 'TYPE_SINT32', 'TYPE_SINT64']):
             raise ValueError("must be one of enum values ('TYPE_DOUBLE', 'TYPE_FLOAT', 'TYPE_INT64', 'TYPE_UINT64', 'TYPE_INT32', 'TYPE_FIXED64', 'TYPE_FIXED32', 'TYPE_BOOL', 'TYPE_STRING', 'TYPE_GROUP', 'TYPE_MESSAGE', 'TYPE_BYTES', 'TYPE_UINT32', 'TYPE_ENUM', 'TYPE_SFIXED32', 'TYPE_SFIXED64', 'TYPE_SINT32', 'TYPE_SINT64')")
+        return value
+
+    @field_validator('label')
+    def label_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['LABEL_OPTIONAL', 'LABEL_REPEATED', 'LABEL_REQUIRED']):
+            raise ValueError("must be one of enum values ('LABEL_OPTIONAL', 'LABEL_REPEATED', 'LABEL_REQUIRED')")
         return value
 
     model_config = ConfigDict(
@@ -112,36 +112,36 @@ class FieldDescriptorProtoOrBuilder(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of name_bytes
-        if self.name_bytes:
-            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of options_or_builder
         if self.options_or_builder:
             _dict['optionsOrBuilder'] = self.options_or_builder.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of type_name_bytes
-        if self.type_name_bytes:
-            _dict['typeNameBytes'] = self.type_name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of extendee_bytes
         if self.extendee_bytes:
             _dict['extendeeBytes'] = self.extendee_bytes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of default_value_bytes
-        if self.default_value_bytes:
-            _dict['defaultValueBytes'] = self.default_value_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of json_name_bytes
         if self.json_name_bytes:
             _dict['jsonNameBytes'] = self.json_name_bytes.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of default_value_bytes
+        if self.default_value_bytes:
+            _dict['defaultValueBytes'] = self.default_value_bytes.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of type_name_bytes
+        if self.type_name_bytes:
+            _dict['typeNameBytes'] = self.type_name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of options
         if self.options:
             _dict['options'] = self.options.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of name_bytes
+        if self.name_bytes:
+            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -154,28 +154,28 @@ class FieldDescriptorProtoOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "label": obj.get("label"),
-            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
+            "optionsOrBuilder": FieldOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
             "jsonName": obj.get("jsonName"),
             "proto3Optional": obj.get("proto3Optional"),
             "oneofIndex": obj.get("oneofIndex"),
             "extendee": obj.get("extendee"),
-            "optionsOrBuilder": FieldOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
-            "typeNameBytes": ByteString.from_dict(obj["typeNameBytes"]) if obj.get("typeNameBytes") is not None else None,
             "extendeeBytes": ByteString.from_dict(obj["extendeeBytes"]) if obj.get("extendeeBytes") is not None else None,
-            "defaultValueBytes": ByteString.from_dict(obj["defaultValueBytes"]) if obj.get("defaultValueBytes") is not None else None,
             "jsonNameBytes": ByteString.from_dict(obj["jsonNameBytes"]) if obj.get("jsonNameBytes") is not None else None,
+            "defaultValueBytes": ByteString.from_dict(obj["defaultValueBytes"]) if obj.get("defaultValueBytes") is not None else None,
+            "typeNameBytes": ByteString.from_dict(obj["typeNameBytes"]) if obj.get("typeNameBytes") is not None else None,
             "name": obj.get("name"),
             "typeName": obj.get("typeName"),
             "type": obj.get("type"),
             "defaultValue": obj.get("defaultValue"),
             "number": obj.get("number"),
             "options": FieldOptions.from_dict(obj["options"]) if obj.get("options") is not None else None,
+            "label": obj.get("label"),
+            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

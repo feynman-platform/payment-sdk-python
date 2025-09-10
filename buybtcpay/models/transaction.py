@@ -34,22 +34,22 @@ class Transaction(BaseModel):
     Transaction
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    raw_data_or_builder: Optional[RawOrBuilder] = Field(default=None, alias="rawDataOrBuilder")
-    signature_list: Optional[List[ByteString]] = Field(default=None, alias="signatureList")
-    signature_count: Optional[StrictInt] = Field(default=None, alias="signatureCount")
-    ret_list: Optional[List[Result]] = Field(default=None, alias="retList")
-    ret_or_builder_list: Optional[List[ResultOrBuilder]] = Field(default=None, alias="retOrBuilderList")
     initialized: Optional[StrictBool] = None
     raw_data: Optional[Raw] = Field(default=None, alias="rawData")
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     ret_count: Optional[StrictInt] = Field(default=None, alias="retCount")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[Transaction] = Field(default=None, alias="defaultInstanceForType")
+    raw_data_or_builder: Optional[RawOrBuilder] = Field(default=None, alias="rawDataOrBuilder")
+    signature_list: Optional[List[ByteString]] = Field(default=None, alias="signatureList")
+    signature_count: Optional[StrictInt] = Field(default=None, alias="signatureCount")
+    ret_list: Optional[List[Result]] = Field(default=None, alias="retList")
+    ret_or_builder_list: Optional[List[ResultOrBuilder]] = Field(default=None, alias="retOrBuilderList")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "rawDataOrBuilder", "signatureList", "signatureCount", "retList", "retOrBuilderList", "initialized", "rawData", "serializedSize", "retCount", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "initialized", "rawData", "serializedSize", "retCount", "parserForType", "defaultInstanceForType", "rawDataOrBuilder", "signatureList", "signatureCount", "retList", "retOrBuilderList", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +93,12 @@ class Transaction(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of raw_data
+        if self.raw_data:
+            _dict['rawData'] = self.raw_data.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
+        if self.default_instance_for_type:
+            _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of raw_data_or_builder
         if self.raw_data_or_builder:
             _dict['rawDataOrBuilder'] = self.raw_data_or_builder.to_dict()
@@ -117,12 +123,6 @@ class Transaction(BaseModel):
                 if _item_ret_or_builder_list:
                     _items.append(_item_ret_or_builder_list.to_dict())
             _dict['retOrBuilderList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of raw_data
-        if self.raw_data:
-            _dict['rawData'] = self.raw_data.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
-        if self.default_instance_for_type:
-            _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
@@ -139,17 +139,17 @@ class Transaction(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "rawDataOrBuilder": RawOrBuilder.from_dict(obj["rawDataOrBuilder"]) if obj.get("rawDataOrBuilder") is not None else None,
-            "signatureList": [ByteString.from_dict(_item) for _item in obj["signatureList"]] if obj.get("signatureList") is not None else None,
-            "signatureCount": obj.get("signatureCount"),
-            "retList": [Result.from_dict(_item) for _item in obj["retList"]] if obj.get("retList") is not None else None,
-            "retOrBuilderList": [ResultOrBuilder.from_dict(_item) for _item in obj["retOrBuilderList"]] if obj.get("retOrBuilderList") is not None else None,
             "initialized": obj.get("initialized"),
             "rawData": Raw.from_dict(obj["rawData"]) if obj.get("rawData") is not None else None,
             "serializedSize": obj.get("serializedSize"),
             "retCount": obj.get("retCount"),
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": Transaction.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
+            "rawDataOrBuilder": RawOrBuilder.from_dict(obj["rawDataOrBuilder"]) if obj.get("rawDataOrBuilder") is not None else None,
+            "signatureList": [ByteString.from_dict(_item) for _item in obj["signatureList"]] if obj.get("signatureList") is not None else None,
+            "signatureCount": obj.get("signatureCount"),
+            "retList": [Result.from_dict(_item) for _item in obj["retList"]] if obj.get("retList") is not None else None,
+            "retOrBuilderList": [ResultOrBuilder.from_dict(_item) for _item in obj["retOrBuilderList"]] if obj.get("retOrBuilderList") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

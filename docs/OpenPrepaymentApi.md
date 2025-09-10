@@ -8,7 +8,8 @@ Method | HTTP request | Description
 [**create_prepayment_order**](OpenPrepaymentApi.md#create_prepayment_order) | **POST** /v1/open/prepayment | 创建预付订单
 [**pagination4**](OpenPrepaymentApi.md#pagination4) | **POST** /v1/open/prepayment/pagination | 查询预付订单
 [**payment_aggregation**](OpenPrepaymentApi.md#payment_aggregation) | **POST** /v1/open/prepayment/payment/aggregation | 合并支付
-[**payment_merchant_to_merchant**](OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 商户到商户转账
+[**payment_merchant_to_merchant**](OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant | 商户到商户转账
+[**payment_merchant_to_merchant_by_business_id**](OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 商户到商户转账
 [**payment_ngn_currency**](OpenPrepaymentApi.md#payment_ngn_currency) | **POST** /v1/open/prepayment/payment/ngn/{businessId} | 支付NGN币种
 [**update_amount**](OpenPrepaymentApi.md#update_amount) | **POST** /v1/open/prepayment/amount | 更新预付订单金额
 
@@ -289,7 +290,76 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **payment_merchant_to_merchant**
-> BuyBtcResponsePaymentOrderEntity payment_merchant_to_merchant(business_id, merchant_to_merchant_params)
+> BuyBtcResponsePaymentOrderEntity payment_merchant_to_merchant(merchant_to_merchant_automatic_params)
+
+商户到商户转账
+
+该接口不依赖预付单业务ID，会主动创建预付单，需要签名，签名算法见MD文档
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
+from buybtcpay.models.merchant_to_merchant_automatic_params import MerchantToMerchantAutomaticParams
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenPrepaymentApi(api_client)
+    merchant_to_merchant_automatic_params = buybtcpay.MerchantToMerchantAutomaticParams() # MerchantToMerchantAutomaticParams | 
+
+    try:
+        # 商户到商户转账
+        api_response = api_instance.payment_merchant_to_merchant(merchant_to_merchant_automatic_params)
+        print("The response of OpenPrepaymentApi->payment_merchant_to_merchant:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPrepaymentApi->payment_merchant_to_merchant: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_to_merchant_automatic_params** | [**MerchantToMerchantAutomaticParams**](MerchantToMerchantAutomaticParams.md)|  | 
+
+### Return type
+
+[**BuyBtcResponsePaymentOrderEntity**](BuyBtcResponsePaymentOrderEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **payment_merchant_to_merchant_by_business_id**
+> BuyBtcResponsePaymentOrderEntity payment_merchant_to_merchant_by_business_id(business_id, merchant_to_merchant_params)
 
 商户到商户转账
 
@@ -321,11 +391,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
     try:
         # 商户到商户转账
-        api_response = api_instance.payment_merchant_to_merchant(business_id, merchant_to_merchant_params)
-        print("The response of OpenPrepaymentApi->payment_merchant_to_merchant:\n")
+        api_response = api_instance.payment_merchant_to_merchant_by_business_id(business_id, merchant_to_merchant_params)
+        print("The response of OpenPrepaymentApi->payment_merchant_to_merchant_by_business_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPrepaymentApi->payment_merchant_to_merchant: %s\n" % e)
+        print("Exception when calling OpenPrepaymentApi->payment_merchant_to_merchant_by_business_id: %s\n" % e)
 ```
 
 

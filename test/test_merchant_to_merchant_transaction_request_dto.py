@@ -35,6 +35,10 @@ class TestMerchantToMerchantTransactionRequestDto(unittest.TestCase):
         model = MerchantToMerchantTransactionRequestDto()
         if include_optional:
             return MerchantToMerchantTransactionRequestDto(
+                verification = buybtcpay.models.verification.Verification(
+                    request_id = '', 
+                    otp_code = '', 
+                    otp_type = '', ),
                 request_time = '40123456789101112',
                 version = 'v4.072888001528021798096225500850762068629',
                 nonce = 'G012345678910111213141516171819202122232425262728293031',

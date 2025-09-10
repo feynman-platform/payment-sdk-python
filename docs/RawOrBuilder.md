@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **fee_limit** | **int** |  | [optional] 
 **timestamp** | **int** |  | [optional] 
 **data** | [**ByteString**](ByteString.md) |  | [optional] 
-**expiration** | **int** |  | [optional] 
 **contract_list** | [**List[Contract]**](Contract.md) |  | [optional] 
 **scripts** | [**ByteString**](ByteString.md) |  | [optional] 
+**expiration** | **int** |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

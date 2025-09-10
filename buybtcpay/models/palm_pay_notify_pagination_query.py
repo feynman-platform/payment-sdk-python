@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,11 +34,22 @@ class PalmPayNotifyPaginationQuery(BaseModel):
     order_id: Optional[StrictStr] = Field(default=None, alias="orderId")
     order_no: Optional[StrictStr] = Field(default=None, alias="orderNo")
     app_id: Optional[StrictStr] = Field(default=None, alias="appId")
+    currency: Optional[StrictStr] = Field(default=None, description="货币类型")
     order_status: Optional[StrictInt] = Field(default=None, alias="orderStatus")
     complete_time: Optional[List[StrictStr]] = Field(default=None, description="查询开始时间区间", alias="completeTime")
     amount: Optional[List[StrictStr]] = Field(default=None, description="金额区间")
     payer_bank_code: Optional[StrictStr] = Field(default=None, alias="payerBankCode")
-    __properties: ClassVar[List[str]] = ["id", "orderByCreateAt", "createAtSince", "createAtUntil", "merchantId", "orderId", "orderNo", "appId", "orderStatus", "completeTime", "amount", "payerBankCode"]
+    __properties: ClassVar[List[str]] = ["id", "orderByCreateAt", "createAtSince", "createAtUntil", "merchantId", "orderId", "orderNo", "appId", "currency", "orderStatus", "completeTime", "amount", "payerBankCode"]
+
+    @field_validator('currency')
+    def currency_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['NGN', 'GHS', 'ETH', 'BTC', 'USDT']):
+            raise ValueError("must be one of enum values ('NGN', 'GHS', 'ETH', 'BTC', 'USDT')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +110,7 @@ class PalmPayNotifyPaginationQuery(BaseModel):
             "orderId": obj.get("orderId"),
             "orderNo": obj.get("orderNo"),
             "appId": obj.get("appId"),
+            "currency": obj.get("currency"),
             "orderStatus": obj.get("orderStatus"),
             "completeTime": obj.get("completeTime"),
             "amount": obj.get("amount"),

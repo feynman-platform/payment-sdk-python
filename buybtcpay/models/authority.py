@@ -34,16 +34,16 @@ class Authority(BaseModel):
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     account_or_builder: Optional[AccountIdOrBuilder] = Field(default=None, alias="accountOrBuilder")
     initialized: Optional[StrictBool] = None
+    permission_name: Optional[ByteString] = Field(default=None, alias="permissionName")
     account: Optional[AccountId] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
-    permission_name: Optional[ByteString] = Field(default=None, alias="permissionName")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[Authority] = Field(default=None, alias="defaultInstanceForType")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "accountOrBuilder", "initialized", "account", "serializedSize", "permissionName", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "accountOrBuilder", "initialized", "permissionName", "account", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,12 +90,12 @@ class Authority(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of account_or_builder
         if self.account_or_builder:
             _dict['accountOrBuilder'] = self.account_or_builder.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of account
-        if self.account:
-            _dict['account'] = self.account.to_dict()
         # override the default output from pydantic by calling `to_dict()` of permission_name
         if self.permission_name:
             _dict['permissionName'] = self.permission_name.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
@@ -117,9 +117,9 @@ class Authority(BaseModel):
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "accountOrBuilder": AccountIdOrBuilder.from_dict(obj["accountOrBuilder"]) if obj.get("accountOrBuilder") is not None else None,
             "initialized": obj.get("initialized"),
+            "permissionName": ByteString.from_dict(obj["permissionName"]) if obj.get("permissionName") is not None else None,
             "account": AccountId.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "serializedSize": obj.get("serializedSize"),
-            "permissionName": ByteString.from_dict(obj["permissionName"]) if obj.get("permissionName") is not None else None,
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": Authority.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),

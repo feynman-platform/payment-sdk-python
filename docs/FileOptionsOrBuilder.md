@@ -42,9 +42,9 @@ Name | Type | Description | Notes
 **optimize_for** | **str** |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

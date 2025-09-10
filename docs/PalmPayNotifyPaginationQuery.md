@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **order_id** | **str** |  | [optional] 
 **order_no** | **str** |  | [optional] 
 **app_id** | **str** |  | [optional] 
+**currency** | **str** | 货币类型 | [optional] 
 **order_status** | **int** |  | [optional] 
 **complete_time** | **List[str]** | 查询开始时间区间 | [optional] 
 **amount** | **List[str]** | 金额区间 | [optional] 

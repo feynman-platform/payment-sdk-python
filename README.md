@@ -50,47 +50,33 @@ Execute `pytest` to run the tests.
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
-from buybtcpay.api.open_payout_api import OpenPayoutApi, OpenPayoutRequestDto
-from buybtcpay.app.buybtc_api_client import BuyBtcApiClient
-from buybtcpay.app.buybtc_payment_config import BuyBtcPaymentConfig
-from buybtcpay.app.buybtc_sign_util import BuyBtcRequestBodyBase
-from sonyflake import Sonyflake
-import datetime
+
+import buybtcpay
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
 
 
-if __name__ == '__main__':
-    start_time = datetime.datetime(2025, 1, 1, 0, 0, 0, 0, datetime.UTC)
-    sf = Sonyflake(start_time=start_time, machine_id=1)
 
-    PrivateKey = "your merchant private key"
-    PublicKey = "your merchant public key"
-    BuyBtcPublickKey = "buybtc payment public key"
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.ExchangeRateApi(api_client)
+    rate_list_request_query = buybtcpay.RateListRequestQuery() # RateListRequestQuery | 
 
-    config = BuyBtcPaymentConfig(
-        base_url="https://pay.api.dev.buybtc.com",
-        merchant_id="your merchant id",
-        private_key=PrivateKey,
-        buy_btc_pay_public_key=BuyBtcPublickKey
-    )
-    api_client = BuyBtcApiClient(config)
-    api = OpenPayoutApi(api_client)
-    payload = BuyBtcRequestBodyBase.attach({
-        "orderId": str(sf.next_id()),
-        "title": "test payout",
-        "description": "test payout",
-        "payeeName": "zhang san",
-        "payeeBankCode": "01050000",
-        "payeeBankAccNo": "6217000000000000018",
-        "amount": "100",
-        "currency": "NGN",
-        "notifyUrl": None,
-        "remark": "test"
-    }, True)
-    dto = OpenPayoutRequestDto.from_dict(payload)
+    try:
+        # 分页查询汇率列表
+        api_response = api_instance.get_rate_list(rate_list_request_query)
+        print("The response of ExchangeRateApi->get_rate_list:\n")
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ExchangeRateApi->get_rate_list: %s\n" % e)
 
-    if dto is not None:
-        resp = api.payout1(dto)
-        print(resp)
 ```
 
 ## Documentation for API Endpoints
@@ -135,7 +121,8 @@ Class | Method | HTTP request | Description
 *OpenPrepaymentApi* | [**create_prepayment_order**](docs/OpenPrepaymentApi.md#create_prepayment_order) | **POST** /v1/open/prepayment | 创建预付订单
 *OpenPrepaymentApi* | [**pagination4**](docs/OpenPrepaymentApi.md#pagination4) | **POST** /v1/open/prepayment/pagination | 查询预付订单
 *OpenPrepaymentApi* | [**payment_aggregation**](docs/OpenPrepaymentApi.md#payment_aggregation) | **POST** /v1/open/prepayment/payment/aggregation | 合并支付
-*OpenPrepaymentApi* | [**payment_merchant_to_merchant**](docs/OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 商户到商户转账
+*OpenPrepaymentApi* | [**payment_merchant_to_merchant**](docs/OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant | 商户到商户转账
+*OpenPrepaymentApi* | [**payment_merchant_to_merchant_by_business_id**](docs/OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 商户到商户转账
 *OpenPrepaymentApi* | [**payment_ngn_currency**](docs/OpenPrepaymentApi.md#payment_ngn_currency) | **POST** /v1/open/prepayment/payment/ngn/{businessId} | 支付NGN币种
 *OpenPrepaymentApi* | [**update_amount**](docs/OpenPrepaymentApi.md#update_amount) | **POST** /v1/open/prepayment/amount | 更新预付订单金额
 *OpenQueryPayStatusApi* | [**query_check_order_data**](docs/OpenQueryPayStatusApi.md#query_check_order_data) | **POST** /v1/open/pay/status/{orderId}/order/data | 代付银行查询交易单状态
@@ -359,6 +346,7 @@ Class | Method | HTTP request | Description
  - [MerchantPayoutRequestDto](docs/MerchantPayoutRequestDto.md)
  - [MerchantRechargeCreateDto](docs/MerchantRechargeCreateDto.md)
  - [MerchantRechargeEntity](docs/MerchantRechargeEntity.md)
+ - [MerchantToMerchantAutomaticParams](docs/MerchantToMerchantAutomaticParams.md)
  - [MerchantToMerchantParams](docs/MerchantToMerchantParams.md)
  - [MerchantToMerchantTransactionRequestDto](docs/MerchantToMerchantTransactionRequestDto.md)
  - [MerchantTransactionEntity](docs/MerchantTransactionEntity.md)
@@ -488,6 +476,7 @@ Class | Method | HTTP request | Description
  - [UnknownFieldSet](docs/UnknownFieldSet.md)
  - [UpdatePrepaymentOrderAmountDto](docs/UpdatePrepaymentOrderAmountDto.md)
  - [UpdateSelfServiceApprovalReceviedDto](docs/UpdateSelfServiceApprovalReceviedDto.md)
+ - [Verification](docs/Verification.md)
  - [VirtualAccountCreateDto](docs/VirtualAccountCreateDto.md)
  - [VirtualAccountData](docs/VirtualAccountData.md)
  - [VirtualAccountEntity](docs/VirtualAccountEntity.md)

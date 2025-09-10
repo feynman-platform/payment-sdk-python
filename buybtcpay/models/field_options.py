@@ -29,6 +29,10 @@ class FieldOptions(BaseModel):
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     packed: Optional[StrictBool] = None
+    features_or_builder: Optional[FeatureSetOrBuilder] = Field(default=None, alias="featuresOrBuilder")
+    uninterpreted_option_list: Optional[List[UninterpretedOption]] = Field(default=None, alias="uninterpretedOptionList")
+    uninterpreted_option_or_builder_list: Optional[List[UninterpretedOptionOrBuilder]] = Field(default=None, alias="uninterpretedOptionOrBuilderList")
+    uninterpreted_option_count: Optional[StrictInt] = Field(default=None, alias="uninterpretedOptionCount")
     ctype: Optional[StrictStr] = None
     jstype: Optional[StrictStr] = None
     lazy: Optional[StrictBool] = None
@@ -40,10 +44,6 @@ class FieldOptions(BaseModel):
     edition_defaults_list: Optional[List[EditionDefault]] = Field(default=None, alias="editionDefaultsList")
     edition_defaults_count: Optional[StrictInt] = Field(default=None, alias="editionDefaultsCount")
     edition_defaults_or_builder_list: Optional[List[EditionDefaultOrBuilder]] = Field(default=None, alias="editionDefaultsOrBuilderList")
-    features_or_builder: Optional[FeatureSetOrBuilder] = Field(default=None, alias="featuresOrBuilder")
-    uninterpreted_option_list: Optional[List[UninterpretedOption]] = Field(default=None, alias="uninterpretedOptionList")
-    uninterpreted_option_or_builder_list: Optional[List[UninterpretedOptionOrBuilder]] = Field(default=None, alias="uninterpretedOptionOrBuilderList")
-    uninterpreted_option_count: Optional[StrictInt] = Field(default=None, alias="uninterpretedOptionCount")
     features: Optional[FeatureSet] = None
     initialized: Optional[StrictBool] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
@@ -56,7 +56,7 @@ class FieldOptions(BaseModel):
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "packed", "ctype", "jstype", "lazy", "unverifiedLazy", "weak", "debugRedact", "targetsList", "targetsCount", "editionDefaultsList", "editionDefaultsCount", "editionDefaultsOrBuilderList", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "features", "initialized", "serializedSize", "deprecated", "retention", "parserForType", "defaultInstanceForType", "allFields", "allFieldsRaw", "initializationErrorString", "descriptorForType", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "packed", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "ctype", "jstype", "lazy", "unverifiedLazy", "weak", "debugRedact", "targetsList", "targetsCount", "editionDefaultsList", "editionDefaultsCount", "editionDefaultsOrBuilderList", "features", "initialized", "serializedSize", "deprecated", "retention", "parserForType", "defaultInstanceForType", "allFields", "allFieldsRaw", "initializationErrorString", "descriptorForType", "memoizedSerializedSize"]
 
     @field_validator('ctype')
     def ctype_validate_enum(cls, value):
@@ -141,20 +141,6 @@ class FieldOptions(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in edition_defaults_list (list)
-        _items = []
-        if self.edition_defaults_list:
-            for _item_edition_defaults_list in self.edition_defaults_list:
-                if _item_edition_defaults_list:
-                    _items.append(_item_edition_defaults_list.to_dict())
-            _dict['editionDefaultsList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in edition_defaults_or_builder_list (list)
-        _items = []
-        if self.edition_defaults_or_builder_list:
-            for _item_edition_defaults_or_builder_list in self.edition_defaults_or_builder_list:
-                if _item_edition_defaults_or_builder_list:
-                    _items.append(_item_edition_defaults_or_builder_list.to_dict())
-            _dict['editionDefaultsOrBuilderList'] = _items
         # override the default output from pydantic by calling `to_dict()` of features_or_builder
         if self.features_or_builder:
             _dict['featuresOrBuilder'] = self.features_or_builder.to_dict()
@@ -172,6 +158,20 @@ class FieldOptions(BaseModel):
                 if _item_uninterpreted_option_or_builder_list:
                     _items.append(_item_uninterpreted_option_or_builder_list.to_dict())
             _dict['uninterpretedOptionOrBuilderList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in edition_defaults_list (list)
+        _items = []
+        if self.edition_defaults_list:
+            for _item_edition_defaults_list in self.edition_defaults_list:
+                if _item_edition_defaults_list:
+                    _items.append(_item_edition_defaults_list.to_dict())
+            _dict['editionDefaultsList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in edition_defaults_or_builder_list (list)
+        _items = []
+        if self.edition_defaults_or_builder_list:
+            for _item_edition_defaults_or_builder_list in self.edition_defaults_or_builder_list:
+                if _item_edition_defaults_or_builder_list:
+                    _items.append(_item_edition_defaults_or_builder_list.to_dict())
+            _dict['editionDefaultsOrBuilderList'] = _items
         # override the default output from pydantic by calling `to_dict()` of features
         if self.features:
             _dict['features'] = self.features.to_dict()
@@ -195,6 +195,10 @@ class FieldOptions(BaseModel):
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "packed": obj.get("packed"),
+            "featuresOrBuilder": FeatureSetOrBuilder.from_dict(obj["featuresOrBuilder"]) if obj.get("featuresOrBuilder") is not None else None,
+            "uninterpretedOptionList": [UninterpretedOption.from_dict(_item) for _item in obj["uninterpretedOptionList"]] if obj.get("uninterpretedOptionList") is not None else None,
+            "uninterpretedOptionOrBuilderList": [UninterpretedOptionOrBuilder.from_dict(_item) for _item in obj["uninterpretedOptionOrBuilderList"]] if obj.get("uninterpretedOptionOrBuilderList") is not None else None,
+            "uninterpretedOptionCount": obj.get("uninterpretedOptionCount"),
             "ctype": obj.get("ctype"),
             "jstype": obj.get("jstype"),
             "lazy": obj.get("lazy"),
@@ -206,10 +210,6 @@ class FieldOptions(BaseModel):
             "editionDefaultsList": [EditionDefault.from_dict(_item) for _item in obj["editionDefaultsList"]] if obj.get("editionDefaultsList") is not None else None,
             "editionDefaultsCount": obj.get("editionDefaultsCount"),
             "editionDefaultsOrBuilderList": [EditionDefaultOrBuilder.from_dict(_item) for _item in obj["editionDefaultsOrBuilderList"]] if obj.get("editionDefaultsOrBuilderList") is not None else None,
-            "featuresOrBuilder": FeatureSetOrBuilder.from_dict(obj["featuresOrBuilder"]) if obj.get("featuresOrBuilder") is not None else None,
-            "uninterpretedOptionList": [UninterpretedOption.from_dict(_item) for _item in obj["uninterpretedOptionList"]] if obj.get("uninterpretedOptionList") is not None else None,
-            "uninterpretedOptionOrBuilderList": [UninterpretedOptionOrBuilder.from_dict(_item) for _item in obj["uninterpretedOptionOrBuilderList"]] if obj.get("uninterpretedOptionOrBuilderList") is not None else None,
-            "uninterpretedOptionCount": obj.get("uninterpretedOptionCount"),
             "features": FeatureSet.from_dict(obj["features"]) if obj.get("features") is not None else None,
             "initialized": obj.get("initialized"),
             "serializedSize": obj.get("serializedSize"),

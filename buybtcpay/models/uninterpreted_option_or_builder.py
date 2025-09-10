@@ -28,24 +28,24 @@ class UninterpretedOptionOrBuilder(BaseModel):
     """
     UninterpretedOptionOrBuilder
     """ # noqa: E501
+    aggregate_value_bytes: Optional[ByteString] = Field(default=None, alias="aggregateValueBytes")
     name_list: Optional[List[NamePart]] = Field(default=None, alias="nameList")
     name_or_builder_list: Optional[List[NamePartOrBuilder]] = Field(default=None, alias="nameOrBuilderList")
     identifier_value_bytes: Optional[ByteString] = Field(default=None, alias="identifierValueBytes")
     positive_int_value: Optional[StrictInt] = Field(default=None, alias="positiveIntValue")
     negative_int_value: Optional[StrictInt] = Field(default=None, alias="negativeIntValue")
     aggregate_value: Optional[StrictStr] = Field(default=None, alias="aggregateValue")
-    aggregate_value_bytes: Optional[ByteString] = Field(default=None, alias="aggregateValueBytes")
     double_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="doubleValue")
     name_count: Optional[StrictInt] = Field(default=None, alias="nameCount")
     string_value: Optional[ByteString] = Field(default=None, alias="stringValue")
     identifier_value: Optional[StrictStr] = Field(default=None, alias="identifierValue")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["nameList", "nameOrBuilderList", "identifierValueBytes", "positiveIntValue", "negativeIntValue", "aggregateValue", "aggregateValueBytes", "doubleValue", "nameCount", "stringValue", "identifierValue", "initializationErrorString", "unknownFields", "defaultInstanceForType", "descriptorForType", "allFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["aggregateValueBytes", "nameList", "nameOrBuilderList", "identifierValueBytes", "positiveIntValue", "negativeIntValue", "aggregateValue", "doubleValue", "nameCount", "stringValue", "identifierValue", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +86,9 @@ class UninterpretedOptionOrBuilder(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of aggregate_value_bytes
+        if self.aggregate_value_bytes:
+            _dict['aggregateValueBytes'] = self.aggregate_value_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in name_list (list)
         _items = []
         if self.name_list:
@@ -103,21 +106,18 @@ class UninterpretedOptionOrBuilder(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of identifier_value_bytes
         if self.identifier_value_bytes:
             _dict['identifierValueBytes'] = self.identifier_value_bytes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of aggregate_value_bytes
-        if self.aggregate_value_bytes:
-            _dict['aggregateValueBytes'] = self.aggregate_value_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of string_value
         if self.string_value:
             _dict['stringValue'] = self.string_value.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -130,22 +130,22 @@ class UninterpretedOptionOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "aggregateValueBytes": ByteString.from_dict(obj["aggregateValueBytes"]) if obj.get("aggregateValueBytes") is not None else None,
             "nameList": [NamePart.from_dict(_item) for _item in obj["nameList"]] if obj.get("nameList") is not None else None,
             "nameOrBuilderList": [NamePartOrBuilder.from_dict(_item) for _item in obj["nameOrBuilderList"]] if obj.get("nameOrBuilderList") is not None else None,
             "identifierValueBytes": ByteString.from_dict(obj["identifierValueBytes"]) if obj.get("identifierValueBytes") is not None else None,
             "positiveIntValue": obj.get("positiveIntValue"),
             "negativeIntValue": obj.get("negativeIntValue"),
             "aggregateValue": obj.get("aggregateValue"),
-            "aggregateValueBytes": ByteString.from_dict(obj["aggregateValueBytes"]) if obj.get("aggregateValueBytes") is not None else None,
             "doubleValue": obj.get("doubleValue"),
             "nameCount": obj.get("nameCount"),
             "stringValue": ByteString.from_dict(obj["stringValue"]) if obj.get("stringValue") is not None else None,
             "identifierValue": obj.get("identifierValue"),
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

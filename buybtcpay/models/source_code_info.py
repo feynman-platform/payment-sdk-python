@@ -28,9 +28,9 @@ class SourceCodeInfo(BaseModel):
     SourceCodeInfo
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    location_list: Optional[List[Location]] = Field(default=None, alias="locationList")
     location_count: Optional[StrictInt] = Field(default=None, alias="locationCount")
     location_or_builder_list: Optional[List[LocationOrBuilder]] = Field(default=None, alias="locationOrBuilderList")
+    location_list: Optional[List[Location]] = Field(default=None, alias="locationList")
     initialized: Optional[StrictBool] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
@@ -39,7 +39,7 @@ class SourceCodeInfo(BaseModel):
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "locationList", "locationCount", "locationOrBuilderList", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "locationCount", "locationOrBuilderList", "locationList", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,13 +83,6 @@ class SourceCodeInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in location_list (list)
-        _items = []
-        if self.location_list:
-            for _item_location_list in self.location_list:
-                if _item_location_list:
-                    _items.append(_item_location_list.to_dict())
-            _dict['locationList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in location_or_builder_list (list)
         _items = []
         if self.location_or_builder_list:
@@ -97,6 +90,13 @@ class SourceCodeInfo(BaseModel):
                 if _item_location_or_builder_list:
                     _items.append(_item_location_or_builder_list.to_dict())
             _dict['locationOrBuilderList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in location_list (list)
+        _items = []
+        if self.location_list:
+            for _item_location_list in self.location_list:
+                if _item_location_list:
+                    _items.append(_item_location_list.to_dict())
+            _dict['locationList'] = _items
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
@@ -116,9 +116,9 @@ class SourceCodeInfo(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "locationList": [Location.from_dict(_item) for _item in obj["locationList"]] if obj.get("locationList") is not None else None,
             "locationCount": obj.get("locationCount"),
             "locationOrBuilderList": [LocationOrBuilder.from_dict(_item) for _item in obj["locationOrBuilderList"]] if obj.get("locationOrBuilderList") is not None else None,
+            "locationList": [Location.from_dict(_item) for _item in obj["locationList"]] if obj.get("locationList") is not None else None,
             "initialized": obj.get("initialized"),
             "serializedSize": obj.get("serializedSize"),
             "parserForType": obj.get("parserForType"),

@@ -28,18 +28,18 @@ class EnumValueDescriptorProtoOrBuilder(BaseModel):
     """
     EnumValueDescriptorProtoOrBuilder
     """ # noqa: E501
-    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
     options_or_builder: Optional[EnumValueOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
     name: Optional[StrictStr] = None
     number: Optional[StrictInt] = None
     options: Optional[EnumValueOptions] = None
+    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["nameBytes", "optionsOrBuilder", "name", "number", "options", "initializationErrorString", "unknownFields", "defaultInstanceForType", "descriptorForType", "allFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["optionsOrBuilder", "name", "number", "options", "nameBytes", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,24 +80,24 @@ class EnumValueDescriptorProtoOrBuilder(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of name_bytes
-        if self.name_bytes:
-            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of options_or_builder
         if self.options_or_builder:
             _dict['optionsOrBuilder'] = self.options_or_builder.to_dict()
         # override the default output from pydantic by calling `to_dict()` of options
         if self.options:
             _dict['options'] = self.options.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of name_bytes
+        if self.name_bytes:
+            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -110,16 +110,16 @@ class EnumValueDescriptorProtoOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
             "optionsOrBuilder": EnumValueOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
             "name": obj.get("name"),
             "number": obj.get("number"),
             "options": EnumValueOptions.from_dict(obj["options"]) if obj.get("options") is not None else None,
+            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

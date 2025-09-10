@@ -35,6 +35,7 @@ class PalmPayNotifyEntity(BaseModel):
     order_id: Optional[StrictStr] = Field(default=None, alias="orderId")
     order_no: Optional[StrictStr] = Field(default=None, alias="orderNo")
     amount: Optional[StrictInt] = None
+    currency: Optional[StrictStr] = Field(default=None, description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
     order_status: Optional[StrictInt] = Field(default=None, description="0: UNPAID, 1: PAYING, 2: SUCCESS, 3: FAIL, 4: CLOSE, 20: REFUNDED", alias="orderStatus")
     complete_time: Optional[datetime] = Field(default=None, alias="completeTime")
     error_code: Optional[StrictStr] = Field(default=None, alias="errorCode")
@@ -43,7 +44,7 @@ class PalmPayNotifyEntity(BaseModel):
     payer_bank_name: Optional[StrictStr] = Field(default=None, alias="payerBankName")
     payer_account_no: Optional[StrictStr] = Field(default=None, alias="payerAccountNo")
     payer_account_name: Optional[StrictStr] = Field(default=None, alias="payerAccountName")
-    __properties: ClassVar[List[str]] = ["id", "createAt", "updateAt", "status", "merchantId", "orderId", "orderNo", "amount", "orderStatus", "completeTime", "errorCode", "sign", "payerBankCode", "payerBankName", "payerAccountNo", "payerAccountName"]
+    __properties: ClassVar[List[str]] = ["id", "createAt", "updateAt", "status", "merchantId", "orderId", "orderNo", "amount", "currency", "orderStatus", "completeTime", "errorCode", "sign", "payerBankCode", "payerBankName", "payerAccountNo", "payerAccountName"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -53,6 +54,16 @@ class PalmPayNotifyEntity(BaseModel):
 
         if value not in set([0, 1]):
             raise ValueError("must be one of enum values (0, 1)")
+        return value
+
+    @field_validator('currency')
+    def currency_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['NGN', 'GHS', 'ETH', 'BTC', 'USDT']):
+            raise ValueError("must be one of enum values ('NGN', 'GHS', 'ETH', 'BTC', 'USDT')")
         return value
 
     @field_validator('order_status')
@@ -124,6 +135,7 @@ class PalmPayNotifyEntity(BaseModel):
             "orderId": obj.get("orderId"),
             "orderNo": obj.get("orderNo"),
             "amount": obj.get("amount"),
+            "currency": obj.get("currency"),
             "orderStatus": obj.get("orderStatus"),
             "completeTime": obj.get("completeTime"),
             "errorCode": obj.get("errorCode"),

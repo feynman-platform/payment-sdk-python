@@ -24,7 +24,7 @@ from typing_extensions import Self
 
 class Fee(BaseModel):
     """
-    Fee
+    手续费信息
     """ # noqa: E501
     amount: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["amount"]

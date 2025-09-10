@@ -191,6 +191,7 @@ buybtcpay/models/merchant_money_usage_statistics_req.py
 buybtcpay/models/merchant_payout_request_dto.py
 buybtcpay/models/merchant_recharge_create_dto.py
 buybtcpay/models/merchant_recharge_entity.py
+buybtcpay/models/merchant_to_merchant_automatic_params.py
 buybtcpay/models/merchant_to_merchant_params.py
 buybtcpay/models/merchant_to_merchant_transaction_request_dto.py
 buybtcpay/models/merchant_transaction_entity.py
@@ -320,6 +321,7 @@ buybtcpay/models/uninterpreted_option_or_builder.py
 buybtcpay/models/unknown_field_set.py
 buybtcpay/models/update_prepayment_order_amount_dto.py
 buybtcpay/models/update_self_service_approval_recevied_dto.py
+buybtcpay/models/verification.py
 buybtcpay/models/virtual_account_create_dto.py
 buybtcpay/models/virtual_account_data.py
 buybtcpay/models/virtual_account_entity.py
@@ -477,6 +479,7 @@ docs/MerchantPayoutRequestDto.md
 docs/MerchantRechargeControllerApi.md
 docs/MerchantRechargeCreateDto.md
 docs/MerchantRechargeEntity.md
+docs/MerchantToMerchantAutomaticParams.md
 docs/MerchantToMerchantParams.md
 docs/MerchantToMerchantTransactionRequestDto.md
 docs/MerchantTransactionEntity.md
@@ -639,6 +642,7 @@ docs/UninterpretedOptionOrBuilder.md
 docs/UnknownFieldSet.md
 docs/UpdatePrepaymentOrderAmountDto.md
 docs/UpdateSelfServiceApprovalReceviedDto.md
+docs/Verification.md
 docs/VirtualAccountCreateDto.md
 docs/VirtualAccountData.md
 docs/VirtualAccountEntity.md
@@ -801,6 +805,7 @@ test/test_merchant_payout_request_dto.py
 test/test_merchant_recharge_controller_api.py
 test/test_merchant_recharge_create_dto.py
 test/test_merchant_recharge_entity.py
+test/test_merchant_to_merchant_automatic_params.py
 test/test_merchant_to_merchant_params.py
 test/test_merchant_to_merchant_transaction_request_dto.py
 test/test_merchant_transaction_entity.py
@@ -963,6 +968,7 @@ test/test_unknown_field_set.py
 test/test_update_prepayment_order_amount_dto.py
 test/test_update_self_service_approval_recevied_dto.py
 test/test_usdt_address_api.py
+test/test_verification.py
 test/test_virtual_account_create_dto.py
 test/test_virtual_account_data.py
 test/test_virtual_account_entity.py

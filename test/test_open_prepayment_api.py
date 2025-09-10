@@ -61,6 +61,13 @@ class TestOpenPrepaymentApi(unittest.TestCase):
         """
         pass
 
+    def test_payment_merchant_to_merchant_by_business_id(self) -> None:
+        """Test case for payment_merchant_to_merchant_by_business_id
+
+        商户到商户转账
+        """
+        pass
+
     def test_payment_ngn_currency(self) -> None:
         """Test case for payment_ngn_currency
 

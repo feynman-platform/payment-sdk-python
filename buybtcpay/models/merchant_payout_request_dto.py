@@ -27,20 +27,17 @@ class MerchantPayoutRequestDto(BaseModel):
     """
     注册商户支付请求参数
     """ # noqa: E501
-    payee_name: Optional[StrictStr] = Field(default=None, description="收款方姓名（如果不传，默认为值是unknow）", alias="payeeName")
+    payee_name: Optional[StrictStr] = Field(default=None, description="收款方姓名（如果不传，默认为值是unknown）", alias="payeeName")
     payee_bank_code: StrictStr = Field(description="收款方银行或MMO编码", alias="payeeBankCode")
     payee_bank_acc_no: StrictStr = Field(description="收款方银行账户或MoMo账户账号为纯数字，不能带空格或特殊符号", alias="payeeBankAccNo")
     amount: StrictStr = Field(description="交易金额(标准单位计量)")
-    currency: Optional[StrictStr] = Field(default=None, description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
+    currency: StrictStr = Field(description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
     remark: Annotated[str, Field(min_length=0, strict=True, max_length=255)] = Field(description="备注信息")
     __properties: ClassVar[List[str]] = ["payeeName", "payeeBankCode", "payeeBankAccNo", "amount", "currency", "remark"]
 
     @field_validator('currency')
     def currency_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set(['NGN', 'GHS', 'ETH', 'BTC', 'USDT']):
             raise ValueError("must be one of enum values ('NGN', 'GHS', 'ETH', 'BTC', 'USDT')")
         return value

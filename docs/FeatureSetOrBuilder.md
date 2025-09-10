@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**field_presence** | **str** |  | [optional] 
+**json_format** | **str** |  | [optional] 
 **repeated_field_encoding** | **str** |  | [optional] 
 **utf8_validation** | **str** |  | [optional] 
-**json_format** | **str** |  | [optional] 
 **enum_type** | **str** |  | [optional] 
 **message_encoding** | **str** |  | [optional] 
+**field_presence** | **str** |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

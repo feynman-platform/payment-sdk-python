@@ -35,6 +35,10 @@ class TestOpenPayoutRequestDto(unittest.TestCase):
         model = OpenPayoutRequestDto()
         if include_optional:
             return OpenPayoutRequestDto(
+                verification = buybtcpay.models.verification.Verification(
+                    request_id = '', 
+                    otp_code = '', 
+                    otp_type = '', ),
                 request_time = '40123456789101112',
                 version = 'v4.072888001528021798096225500850762068629',
                 nonce = 'G012345678910111213141516171819202122232425262728293031',
@@ -60,6 +64,7 @@ class TestOpenPayoutRequestDto(unittest.TestCase):
                 payee_bank_code = '',
                 payee_bank_acc_no = '',
                 amount = '',
+                currency = 'NGN',
         )
         """
 

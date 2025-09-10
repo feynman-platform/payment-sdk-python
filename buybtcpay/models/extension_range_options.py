@@ -28,16 +28,16 @@ class ExtensionRangeOptions(BaseModel):
     ExtensionRangeOptions
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    declaration_or_builder_list: Optional[List[DeclarationOrBuilder]] = Field(default=None, alias="declarationOrBuilderList")
-    declaration_count: Optional[StrictInt] = Field(default=None, alias="declarationCount")
-    verification: Optional[StrictStr] = None
     features_or_builder: Optional[FeatureSetOrBuilder] = Field(default=None, alias="featuresOrBuilder")
     uninterpreted_option_list: Optional[List[UninterpretedOption]] = Field(default=None, alias="uninterpretedOptionList")
     uninterpreted_option_or_builder_list: Optional[List[UninterpretedOptionOrBuilder]] = Field(default=None, alias="uninterpretedOptionOrBuilderList")
     uninterpreted_option_count: Optional[StrictInt] = Field(default=None, alias="uninterpretedOptionCount")
+    declaration_count: Optional[StrictInt] = Field(default=None, alias="declarationCount")
+    declaration_or_builder_list: Optional[List[DeclarationOrBuilder]] = Field(default=None, alias="declarationOrBuilderList")
     declaration_list: Optional[List[Declaration]] = Field(default=None, alias="declarationList")
     features: Optional[FeatureSet] = None
     initialized: Optional[StrictBool] = None
+    verification: Optional[StrictStr] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[ExtensionRangeOptions] = Field(default=None, alias="defaultInstanceForType")
@@ -46,7 +46,7 @@ class ExtensionRangeOptions(BaseModel):
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "declarationOrBuilderList", "declarationCount", "verification", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "declarationList", "features", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "allFields", "allFieldsRaw", "initializationErrorString", "descriptorForType", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "declarationCount", "declarationOrBuilderList", "declarationList", "features", "initialized", "verification", "serializedSize", "parserForType", "defaultInstanceForType", "allFields", "allFieldsRaw", "initializationErrorString", "descriptorForType", "memoizedSerializedSize"]
 
     @field_validator('verification')
     def verification_validate_enum(cls, value):
@@ -100,13 +100,6 @@ class ExtensionRangeOptions(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in declaration_or_builder_list (list)
-        _items = []
-        if self.declaration_or_builder_list:
-            for _item_declaration_or_builder_list in self.declaration_or_builder_list:
-                if _item_declaration_or_builder_list:
-                    _items.append(_item_declaration_or_builder_list.to_dict())
-            _dict['declarationOrBuilderList'] = _items
         # override the default output from pydantic by calling `to_dict()` of features_or_builder
         if self.features_or_builder:
             _dict['featuresOrBuilder'] = self.features_or_builder.to_dict()
@@ -124,6 +117,13 @@ class ExtensionRangeOptions(BaseModel):
                 if _item_uninterpreted_option_or_builder_list:
                     _items.append(_item_uninterpreted_option_or_builder_list.to_dict())
             _dict['uninterpretedOptionOrBuilderList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in declaration_or_builder_list (list)
+        _items = []
+        if self.declaration_or_builder_list:
+            for _item_declaration_or_builder_list in self.declaration_or_builder_list:
+                if _item_declaration_or_builder_list:
+                    _items.append(_item_declaration_or_builder_list.to_dict())
+            _dict['declarationOrBuilderList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in declaration_list (list)
         _items = []
         if self.declaration_list:
@@ -153,16 +153,16 @@ class ExtensionRangeOptions(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "declarationOrBuilderList": [DeclarationOrBuilder.from_dict(_item) for _item in obj["declarationOrBuilderList"]] if obj.get("declarationOrBuilderList") is not None else None,
-            "declarationCount": obj.get("declarationCount"),
-            "verification": obj.get("verification"),
             "featuresOrBuilder": FeatureSetOrBuilder.from_dict(obj["featuresOrBuilder"]) if obj.get("featuresOrBuilder") is not None else None,
             "uninterpretedOptionList": [UninterpretedOption.from_dict(_item) for _item in obj["uninterpretedOptionList"]] if obj.get("uninterpretedOptionList") is not None else None,
             "uninterpretedOptionOrBuilderList": [UninterpretedOptionOrBuilder.from_dict(_item) for _item in obj["uninterpretedOptionOrBuilderList"]] if obj.get("uninterpretedOptionOrBuilderList") is not None else None,
             "uninterpretedOptionCount": obj.get("uninterpretedOptionCount"),
+            "declarationCount": obj.get("declarationCount"),
+            "declarationOrBuilderList": [DeclarationOrBuilder.from_dict(_item) for _item in obj["declarationOrBuilderList"]] if obj.get("declarationOrBuilderList") is not None else None,
             "declarationList": [Declaration.from_dict(_item) for _item in obj["declarationList"]] if obj.get("declarationList") is not None else None,
             "features": FeatureSet.from_dict(obj["features"]) if obj.get("features") is not None else None,
             "initialized": obj.get("initialized"),
+            "verification": obj.get("verification"),
             "serializedSize": obj.get("serializedSize"),
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": ExtensionRangeOptions.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,

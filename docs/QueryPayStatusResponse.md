@@ -1,5 +1,6 @@
 # QueryPayStatusResponse
 
+PalmPay查询支付状态响应
 
 ## Properties
 

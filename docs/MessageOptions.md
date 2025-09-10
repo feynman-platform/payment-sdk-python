@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **map_entry** | **bool** |  | [optional] 
-**message_set_wire_format** | **bool** |  | [optional] 
 **no_standard_descriptor_accessor** | **bool** |  | [optional] 
 **deprecated_legacy_json_field_conflicts** | **bool** |  | [optional] 
 **features_or_builder** | [**FeatureSetOrBuilder**](FeatureSetOrBuilder.md) |  | [optional] 
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **deprecated** | **bool** |  | [optional] 
 **parser_for_type** | **object** |  | [optional] 
 **default_instance_for_type** | [**MessageOptions**](MessageOptions.md) |  | [optional] 
+**message_set_wire_format** | **bool** |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 

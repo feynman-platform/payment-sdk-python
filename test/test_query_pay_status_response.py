@@ -38,6 +38,7 @@ class TestQueryPayStatusResponse(unittest.TestCase):
                 resp_code = '',
                 resp_msg = '',
                 data = buybtcpay.models.query_pay_status_data.QueryPayStatusData(
+                    currency = '', 
                     amount = 56, 
                     fee = buybtcpay.models.fee.Fee(
                         amount = 56, ), 

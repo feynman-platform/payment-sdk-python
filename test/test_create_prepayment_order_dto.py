@@ -35,6 +35,10 @@ class TestCreatePrepaymentOrderDto(unittest.TestCase):
         model = CreatePrepaymentOrderDto()
         if include_optional:
             return CreatePrepaymentOrderDto(
+                verification = buybtcpay.models.verification.Verification(
+                    request_id = '', 
+                    otp_code = '', 
+                    otp_type = '', ),
                 request_time = '40123456789101112',
                 version = 'v4.072888001528021798096225500850762068629',
                 nonce = 'G012345678910111213141516171819202122232425262728293031',
@@ -42,7 +46,8 @@ class TestCreatePrepaymentOrderDto(unittest.TestCase):
                 merchant_id = '',
                 type = 0,
                 amount = '',
-                currency = 'NGN'
+                currency = 'NGN',
+                payee_bank_code = ''
             )
         else:
             return CreatePrepaymentOrderDto(
@@ -51,6 +56,7 @@ class TestCreatePrepaymentOrderDto(unittest.TestCase):
                 nonce = 'G012345678910111213141516171819202122232425262728293031',
                 business_id = '',
                 merchant_id = '',
+                type = 0,
                 amount = '',
                 currency = 'NGN',
         )

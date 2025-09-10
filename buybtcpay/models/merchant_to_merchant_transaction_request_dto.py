@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from buybtcpay.models.verification import Verification
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,6 +28,7 @@ class MerchantToMerchantTransactionRequestDto(BaseModel):
     """
     MerchantToMerchantTransactionRequestDto
     """ # noqa: E501
+    verification: Optional[Verification] = None
     request_time: Annotated[str, Field(min_length=13, strict=True, max_length=2147483647)] = Field(description="请注意，此处是字符类型，不是数值", alias="requestTime")
     version: Annotated[str, Field(strict=True)] = Field(description="保留字段，暂时无用")
     nonce: Annotated[str, Field(min_length=32, strict=True, max_length=32)] = Field(description="最大32位，用于防止重放攻击")
@@ -35,7 +37,7 @@ class MerchantToMerchantTransactionRequestDto(BaseModel):
     amount: StrictStr = Field(description="转账金额")
     currency: StrictStr = Field(description="货币类型")
     note: Optional[StrictStr] = Field(default=None, description="转账备注")
-    __properties: ClassVar[List[str]] = ["requestTime", "version", "nonce", "payerMerchantEmail", "payeeMerchantEmail", "amount", "currency", "note"]
+    __properties: ClassVar[List[str]] = ["verification", "requestTime", "version", "nonce", "payerMerchantEmail", "payeeMerchantEmail", "amount", "currency", "note"]
 
     @field_validator('request_time')
     def request_time_validate_regular_expression(cls, value):
@@ -104,6 +106,9 @@ class MerchantToMerchantTransactionRequestDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of verification
+        if self.verification:
+            _dict['verification'] = self.verification.to_dict()
         return _dict
 
     @classmethod
@@ -116,6 +121,7 @@ class MerchantToMerchantTransactionRequestDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "verification": Verification.from_dict(obj["verification"]) if obj.get("verification") is not None else None,
             "requestTime": obj.get("requestTime"),
             "version": obj.get("version"),
             "nonce": obj.get("nonce"),

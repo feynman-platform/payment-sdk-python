@@ -32,6 +32,16 @@ class Result(BaseModel):
     Result
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
+    ret_value: Optional[StrictInt] = Field(default=None, alias="retValue")
+    contract_ret_value: Optional[StrictInt] = Field(default=None, alias="contractRetValue")
+    contract_ret: Optional[StrictStr] = Field(default=None, alias="contractRet")
+    initialized: Optional[StrictBool] = None
+    order_id: Optional[ByteString] = Field(default=None, alias="orderId")
+    fee: Optional[StrictInt] = None
+    exchange_id: Optional[StrictInt] = Field(default=None, alias="exchangeId")
+    serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
+    parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
+    default_instance_for_type: Optional[Result] = Field(default=None, alias="defaultInstanceForType")
     ret: Optional[StrictStr] = None
     asset_issue_id: Optional[StrictStr] = Field(default=None, alias="assetIssueID")
     asset_issue_id_bytes: Optional[ByteString] = Field(default=None, alias="assetIssueIDBytes")
@@ -48,31 +58,11 @@ class Result(BaseModel):
     cancel_unfreeze_v2_amount_count: Optional[StrictInt] = Field(default=None, alias="cancelUnfreezeV2AmountCount")
     cancel_unfreeze_v2_amount: Optional[Dict[str, StrictInt]] = Field(default=None, alias="cancelUnfreezeV2Amount")
     cancel_unfreeze_v2_amount_map: Optional[Dict[str, StrictInt]] = Field(default=None, alias="cancelUnfreezeV2AmountMap")
-    ret_value: Optional[StrictInt] = Field(default=None, alias="retValue")
-    contract_ret_value: Optional[StrictInt] = Field(default=None, alias="contractRetValue")
-    contract_ret: Optional[StrictStr] = Field(default=None, alias="contractRet")
-    initialized: Optional[StrictBool] = None
-    order_id: Optional[ByteString] = Field(default=None, alias="orderId")
-    fee: Optional[StrictInt] = None
-    exchange_id: Optional[StrictInt] = Field(default=None, alias="exchangeId")
-    serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
-    parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
-    default_instance_for_type: Optional[Result] = Field(default=None, alias="defaultInstanceForType")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "ret", "assetIssueID", "assetIssueIDBytes", "withdrawAmount", "unfreezeAmount", "exchangeReceivedAmount", "exchangeInjectAnotherAmount", "exchangeWithdrawAnotherAmount", "shieldedTransactionFee", "orderDetailsList", "orderDetailsOrBuilderList", "orderDetailsCount", "withdrawExpireAmount", "cancelUnfreezeV2AmountCount", "cancelUnfreezeV2Amount", "cancelUnfreezeV2AmountMap", "retValue", "contractRetValue", "contractRet", "initialized", "orderId", "fee", "exchangeId", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
-
-    @field_validator('ret')
-    def ret_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['SUCESS', 'FAILED', 'UNRECOGNIZED']):
-            raise ValueError("must be one of enum values ('SUCESS', 'FAILED', 'UNRECOGNIZED')")
-        return value
+    __properties: ClassVar[List[str]] = ["unknownFields", "retValue", "contractRetValue", "contractRet", "initialized", "orderId", "fee", "exchangeId", "serializedSize", "parserForType", "defaultInstanceForType", "ret", "assetIssueID", "assetIssueIDBytes", "withdrawAmount", "unfreezeAmount", "exchangeReceivedAmount", "exchangeInjectAnotherAmount", "exchangeWithdrawAnotherAmount", "shieldedTransactionFee", "orderDetailsList", "orderDetailsOrBuilderList", "orderDetailsCount", "withdrawExpireAmount", "cancelUnfreezeV2AmountCount", "cancelUnfreezeV2Amount", "cancelUnfreezeV2AmountMap", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     @field_validator('contract_ret')
     def contract_ret_validate_enum(cls, value):
@@ -82,6 +72,16 @@ class Result(BaseModel):
 
         if value not in set(['DEFAULT', 'SUCCESS', 'REVERT', 'BAD_JUMP_DESTINATION', 'OUT_OF_MEMORY', 'PRECOMPILED_CONTRACT', 'STACK_TOO_SMALL', 'STACK_TOO_LARGE', 'ILLEGAL_OPERATION', 'STACK_OVERFLOW', 'OUT_OF_ENERGY', 'OUT_OF_TIME', 'JVM_STACK_OVER_FLOW', 'UNKNOWN', 'TRANSFER_FAILED', 'INVALID_CODE', 'UNRECOGNIZED']):
             raise ValueError("must be one of enum values ('DEFAULT', 'SUCCESS', 'REVERT', 'BAD_JUMP_DESTINATION', 'OUT_OF_MEMORY', 'PRECOMPILED_CONTRACT', 'STACK_TOO_SMALL', 'STACK_TOO_LARGE', 'ILLEGAL_OPERATION', 'STACK_OVERFLOW', 'OUT_OF_ENERGY', 'OUT_OF_TIME', 'JVM_STACK_OVER_FLOW', 'UNKNOWN', 'TRANSFER_FAILED', 'INVALID_CODE', 'UNRECOGNIZED')")
+        return value
+
+    @field_validator('ret')
+    def ret_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['SUCESS', 'FAILED', 'UNRECOGNIZED']):
+            raise ValueError("must be one of enum values ('SUCESS', 'FAILED', 'UNRECOGNIZED')")
         return value
 
     model_config = ConfigDict(
@@ -126,6 +126,12 @@ class Result(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of order_id
+        if self.order_id:
+            _dict['orderId'] = self.order_id.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
+        if self.default_instance_for_type:
+            _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of asset_issue_id_bytes
         if self.asset_issue_id_bytes:
             _dict['assetIssueIDBytes'] = self.asset_issue_id_bytes.to_dict()
@@ -143,12 +149,6 @@ class Result(BaseModel):
                 if _item_order_details_or_builder_list:
                     _items.append(_item_order_details_or_builder_list.to_dict())
             _dict['orderDetailsOrBuilderList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of order_id
-        if self.order_id:
-            _dict['orderId'] = self.order_id.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
-        if self.default_instance_for_type:
-            _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
@@ -165,6 +165,16 @@ class Result(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
+            "retValue": obj.get("retValue"),
+            "contractRetValue": obj.get("contractRetValue"),
+            "contractRet": obj.get("contractRet"),
+            "initialized": obj.get("initialized"),
+            "orderId": ByteString.from_dict(obj["orderId"]) if obj.get("orderId") is not None else None,
+            "fee": obj.get("fee"),
+            "exchangeId": obj.get("exchangeId"),
+            "serializedSize": obj.get("serializedSize"),
+            "parserForType": obj.get("parserForType"),
+            "defaultInstanceForType": Result.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "ret": obj.get("ret"),
             "assetIssueID": obj.get("assetIssueID"),
             "assetIssueIDBytes": ByteString.from_dict(obj["assetIssueIDBytes"]) if obj.get("assetIssueIDBytes") is not None else None,
@@ -181,16 +191,6 @@ class Result(BaseModel):
             "cancelUnfreezeV2AmountCount": obj.get("cancelUnfreezeV2AmountCount"),
             "cancelUnfreezeV2Amount": obj.get("cancelUnfreezeV2Amount"),
             "cancelUnfreezeV2AmountMap": obj.get("cancelUnfreezeV2AmountMap"),
-            "retValue": obj.get("retValue"),
-            "contractRetValue": obj.get("contractRetValue"),
-            "contractRet": obj.get("contractRet"),
-            "initialized": obj.get("initialized"),
-            "orderId": ByteString.from_dict(obj["orderId"]) if obj.get("orderId") is not None else None,
-            "fee": obj.get("fee"),
-            "exchangeId": obj.get("exchangeId"),
-            "serializedSize": obj.get("serializedSize"),
-            "parserForType": obj.get("parserForType"),
-            "defaultInstanceForType": Result.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

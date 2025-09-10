@@ -40,8 +40,8 @@ class MerchantBillQuery(BaseModel):
     account_no: Optional[StrictStr] = Field(default=None, description="账户号码", alias="accountNo")
     counterparty_account_no: Optional[StrictStr] = Field(default=None, description="交易对方账户号码", alias="counterpartyAccountNo")
     direction: Optional[List[StrictInt]] = Field(default=None, description="交易方向")
-    bill_status: Optional[StrictInt] = Field(default=None, description="0: Initiated, 1: Processing, 2: Success, 3: Failed, 4: Canceled, 5: Closed, 6: Refunded", alias="billStatus")
-    currency: Optional[StrictStr] = Field(default=None, description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
+    bill_status: Optional[List[StrictInt]] = Field(default=None, description="交易状态", alias="billStatus")
+    currency: Optional[List[StrictStr]] = Field(default=None, description="币种")
     amount: Optional[List[StrictStr]] = Field(default=None, description="金额，需要与币种一起使用")
     __properties: ClassVar[List[str]] = ["id", "orderByCreateAt", "createAtSince", "createAtUntil", "businessIds", "businessId", "channelId", "merchantId", "businessType", "accountType", "counterpartyAccountType", "accountNo", "counterpartyAccountNo", "direction", "billStatus", "currency", "amount"]
 
@@ -95,8 +95,9 @@ class MerchantBillQuery(BaseModel):
         if value is None:
             return value
 
-        if value not in set([0, 1, 2, 3, 4, 5, 6]):
-            raise ValueError("must be one of enum values (0, 1, 2, 3, 4, 5, 6)")
+        for i in value:
+            if i not in set([0, 1, 2, 3, 4, 5, 6]):
+                raise ValueError("each list item must be one of (0, 1, 2, 3, 4, 5, 6)")
         return value
 
     @field_validator('currency')
@@ -105,8 +106,9 @@ class MerchantBillQuery(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['NGN', 'GHS', 'ETH', 'BTC', 'USDT']):
-            raise ValueError("must be one of enum values ('NGN', 'GHS', 'ETH', 'BTC', 'USDT')")
+        for i in value:
+            if i not in set(['NGN', 'GHS', 'ETH', 'BTC', 'USDT']):
+                raise ValueError("each list item must be one of ('NGN', 'GHS', 'ETH', 'BTC', 'USDT')")
         return value
 
     model_config = ConfigDict(

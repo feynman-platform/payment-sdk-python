@@ -6,13 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_or_builder** | [**AccountIdOrBuilder**](AccountIdOrBuilder.md) |  | [optional] 
-**account** | [**AccountId**](AccountId.md) |  | [optional] 
 **permission_name** | [**ByteString**](ByteString.md) |  | [optional] 
+**account** | [**AccountId**](AccountId.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

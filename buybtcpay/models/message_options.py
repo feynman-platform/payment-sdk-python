@@ -29,7 +29,6 @@ class MessageOptions(BaseModel):
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     map_entry: Optional[StrictBool] = Field(default=None, alias="mapEntry")
-    message_set_wire_format: Optional[StrictBool] = Field(default=None, alias="messageSetWireFormat")
     no_standard_descriptor_accessor: Optional[StrictBool] = Field(default=None, alias="noStandardDescriptorAccessor")
     deprecated_legacy_json_field_conflicts: Optional[StrictBool] = Field(default=None, alias="deprecatedLegacyJsonFieldConflicts")
     features_or_builder: Optional[FeatureSetOrBuilder] = Field(default=None, alias="featuresOrBuilder")
@@ -42,12 +41,13 @@ class MessageOptions(BaseModel):
     deprecated: Optional[StrictBool] = None
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[MessageOptions] = Field(default=None, alias="defaultInstanceForType")
+    message_set_wire_format: Optional[StrictBool] = Field(default=None, alias="messageSetWireFormat")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     all_fields_raw: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFieldsRaw")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "mapEntry", "messageSetWireFormat", "noStandardDescriptorAccessor", "deprecatedLegacyJsonFieldConflicts", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "features", "initialized", "serializedSize", "deprecated", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "allFieldsRaw", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "mapEntry", "noStandardDescriptorAccessor", "deprecatedLegacyJsonFieldConflicts", "featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "features", "initialized", "serializedSize", "deprecated", "parserForType", "defaultInstanceForType", "messageSetWireFormat", "initializationErrorString", "descriptorForType", "allFields", "allFieldsRaw", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,7 +131,6 @@ class MessageOptions(BaseModel):
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "mapEntry": obj.get("mapEntry"),
-            "messageSetWireFormat": obj.get("messageSetWireFormat"),
             "noStandardDescriptorAccessor": obj.get("noStandardDescriptorAccessor"),
             "deprecatedLegacyJsonFieldConflicts": obj.get("deprecatedLegacyJsonFieldConflicts"),
             "featuresOrBuilder": FeatureSetOrBuilder.from_dict(obj["featuresOrBuilder"]) if obj.get("featuresOrBuilder") is not None else None,
@@ -144,6 +143,7 @@ class MessageOptions(BaseModel):
             "deprecated": obj.get("deprecated"),
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": MessageOptions.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
+            "messageSetWireFormat": obj.get("messageSetWireFormat"),
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

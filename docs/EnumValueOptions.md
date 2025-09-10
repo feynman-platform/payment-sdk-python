@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
-**debug_redact** | **bool** |  | [optional] 
 **features_or_builder** | [**FeatureSetOrBuilder**](FeatureSetOrBuilder.md) |  | [optional] 
 **uninterpreted_option_list** | [**List[UninterpretedOption]**](UninterpretedOption.md) |  | [optional] 
 **uninterpreted_option_or_builder_list** | [**List[UninterpretedOptionOrBuilder]**](UninterpretedOptionOrBuilder.md) |  | [optional] 
 **uninterpreted_option_count** | **int** |  | [optional] 
+**debug_redact** | **bool** |  | [optional] 
 **features** | [**FeatureSet**](FeatureSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 **serialized_size** | **int** |  | [optional] 

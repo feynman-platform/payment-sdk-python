@@ -29,15 +29,6 @@ class DescriptorProto(BaseModel):
     DescriptorProto
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
-    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
-    reserved_range_list: Optional[List[ReservedRange]] = Field(default=None, alias="reservedRangeList")
-    reserved_name_list: Optional[List[str]] = Field(default=None, alias="reservedNameList")
-    extension_range_list: Optional[List[ExtensionRange]] = Field(default=None, alias="extensionRangeList")
-    oneof_decl_count: Optional[StrictInt] = Field(default=None, alias="oneofDeclCount")
-    nested_type_count: Optional[StrictInt] = Field(default=None, alias="nestedTypeCount")
-    enum_type_count: Optional[StrictInt] = Field(default=None, alias="enumTypeCount")
-    extension_count: Optional[StrictInt] = Field(default=None, alias="extensionCount")
-    extension_range_count: Optional[StrictInt] = Field(default=None, alias="extensionRangeCount")
     field_or_builder_list: Optional[List[FieldDescriptorProtoOrBuilder]] = Field(default=None, alias="fieldOrBuilderList")
     extension_list: Optional[List[FieldDescriptorProto]] = Field(default=None, alias="extensionList")
     extension_or_builder_list: Optional[List[FieldDescriptorProtoOrBuilder]] = Field(default=None, alias="extensionOrBuilderList")
@@ -52,6 +43,14 @@ class DescriptorProto(BaseModel):
     reserved_range_or_builder_list: Optional[List[ReservedRangeOrBuilder]] = Field(default=None, alias="reservedRangeOrBuilderList")
     reserved_range_count: Optional[StrictInt] = Field(default=None, alias="reservedRangeCount")
     reserved_name_count: Optional[StrictInt] = Field(default=None, alias="reservedNameCount")
+    reserved_range_list: Optional[List[ReservedRange]] = Field(default=None, alias="reservedRangeList")
+    reserved_name_list: Optional[List[str]] = Field(default=None, alias="reservedNameList")
+    extension_range_list: Optional[List[ExtensionRange]] = Field(default=None, alias="extensionRangeList")
+    oneof_decl_count: Optional[StrictInt] = Field(default=None, alias="oneofDeclCount")
+    nested_type_count: Optional[StrictInt] = Field(default=None, alias="nestedTypeCount")
+    enum_type_count: Optional[StrictInt] = Field(default=None, alias="enumTypeCount")
+    extension_count: Optional[StrictInt] = Field(default=None, alias="extensionCount")
+    extension_range_count: Optional[StrictInt] = Field(default=None, alias="extensionRangeCount")
     field_count: Optional[StrictInt] = Field(default=None, alias="fieldCount")
     initialized: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
@@ -60,11 +59,12 @@ class DescriptorProto(BaseModel):
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[DescriptorProto] = Field(default=None, alias="defaultInstanceForType")
+    name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "nameBytes", "reservedRangeList", "reservedNameList", "extensionRangeList", "oneofDeclCount", "nestedTypeCount", "enumTypeCount", "extensionCount", "extensionRangeCount", "fieldOrBuilderList", "extensionList", "extensionOrBuilderList", "nestedTypeList", "nestedTypeOrBuilderList", "enumTypeList", "enumTypeOrBuilderList", "extensionRangeOrBuilderList", "oneofDeclList", "oneofDeclOrBuilderList", "optionsOrBuilder", "reservedRangeOrBuilderList", "reservedRangeCount", "reservedNameCount", "fieldCount", "initialized", "name", "options", "fieldList", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "fieldOrBuilderList", "extensionList", "extensionOrBuilderList", "nestedTypeList", "nestedTypeOrBuilderList", "enumTypeList", "enumTypeOrBuilderList", "extensionRangeOrBuilderList", "oneofDeclList", "oneofDeclOrBuilderList", "optionsOrBuilder", "reservedRangeOrBuilderList", "reservedRangeCount", "reservedNameCount", "reservedRangeList", "reservedNameList", "extensionRangeList", "oneofDeclCount", "nestedTypeCount", "enumTypeCount", "extensionCount", "extensionRangeCount", "fieldCount", "initialized", "name", "options", "fieldList", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,23 +108,6 @@ class DescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of name_bytes
-        if self.name_bytes:
-            _dict['nameBytes'] = self.name_bytes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in reserved_range_list (list)
-        _items = []
-        if self.reserved_range_list:
-            for _item_reserved_range_list in self.reserved_range_list:
-                if _item_reserved_range_list:
-                    _items.append(_item_reserved_range_list.to_dict())
-            _dict['reservedRangeList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in extension_range_list (list)
-        _items = []
-        if self.extension_range_list:
-            for _item_extension_range_list in self.extension_range_list:
-                if _item_extension_range_list:
-                    _items.append(_item_extension_range_list.to_dict())
-            _dict['extensionRangeList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in field_or_builder_list (list)
         _items = []
         if self.field_or_builder_list:
@@ -205,6 +188,20 @@ class DescriptorProto(BaseModel):
                 if _item_reserved_range_or_builder_list:
                     _items.append(_item_reserved_range_or_builder_list.to_dict())
             _dict['reservedRangeOrBuilderList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in reserved_range_list (list)
+        _items = []
+        if self.reserved_range_list:
+            for _item_reserved_range_list in self.reserved_range_list:
+                if _item_reserved_range_list:
+                    _items.append(_item_reserved_range_list.to_dict())
+            _dict['reservedRangeList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in extension_range_list (list)
+        _items = []
+        if self.extension_range_list:
+            for _item_extension_range_list in self.extension_range_list:
+                if _item_extension_range_list:
+                    _items.append(_item_extension_range_list.to_dict())
+            _dict['extensionRangeList'] = _items
         # override the default output from pydantic by calling `to_dict()` of options
         if self.options:
             _dict['options'] = self.options.to_dict()
@@ -218,6 +215,9 @@ class DescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of name_bytes
+        if self.name_bytes:
+            _dict['nameBytes'] = self.name_bytes.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
@@ -234,14 +234,6 @@ class DescriptorProto(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
-            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
-            "reservedRangeList": [ReservedRange.from_dict(_item) for _item in obj["reservedRangeList"]] if obj.get("reservedRangeList") is not None else None,
-            "extensionRangeList": [ExtensionRange.from_dict(_item) for _item in obj["extensionRangeList"]] if obj.get("extensionRangeList") is not None else None,
-            "oneofDeclCount": obj.get("oneofDeclCount"),
-            "nestedTypeCount": obj.get("nestedTypeCount"),
-            "enumTypeCount": obj.get("enumTypeCount"),
-            "extensionCount": obj.get("extensionCount"),
-            "extensionRangeCount": obj.get("extensionRangeCount"),
             "fieldOrBuilderList": [FieldDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["fieldOrBuilderList"]] if obj.get("fieldOrBuilderList") is not None else None,
             "extensionList": [FieldDescriptorProto.from_dict(_item) for _item in obj["extensionList"]] if obj.get("extensionList") is not None else None,
             "extensionOrBuilderList": [FieldDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["extensionOrBuilderList"]] if obj.get("extensionOrBuilderList") is not None else None,
@@ -256,6 +248,13 @@ class DescriptorProto(BaseModel):
             "reservedRangeOrBuilderList": [ReservedRangeOrBuilder.from_dict(_item) for _item in obj["reservedRangeOrBuilderList"]] if obj.get("reservedRangeOrBuilderList") is not None else None,
             "reservedRangeCount": obj.get("reservedRangeCount"),
             "reservedNameCount": obj.get("reservedNameCount"),
+            "reservedRangeList": [ReservedRange.from_dict(_item) for _item in obj["reservedRangeList"]] if obj.get("reservedRangeList") is not None else None,
+            "extensionRangeList": [ExtensionRange.from_dict(_item) for _item in obj["extensionRangeList"]] if obj.get("extensionRangeList") is not None else None,
+            "oneofDeclCount": obj.get("oneofDeclCount"),
+            "nestedTypeCount": obj.get("nestedTypeCount"),
+            "enumTypeCount": obj.get("enumTypeCount"),
+            "extensionCount": obj.get("extensionCount"),
+            "extensionRangeCount": obj.get("extensionRangeCount"),
             "fieldCount": obj.get("fieldCount"),
             "initialized": obj.get("initialized"),
             "name": obj.get("name"),
@@ -264,6 +263,7 @@ class DescriptorProto(BaseModel):
             "serializedSize": obj.get("serializedSize"),
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": DescriptorProto.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
+            "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

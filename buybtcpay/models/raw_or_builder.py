@@ -45,16 +45,16 @@ class RawOrBuilder(BaseModel):
     fee_limit: Optional[StrictInt] = Field(default=None, alias="feeLimit")
     timestamp: Optional[StrictInt] = None
     data: Optional[ByteString] = None
-    expiration: Optional[StrictInt] = None
     contract_list: Optional[List[Contract]] = Field(default=None, alias="contractList")
     scripts: Optional[ByteString] = None
+    expiration: Optional[StrictInt] = None
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["refBlockBytes", "refBlockNum", "refBlockHash", "authsList", "authsCount", "authsOrBuilderList", "contractCount", "contractOrBuilderList", "feeLimit", "timestamp", "data", "expiration", "contractList", "scripts", "initializationErrorString", "unknownFields", "defaultInstanceForType", "descriptorForType", "allFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["refBlockBytes", "refBlockNum", "refBlockHash", "authsList", "authsCount", "authsOrBuilderList", "contractCount", "contractOrBuilderList", "feeLimit", "timestamp", "data", "contractList", "scripts", "expiration", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -135,15 +135,15 @@ class RawOrBuilder(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of scripts
         if self.scripts:
             _dict['scripts'] = self.scripts.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -167,14 +167,14 @@ class RawOrBuilder(BaseModel):
             "feeLimit": obj.get("feeLimit"),
             "timestamp": obj.get("timestamp"),
             "data": ByteString.from_dict(obj["data"]) if obj.get("data") is not None else None,
-            "expiration": obj.get("expiration"),
             "contractList": [Contract.from_dict(_item) for _item in obj["contractList"]] if obj.get("contractList") is not None else None,
             "scripts": ByteString.from_dict(obj["scripts"]) if obj.get("scripts") is not None else None,
+            "expiration": obj.get("expiration"),
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

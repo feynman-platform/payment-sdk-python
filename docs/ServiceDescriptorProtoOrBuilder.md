@@ -5,18 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
-**method_list** | [**List[MethodDescriptorProto]**](MethodDescriptorProto.md) |  | [optional] 
 **options_or_builder** | [**ServiceOptionsOrBuilder**](ServiceOptionsOrBuilder.md) |  | [optional] 
 **method_count** | **int** |  | [optional] 
 **method_or_builder_list** | [**List[MethodDescriptorProtoOrBuilder]**](MethodDescriptorProtoOrBuilder.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **options** | [**ServiceOptions**](ServiceOptions.md) |  | [optional] 
+**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
+**method_list** | [**List[MethodDescriptorProto]**](MethodDescriptorProto.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

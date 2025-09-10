@@ -46,17 +46,17 @@ class Raw(BaseModel):
     initialized: Optional[StrictBool] = None
     timestamp: Optional[StrictInt] = None
     data: Optional[ByteString] = None
-    expiration: Optional[StrictInt] = None
     contract_list: Optional[List[Contract]] = Field(default=None, alias="contractList")
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     scripts: Optional[ByteString] = None
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[Raw] = Field(default=None, alias="defaultInstanceForType")
+    expiration: Optional[StrictInt] = None
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "refBlockBytes", "refBlockNum", "refBlockHash", "authsList", "authsCount", "authsOrBuilderList", "contractCount", "contractOrBuilderList", "feeLimit", "initialized", "timestamp", "data", "expiration", "contractList", "serializedSize", "scripts", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "refBlockBytes", "refBlockNum", "refBlockHash", "authsList", "authsCount", "authsOrBuilderList", "contractCount", "contractOrBuilderList", "feeLimit", "initialized", "timestamp", "data", "contractList", "serializedSize", "scripts", "parserForType", "defaultInstanceForType", "expiration", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -171,12 +171,12 @@ class Raw(BaseModel):
             "initialized": obj.get("initialized"),
             "timestamp": obj.get("timestamp"),
             "data": ByteString.from_dict(obj["data"]) if obj.get("data") is not None else None,
-            "expiration": obj.get("expiration"),
             "contractList": [Contract.from_dict(_item) for _item in obj["contractList"]] if obj.get("contractList") is not None else None,
             "serializedSize": obj.get("serializedSize"),
             "scripts": ByteString.from_dict(obj["scripts"]) if obj.get("scripts") is not None else None,
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": Raw.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
+            "expiration": obj.get("expiration"),
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

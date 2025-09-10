@@ -29,12 +29,12 @@ class Location(BaseModel):
     Location
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
+    leading_comments_bytes: Optional[ByteString] = Field(default=None, alias="leadingCommentsBytes")
     path_list: Optional[List[StrictInt]] = Field(default=None, alias="pathList")
     path_count: Optional[StrictInt] = Field(default=None, alias="pathCount")
     span_list: Optional[List[StrictInt]] = Field(default=None, alias="spanList")
     span_count: Optional[StrictInt] = Field(default=None, alias="spanCount")
     leading_comments: Optional[StrictStr] = Field(default=None, alias="leadingComments")
-    leading_comments_bytes: Optional[ByteString] = Field(default=None, alias="leadingCommentsBytes")
     trailing_comments: Optional[StrictStr] = Field(default=None, alias="trailingComments")
     trailing_comments_bytes: Optional[ByteString] = Field(default=None, alias="trailingCommentsBytes")
     leading_detached_comments_list: Optional[List[str]] = Field(default=None, alias="leadingDetachedCommentsList")
@@ -47,7 +47,7 @@ class Location(BaseModel):
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "pathList", "pathCount", "spanList", "spanCount", "leadingComments", "leadingCommentsBytes", "trailingComments", "trailingCommentsBytes", "leadingDetachedCommentsList", "leadingDetachedCommentsCount", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "leadingCommentsBytes", "pathList", "pathCount", "spanList", "spanCount", "leadingComments", "trailingComments", "trailingCommentsBytes", "leadingDetachedCommentsList", "leadingDetachedCommentsCount", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,12 +116,12 @@ class Location(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
+            "leadingCommentsBytes": ByteString.from_dict(obj["leadingCommentsBytes"]) if obj.get("leadingCommentsBytes") is not None else None,
             "pathList": obj.get("pathList"),
             "pathCount": obj.get("pathCount"),
             "spanList": obj.get("spanList"),
             "spanCount": obj.get("spanCount"),
             "leadingComments": obj.get("leadingComments"),
-            "leadingCommentsBytes": ByteString.from_dict(obj["leadingCommentsBytes"]) if obj.get("leadingCommentsBytes") is not None else None,
             "trailingComments": obj.get("trailingComments"),
             "trailingCommentsBytes": ByteString.from_dict(obj["trailingCommentsBytes"]) if obj.get("trailingCommentsBytes") is not None else None,
             "leadingDetachedCommentsCount": obj.get("leadingDetachedCommentsCount"),

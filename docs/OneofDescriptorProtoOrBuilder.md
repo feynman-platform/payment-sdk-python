@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **options_or_builder** | [**OneofOptionsOrBuilder**](OneofOptionsOrBuilder.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **options** | [**OneofOptions**](OneofOptions.md) |  | [optional] 
+**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

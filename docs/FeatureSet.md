@@ -6,16 +6,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
-**field_presence** | **str** |  | [optional] 
+**json_format** | **str** |  | [optional] 
 **repeated_field_encoding** | **str** |  | [optional] 
 **utf8_validation** | **str** |  | [optional] 
-**json_format** | **str** |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 **enum_type** | **str** |  | [optional] 
 **serialized_size** | **int** |  | [optional] 
 **parser_for_type** | **object** |  | [optional] 
 **default_instance_for_type** | [**FeatureSet**](FeatureSet.md) |  | [optional] 
 **message_encoding** | **str** |  | [optional] 
+**field_presence** | **str** |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
 **all_fields_raw** | **Dict[str, object]** |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 

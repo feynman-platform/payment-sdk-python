@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **initialized** | **bool** |  | [optional] 
 **default_instance_for_type** | [**MessageLite**](MessageLite.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 
 ## Example
 

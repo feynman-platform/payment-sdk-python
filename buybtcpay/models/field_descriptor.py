@@ -38,21 +38,21 @@ class FieldDescriptor(BaseModel):
     containing_oneof: Optional[OneofDescriptor] = Field(default=None, alias="containingOneof")
     enum_type: Optional[EnumDescriptor] = Field(default=None, alias="enumType")
     default_value: Optional[Dict[str, Any]] = Field(default=None, alias="defaultValue")
-    extension: Optional[StrictBool] = None
+    real_containing_oneof: Optional[OneofDescriptor] = Field(default=None, alias="realContainingOneof")
     lite_java_type: Optional[StrictStr] = Field(default=None, alias="liteJavaType")
-    lite_type: Optional[StrictStr] = Field(default=None, alias="liteType")
     packed: Optional[StrictBool] = None
     packable: Optional[StrictBool] = None
-    real_containing_oneof: Optional[OneofDescriptor] = Field(default=None, alias="realContainingOneof")
     java_type: Optional[StrictStr] = Field(default=None, alias="javaType")
     name: Optional[StrictStr] = None
     number: Optional[StrictInt] = None
-    required: Optional[StrictBool] = None
     options: Optional[FieldOptions] = None
     optional: Optional[StrictBool] = None
+    extension: Optional[StrictBool] = None
+    lite_type: Optional[StrictStr] = Field(default=None, alias="liteType")
     repeated: Optional[StrictBool] = None
     map_field: Optional[StrictBool] = Field(default=None, alias="mapField")
-    __properties: ClassVar[List[str]] = ["index", "proto", "fullName", "jsonName", "file", "extensionScope", "type", "containingType", "messageType", "containingOneof", "enumType", "defaultValue", "extension", "liteJavaType", "liteType", "packed", "packable", "realContainingOneof", "javaType", "name", "number", "required", "options", "optional", "repeated", "mapField"]
+    required: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["index", "proto", "fullName", "jsonName", "file", "extensionScope", "type", "containingType", "messageType", "containingOneof", "enumType", "defaultValue", "realContainingOneof", "liteJavaType", "packed", "packable", "javaType", "name", "number", "options", "optional", "extension", "liteType", "repeated", "mapField", "required"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -74,16 +74,6 @@ class FieldDescriptor(BaseModel):
             raise ValueError("must be one of enum values ('INT', 'LONG', 'FLOAT', 'DOUBLE', 'BOOLEAN', 'STRING', 'BYTE_STRING', 'ENUM', 'MESSAGE')")
         return value
 
-    @field_validator('lite_type')
-    def lite_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['DOUBLE', 'FLOAT', 'INT64', 'UINT64', 'INT32', 'FIXED64', 'FIXED32', 'BOOL', 'STRING', 'GROUP', 'MESSAGE', 'BYTES', 'UINT32', 'ENUM', 'SFIXED32', 'SFIXED64', 'SINT32', 'SINT64']):
-            raise ValueError("must be one of enum values ('DOUBLE', 'FLOAT', 'INT64', 'UINT64', 'INT32', 'FIXED64', 'FIXED32', 'BOOL', 'STRING', 'GROUP', 'MESSAGE', 'BYTES', 'UINT32', 'ENUM', 'SFIXED32', 'SFIXED64', 'SINT32', 'SINT64')")
-        return value
-
     @field_validator('java_type')
     def java_type_validate_enum(cls, value):
         """Validates the enum"""
@@ -92,6 +82,16 @@ class FieldDescriptor(BaseModel):
 
         if value not in set(['INT', 'LONG', 'FLOAT', 'DOUBLE', 'BOOLEAN', 'STRING', 'BYTE_STRING', 'ENUM', 'MESSAGE']):
             raise ValueError("must be one of enum values ('INT', 'LONG', 'FLOAT', 'DOUBLE', 'BOOLEAN', 'STRING', 'BYTE_STRING', 'ENUM', 'MESSAGE')")
+        return value
+
+    @field_validator('lite_type')
+    def lite_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['DOUBLE', 'FLOAT', 'INT64', 'UINT64', 'INT32', 'FIXED64', 'FIXED32', 'BOOL', 'STRING', 'GROUP', 'MESSAGE', 'BYTES', 'UINT32', 'ENUM', 'SFIXED32', 'SFIXED64', 'SINT32', 'SINT64']):
+            raise ValueError("must be one of enum values ('DOUBLE', 'FLOAT', 'INT64', 'UINT64', 'INT32', 'FIXED64', 'FIXED32', 'BOOL', 'STRING', 'GROUP', 'MESSAGE', 'BYTES', 'UINT32', 'ENUM', 'SFIXED32', 'SFIXED64', 'SINT32', 'SINT64')")
         return value
 
     model_config = ConfigDict(
@@ -184,20 +184,20 @@ class FieldDescriptor(BaseModel):
             "containingOneof": OneofDescriptor.from_dict(obj["containingOneof"]) if obj.get("containingOneof") is not None else None,
             "enumType": EnumDescriptor.from_dict(obj["enumType"]) if obj.get("enumType") is not None else None,
             "defaultValue": obj.get("defaultValue"),
-            "extension": obj.get("extension"),
+            "realContainingOneof": OneofDescriptor.from_dict(obj["realContainingOneof"]) if obj.get("realContainingOneof") is not None else None,
             "liteJavaType": obj.get("liteJavaType"),
-            "liteType": obj.get("liteType"),
             "packed": obj.get("packed"),
             "packable": obj.get("packable"),
-            "realContainingOneof": OneofDescriptor.from_dict(obj["realContainingOneof"]) if obj.get("realContainingOneof") is not None else None,
             "javaType": obj.get("javaType"),
             "name": obj.get("name"),
             "number": obj.get("number"),
-            "required": obj.get("required"),
             "options": FieldOptions.from_dict(obj["options"]) if obj.get("options") is not None else None,
             "optional": obj.get("optional"),
+            "extension": obj.get("extension"),
+            "liteType": obj.get("liteType"),
             "repeated": obj.get("repeated"),
-            "mapField": obj.get("mapField")
+            "mapField": obj.get("mapField"),
+            "required": obj.get("required")
         })
         return _obj
 

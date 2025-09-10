@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class QueryPayStatusResponse(BaseModel):
     """
-    QueryPayStatusResponse
+    PalmPay查询支付状态响应
     """ # noqa: E501
     resp_code: Optional[StrictStr] = Field(default=None, alias="respCode")
     resp_msg: Optional[StrictStr] = Field(default=None, alias="respMsg")

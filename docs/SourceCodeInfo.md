@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
-**location_list** | [**List[Location]**](Location.md) |  | [optional] 
 **location_count** | **int** |  | [optional] 
 **location_or_builder_list** | [**List[LocationOrBuilder]**](LocationOrBuilder.md) |  | [optional] 
+**location_list** | [**List[Location]**](Location.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 **serialized_size** | **int** |  | [optional] 
 **parser_for_type** | **object** |  | [optional] 

@@ -207,6 +207,7 @@ __all__ = [
     "MerchantPayoutRequestDto",
     "MerchantRechargeCreateDto",
     "MerchantRechargeEntity",
+    "MerchantToMerchantAutomaticParams",
     "MerchantToMerchantParams",
     "MerchantToMerchantTransactionRequestDto",
     "MerchantTransactionEntity",
@@ -336,6 +337,7 @@ __all__ = [
     "UnknownFieldSet",
     "UpdatePrepaymentOrderAmountDto",
     "UpdateSelfServiceApprovalReceviedDto",
+    "Verification",
     "VirtualAccountCreateDto",
     "VirtualAccountData",
     "VirtualAccountEntity",
@@ -540,6 +542,7 @@ from buybtcpay.models.merchant_money_usage_statistics_req import MerchantMoneyUs
 from buybtcpay.models.merchant_payout_request_dto import MerchantPayoutRequestDto as MerchantPayoutRequestDto
 from buybtcpay.models.merchant_recharge_create_dto import MerchantRechargeCreateDto as MerchantRechargeCreateDto
 from buybtcpay.models.merchant_recharge_entity import MerchantRechargeEntity as MerchantRechargeEntity
+from buybtcpay.models.merchant_to_merchant_automatic_params import MerchantToMerchantAutomaticParams as MerchantToMerchantAutomaticParams
 from buybtcpay.models.merchant_to_merchant_params import MerchantToMerchantParams as MerchantToMerchantParams
 from buybtcpay.models.merchant_to_merchant_transaction_request_dto import MerchantToMerchantTransactionRequestDto as MerchantToMerchantTransactionRequestDto
 from buybtcpay.models.merchant_transaction_entity import MerchantTransactionEntity as MerchantTransactionEntity
@@ -669,6 +672,7 @@ from buybtcpay.models.uninterpreted_option_or_builder import UninterpretedOption
 from buybtcpay.models.unknown_field_set import UnknownFieldSet as UnknownFieldSet
 from buybtcpay.models.update_prepayment_order_amount_dto import UpdatePrepaymentOrderAmountDto as UpdatePrepaymentOrderAmountDto
 from buybtcpay.models.update_self_service_approval_recevied_dto import UpdateSelfServiceApprovalReceviedDto as UpdateSelfServiceApprovalReceviedDto
+from buybtcpay.models.verification import Verification as Verification
 from buybtcpay.models.virtual_account_create_dto import VirtualAccountCreateDto as VirtualAccountCreateDto
 from buybtcpay.models.virtual_account_data import VirtualAccountData as VirtualAccountData
 from buybtcpay.models.virtual_account_entity import VirtualAccountEntity as VirtualAccountEntity

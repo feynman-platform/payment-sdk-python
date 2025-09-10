@@ -29,9 +29,9 @@ class NamePart(BaseModel):
     NamePart
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
+    is_extension: Optional[StrictBool] = Field(default=None, alias="isExtension")
     name_part: Optional[StrictStr] = Field(default=None, alias="namePart")
     name_part_bytes: Optional[ByteString] = Field(default=None, alias="namePartBytes")
-    is_extension: Optional[StrictBool] = Field(default=None, alias="isExtension")
     initialized: Optional[StrictBool] = None
     serialized_size: Optional[StrictInt] = Field(default=None, alias="serializedSize")
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
@@ -40,7 +40,7 @@ class NamePart(BaseModel):
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "namePart", "namePartBytes", "isExtension", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "isExtension", "namePart", "namePartBytes", "initialized", "serializedSize", "parserForType", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,9 +106,9 @@ class NamePart(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
+            "isExtension": obj.get("isExtension"),
             "namePart": obj.get("namePart"),
             "namePartBytes": ByteString.from_dict(obj["namePartBytes"]) if obj.get("namePartBytes") is not None else None,
-            "isExtension": obj.get("isExtension"),
             "initialized": obj.get("initialized"),
             "serializedSize": obj.get("serializedSize"),
             "parserForType": obj.get("parserForType"),

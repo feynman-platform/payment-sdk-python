@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from buybtcpay.models.verification import Verification
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +28,17 @@ class CreatePrepaymentOrderDto(BaseModel):
     """
     创建预付订单请求参数
     """ # noqa: E501
+    verification: Optional[Verification] = None
     request_time: Annotated[str, Field(min_length=13, strict=True, max_length=2147483647)] = Field(description="请注意，此处是字符类型，不是数值", alias="requestTime")
     version: Annotated[str, Field(strict=True)] = Field(description="保留字段，暂时无用")
     nonce: Annotated[str, Field(min_length=32, strict=True, max_length=32)] = Field(description="最大32位，用于防止重放攻击")
     business_id: StrictStr = Field(description="第三方业务ID，由调用方生成，用于标识订单的唯一性", alias="businessId")
     merchant_id: StrictStr = Field(description="代付平台的商户ID，可以是商户ID，也可以是子商户ID", alias="merchantId")
-    type: Optional[StrictInt] = Field(default=None, description="0: Merchant to merchant, 1: Withdrawal")
+    type: StrictInt = Field(description="0: Merchant to merchant, 1: Withdrawal")
     amount: StrictStr = Field(description="预付金额，为方便前端调用，请传标准单位，比如想要转1.23元，直接传1.23即可，系统会将其转为最小单位：123分")
     currency: StrictStr = Field(description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
-    __properties: ClassVar[List[str]] = ["requestTime", "version", "nonce", "businessId", "merchantId", "type", "amount", "currency"]
+    payee_bank_code: Optional[StrictStr] = Field(default=None, description="计算手续费重要参数，如果是不需要手续费的，比如内部转账，可以不传该值", alias="payeeBankCode")
+    __properties: ClassVar[List[str]] = ["verification", "requestTime", "version", "nonce", "businessId", "merchantId", "type", "amount", "currency", "payeeBankCode"]
 
     @field_validator('request_time')
     def request_time_validate_regular_expression(cls, value):
@@ -61,9 +64,6 @@ class CreatePrepaymentOrderDto(BaseModel):
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
-        if value is None:
-            return value
-
         if value not in set([0, 1]):
             raise ValueError("must be one of enum values (0, 1)")
         return value
@@ -114,6 +114,9 @@ class CreatePrepaymentOrderDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of verification
+        if self.verification:
+            _dict['verification'] = self.verification.to_dict()
         return _dict
 
     @classmethod
@@ -126,6 +129,7 @@ class CreatePrepaymentOrderDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "verification": Verification.from_dict(obj["verification"]) if obj.get("verification") is not None else None,
             "requestTime": obj.get("requestTime"),
             "version": obj.get("version"),
             "nonce": obj.get("nonce"),
@@ -133,7 +137,8 @@ class CreatePrepaymentOrderDto(BaseModel):
             "merchantId": obj.get("merchantId"),
             "type": obj.get("type"),
             "amount": obj.get("amount"),
-            "currency": obj.get("currency")
+            "currency": obj.get("currency"),
+            "payeeBankCode": obj.get("payeeBankCode")
         })
         return _obj
 

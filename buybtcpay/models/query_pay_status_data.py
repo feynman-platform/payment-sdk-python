@@ -27,17 +27,18 @@ class QueryPayStatusData(BaseModel):
     """
     QueryPayStatusData
     """ # noqa: E501
-    amount: Optional[StrictInt] = None
+    currency: Optional[StrictStr] = None
+    amount: Optional[StrictInt] = Field(default=None, description="订单金额(最小单位计量) 只有当status=1时才会有值")
     fee: Optional[Fee] = None
-    order_no: Optional[StrictStr] = Field(default=None, alias="orderNo")
-    order_id: Optional[StrictStr] = Field(default=None, alias="orderId")
-    order_status: Optional[StrictInt] = Field(default=None, alias="orderStatus")
-    session_id: Optional[StrictStr] = Field(default=None, alias="sessionId")
-    message: Optional[StrictStr] = None
-    error_msg: Optional[StrictStr] = Field(default=None, alias="errorMsg")
-    create_time: Optional[StrictInt] = Field(default=None, alias="createTime")
-    completed_time: Optional[StrictInt] = Field(default=None, alias="completedTime")
-    __properties: ClassVar[List[str]] = ["amount", "fee", "orderNo", "orderId", "orderStatus", "sessionId", "message", "errorMsg", "createTime", "completedTime"]
+    order_no: Optional[StrictStr] = Field(default=None, description="PalmPay返回的订单号", alias="orderNo")
+    order_id: Optional[StrictStr] = Field(default=None, description="商户原始订单号", alias="orderId")
+    order_status: Optional[StrictInt] = Field(default=None, description="订单状态(见订单状态)", alias="orderStatus")
+    session_id: Optional[StrictStr] = Field(default=None, description="渠道响应参数，注：大部分非NIBSS通道不返回sessionId，此类订单若有问题需提供订单号找PalmPay和银行确认用户实际到账情况", alias="sessionId")
+    message: Optional[StrictStr] = Field(default=None, description="订单状态描述信息")
+    error_msg: Optional[StrictStr] = Field(default=None, description="错误信息", alias="errorMsg")
+    create_time: Optional[StrictInt] = Field(default=None, description="订单创建时间", alias="createTime")
+    completed_time: Optional[StrictInt] = Field(default=None, description="订单完成时间", alias="completedTime")
+    __properties: ClassVar[List[str]] = ["currency", "amount", "fee", "orderNo", "orderId", "orderStatus", "sessionId", "message", "errorMsg", "createTime", "completedTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +94,7 @@ class QueryPayStatusData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "currency": obj.get("currency"),
             "amount": obj.get("amount"),
             "fee": Fee.from_dict(obj["fee"]) if obj.get("fee") is not None else None,
             "orderNo": obj.get("orderNo"),

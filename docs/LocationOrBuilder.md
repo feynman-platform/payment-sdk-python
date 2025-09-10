@@ -5,21 +5,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**leading_comments_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **path_list** | **List[int]** |  | [optional] 
 **path_count** | **int** |  | [optional] 
 **span_list** | **List[int]** |  | [optional] 
 **span_count** | **int** |  | [optional] 
 **leading_comments** | **str** |  | [optional] 
-**leading_comments_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **trailing_comments** | **str** |  | [optional] 
 **trailing_comments_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **leading_detached_comments_list** | **List[str]** |  | [optional] 
 **leading_detached_comments_count** | **int** |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

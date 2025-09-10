@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **options_or_builder** | [**MethodOptionsOrBuilder**](MethodOptionsOrBuilder.md) |  | [optional] 
 **input_type_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **output_type_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
@@ -15,11 +14,12 @@ Name | Type | Description | Notes
 **input_type** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **options** | [**MethodOptions**](MethodOptions.md) |  | [optional] 
+**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

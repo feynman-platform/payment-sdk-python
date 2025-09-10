@@ -28,23 +28,23 @@ class LocationOrBuilder(BaseModel):
     """
     LocationOrBuilder
     """ # noqa: E501
+    leading_comments_bytes: Optional[ByteString] = Field(default=None, alias="leadingCommentsBytes")
     path_list: Optional[List[StrictInt]] = Field(default=None, alias="pathList")
     path_count: Optional[StrictInt] = Field(default=None, alias="pathCount")
     span_list: Optional[List[StrictInt]] = Field(default=None, alias="spanList")
     span_count: Optional[StrictInt] = Field(default=None, alias="spanCount")
     leading_comments: Optional[StrictStr] = Field(default=None, alias="leadingComments")
-    leading_comments_bytes: Optional[ByteString] = Field(default=None, alias="leadingCommentsBytes")
     trailing_comments: Optional[StrictStr] = Field(default=None, alias="trailingComments")
     trailing_comments_bytes: Optional[ByteString] = Field(default=None, alias="trailingCommentsBytes")
     leading_detached_comments_list: Optional[List[StrictStr]] = Field(default=None, alias="leadingDetachedCommentsList")
     leading_detached_comments_count: Optional[StrictInt] = Field(default=None, alias="leadingDetachedCommentsCount")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
-    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
+    unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["pathList", "pathCount", "spanList", "spanCount", "leadingComments", "leadingCommentsBytes", "trailingComments", "trailingCommentsBytes", "leadingDetachedCommentsList", "leadingDetachedCommentsCount", "initializationErrorString", "unknownFields", "defaultInstanceForType", "descriptorForType", "allFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["leadingCommentsBytes", "pathList", "pathCount", "spanList", "spanCount", "leadingComments", "trailingComments", "trailingCommentsBytes", "leadingDetachedCommentsList", "leadingDetachedCommentsCount", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,15 +91,15 @@ class LocationOrBuilder(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of trailing_comments_bytes
         if self.trailing_comments_bytes:
             _dict['trailingCommentsBytes'] = self.trailing_comments_bytes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of unknown_fields
-        if self.unknown_fields:
-            _dict['unknownFields'] = self.unknown_fields.to_dict()
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of unknown_fields
+        if self.unknown_fields:
+            _dict['unknownFields'] = self.unknown_fields.to_dict()
         return _dict
 
     @classmethod
@@ -112,21 +112,21 @@ class LocationOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "leadingCommentsBytes": ByteString.from_dict(obj["leadingCommentsBytes"]) if obj.get("leadingCommentsBytes") is not None else None,
             "pathList": obj.get("pathList"),
             "pathCount": obj.get("pathCount"),
             "spanList": obj.get("spanList"),
             "spanCount": obj.get("spanCount"),
             "leadingComments": obj.get("leadingComments"),
-            "leadingCommentsBytes": ByteString.from_dict(obj["leadingCommentsBytes"]) if obj.get("leadingCommentsBytes") is not None else None,
             "trailingComments": obj.get("trailingComments"),
             "trailingCommentsBytes": ByteString.from_dict(obj["trailingCommentsBytes"]) if obj.get("trailingCommentsBytes") is not None else None,
             "leadingDetachedCommentsList": obj.get("leadingDetachedCommentsList"),
             "leadingDetachedCommentsCount": obj.get("leadingDetachedCommentsCount"),
             "initializationErrorString": obj.get("initializationErrorString"),
-            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),
+            "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
             "initialized": obj.get("initialized")
         })
         return _obj

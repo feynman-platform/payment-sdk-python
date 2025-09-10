@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**verification** | [**Verification**](Verification.md) |  | [optional] 
 **request_time** | **str** | 请注意，此处是字符类型，不是数值 | 
 **version** | **str** | 保留字段，暂时无用 | 
 **nonce** | **str** | 最大32位，用于防止重放攻击 | 

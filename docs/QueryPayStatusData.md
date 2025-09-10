@@ -5,16 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **int** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**amount** | **int** | 订单金额(最小单位计量) 只有当status&#x3D;1时才会有值 | [optional] 
 **fee** | [**Fee**](Fee.md) |  | [optional] 
-**order_no** | **str** |  | [optional] 
-**order_id** | **str** |  | [optional] 
-**order_status** | **int** |  | [optional] 
-**session_id** | **str** |  | [optional] 
-**message** | **str** |  | [optional] 
-**error_msg** | **str** |  | [optional] 
-**create_time** | **int** |  | [optional] 
-**completed_time** | **int** |  | [optional] 
+**order_no** | **str** | PalmPay返回的订单号 | [optional] 
+**order_id** | **str** | 商户原始订单号 | [optional] 
+**order_status** | **int** | 订单状态(见订单状态) | [optional] 
+**session_id** | **str** | 渠道响应参数，注：大部分非NIBSS通道不返回sessionId，此类订单若有问题需提供订单号找PalmPay和银行确认用户实际到账情况 | [optional] 
+**message** | **str** | 订单状态描述信息 | [optional] 
+**error_msg** | **str** | 错误信息 | [optional] 
+**create_time** | **int** | 订单创建时间 | [optional] 
+**completed_time** | **int** | 订单完成时间 | [optional] 
 
 ## Example
 

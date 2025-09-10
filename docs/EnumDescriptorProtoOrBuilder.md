@@ -5,23 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
-**reserved_range_list** | [**List[EnumReservedRange]**](EnumReservedRange.md) |  | [optional] 
-**reserved_name_list** | **List[str]** |  | [optional] 
-**value_count** | **int** |  | [optional] 
 **options_or_builder** | [**EnumOptionsOrBuilder**](EnumOptionsOrBuilder.md) |  | [optional] 
 **reserved_range_or_builder_list** | [**List[EnumReservedRangeOrBuilder]**](EnumReservedRangeOrBuilder.md) |  | [optional] 
 **reserved_range_count** | **int** |  | [optional] 
 **reserved_name_count** | **int** |  | [optional] 
+**reserved_range_list** | [**List[EnumReservedRange]**](EnumReservedRange.md) |  | [optional] 
+**reserved_name_list** | **List[str]** |  | [optional] 
+**value_count** | **int** |  | [optional] 
 **value_list** | [**List[EnumValueDescriptorProto]**](EnumValueDescriptorProto.md) |  | [optional] 
 **value_or_builder_list** | [**List[EnumValueDescriptorProtoOrBuilder]**](EnumValueDescriptorProtoOrBuilder.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **options** | [**EnumOptions**](EnumOptions.md) |  | [optional] 
+**name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
-**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 
+**unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 
 ## Example

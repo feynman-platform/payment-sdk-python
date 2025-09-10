@@ -6,13 +6,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
+**aggregate_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **name_list** | [**List[NamePart]**](NamePart.md) |  | [optional] 
 **name_or_builder_list** | [**List[NamePartOrBuilder]**](NamePartOrBuilder.md) |  | [optional] 
 **identifier_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **positive_int_value** | **int** |  | [optional] 
 **negative_int_value** | **int** |  | [optional] 
 **aggregate_value** | **str** |  | [optional] 
-**aggregate_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **double_value** | **float** |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 **name_count** | **int** |  | [optional] 

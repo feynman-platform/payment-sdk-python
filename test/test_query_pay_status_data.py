@@ -35,6 +35,7 @@ class TestQueryPayStatusData(unittest.TestCase):
         model = QueryPayStatusData()
         if include_optional:
             return QueryPayStatusData(
+                currency = '',
                 amount = 56,
                 fee = buybtcpay.models.fee.Fee(
                     amount = 56, ),
