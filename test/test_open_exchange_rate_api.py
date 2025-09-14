@@ -26,8 +26,8 @@ class TestOpenExchangeRateApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_currency_conversion(self) -> None:
-        """Test case for currency_conversion
+    def test_currency_conversion1(self) -> None:
+        """Test case for currency_conversion1
 
         币种转换
         """

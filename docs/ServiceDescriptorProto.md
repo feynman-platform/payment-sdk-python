@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
+**method_list** | [**List[MethodDescriptorProto]**](MethodDescriptorProto.md) |  | [optional] 
 **options_or_builder** | [**ServiceOptionsOrBuilder**](ServiceOptionsOrBuilder.md) |  | [optional] 
 **method_count** | **int** |  | [optional] 
 **method_or_builder_list** | [**List[MethodDescriptorProtoOrBuilder]**](MethodDescriptorProtoOrBuilder.md) |  | [optional] 
@@ -16,7 +17,6 @@ Name | Type | Description | Notes
 **parser_for_type** | **object** |  | [optional] 
 **default_instance_for_type** | [**ServiceDescriptorProto**](ServiceDescriptorProto.md) |  | [optional] 
 **name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
-**method_list** | [**List[MethodDescriptorProto]**](MethodDescriptorProto.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 
 **all_fields** | **Dict[str, object]** |  | [optional] 

@@ -6,12 +6,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
+**reserved_range_list** | [**List[EnumReservedRange]**](EnumReservedRange.md) |  | [optional] 
+**reserved_name_list** | **List[str]** |  | [optional] 
 **options_or_builder** | [**EnumOptionsOrBuilder**](EnumOptionsOrBuilder.md) |  | [optional] 
 **reserved_range_or_builder_list** | [**List[EnumReservedRangeOrBuilder]**](EnumReservedRangeOrBuilder.md) |  | [optional] 
 **reserved_range_count** | **int** |  | [optional] 
 **reserved_name_count** | **int** |  | [optional] 
-**reserved_range_list** | [**List[EnumReservedRange]**](EnumReservedRange.md) |  | [optional] 
-**reserved_name_list** | **List[str]** |  | [optional] 
 **value_count** | **int** |  | [optional] 
 **value_list** | [**List[EnumValueDescriptorProto]**](EnumValueDescriptorProto.md) |  | [optional] 
 **value_or_builder_list** | [**List[EnumValueDescriptorProtoOrBuilder]**](EnumValueDescriptorProtoOrBuilder.md) |  | [optional] 

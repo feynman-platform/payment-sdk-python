@@ -30,8 +30,8 @@ class AnyOrBuilder(BaseModel):
     """
     AnyOrBuilder
     """ # noqa: E501
-    type_url_bytes: Optional[ByteString] = Field(default=None, alias="typeUrlBytes")
     type_url: Optional[StrictStr] = Field(default=None, alias="typeUrl")
+    type_url_bytes: Optional[ByteString] = Field(default=None, alias="typeUrlBytes")
     value: Optional[ByteString] = None
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
@@ -39,7 +39,7 @@ class AnyOrBuilder(BaseModel):
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["typeUrlBytes", "typeUrl", "value", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["typeUrl", "typeUrlBytes", "value", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,8 +107,8 @@ class AnyOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "typeUrlBytes": ByteString.from_dict(obj["typeUrlBytes"]) if obj.get("typeUrlBytes") is not None else None,
             "typeUrl": obj.get("typeUrl"),
+            "typeUrlBytes": ByteString.from_dict(obj["typeUrlBytes"]) if obj.get("typeUrlBytes") is not None else None,
             "value": ByteString.from_dict(obj["value"]) if obj.get("value") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,

@@ -40,6 +40,12 @@ class TestAdminControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_send_payout_notify(self) -> None:
+        """Test case for send_payout_notify
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

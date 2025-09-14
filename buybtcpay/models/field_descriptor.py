@@ -38,10 +38,10 @@ class FieldDescriptor(BaseModel):
     containing_oneof: Optional[OneofDescriptor] = Field(default=None, alias="containingOneof")
     enum_type: Optional[EnumDescriptor] = Field(default=None, alias="enumType")
     default_value: Optional[Dict[str, Any]] = Field(default=None, alias="defaultValue")
-    real_containing_oneof: Optional[OneofDescriptor] = Field(default=None, alias="realContainingOneof")
     lite_java_type: Optional[StrictStr] = Field(default=None, alias="liteJavaType")
     packed: Optional[StrictBool] = None
     packable: Optional[StrictBool] = None
+    real_containing_oneof: Optional[OneofDescriptor] = Field(default=None, alias="realContainingOneof")
     java_type: Optional[StrictStr] = Field(default=None, alias="javaType")
     name: Optional[StrictStr] = None
     number: Optional[StrictInt] = None
@@ -52,7 +52,7 @@ class FieldDescriptor(BaseModel):
     repeated: Optional[StrictBool] = None
     map_field: Optional[StrictBool] = Field(default=None, alias="mapField")
     required: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["index", "proto", "fullName", "jsonName", "file", "extensionScope", "type", "containingType", "messageType", "containingOneof", "enumType", "defaultValue", "realContainingOneof", "liteJavaType", "packed", "packable", "javaType", "name", "number", "options", "optional", "extension", "liteType", "repeated", "mapField", "required"]
+    __properties: ClassVar[List[str]] = ["index", "proto", "fullName", "jsonName", "file", "extensionScope", "type", "containingType", "messageType", "containingOneof", "enumType", "defaultValue", "liteJavaType", "packed", "packable", "realContainingOneof", "javaType", "name", "number", "options", "optional", "extension", "liteType", "repeated", "mapField", "required"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -184,10 +184,10 @@ class FieldDescriptor(BaseModel):
             "containingOneof": OneofDescriptor.from_dict(obj["containingOneof"]) if obj.get("containingOneof") is not None else None,
             "enumType": EnumDescriptor.from_dict(obj["enumType"]) if obj.get("enumType") is not None else None,
             "defaultValue": obj.get("defaultValue"),
-            "realContainingOneof": OneofDescriptor.from_dict(obj["realContainingOneof"]) if obj.get("realContainingOneof") is not None else None,
             "liteJavaType": obj.get("liteJavaType"),
             "packed": obj.get("packed"),
             "packable": obj.get("packable"),
+            "realContainingOneof": OneofDescriptor.from_dict(obj["realContainingOneof"]) if obj.get("realContainingOneof") is not None else None,
             "javaType": obj.get("javaType"),
             "name": obj.get("name"),
             "number": obj.get("number"),

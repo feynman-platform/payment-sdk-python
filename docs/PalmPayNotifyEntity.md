@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **merchant_id** | **str** |  | [optional] 
 **order_id** | **str** |  | [optional] 
 **order_no** | **str** |  | [optional] 
-**amount** | **int** |  | [optional] 
+**amount** | **str** | 交易金额 | [optional] 
 **currency** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | [optional] 
 **order_status** | **int** | 0: UNPAID, 1: PAYING, 2: SUCCESS, 3: FAIL, 4: CLOSE, 20: REFUNDED | [optional] 
 **complete_time** | **datetime** |  | [optional] 

@@ -29,6 +29,7 @@ class ServiceDescriptorProto(BaseModel):
     ServiceDescriptorProto
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
+    method_list: Optional[List[MethodDescriptorProto]] = Field(default=None, alias="methodList")
     options_or_builder: Optional[ServiceOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
     method_count: Optional[StrictInt] = Field(default=None, alias="methodCount")
     method_or_builder_list: Optional[List[MethodDescriptorProtoOrBuilder]] = Field(default=None, alias="methodOrBuilderList")
@@ -39,12 +40,11 @@ class ServiceDescriptorProto(BaseModel):
     parser_for_type: Optional[Dict[str, Any]] = Field(default=None, alias="parserForType")
     default_instance_for_type: Optional[ServiceDescriptorProto] = Field(default=None, alias="defaultInstanceForType")
     name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
-    method_list: Optional[List[MethodDescriptorProto]] = Field(default=None, alias="methodList")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "optionsOrBuilder", "methodCount", "methodOrBuilderList", "initialized", "name", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "methodList", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "methodList", "optionsOrBuilder", "methodCount", "methodOrBuilderList", "initialized", "name", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +88,13 @@ class ServiceDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in method_list (list)
+        _items = []
+        if self.method_list:
+            for _item_method_list in self.method_list:
+                if _item_method_list:
+                    _items.append(_item_method_list.to_dict())
+            _dict['methodList'] = _items
         # override the default output from pydantic by calling `to_dict()` of options_or_builder
         if self.options_or_builder:
             _dict['optionsOrBuilder'] = self.options_or_builder.to_dict()
@@ -107,13 +114,6 @@ class ServiceDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of name_bytes
         if self.name_bytes:
             _dict['nameBytes'] = self.name_bytes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in method_list (list)
-        _items = []
-        if self.method_list:
-            for _item_method_list in self.method_list:
-                if _item_method_list:
-                    _items.append(_item_method_list.to_dict())
-            _dict['methodList'] = _items
         # override the default output from pydantic by calling `to_dict()` of descriptor_for_type
         if self.descriptor_for_type:
             _dict['descriptorForType'] = self.descriptor_for_type.to_dict()
@@ -130,6 +130,7 @@ class ServiceDescriptorProto(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
+            "methodList": [MethodDescriptorProto.from_dict(_item) for _item in obj["methodList"]] if obj.get("methodList") is not None else None,
             "optionsOrBuilder": ServiceOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
             "methodCount": obj.get("methodCount"),
             "methodOrBuilderList": [MethodDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["methodOrBuilderList"]] if obj.get("methodOrBuilderList") is not None else None,
@@ -140,7 +141,6 @@ class ServiceDescriptorProto(BaseModel):
             "parserForType": obj.get("parserForType"),
             "defaultInstanceForType": ServiceDescriptorProto.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
-            "methodList": [MethodDescriptorProto.from_dict(_item) for _item in obj["methodList"]] if obj.get("methodList") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,
             "allFields": obj.get("allFields"),

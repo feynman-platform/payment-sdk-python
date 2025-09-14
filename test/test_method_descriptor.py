@@ -48,51 +48,47 @@ class TestMethodDescriptor(unittest.TestCase):
                             serialized_size = 56, ), ), 
                     options_or_builder = buybtcpay.models.method_options_or_builder.MethodOptionsOrBuilder(
                         features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
-                            json_format = 'JSON_FORMAT_UNKNOWN', 
+                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                             repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                             utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                            json_format = 'JSON_FORMAT_UNKNOWN', 
                             enum_type = 'ENUM_TYPE_UNKNOWN', 
                             message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                             initialization_error_string = '', 
                             descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
                                 index = 56, 
                                 proto = buybtcpay.models.descriptor_proto.DescriptorProto(
-                                    field_or_builder_list = [
-                                        buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
-                                            json_name = '', 
-                                            proto3_optional = True, 
-                                            oneof_index = 56, 
-                                            extendee = '', 
-                                            extendee_bytes = buybtcpay.models.byte_string.ByteString(
-                                                empty = True, 
-                                                valid_utf8 = True, ), 
-                                            json_name_bytes = buybtcpay.models.byte_string.ByteString(
-                                                empty = True, 
-                                                valid_utf8 = True, ), 
-                                            default_value_bytes = , 
-                                            type_name_bytes = , 
-                                            name = '', 
-                                            type_name = '', 
-                                            type = 'TYPE_DOUBLE', 
-                                            default_value = '', 
-                                            number = 56, 
-                                            options = buybtcpay.models.field_options.FieldOptions(
-                                                packed = True, 
+                                    reserved_range_list = [
+                                        buybtcpay.models.reserved_range.ReservedRange(
+                                            initialized = True, 
+                                            start = 56, 
+                                            end = 56, 
+                                            serialized_size = 56, 
+                                            initialization_error_string = '', 
+                                            all_fields = {
+                                                'key' : None
+                                                }, 
+                                            memoized_serialized_size = 56, )
+                                        ], 
+                                    reserved_name_list = [
+                                        ''
+                                        ], 
+                                    extension_range_list = [
+                                        buybtcpay.models.extension_range.ExtensionRange(
+                                            initialized = True, 
+                                            options = buybtcpay.models.extension_range_options.ExtensionRangeOptions(
                                                 uninterpreted_option_list = [
                                                     buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                                        aggregate_value_bytes = , 
                                                         name_list = [
                                                             buybtcpay.models.name_part.NamePart(
+                                                                name_part_bytes = buybtcpay.models.byte_string.ByteString(
+                                                                    empty = True, 
+                                                                    valid_utf8 = True, ), 
                                                                 is_extension = True, 
                                                                 name_part = '', 
-                                                                name_part_bytes = , 
                                                                 initialized = True, 
                                                                 serialized_size = 56, 
                                                                 initialization_error_string = '', 
-                                                                all_fields = {
-                                                                    'key' : None
-                                                                    }, 
                                                                 memoized_serialized_size = 56, )
                                                             ], 
                                                         name_or_builder_list = [
@@ -102,10 +98,13 @@ class TestMethodDescriptor(unittest.TestCase):
                                                                 initialization_error_string = '', 
                                                                 initialized = True, )
                                                             ], 
-                                                        identifier_value_bytes = , 
+                                                        identifier_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                            empty = True, 
+                                                            valid_utf8 = True, ), 
                                                         positive_int_value = 56, 
                                                         negative_int_value = 56, 
                                                         aggregate_value = '', 
+                                                        aggregate_value_bytes = , 
                                                         double_value = 1.337, 
                                                         initialized = True, 
                                                         name_count = 56, 
@@ -113,9 +112,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                         string_value = , 
                                                         identifier_value = '', 
                                                         initialization_error_string = '', 
-                                                        all_fields = {
-                                                            'key' : None
-                                                            }, 
                                                         memoized_serialized_size = 56, )
                                                     ], 
                                                 uninterpreted_option_or_builder_list = [
@@ -130,62 +126,82 @@ class TestMethodDescriptor(unittest.TestCase):
                                                         initialized = True, )
                                                     ], 
                                                 uninterpreted_option_count = 56, 
-                                                ctype = 'STRING', 
-                                                jstype = 'JS_NORMAL', 
-                                                lazy = True, 
-                                                unverified_lazy = True, 
-                                                weak = True, 
-                                                debug_redact = True, 
-                                                targets_list = [
-                                                    'TARGET_TYPE_UNKNOWN'
-                                                    ], 
-                                                targets_count = 56, 
-                                                edition_defaults_list = [
-                                                    buybtcpay.models.edition_default.EditionDefault(
-                                                        edition = 'EDITION_UNKNOWN', 
-                                                        value_bytes = , 
+                                                declaration_list = [
+                                                    buybtcpay.models.declaration.Declaration(
+                                                        full_name_bytes = , 
+                                                        type_bytes = , 
+                                                        reserved = True, 
                                                         initialized = True, 
-                                                        value = '', 
+                                                        type = '', 
+                                                        number = 56, 
+                                                        full_name = '', 
                                                         serialized_size = 56, 
+                                                        repeated = True, 
                                                         initialization_error_string = '', 
                                                         memoized_serialized_size = 56, )
                                                     ], 
-                                                edition_defaults_count = 56, 
-                                                edition_defaults_or_builder_list = [
-                                                    buybtcpay.models.edition_default_or_builder.EditionDefaultOrBuilder(
-                                                        edition = 'EDITION_UNKNOWN', 
-                                                        value = '', 
+                                                declaration_count = 56, 
+                                                declaration_or_builder_list = [
+                                                    buybtcpay.models.declaration_or_builder.DeclarationOrBuilder(
+                                                        reserved = True, 
+                                                        type = '', 
+                                                        number = 56, 
+                                                        full_name = '', 
+                                                        repeated = True, 
                                                         initialization_error_string = '', 
                                                         initialized = True, )
                                                     ], 
                                                 features = buybtcpay.models.feature_set.FeatureSet(
-                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                                     repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                                                     utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
                                                     initialized = True, 
                                                     enum_type = 'ENUM_TYPE_UNKNOWN', 
                                                     serialized_size = 56, 
                                                     message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                                     all_fields_raw = {
                                                         'key' : None
                                                         }, 
                                                     initialization_error_string = '', 
                                                     memoized_serialized_size = 56, ), 
                                                 initialized = True, 
+                                                verification = 'DECLARATION', 
                                                 serialized_size = 56, 
-                                                deprecated = True, 
-                                                retention = 'RETENTION_UNKNOWN', 
-                                                all_fields = , 
                                                 all_fields_raw = {
                                                     'key' : None
                                                     }, 
                                                 initialization_error_string = '', 
                                                 memoized_serialized_size = 56, ), 
+                                            start = 56, 
+                                            end = 56, 
+                                            serialized_size = 56, 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, )
+                                        ], 
+                                    oneof_decl_count = 56, 
+                                    nested_type_count = 56, 
+                                    enum_type_count = 56, 
+                                    extension_count = 56, 
+                                    extension_range_count = 56, 
+                                    field_or_builder_list = [
+                                        buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
+                                            json_name = '', 
+                                            proto3_optional = True, 
+                                            oneof_index = 56, 
+                                            extendee = '', 
+                                            extendee_bytes = , 
+                                            default_value_bytes = , 
+                                            json_name_bytes = , 
+                                            type_name_bytes = , 
+                                            name = '', 
+                                            type_name = '', 
+                                            type = 'TYPE_DOUBLE', 
+                                            default_value = '', 
+                                            number = 56, 
                                             label = 'LABEL_OPTIONAL', 
                                             name_bytes = , 
                                             initialization_error_string = '', 
-                                            all_fields = , 
                                             initialized = True, )
                                         ], 
                                     extension_list = [
@@ -222,8 +238,18 @@ class TestMethodDescriptor(unittest.TestCase):
                                         ], 
                                     nested_type_list = [
                                         buybtcpay.models.descriptor_proto.DescriptorProto(
+                                            oneof_decl_count = 56, 
+                                            nested_type_count = 56, 
+                                            enum_type_count = 56, 
+                                            extension_count = 56, 
+                                            extension_range_count = 56, 
                                             nested_type_or_builder_list = [
                                                 buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
+                                                    oneof_decl_count = 56, 
+                                                    nested_type_count = 56, 
+                                                    enum_type_count = 56, 
+                                                    extension_count = 56, 
+                                                    extension_range_count = 56, 
                                                     enum_type_list = [
                                                         buybtcpay.models.enum_descriptor_proto.EnumDescriptorProto(
                                                             reserved_range_or_builder_list = [
@@ -235,18 +261,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                                 ], 
                                                             reserved_range_count = 56, 
                                                             reserved_name_count = 56, 
-                                                            reserved_range_list = [
-                                                                buybtcpay.models.enum_reserved_range.EnumReservedRange(
-                                                                    initialized = True, 
-                                                                    start = 56, 
-                                                                    end = 56, 
-                                                                    serialized_size = 56, 
-                                                                    initialization_error_string = '', 
-                                                                    memoized_serialized_size = 56, )
-                                                                ], 
-                                                            reserved_name_list = [
-                                                                ''
-                                                                ], 
                                                             value_count = 56, 
                                                             value_list = [
                                                                 buybtcpay.models.enum_value_descriptor_proto.EnumValueDescriptorProto(
@@ -309,32 +323,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                         ], 
                                                     reserved_range_count = 56, 
                                                     reserved_name_count = 56, 
-                                                    reserved_range_list = [
-                                                        buybtcpay.models.reserved_range.ReservedRange(
-                                                            initialized = True, 
-                                                            start = 56, 
-                                                            end = 56, 
-                                                            serialized_size = 56, 
-                                                            initialization_error_string = '', 
-                                                            memoized_serialized_size = 56, )
-                                                        ], 
-                                                    reserved_name_list = [
-                                                        ''
-                                                        ], 
-                                                    extension_range_list = [
-                                                        buybtcpay.models.extension_range.ExtensionRange(
-                                                            initialized = True, 
-                                                            start = 56, 
-                                                            end = 56, 
-                                                            serialized_size = 56, 
-                                                            initialization_error_string = '', 
-                                                            memoized_serialized_size = 56, )
-                                                        ], 
-                                                    oneof_decl_count = 56, 
-                                                    nested_type_count = 56, 
-                                                    enum_type_count = 56, 
-                                                    extension_count = 56, 
-                                                    extension_range_count = 56, 
                                                     field_count = 56, 
                                                     name = '', 
                                                     field_list = [
@@ -407,32 +395,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                 ], 
                                             reserved_range_count = 56, 
                                             reserved_name_count = 56, 
-                                            reserved_range_list = [
-                                                buybtcpay.models.reserved_range.ReservedRange(
-                                                    initialized = True, 
-                                                    start = 56, 
-                                                    end = 56, 
-                                                    serialized_size = 56, 
-                                                    initialization_error_string = '', 
-                                                    memoized_serialized_size = 56, )
-                                                ], 
-                                            reserved_name_list = [
-                                                ''
-                                                ], 
-                                            extension_range_list = [
-                                                buybtcpay.models.extension_range.ExtensionRange(
-                                                    initialized = True, 
-                                                    start = 56, 
-                                                    end = 56, 
-                                                    serialized_size = 56, 
-                                                    initialization_error_string = '', 
-                                                    memoized_serialized_size = 56, )
-                                                ], 
-                                            oneof_decl_count = 56, 
-                                            nested_type_count = 56, 
-                                            enum_type_count = 56, 
-                                            extension_count = 56, 
-                                            extension_range_count = 56, 
                                             field_count = 56, 
                                             initialized = True, 
                                             name = '', 
@@ -445,13 +407,13 @@ class TestMethodDescriptor(unittest.TestCase):
                                         ], 
                                     nested_type_or_builder_list = [
                                         buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
-                                            reserved_range_count = 56, 
-                                            reserved_name_count = 56, 
                                             oneof_decl_count = 56, 
                                             nested_type_count = 56, 
                                             enum_type_count = 56, 
                                             extension_count = 56, 
                                             extension_range_count = 56, 
+                                            reserved_range_count = 56, 
+                                            reserved_name_count = 56, 
                                             field_count = 56, 
                                             name = '', 
                                             initialization_error_string = '', 
@@ -465,14 +427,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                     reserved_range_or_builder_list = , 
                                     reserved_range_count = 56, 
                                     reserved_name_count = 56, 
-                                    reserved_range_list = , 
-                                    reserved_name_list = , 
-                                    extension_range_list = , 
-                                    oneof_decl_count = 56, 
-                                    nested_type_count = 56, 
-                                    enum_type_count = 56, 
-                                    extension_count = 56, 
-                                    extension_range_count = 56, 
                                     field_count = 56, 
                                     initialized = True, 
                                     name = '', 
@@ -491,7 +445,9 @@ class TestMethodDescriptor(unittest.TestCase):
                                     serialized_size = 56, 
                                     name_bytes = , 
                                     initialization_error_string = '', 
-                                    all_fields = , 
+                                    all_fields = {
+                                        'key' : None
+                                        }, 
                                     memoized_serialized_size = 56, ), 
                                 full_name = '', 
                                 file = buybtcpay.models.file_descriptor.FileDescriptor(
@@ -537,15 +493,15 @@ class TestMethodDescriptor(unittest.TestCase):
                                                         synthetic = True, ), 
                                                     enum_type = , 
                                                     default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                    lite_java_type = 'INT', 
+                                                    packed = True, 
+                                                    packable = True, 
                                                     real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
                                                         index = 56, 
                                                         full_name = '', 
                                                         field_count = 56, 
                                                         name = '', 
                                                         synthetic = True, ), 
-                                                    lite_java_type = 'INT', 
-                                                    packed = True, 
-                                                    packable = True, 
                                                     java_type = 'INT', 
                                                     name = '', 
                                                     number = 56, 
@@ -688,13 +644,13 @@ class TestMethodDescriptor(unittest.TestCase):
                         uninterpreted_option_count = 56, 
                         idempotency_level = 'IDEMPOTENCY_UNKNOWN', 
                         features = buybtcpay.models.feature_set.FeatureSet(
-                            json_format = 'JSON_FORMAT_UNKNOWN', 
+                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                             repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                             utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                            json_format = 'JSON_FORMAT_UNKNOWN', 
                             initialized = True, 
                             serialized_size = 56, 
                             message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                             initialization_error_string = '', 
                             memoized_serialized_size = 56, ), 
                         deprecated = True, 
@@ -745,17 +701,816 @@ class TestMethodDescriptor(unittest.TestCase):
                                 serialized_size_as_message_set = 56, 
                                 initialized = True, 
                                 serialized_size = 56, ), ), 
+                        source_code_info_or_builder = buybtcpay.models.source_code_info_or_builder.SourceCodeInfoOrBuilder(
+                            location_count = 56, 
+                            location_or_builder_list = [
+                                buybtcpay.models.location_or_builder.LocationOrBuilder(
+                                    path_list = [
+                                        56
+                                        ], 
+                                    path_count = 56, 
+                                    span_list = [
+                                        56
+                                        ], 
+                                    span_count = 56, 
+                                    leading_comments = '', 
+                                    leading_comments_bytes = buybtcpay.models.byte_string.ByteString(
+                                        empty = True, 
+                                        valid_utf8 = True, ), 
+                                    trailing_comments = '', 
+                                    trailing_comments_bytes = buybtcpay.models.byte_string.ByteString(
+                                        empty = True, 
+                                        valid_utf8 = True, ), 
+                                    leading_detached_comments_list = [
+                                        ''
+                                        ], 
+                                    leading_detached_comments_count = 56, 
+                                    initialization_error_string = '', 
+                                    descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
+                                        index = 56, 
+                                        full_name = '', 
+                                        file = buybtcpay.models.file_descriptor.FileDescriptor(
+                                            message_types = [
+                                                buybtcpay.models.descriptor.Descriptor(
+                                                    index = 56, 
+                                                    full_name = '', 
+                                                    containing_type = , 
+                                                    nested_types = [
+                                                        
+                                                        ], 
+                                                    enum_types = [
+                                                        buybtcpay.models.enum_descriptor.EnumDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            values = [
+                                                                buybtcpay.models.enum_value_descriptor.EnumValueDescriptor(
+                                                                    index = 56, 
+                                                                    full_name = '', 
+                                                                    type = buybtcpay.models.enum_descriptor.EnumDescriptor(
+                                                                        index = 56, 
+                                                                        full_name = '', 
+                                                                        closed = True, 
+                                                                        name = '', 
+                                                                        options = buybtcpay.models.enum_options.EnumOptions(
+                                                                            deprecated_legacy_json_field_conflicts = True, 
+                                                                            features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
+                                                                                field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                                                                repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
+                                                                                utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                                json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                                                enum_type = 'ENUM_TYPE_UNKNOWN', 
+                                                                                message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
+                                                                                initialization_error_string = '', 
+                                                                                all_fields = {
+                                                                                    'key' : None
+                                                                                    }, 
+                                                                                initialized = True, ), 
+                                                                            uninterpreted_option_list = [
+                                                                                buybtcpay.models.uninterpreted_option.UninterpretedOption(
+                                                                                    name_list = [
+                                                                                        buybtcpay.models.name_part.NamePart(
+                                                                                            name_part_bytes = , 
+                                                                                            is_extension = True, 
+                                                                                            name_part = '', 
+                                                                                            initialized = True, 
+                                                                                            serialized_size = 56, 
+                                                                                            initialization_error_string = '', 
+                                                                                            memoized_serialized_size = 56, )
+                                                                                        ], 
+                                                                                    name_or_builder_list = [
+                                                                                        buybtcpay.models.name_part_or_builder.NamePartOrBuilder(
+                                                                                            is_extension = True, 
+                                                                                            name_part = '', 
+                                                                                            initialization_error_string = '', 
+                                                                                            initialized = True, )
+                                                                                        ], 
+                                                                                    identifier_value_bytes = , 
+                                                                                    positive_int_value = 56, 
+                                                                                    negative_int_value = 56, 
+                                                                                    aggregate_value = '', 
+                                                                                    aggregate_value_bytes = , 
+                                                                                    double_value = 1.337, 
+                                                                                    initialized = True, 
+                                                                                    name_count = 56, 
+                                                                                    serialized_size = 56, 
+                                                                                    string_value = , 
+                                                                                    identifier_value = '', 
+                                                                                    initialization_error_string = '', 
+                                                                                    memoized_serialized_size = 56, )
+                                                                                ], 
+                                                                            uninterpreted_option_or_builder_list = [
+                                                                                buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
+                                                                                    positive_int_value = 56, 
+                                                                                    negative_int_value = 56, 
+                                                                                    aggregate_value = '', 
+                                                                                    double_value = 1.337, 
+                                                                                    name_count = 56, 
+                                                                                    identifier_value = '', 
+                                                                                    initialization_error_string = '', 
+                                                                                    initialized = True, )
+                                                                                ], 
+                                                                            uninterpreted_option_count = 56, 
+                                                                            allow_alias = True, 
+                                                                            features = buybtcpay.models.feature_set.FeatureSet(
+                                                                                field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                                                                repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
+                                                                                utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                                json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                                                initialized = True, 
+                                                                                enum_type = 'ENUM_TYPE_UNKNOWN', 
+                                                                                serialized_size = 56, 
+                                                                                message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
+                                                                                all_fields_raw = {
+                                                                                    'key' : None
+                                                                                    }, 
+                                                                                initialization_error_string = '', 
+                                                                                memoized_serialized_size = 56, ), 
+                                                                            initialized = True, 
+                                                                            serialized_size = 56, 
+                                                                            deprecated = True, 
+                                                                            all_fields = {
+                                                                                'key' : None
+                                                                                }, 
+                                                                            all_fields_raw = {
+                                                                                'key' : None
+                                                                                }, 
+                                                                            initialization_error_string = '', 
+                                                                            memoized_serialized_size = 56, ), ), 
+                                                                    name = '', 
+                                                                    number = 56, 
+                                                                    options = buybtcpay.models.enum_value_options.EnumValueOptions(
+                                                                        uninterpreted_option_count = 56, 
+                                                                        debug_redact = True, 
+                                                                        initialized = True, 
+                                                                        serialized_size = 56, 
+                                                                        deprecated = True, 
+                                                                        initialization_error_string = '', 
+                                                                        memoized_serialized_size = 56, ), )
+                                                                ], 
+                                                            closed = True, 
+                                                            name = '', 
+                                                            options = buybtcpay.models.enum_options.EnumOptions(
+                                                                deprecated_legacy_json_field_conflicts = True, 
+                                                                uninterpreted_option_count = 56, 
+                                                                allow_alias = True, 
+                                                                initialized = True, 
+                                                                serialized_size = 56, 
+                                                                deprecated = True, 
+                                                                initialization_error_string = '', 
+                                                                memoized_serialized_size = 56, ), )
+                                                        ], 
+                                                    fields = [
+                                                        buybtcpay.models.field_descriptor.FieldDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            json_name = '', 
+                                                            extension_scope = , 
+                                                            message_type = , 
+                                                            containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
+                                                                index = 56, 
+                                                                full_name = '', 
+                                                                field_count = 56, 
+                                                                name = '', 
+                                                                synthetic = True, ), 
+                                                            enum_type = , 
+                                                            default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                            lite_java_type = 'INT', 
+                                                            packed = True, 
+                                                            packable = True, 
+                                                            real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
+                                                                index = 56, 
+                                                                full_name = '', 
+                                                                field_count = 56, 
+                                                                name = '', 
+                                                                synthetic = True, ), 
+                                                            java_type = 'INT', 
+                                                            name = '', 
+                                                            number = 56, 
+                                                            optional = True, 
+                                                            extension = True, 
+                                                            lite_type = 'DOUBLE', 
+                                                            repeated = True, 
+                                                            map_field = True, 
+                                                            required = True, )
+                                                        ], 
+                                                    extensions = [
+                                                        buybtcpay.models.field_descriptor.FieldDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            json_name = '', 
+                                                            default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                            lite_java_type = 'INT', 
+                                                            packed = True, 
+                                                            packable = True, 
+                                                            java_type = 'INT', 
+                                                            name = '', 
+                                                            number = 56, 
+                                                            optional = True, 
+                                                            extension = True, 
+                                                            lite_type = 'DOUBLE', 
+                                                            repeated = True, 
+                                                            map_field = True, 
+                                                            required = True, )
+                                                        ], 
+                                                    oneofs = [
+                                                        
+                                                        ], 
+                                                    real_oneofs = [
+                                                        
+                                                        ], 
+                                                    extendable = True, 
+                                                    name = '', 
+                                                    options = buybtcpay.models.message_options.MessageOptions(
+                                                        map_entry = True, 
+                                                        no_standard_descriptor_accessor = True, 
+                                                        deprecated_legacy_json_field_conflicts = True, 
+                                                        uninterpreted_option_count = 56, 
+                                                        initialized = True, 
+                                                        serialized_size = 56, 
+                                                        deprecated = True, 
+                                                        message_set_wire_format = True, 
+                                                        initialization_error_string = '', 
+                                                        memoized_serialized_size = 56, ), )
+                                                ], 
+                                            enum_types = [
+                                                
+                                                ], 
+                                            services = [
+                                                buybtcpay.models.service_descriptor.ServiceDescriptor(
+                                                    index = 56, 
+                                                    full_name = '', 
+                                                    methods = [
+                                                        buybtcpay.models.method_descriptor.MethodDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            service = buybtcpay.models.service_descriptor.ServiceDescriptor(
+                                                                index = 56, 
+                                                                full_name = '', 
+                                                                name = '', ), 
+                                                            input_type = , 
+                                                            output_type = , 
+                                                            client_streaming = True, 
+                                                            server_streaming = True, 
+                                                            name = '', )
+                                                        ], 
+                                                    name = '', )
+                                                ], 
+                                            extensions = [
+                                                
+                                                ], 
+                                            dependencies = [
+                                                
+                                                ], 
+                                            public_dependencies = [
+                                                
+                                                ], 
+                                            syntax = 'UNKNOWN', 
+                                            edition = 'EDITION_UNKNOWN', 
+                                            edition_name = '', 
+                                            name = '', 
+                                            package = '', 
+                                            full_name = '', 
+                                            options = buybtcpay.models.file_options.FileOptions(
+                                                java_string_check_utf8 = True, 
+                                                uninterpreted_option_count = 56, 
+                                                java_package = '', 
+                                                java_package_bytes = , 
+                                                java_outer_classname = '', 
+                                                java_outer_classname_bytes = , 
+                                                java_multiple_files = True, 
+                                                java_generate_equals_and_hash = True, 
+                                                go_package = '', 
+                                                go_package_bytes = , 
+                                                cc_generic_services = True, 
+                                                java_generic_services = True, 
+                                                py_generic_services = True, 
+                                                php_generic_services = True, 
+                                                cc_enable_arenas = True, 
+                                                objc_class_prefix = '', 
+                                                objc_class_prefix_bytes = , 
+                                                csharp_namespace = '', 
+                                                csharp_namespace_bytes = , 
+                                                swift_prefix = '', 
+                                                swift_prefix_bytes = , 
+                                                php_class_prefix = '', 
+                                                php_class_prefix_bytes = , 
+                                                php_namespace = '', 
+                                                php_namespace_bytes = , 
+                                                php_metadata_namespace = '', 
+                                                php_metadata_namespace_bytes = , 
+                                                ruby_package = '', 
+                                                ruby_package_bytes = , 
+                                                initialized = True, 
+                                                serialized_size = 56, 
+                                                deprecated = True, 
+                                                optimize_for = 'SPEED', 
+                                                initialization_error_string = '', 
+                                                memoized_serialized_size = 56, ), ), 
+                                        containing_type = , 
+                                        nested_types = [
+                                            
+                                            ], 
+                                        enum_types = , 
+                                        fields = [
+                                            
+                                            ], 
+                                        extensions = , 
+                                        oneofs = [
+                                            
+                                            ], 
+                                        real_oneofs = [
+                                            
+                                            ], 
+                                        extendable = True, 
+                                        name = '', 
+                                        options = buybtcpay.models.message_options.MessageOptions(
+                                            map_entry = True, 
+                                            no_standard_descriptor_accessor = True, 
+                                            deprecated_legacy_json_field_conflicts = True, 
+                                            uninterpreted_option_count = 56, 
+                                            initialized = True, 
+                                            serialized_size = 56, 
+                                            deprecated = True, 
+                                            message_set_wire_format = True, 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, ), ), 
+                                    all_fields = , 
+                                    initialized = True, )
+                                ], 
+                            location_list = [
+                                buybtcpay.models.location.Location(
+                                    path_count = 56, 
+                                    span_count = 56, 
+                                    leading_comments = '', 
+                                    trailing_comments = '', 
+                                    leading_detached_comments_count = 56, 
+                                    initialized = True, 
+                                    serialized_size = 56, 
+                                    initialization_error_string = '', 
+                                    memoized_serialized_size = 56, )
+                                ], 
+                            initialization_error_string = '', 
+                            descriptor_for_type = , 
+                            all_fields = , 
+                            initialized = True, ), 
+                        enum_type_count = 56, 
+                        extension_count = 56, 
+                        syntax = '', 
                         extension_list = [
                             buybtcpay.models.field_descriptor_proto.FieldDescriptorProto(
+                                json_name = '', 
+                                proto3_optional = True, 
+                                oneof_index = 56, 
+                                extendee = '', 
                                 options_or_builder = buybtcpay.models.field_options_or_builder.FieldOptionsOrBuilder(
                                     packed = True, 
+                                    uninterpreted_option_count = 56, 
+                                    ctype = 'STRING', 
+                                    jstype = 'JS_NORMAL', 
+                                    lazy = True, 
+                                    unverified_lazy = True, 
+                                    weak = True, 
+                                    debug_redact = True, 
+                                    targets_list = [
+                                        'TARGET_TYPE_UNKNOWN'
+                                        ], 
+                                    targets_count = 56, 
+                                    edition_defaults_list = [
+                                        buybtcpay.models.edition_default.EditionDefault(
+                                            edition = 'EDITION_UNKNOWN', 
+                                            value_bytes = , 
+                                            initialized = True, 
+                                            value = '', 
+                                            serialized_size = 56, 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, )
+                                        ], 
+                                    edition_defaults_count = 56, 
+                                    edition_defaults_or_builder_list = [
+                                        buybtcpay.models.edition_default_or_builder.EditionDefaultOrBuilder(
+                                            edition = 'EDITION_UNKNOWN', 
+                                            value = '', 
+                                            initialization_error_string = '', 
+                                            initialized = True, )
+                                        ], 
+                                    deprecated = True, 
+                                    retention = 'RETENTION_UNKNOWN', 
+                                    initialization_error_string = '', 
+                                    initialized = True, ), 
+                                extendee_bytes = , 
+                                default_value_bytes = , 
+                                json_name_bytes = , 
+                                type_name_bytes = , 
+                                initialized = True, 
+                                name = '', 
+                                type_name = '', 
+                                default_value = '', 
+                                number = 56, 
+                                serialized_size = 56, 
+                                label = 'LABEL_OPTIONAL', 
+                                name_bytes = , 
+                                initialization_error_string = '', 
+                                memoized_serialized_size = 56, )
+                            ], 
+                        extension_or_builder_list = [
+                            buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
+                                json_name = '', 
+                                proto3_optional = True, 
+                                oneof_index = 56, 
+                                extendee = '', 
+                                name = '', 
+                                type_name = '', 
+                                default_value = '', 
+                                number = 56, 
+                                label = 'LABEL_OPTIONAL', 
+                                initialization_error_string = '', 
+                                initialized = True, )
+                            ], 
+                        enum_type_list = [
+                            buybtcpay.models.enum_descriptor_proto.EnumDescriptorProto(
+                                reserved_range_list = [
+                                    buybtcpay.models.enum_reserved_range.EnumReservedRange(
+                                        initialized = True, 
+                                        start = 56, 
+                                        end = 56, 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                reserved_name_list = [
+                                    ''
+                                    ], 
+                                reserved_range_or_builder_list = [
+                                    buybtcpay.models.enum_reserved_range_or_builder.EnumReservedRangeOrBuilder(
+                                        start = 56, 
+                                        end = 56, 
+                                        initialization_error_string = '', 
+                                        initialized = True, )
+                                    ], 
+                                reserved_range_count = 56, 
+                                reserved_name_count = 56, 
+                                value_count = 56, 
+                                value_list = [
+                                    buybtcpay.models.enum_value_descriptor_proto.EnumValueDescriptorProto(
+                                        initialized = True, 
+                                        name = '', 
+                                        number = 56, 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                value_or_builder_list = [
+                                    buybtcpay.models.enum_value_descriptor_proto_or_builder.EnumValueDescriptorProtoOrBuilder(
+                                        name = '', 
+                                        number = 56, 
+                                        initialization_error_string = '', 
+                                        initialized = True, )
+                                    ], 
+                                initialized = True, 
+                                name = '', 
+                                serialized_size = 56, 
+                                initialization_error_string = '', 
+                                memoized_serialized_size = 56, )
+                            ], 
+                        enum_type_or_builder_list = [
+                            buybtcpay.models.enum_descriptor_proto_or_builder.EnumDescriptorProtoOrBuilder(
+                                reserved_range_count = 56, 
+                                reserved_name_count = 56, 
+                                value_count = 56, 
+                                name = '', 
+                                initialization_error_string = '', 
+                                initialized = True, )
+                            ], 
+                        options_or_builder = buybtcpay.models.file_options_or_builder.FileOptionsOrBuilder(
+                            java_string_check_utf8 = True, 
+                            uninterpreted_option_count = 56, 
+                            java_package = '', 
+                            java_outer_classname = '', 
+                            java_multiple_files = True, 
+                            java_generate_equals_and_hash = True, 
+                            go_package = '', 
+                            cc_generic_services = True, 
+                            java_generic_services = True, 
+                            py_generic_services = True, 
+                            php_generic_services = True, 
+                            cc_enable_arenas = True, 
+                            objc_class_prefix = '', 
+                            csharp_namespace = '', 
+                            swift_prefix = '', 
+                            php_class_prefix = '', 
+                            php_namespace = '', 
+                            php_metadata_namespace = '', 
+                            ruby_package = '', 
+                            deprecated = True, 
+                            optimize_for = 'SPEED', 
+                            initialization_error_string = '', 
+                            initialized = True, ), 
+                        public_dependency_count = 56, 
+                        dependency_count = 56, 
+                        message_type_count = 56, 
+                        service_count = 56, 
+                        edition = 'EDITION_UNKNOWN', 
+                        package_bytes = , 
+                        dependency_list = [
+                            ''
+                            ], 
+                        public_dependency_list = [
+                            56
+                            ], 
+                        weak_dependency_list = [
+                            56
+                            ], 
+                        weak_dependency_count = 56, 
+                        message_type_list = [
+                            buybtcpay.models.descriptor_proto.DescriptorProto(
+                                extension_range_list = [
+                                    buybtcpay.models.extension_range.ExtensionRange(
+                                        initialized = True, 
+                                        start = 56, 
+                                        end = 56, 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                oneof_decl_count = 56, 
+                                nested_type_count = 56, 
+                                enum_type_count = 56, 
+                                extension_count = 56, 
+                                extension_range_count = 56, 
+                                field_or_builder_list = [
+                                    buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
+                                        json_name = '', 
+                                        proto3_optional = True, 
+                                        oneof_index = 56, 
+                                        extendee = '', 
+                                        name = '', 
+                                        type_name = '', 
+                                        default_value = '', 
+                                        number = 56, 
+                                        label = 'LABEL_OPTIONAL', 
+                                        initialization_error_string = '', 
+                                        initialized = True, )
+                                    ], 
+                                nested_type_list = [
+                                    buybtcpay.models.descriptor_proto.DescriptorProto(
+                                        oneof_decl_count = 56, 
+                                        nested_type_count = 56, 
+                                        enum_type_count = 56, 
+                                        extension_count = 56, 
+                                        extension_range_count = 56, 
+                                        nested_type_or_builder_list = [
+                                            buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
+                                                oneof_decl_count = 56, 
+                                                nested_type_count = 56, 
+                                                enum_type_count = 56, 
+                                                extension_count = 56, 
+                                                extension_range_count = 56, 
+                                                extension_range_or_builder_list = [
+                                                    buybtcpay.models.extension_range_or_builder.ExtensionRangeOrBuilder(
+                                                        start = 56, 
+                                                        end = 56, 
+                                                        initialization_error_string = '', 
+                                                        initialized = True, )
+                                                    ], 
+                                                oneof_decl_list = [
+                                                    buybtcpay.models.oneof_descriptor_proto.OneofDescriptorProto(
+                                                        initialized = True, 
+                                                        name = '', 
+                                                        serialized_size = 56, 
+                                                        initialization_error_string = '', 
+                                                        memoized_serialized_size = 56, )
+                                                    ], 
+                                                oneof_decl_or_builder_list = [
+                                                    buybtcpay.models.oneof_descriptor_proto_or_builder.OneofDescriptorProtoOrBuilder(
+                                                        name = '', 
+                                                        initialization_error_string = '', 
+                                                        initialized = True, )
+                                                    ], 
+                                                reserved_range_count = 56, 
+                                                reserved_name_count = 56, 
+                                                field_count = 56, 
+                                                name = '', 
+                                                field_list = [
+                                                    buybtcpay.models.field_descriptor_proto.FieldDescriptorProto(
+                                                        json_name = '', 
+                                                        proto3_optional = True, 
+                                                        oneof_index = 56, 
+                                                        extendee = '', 
+                                                        initialized = True, 
+                                                        name = '', 
+                                                        type_name = '', 
+                                                        default_value = '', 
+                                                        number = 56, 
+                                                        serialized_size = 56, 
+                                                        label = 'LABEL_OPTIONAL', 
+                                                        initialization_error_string = '', 
+                                                        memoized_serialized_size = 56, )
+                                                    ], 
+                                                initialization_error_string = '', 
+                                                initialized = True, )
+                                            ], 
+                                        extension_range_or_builder_list = [
+                                            buybtcpay.models.extension_range_or_builder.ExtensionRangeOrBuilder(
+                                                start = 56, 
+                                                end = 56, 
+                                                initialization_error_string = '', 
+                                                initialized = True, )
+                                            ], 
+                                        oneof_decl_list = [
+                                            buybtcpay.models.oneof_descriptor_proto.OneofDescriptorProto(
+                                                initialized = True, 
+                                                name = '', 
+                                                serialized_size = 56, 
+                                                initialization_error_string = '', 
+                                                memoized_serialized_size = 56, )
+                                            ], 
+                                        oneof_decl_or_builder_list = [
+                                            buybtcpay.models.oneof_descriptor_proto_or_builder.OneofDescriptorProtoOrBuilder(
+                                                name = '', 
+                                                initialization_error_string = '', 
+                                                initialized = True, )
+                                            ], 
+                                        reserved_range_count = 56, 
+                                        reserved_name_count = 56, 
+                                        field_count = 56, 
+                                        initialized = True, 
+                                        name = '', 
+                                        field_list = [
+                                            
+                                            ], 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                nested_type_or_builder_list = [
+                                    buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
+                                        oneof_decl_count = 56, 
+                                        nested_type_count = 56, 
+                                        enum_type_count = 56, 
+                                        extension_count = 56, 
+                                        extension_range_count = 56, 
+                                        reserved_range_count = 56, 
+                                        reserved_name_count = 56, 
+                                        field_count = 56, 
+                                        name = '', 
+                                        initialization_error_string = '', 
+                                        initialized = True, )
+                                    ], 
+                                extension_range_or_builder_list = , 
+                                oneof_decl_list = , 
+                                oneof_decl_or_builder_list = , 
+                                reserved_range_count = 56, 
+                                reserved_name_count = 56, 
+                                field_count = 56, 
+                                initialized = True, 
+                                name = '', 
+                                field_list = , 
+                                serialized_size = 56, 
+                                initialization_error_string = '', 
+                                memoized_serialized_size = 56, )
+                            ], 
+                        message_type_or_builder_list = [
+                            
+                            ], 
+                        service_list = [
+                            buybtcpay.models.service_descriptor_proto.ServiceDescriptorProto(
+                                method_list = [
+                                    buybtcpay.models.method_descriptor_proto.MethodDescriptorProto(
+                                        input_type_bytes = , 
+                                        output_type_bytes = , 
+                                        client_streaming = True, 
+                                        server_streaming = True, 
+                                        initialized = True, 
+                                        name = '', 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                method_count = 56, 
+                                method_or_builder_list = [
+                                    buybtcpay.models.method_descriptor_proto_or_builder.MethodDescriptorProtoOrBuilder(
+                                        client_streaming = True, 
+                                        server_streaming = True, 
+                                        name = '', 
+                                        initialization_error_string = '', 
+                                        initialized = True, )
+                                    ], 
+                                initialized = True, 
+                                name = '', 
+                                serialized_size = 56, 
+                                initialization_error_string = '', 
+                                memoized_serialized_size = 56, )
+                            ], 
+                        service_or_builder_list = [
+                            buybtcpay.models.service_descriptor_proto_or_builder.ServiceDescriptorProtoOrBuilder(
+                                method_count = 56, 
+                                name = '', 
+                                initialization_error_string = '', 
+                                initialized = True, )
+                            ], 
+                        source_code_info = buybtcpay.models.source_code_info.SourceCodeInfo(
+                            location_count = 56, 
+                            initialized = True, 
+                            serialized_size = 56, 
+                            initialization_error_string = '', 
+                            memoized_serialized_size = 56, ), 
+                        syntax_bytes = , 
+                        initialized = True, 
+                        name = '', 
+                        package = '', 
+                        options = buybtcpay.models.file_options.FileOptions(
+                            java_string_check_utf8 = True, 
+                            uninterpreted_option_count = 56, 
+                            java_package = '', 
+                            java_outer_classname = '', 
+                            java_multiple_files = True, 
+                            java_generate_equals_and_hash = True, 
+                            go_package = '', 
+                            cc_generic_services = True, 
+                            java_generic_services = True, 
+                            py_generic_services = True, 
+                            php_generic_services = True, 
+                            cc_enable_arenas = True, 
+                            objc_class_prefix = '', 
+                            csharp_namespace = '', 
+                            swift_prefix = '', 
+                            php_class_prefix = '', 
+                            php_namespace = '', 
+                            php_metadata_namespace = '', 
+                            ruby_package = '', 
+                            initialized = True, 
+                            serialized_size = 56, 
+                            deprecated = True, 
+                            optimize_for = 'SPEED', 
+                            initialization_error_string = '', 
+                            memoized_serialized_size = 56, ), 
+                        serialized_size = 56, 
+                        parser_for_type = buybtcpay.models.parser_file_descriptor_proto.ParserFileDescriptorProto(), 
+                        default_instance_for_type = buybtcpay.models.file_descriptor_proto.FileDescriptorProto(
+                            enum_type_count = 56, 
+                            extension_count = 56, 
+                            syntax = '', 
+                            public_dependency_count = 56, 
+                            dependency_count = 56, 
+                            message_type_count = 56, 
+                            service_count = 56, 
+                            edition = 'EDITION_UNKNOWN', 
+                            weak_dependency_count = 56, 
+                            initialized = True, 
+                            name = '', 
+                            package = '', 
+                            serialized_size = 56, 
+                            initialization_error_string = '', 
+                            memoized_serialized_size = 56, ), 
+                        name_bytes = , 
+                        initialization_error_string = '', 
+                        descriptor_for_type = , 
+                        all_fields = , 
+                        memoized_serialized_size = 56, ), 
+                    message_types = [
+                        
+                        ], 
+                    enum_types = , 
+                    services = [
+                        
+                        ], 
+                    extensions = , 
+                    dependencies = [
+                        
+                        ], 
+                    public_dependencies = [
+                        
+                        ], 
+                    syntax = 'UNKNOWN', 
+                    edition = 'EDITION_UNKNOWN', 
+                    edition_name = '', 
+                    name = '', 
+                    package = '', 
+                    file = , 
+                    full_name = '', 
+                    options = , ),
+                service = buybtcpay.models.service_descriptor.ServiceDescriptor(
+                    index = 56, 
+                    proto = buybtcpay.models.service_descriptor_proto.ServiceDescriptorProto(
+                        unknown_fields = buybtcpay.models.unknown_field_set.UnknownFieldSet(
+                            serialized_size_as_message_set = 56, 
+                            initialized = True, 
+                            serialized_size = 56, 
+                            parser_for_type = buybtcpay.models.parser.Parser(), 
+                            default_instance_for_type = buybtcpay.models.unknown_field_set.UnknownFieldSet(
+                                serialized_size_as_message_set = 56, 
+                                initialized = True, 
+                                serialized_size = 56, ), ), 
+                        method_list = [
+                            buybtcpay.models.method_descriptor_proto.MethodDescriptorProto(
+                                options_or_builder = buybtcpay.models.method_options_or_builder.MethodOptionsOrBuilder(
                                     features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
-                                        json_format = 'JSON_FORMAT_UNKNOWN', 
+                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                         repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                                         utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                        json_format = 'JSON_FORMAT_UNKNOWN', 
                                         enum_type = 'ENUM_TYPE_UNKNOWN', 
                                         message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                         initialization_error_string = '', 
                                         descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
                                             index = 56, 
@@ -786,16 +1541,13 @@ class TestMethodDescriptor(unittest.TestCase):
                                                                                 deprecated_legacy_json_field_conflicts = True, 
                                                                                 uninterpreted_option_list = [
                                                                                     buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                                                                        aggregate_value_bytes = buybtcpay.models.byte_string.ByteString(
-                                                                                            empty = True, 
-                                                                                            valid_utf8 = True, ), 
                                                                                         name_list = [
                                                                                             buybtcpay.models.name_part.NamePart(
-                                                                                                is_extension = True, 
-                                                                                                name_part = '', 
                                                                                                 name_part_bytes = buybtcpay.models.byte_string.ByteString(
                                                                                                     empty = True, 
                                                                                                     valid_utf8 = True, ), 
+                                                                                                is_extension = True, 
+                                                                                                name_part = '', 
                                                                                                 initialized = True, 
                                                                                                 serialized_size = 56, 
                                                                                                 initialization_error_string = '', 
@@ -811,10 +1563,13 @@ class TestMethodDescriptor(unittest.TestCase):
                                                                                                 initialization_error_string = '', 
                                                                                                 initialized = True, )
                                                                                             ], 
-                                                                                        identifier_value_bytes = , 
+                                                                                        identifier_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                                                            empty = True, 
+                                                                                            valid_utf8 = True, ), 
                                                                                         positive_int_value = 56, 
                                                                                         negative_int_value = 56, 
                                                                                         aggregate_value = '', 
+                                                                                        aggregate_value_bytes = , 
                                                                                         double_value = 1.337, 
                                                                                         initialized = True, 
                                                                                         name_count = 56, 
@@ -841,14 +1596,14 @@ class TestMethodDescriptor(unittest.TestCase):
                                                                                 uninterpreted_option_count = 56, 
                                                                                 allow_alias = True, 
                                                                                 features = buybtcpay.models.feature_set.FeatureSet(
-                                                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                                                                     repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                                                                                     utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
                                                                                     initialized = True, 
                                                                                     enum_type = 'ENUM_TYPE_UNKNOWN', 
                                                                                     serialized_size = 56, 
                                                                                     message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                                                                     all_fields_raw = {
                                                                                         'key' : None
                                                                                         }, 
@@ -901,15 +1656,15 @@ class TestMethodDescriptor(unittest.TestCase):
                                                                     synthetic = True, ), 
                                                                 enum_type = , 
                                                                 default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                                lite_java_type = 'INT', 
+                                                                packed = True, 
+                                                                packable = True, 
                                                                 real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
                                                                     index = 56, 
                                                                     full_name = '', 
                                                                     field_count = 56, 
                                                                     name = '', 
                                                                     synthetic = True, ), 
-                                                                lite_java_type = 'INT', 
-                                                                packed = True, 
-                                                                packable = True, 
                                                                 java_type = 'INT', 
                                                                 name = '', 
                                                                 number = 56, 
@@ -970,10 +1725,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                             buybtcpay.models.method_descriptor.MethodDescriptor(
                                                                 index = 56, 
                                                                 full_name = '', 
-                                                                service = buybtcpay.models.service_descriptor.ServiceDescriptor(
-                                                                    index = 56, 
-                                                                    full_name = '', 
-                                                                    name = '', ), 
                                                                 input_type = , 
                                                                 output_type = , 
                                                                 client_streaming = True, 
@@ -986,7 +1737,16 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     
                                                     ], 
                                                 dependencies = [
-                                                    
+                                                    buybtcpay.models.file_descriptor.FileDescriptor(
+                                                        public_dependencies = [
+                                                            
+                                                            ], 
+                                                        syntax = 'UNKNOWN', 
+                                                        edition = 'EDITION_UNKNOWN', 
+                                                        edition_name = '', 
+                                                        name = '', 
+                                                        package = '', 
+                                                        full_name = '', )
                                                     ], 
                                                 public_dependencies = [
                                                     
@@ -1088,486 +1848,74 @@ class TestMethodDescriptor(unittest.TestCase):
                                             initialized = True, )
                                         ], 
                                     uninterpreted_option_count = 56, 
-                                    ctype = 'STRING', 
-                                    jstype = 'JS_NORMAL', 
-                                    lazy = True, 
-                                    unverified_lazy = True, 
-                                    weak = True, 
-                                    debug_redact = True, 
-                                    targets_list = [
-                                        'TARGET_TYPE_UNKNOWN'
-                                        ], 
-                                    targets_count = 56, 
-                                    edition_defaults_list = [
-                                        buybtcpay.models.edition_default.EditionDefault(
-                                            edition = 'EDITION_UNKNOWN', 
-                                            value_bytes = , 
-                                            initialized = True, 
-                                            value = '', 
-                                            serialized_size = 56, 
-                                            initialization_error_string = '', 
-                                            memoized_serialized_size = 56, )
-                                        ], 
-                                    edition_defaults_count = 56, 
-                                    edition_defaults_or_builder_list = [
-                                        buybtcpay.models.edition_default_or_builder.EditionDefaultOrBuilder(
-                                            edition = 'EDITION_UNKNOWN', 
-                                            value = '', 
-                                            initialization_error_string = '', 
-                                            initialized = True, )
-                                        ], 
+                                    idempotency_level = 'IDEMPOTENCY_UNKNOWN', 
                                     features = buybtcpay.models.feature_set.FeatureSet(
-                                        json_format = 'JSON_FORMAT_UNKNOWN', 
+                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                         repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                                         utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                        json_format = 'JSON_FORMAT_UNKNOWN', 
                                         initialized = True, 
                                         serialized_size = 56, 
                                         message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                         initialization_error_string = '', 
                                         memoized_serialized_size = 56, ), 
                                     deprecated = True, 
-                                    retention = 'RETENTION_UNKNOWN', 
                                     initialization_error_string = '', 
                                     descriptor_for_type = , 
                                     all_fields = , 
                                     initialized = True, ), 
-                                json_name = '', 
-                                proto3_optional = True, 
-                                oneof_index = 56, 
-                                extendee = '', 
-                                extendee_bytes = , 
-                                json_name_bytes = , 
-                                default_value_bytes = , 
-                                type_name_bytes = , 
+                                input_type_bytes = , 
+                                output_type_bytes = , 
+                                client_streaming = True, 
+                                server_streaming = True, 
+                                output_type = '', 
+                                input_type = '', 
                                 initialized = True, 
                                 name = '', 
-                                type_name = '', 
-                                type = 'TYPE_DOUBLE', 
-                                default_value = '', 
-                                number = 56, 
-                                options = buybtcpay.models.field_options.FieldOptions(
-                                    packed = True, 
+                                options = buybtcpay.models.method_options.MethodOptions(
                                     uninterpreted_option_count = 56, 
-                                    ctype = 'STRING', 
-                                    jstype = 'JS_NORMAL', 
-                                    lazy = True, 
-                                    unverified_lazy = True, 
-                                    weak = True, 
-                                    debug_redact = True, 
-                                    targets_count = 56, 
-                                    edition_defaults_count = 56, 
+                                    idempotency_level = 'IDEMPOTENCY_UNKNOWN', 
                                     initialized = True, 
                                     serialized_size = 56, 
                                     deprecated = True, 
-                                    retention = 'RETENTION_UNKNOWN', 
                                     initialization_error_string = '', 
                                     memoized_serialized_size = 56, ), 
                                 serialized_size = 56, 
-                                label = 'LABEL_OPTIONAL', 
                                 name_bytes = , 
                                 initialization_error_string = '', 
                                 descriptor_for_type = , 
                                 all_fields = , 
                                 memoized_serialized_size = 56, )
                             ], 
-                        extension_or_builder_list = [
-                            buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
-                                json_name = '', 
-                                proto3_optional = True, 
-                                oneof_index = 56, 
-                                extendee = '', 
-                                name = '', 
-                                type_name = '', 
-                                default_value = '', 
-                                number = 56, 
-                                label = 'LABEL_OPTIONAL', 
-                                initialization_error_string = '', 
-                                initialized = True, )
-                            ], 
-                        enum_type_list = [
-                            buybtcpay.models.enum_descriptor_proto.EnumDescriptorProto(
-                                reserved_range_or_builder_list = [
-                                    buybtcpay.models.enum_reserved_range_or_builder.EnumReservedRangeOrBuilder(
-                                        start = 56, 
-                                        end = 56, 
-                                        initialization_error_string = '', 
-                                        initialized = True, )
-                                    ], 
-                                reserved_range_count = 56, 
-                                reserved_name_count = 56, 
-                                reserved_range_list = [
-                                    buybtcpay.models.enum_reserved_range.EnumReservedRange(
-                                        initialized = True, 
-                                        start = 56, 
-                                        end = 56, 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                reserved_name_list = [
-                                    ''
-                                    ], 
-                                value_count = 56, 
-                                value_list = [
-                                    buybtcpay.models.enum_value_descriptor_proto.EnumValueDescriptorProto(
-                                        initialized = True, 
-                                        name = '', 
-                                        number = 56, 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                value_or_builder_list = [
-                                    buybtcpay.models.enum_value_descriptor_proto_or_builder.EnumValueDescriptorProtoOrBuilder(
-                                        name = '', 
-                                        number = 56, 
-                                        initialization_error_string = '', 
-                                        initialized = True, )
-                                    ], 
-                                initialized = True, 
-                                name = '', 
-                                serialized_size = 56, 
-                                initialization_error_string = '', 
-                                memoized_serialized_size = 56, )
-                            ], 
-                        enum_type_or_builder_list = [
-                            buybtcpay.models.enum_descriptor_proto_or_builder.EnumDescriptorProtoOrBuilder(
-                                reserved_range_count = 56, 
-                                reserved_name_count = 56, 
-                                value_count = 56, 
-                                name = '', 
-                                initialization_error_string = '', 
-                                initialized = True, )
-                            ], 
-                        options_or_builder = buybtcpay.models.file_options_or_builder.FileOptionsOrBuilder(
-                            java_string_check_utf8 = True, 
+                        options_or_builder = buybtcpay.models.service_options_or_builder.ServiceOptionsOrBuilder(
                             uninterpreted_option_count = 56, 
-                            java_package = '', 
-                            java_outer_classname = '', 
-                            java_multiple_files = True, 
-                            java_generate_equals_and_hash = True, 
-                            go_package = '', 
-                            cc_generic_services = True, 
-                            java_generic_services = True, 
-                            py_generic_services = True, 
-                            php_generic_services = True, 
-                            cc_enable_arenas = True, 
-                            objc_class_prefix = '', 
-                            csharp_namespace = '', 
-                            swift_prefix = '', 
-                            php_class_prefix = '', 
-                            php_namespace = '', 
-                            php_metadata_namespace = '', 
-                            ruby_package = '', 
                             deprecated = True, 
-                            optimize_for = 'SPEED', 
                             initialization_error_string = '', 
                             initialized = True, ), 
-                        enum_type_count = 56, 
-                        extension_count = 56, 
-                        syntax = '', 
-                        public_dependency_count = 56, 
-                        dependency_count = 56, 
-                        message_type_count = 56, 
-                        service_count = 56, 
-                        edition = 'EDITION_UNKNOWN', 
-                        package_bytes = , 
-                        dependency_list = [
-                            ''
-                            ], 
-                        public_dependency_list = [
-                            56
-                            ], 
-                        weak_dependency_list = [
-                            56
-                            ], 
-                        weak_dependency_count = 56, 
-                        message_type_list = [
-                            buybtcpay.models.descriptor_proto.DescriptorProto(
-                                field_or_builder_list = [
-                                    buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
-                                        json_name = '', 
-                                        proto3_optional = True, 
-                                        oneof_index = 56, 
-                                        extendee = '', 
-                                        name = '', 
-                                        type_name = '', 
-                                        default_value = '', 
-                                        number = 56, 
-                                        label = 'LABEL_OPTIONAL', 
-                                        initialization_error_string = '', 
-                                        initialized = True, )
-                                    ], 
-                                nested_type_list = [
-                                    buybtcpay.models.descriptor_proto.DescriptorProto(
-                                        nested_type_or_builder_list = [
-                                            buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
-                                                extension_range_or_builder_list = [
-                                                    buybtcpay.models.extension_range_or_builder.ExtensionRangeOrBuilder(
-                                                        start = 56, 
-                                                        end = 56, 
-                                                        initialization_error_string = '', 
-                                                        initialized = True, )
-                                                    ], 
-                                                oneof_decl_list = [
-                                                    buybtcpay.models.oneof_descriptor_proto.OneofDescriptorProto(
-                                                        initialized = True, 
-                                                        name = '', 
-                                                        serialized_size = 56, 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                oneof_decl_or_builder_list = [
-                                                    buybtcpay.models.oneof_descriptor_proto_or_builder.OneofDescriptorProtoOrBuilder(
-                                                        name = '', 
-                                                        initialization_error_string = '', 
-                                                        initialized = True, )
-                                                    ], 
-                                                reserved_range_count = 56, 
-                                                reserved_name_count = 56, 
-                                                extension_range_list = [
-                                                    buybtcpay.models.extension_range.ExtensionRange(
-                                                        initialized = True, 
-                                                        start = 56, 
-                                                        end = 56, 
-                                                        serialized_size = 56, 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                oneof_decl_count = 56, 
-                                                nested_type_count = 56, 
-                                                enum_type_count = 56, 
-                                                extension_count = 56, 
-                                                extension_range_count = 56, 
-                                                field_count = 56, 
-                                                name = '', 
-                                                field_list = [
-                                                    buybtcpay.models.field_descriptor_proto.FieldDescriptorProto(
-                                                        json_name = '', 
-                                                        proto3_optional = True, 
-                                                        oneof_index = 56, 
-                                                        extendee = '', 
-                                                        initialized = True, 
-                                                        name = '', 
-                                                        type_name = '', 
-                                                        default_value = '', 
-                                                        number = 56, 
-                                                        serialized_size = 56, 
-                                                        label = 'LABEL_OPTIONAL', 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                initialization_error_string = '', 
-                                                initialized = True, )
-                                            ], 
-                                        extension_range_or_builder_list = [
-                                            buybtcpay.models.extension_range_or_builder.ExtensionRangeOrBuilder(
-                                                start = 56, 
-                                                end = 56, 
-                                                initialization_error_string = '', 
-                                                initialized = True, )
-                                            ], 
-                                        oneof_decl_list = [
-                                            buybtcpay.models.oneof_descriptor_proto.OneofDescriptorProto(
-                                                initialized = True, 
-                                                name = '', 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        oneof_decl_or_builder_list = [
-                                            buybtcpay.models.oneof_descriptor_proto_or_builder.OneofDescriptorProtoOrBuilder(
-                                                name = '', 
-                                                initialization_error_string = '', 
-                                                initialized = True, )
-                                            ], 
-                                        reserved_range_count = 56, 
-                                        reserved_name_count = 56, 
-                                        extension_range_list = [
-                                            buybtcpay.models.extension_range.ExtensionRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        oneof_decl_count = 56, 
-                                        nested_type_count = 56, 
-                                        enum_type_count = 56, 
-                                        extension_count = 56, 
-                                        extension_range_count = 56, 
-                                        field_count = 56, 
-                                        initialized = True, 
-                                        name = '', 
-                                        field_list = [
-                                            
-                                            ], 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                nested_type_or_builder_list = [
-                                    buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
-                                        reserved_range_count = 56, 
-                                        reserved_name_count = 56, 
-                                        oneof_decl_count = 56, 
-                                        nested_type_count = 56, 
-                                        enum_type_count = 56, 
-                                        extension_count = 56, 
-                                        extension_range_count = 56, 
-                                        field_count = 56, 
-                                        name = '', 
-                                        initialization_error_string = '', 
-                                        initialized = True, )
-                                    ], 
-                                extension_range_or_builder_list = , 
-                                oneof_decl_list = , 
-                                oneof_decl_or_builder_list = , 
-                                reserved_range_count = 56, 
-                                reserved_name_count = 56, 
-                                extension_range_list = , 
-                                oneof_decl_count = 56, 
-                                nested_type_count = 56, 
-                                enum_type_count = 56, 
-                                extension_count = 56, 
-                                extension_range_count = 56, 
-                                field_count = 56, 
-                                initialized = True, 
-                                name = '', 
-                                field_list = , 
-                                serialized_size = 56, 
-                                initialization_error_string = '', 
-                                memoized_serialized_size = 56, )
-                            ], 
-                        message_type_or_builder_list = [
-                            
-                            ], 
-                        service_list = [
-                            buybtcpay.models.service_descriptor_proto.ServiceDescriptorProto(
-                                method_count = 56, 
-                                method_or_builder_list = [
-                                    buybtcpay.models.method_descriptor_proto_or_builder.MethodDescriptorProtoOrBuilder(
-                                        input_type_bytes = , 
-                                        output_type_bytes = , 
-                                        client_streaming = True, 
-                                        server_streaming = True, 
-                                        name = '', 
-                                        initialization_error_string = '', 
-                                        initialized = True, )
-                                    ], 
-                                initialized = True, 
-                                name = '', 
-                                serialized_size = 56, 
-                                method_list = [
-                                    buybtcpay.models.method_descriptor_proto.MethodDescriptorProto(
-                                        client_streaming = True, 
-                                        server_streaming = True, 
-                                        initialized = True, 
-                                        name = '', 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                initialization_error_string = '', 
-                                memoized_serialized_size = 56, )
-                            ], 
-                        service_or_builder_list = [
-                            buybtcpay.models.service_descriptor_proto_or_builder.ServiceDescriptorProtoOrBuilder(
-                                method_count = 56, 
+                        method_count = 56, 
+                        method_or_builder_list = [
+                            buybtcpay.models.method_descriptor_proto_or_builder.MethodDescriptorProtoOrBuilder(
+                                client_streaming = True, 
+                                server_streaming = True, 
                                 name = '', 
                                 initialization_error_string = '', 
                                 initialized = True, )
                             ], 
-                        source_code_info = buybtcpay.models.source_code_info.SourceCodeInfo(
-                            location_count = 56, 
-                            location_or_builder_list = [
-                                buybtcpay.models.location_or_builder.LocationOrBuilder(
-                                    leading_comments_bytes = , 
-                                    path_list = [
-                                        56
-                                        ], 
-                                    path_count = 56, 
-                                    span_list = [
-                                        56
-                                        ], 
-                                    span_count = 56, 
-                                    leading_comments = '', 
-                                    trailing_comments = '', 
-                                    trailing_comments_bytes = , 
-                                    leading_detached_comments_list = [
-                                        ''
-                                        ], 
-                                    leading_detached_comments_count = 56, 
-                                    initialization_error_string = '', 
-                                    initialized = True, )
-                                ], 
-                            location_list = [
-                                buybtcpay.models.location.Location(
-                                    path_count = 56, 
-                                    span_count = 56, 
-                                    leading_comments = '', 
-                                    trailing_comments = '', 
-                                    leading_detached_comments_count = 56, 
-                                    initialized = True, 
-                                    serialized_size = 56, 
-                                    initialization_error_string = '', 
-                                    memoized_serialized_size = 56, )
-                                ], 
-                            initialized = True, 
-                            serialized_size = 56, 
-                            initialization_error_string = '', 
-                            memoized_serialized_size = 56, ), 
-                        source_code_info_or_builder = buybtcpay.models.source_code_info_or_builder.SourceCodeInfoOrBuilder(
-                            location_count = 56, 
-                            initialization_error_string = '', 
-                            initialized = True, ), 
-                        syntax_bytes = , 
                         initialized = True, 
                         name = '', 
-                        package = '', 
-                        options = buybtcpay.models.file_options.FileOptions(
-                            java_string_check_utf8 = True, 
+                        options = buybtcpay.models.service_options.ServiceOptions(
                             uninterpreted_option_count = 56, 
-                            java_package = '', 
-                            java_outer_classname = '', 
-                            java_multiple_files = True, 
-                            java_generate_equals_and_hash = True, 
-                            go_package = '', 
-                            cc_generic_services = True, 
-                            java_generic_services = True, 
-                            py_generic_services = True, 
-                            php_generic_services = True, 
-                            cc_enable_arenas = True, 
-                            objc_class_prefix = '', 
-                            csharp_namespace = '', 
-                            swift_prefix = '', 
-                            php_class_prefix = '', 
-                            php_namespace = '', 
-                            php_metadata_namespace = '', 
-                            ruby_package = '', 
                             initialized = True, 
                             serialized_size = 56, 
                             deprecated = True, 
-                            optimize_for = 'SPEED', 
                             initialization_error_string = '', 
                             memoized_serialized_size = 56, ), 
                         serialized_size = 56, 
-                        parser_for_type = buybtcpay.models.parser_file_descriptor_proto.ParserFileDescriptorProto(), 
-                        default_instance_for_type = buybtcpay.models.file_descriptor_proto.FileDescriptorProto(
-                            enum_type_count = 56, 
-                            extension_count = 56, 
-                            syntax = '', 
-                            public_dependency_count = 56, 
-                            dependency_count = 56, 
-                            message_type_count = 56, 
-                            service_count = 56, 
-                            edition = 'EDITION_UNKNOWN', 
-                            weak_dependency_count = 56, 
+                        parser_for_type = buybtcpay.models.parser_service_descriptor_proto.ParserServiceDescriptorProto(), 
+                        default_instance_for_type = buybtcpay.models.service_descriptor_proto.ServiceDescriptorProto(
+                            method_count = 56, 
                             initialized = True, 
                             name = '', 
-                            package = '', 
                             serialized_size = 56, 
                             initialization_error_string = '', 
                             memoized_serialized_size = 56, ), 
@@ -1576,31 +1924,27 @@ class TestMethodDescriptor(unittest.TestCase):
                         descriptor_for_type = , 
                         all_fields = , 
                         memoized_serialized_size = 56, ), 
-                    message_types = [
-                        
-                        ], 
-                    enum_types = , 
-                    services = [
-                        
-                        ], 
-                    extensions = , 
-                    dependencies = [
-                        
-                        ], 
-                    public_dependencies = [
-                        
-                        ], 
-                    syntax = 'UNKNOWN', 
-                    edition = 'EDITION_UNKNOWN', 
-                    edition_name = '', 
-                    name = '', 
-                    package = '', 
-                    file = , 
                     full_name = '', 
-                    options = , ),
-                service = buybtcpay.models.service_descriptor.ServiceDescriptor(
+                    file = , 
+                    methods = [
+                        buybtcpay.models.method_descriptor.MethodDescriptor(
+                            index = 56, 
+                            full_name = '', 
+                            client_streaming = True, 
+                            server_streaming = True, 
+                            name = '', )
+                        ], 
+                    name = '', 
+                    options = buybtcpay.models.service_options.ServiceOptions(
+                        uninterpreted_option_count = 56, 
+                        initialized = True, 
+                        serialized_size = 56, 
+                        deprecated = True, 
+                        initialization_error_string = '', 
+                        memoized_serialized_size = 56, ), ),
+                input_type = buybtcpay.models.descriptor.Descriptor(
                     index = 56, 
-                    proto = buybtcpay.models.service_descriptor_proto.ServiceDescriptorProto(
+                    proto = buybtcpay.models.descriptor_proto.DescriptorProto(
                         unknown_fields = buybtcpay.models.unknown_field_set.UnknownFieldSet(
                             serialized_size_as_message_set = 56, 
                             initialized = True, 
@@ -1610,219 +1954,145 @@ class TestMethodDescriptor(unittest.TestCase):
                                 serialized_size_as_message_set = 56, 
                                 initialized = True, 
                                 serialized_size = 56, ), ), 
-                        options_or_builder = buybtcpay.models.service_options_or_builder.ServiceOptionsOrBuilder(
-                            features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
-                                json_format = 'JSON_FORMAT_UNKNOWN', 
-                                repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                enum_type = 'ENUM_TYPE_UNKNOWN', 
-                                message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                        reserved_range_list = [
+                            buybtcpay.models.reserved_range.ReservedRange(
+                                initialized = True, 
+                                start = 56, 
+                                end = 56, 
+                                serialized_size = 56, 
                                 initialization_error_string = '', 
                                 descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
                                     index = 56, 
                                     full_name = '', 
                                     file = buybtcpay.models.file_descriptor.FileDescriptor(
                                         message_types = [
-                                            buybtcpay.models.descriptor.Descriptor(
+                                            
+                                            ], 
+                                        enum_types = [
+                                            buybtcpay.models.enum_descriptor.EnumDescriptor(
                                                 index = 56, 
                                                 full_name = '', 
                                                 containing_type = , 
-                                                nested_types = [
-                                                    
-                                                    ], 
-                                                enum_types = [
-                                                    buybtcpay.models.enum_descriptor.EnumDescriptor(
+                                                values = [
+                                                    buybtcpay.models.enum_value_descriptor.EnumValueDescriptor(
                                                         index = 56, 
                                                         full_name = '', 
-                                                        values = [
-                                                            buybtcpay.models.enum_value_descriptor.EnumValueDescriptor(
-                                                                index = 56, 
-                                                                full_name = '', 
-                                                                type = buybtcpay.models.enum_descriptor.EnumDescriptor(
-                                                                    index = 56, 
-                                                                    full_name = '', 
-                                                                    closed = True, 
-                                                                    name = '', 
-                                                                    options = buybtcpay.models.enum_options.EnumOptions(
-                                                                        deprecated_legacy_json_field_conflicts = True, 
-                                                                        uninterpreted_option_list = [
-                                                                            buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                                                                aggregate_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                        type = buybtcpay.models.enum_descriptor.EnumDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            closed = True, 
+                                                            name = '', 
+                                                            options = buybtcpay.models.enum_options.EnumOptions(
+                                                                deprecated_legacy_json_field_conflicts = True, 
+                                                                features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
+                                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                                                    repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
+                                                                    utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                                    enum_type = 'ENUM_TYPE_UNKNOWN', 
+                                                                    message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
+                                                                    initialization_error_string = '', 
+                                                                    all_fields = {
+                                                                        'key' : None
+                                                                        }, 
+                                                                    initialized = True, ), 
+                                                                uninterpreted_option_list = [
+                                                                    buybtcpay.models.uninterpreted_option.UninterpretedOption(
+                                                                        name_list = [
+                                                                            buybtcpay.models.name_part.NamePart(
+                                                                                name_part_bytes = buybtcpay.models.byte_string.ByteString(
                                                                                     empty = True, 
                                                                                     valid_utf8 = True, ), 
-                                                                                name_list = [
-                                                                                    buybtcpay.models.name_part.NamePart(
-                                                                                        is_extension = True, 
-                                                                                        name_part = '', 
-                                                                                        name_part_bytes = buybtcpay.models.byte_string.ByteString(
-                                                                                            empty = True, 
-                                                                                            valid_utf8 = True, ), 
-                                                                                        initialized = True, 
-                                                                                        serialized_size = 56, 
-                                                                                        initialization_error_string = '', 
-                                                                                        all_fields = {
-                                                                                            'key' : None
-                                                                                            }, 
-                                                                                        memoized_serialized_size = 56, )
-                                                                                    ], 
-                                                                                name_or_builder_list = [
-                                                                                    buybtcpay.models.name_part_or_builder.NamePartOrBuilder(
-                                                                                        is_extension = True, 
-                                                                                        name_part = '', 
-                                                                                        initialization_error_string = '', 
-                                                                                        initialized = True, )
-                                                                                    ], 
-                                                                                identifier_value_bytes = , 
-                                                                                positive_int_value = 56, 
-                                                                                negative_int_value = 56, 
-                                                                                aggregate_value = '', 
-                                                                                double_value = 1.337, 
+                                                                                is_extension = True, 
+                                                                                name_part = '', 
                                                                                 initialized = True, 
-                                                                                name_count = 56, 
                                                                                 serialized_size = 56, 
-                                                                                string_value = , 
-                                                                                identifier_value = '', 
                                                                                 initialization_error_string = '', 
-                                                                                all_fields = {
-                                                                                    'key' : None
-                                                                                    }, 
                                                                                 memoized_serialized_size = 56, )
                                                                             ], 
-                                                                        uninterpreted_option_or_builder_list = [
-                                                                            buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
-                                                                                positive_int_value = 56, 
-                                                                                negative_int_value = 56, 
-                                                                                aggregate_value = '', 
-                                                                                double_value = 1.337, 
-                                                                                name_count = 56, 
-                                                                                identifier_value = '', 
+                                                                        name_or_builder_list = [
+                                                                            buybtcpay.models.name_part_or_builder.NamePartOrBuilder(
+                                                                                is_extension = True, 
+                                                                                name_part = '', 
                                                                                 initialization_error_string = '', 
                                                                                 initialized = True, )
                                                                             ], 
-                                                                        uninterpreted_option_count = 56, 
-                                                                        allow_alias = True, 
-                                                                        features = buybtcpay.models.feature_set.FeatureSet(
-                                                                            json_format = 'JSON_FORMAT_UNKNOWN', 
-                                                                            repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                                                            utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                                                            initialized = True, 
-                                                                            enum_type = 'ENUM_TYPE_UNKNOWN', 
-                                                                            serialized_size = 56, 
-                                                                            message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                                                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                                                            all_fields_raw = {
-                                                                                'key' : None
-                                                                                }, 
-                                                                            initialization_error_string = '', 
-                                                                            memoized_serialized_size = 56, ), 
+                                                                        identifier_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                                            empty = True, 
+                                                                            valid_utf8 = True, ), 
+                                                                        positive_int_value = 56, 
+                                                                        negative_int_value = 56, 
+                                                                        aggregate_value = '', 
+                                                                        aggregate_value_bytes = , 
+                                                                        double_value = 1.337, 
                                                                         initialized = True, 
+                                                                        name_count = 56, 
                                                                         serialized_size = 56, 
-                                                                        deprecated = True, 
-                                                                        all_fields = , 
-                                                                        all_fields_raw = {
-                                                                            'key' : None
-                                                                            }, 
+                                                                        string_value = , 
+                                                                        identifier_value = '', 
                                                                         initialization_error_string = '', 
-                                                                        memoized_serialized_size = 56, ), ), 
-                                                                name = '', 
-                                                                number = 56, 
-                                                                options = buybtcpay.models.enum_value_options.EnumValueOptions(
-                                                                    uninterpreted_option_count = 56, 
-                                                                    debug_redact = True, 
+                                                                        memoized_serialized_size = 56, )
+                                                                    ], 
+                                                                uninterpreted_option_or_builder_list = [
+                                                                    buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
+                                                                        positive_int_value = 56, 
+                                                                        negative_int_value = 56, 
+                                                                        aggregate_value = '', 
+                                                                        double_value = 1.337, 
+                                                                        name_count = 56, 
+                                                                        identifier_value = '', 
+                                                                        initialization_error_string = '', 
+                                                                        initialized = True, )
+                                                                    ], 
+                                                                uninterpreted_option_count = 56, 
+                                                                allow_alias = True, 
+                                                                features = buybtcpay.models.feature_set.FeatureSet(
+                                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                                                    repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
+                                                                    utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
                                                                     initialized = True, 
+                                                                    enum_type = 'ENUM_TYPE_UNKNOWN', 
                                                                     serialized_size = 56, 
-                                                                    deprecated = True, 
+                                                                    message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
+                                                                    all_fields_raw = {
+                                                                        'key' : None
+                                                                        }, 
                                                                     initialization_error_string = '', 
-                                                                    memoized_serialized_size = 56, ), )
-                                                            ], 
-                                                        closed = True, 
+                                                                    memoized_serialized_size = 56, ), 
+                                                                initialized = True, 
+                                                                serialized_size = 56, 
+                                                                deprecated = True, 
+                                                                all_fields = {
+                                                                    'key' : None
+                                                                    }, 
+                                                                all_fields_raw = {
+                                                                    'key' : None
+                                                                    }, 
+                                                                initialization_error_string = '', 
+                                                                memoized_serialized_size = 56, ), ), 
                                                         name = '', 
-                                                        options = buybtcpay.models.enum_options.EnumOptions(
-                                                            deprecated_legacy_json_field_conflicts = True, 
+                                                        number = 56, 
+                                                        options = buybtcpay.models.enum_value_options.EnumValueOptions(
                                                             uninterpreted_option_count = 56, 
-                                                            allow_alias = True, 
+                                                            debug_redact = True, 
                                                             initialized = True, 
                                                             serialized_size = 56, 
                                                             deprecated = True, 
                                                             initialization_error_string = '', 
                                                             memoized_serialized_size = 56, ), )
                                                     ], 
-                                                fields = [
-                                                    buybtcpay.models.field_descriptor.FieldDescriptor(
-                                                        index = 56, 
-                                                        full_name = '', 
-                                                        json_name = '', 
-                                                        extension_scope = , 
-                                                        message_type = , 
-                                                        containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
-                                                            index = 56, 
-                                                            full_name = '', 
-                                                            field_count = 56, 
-                                                            name = '', 
-                                                            synthetic = True, ), 
-                                                        enum_type = , 
-                                                        default_value = buybtcpay.models.default_value.defaultValue(), 
-                                                        real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
-                                                            index = 56, 
-                                                            full_name = '', 
-                                                            field_count = 56, 
-                                                            name = '', 
-                                                            synthetic = True, ), 
-                                                        lite_java_type = 'INT', 
-                                                        packed = True, 
-                                                        packable = True, 
-                                                        java_type = 'INT', 
-                                                        name = '', 
-                                                        number = 56, 
-                                                        optional = True, 
-                                                        extension = True, 
-                                                        lite_type = 'DOUBLE', 
-                                                        repeated = True, 
-                                                        map_field = True, 
-                                                        required = True, )
-                                                    ], 
-                                                extensions = [
-                                                    buybtcpay.models.field_descriptor.FieldDescriptor(
-                                                        index = 56, 
-                                                        full_name = '', 
-                                                        json_name = '', 
-                                                        default_value = buybtcpay.models.default_value.defaultValue(), 
-                                                        lite_java_type = 'INT', 
-                                                        packed = True, 
-                                                        packable = True, 
-                                                        java_type = 'INT', 
-                                                        name = '', 
-                                                        number = 56, 
-                                                        optional = True, 
-                                                        extension = True, 
-                                                        lite_type = 'DOUBLE', 
-                                                        repeated = True, 
-                                                        map_field = True, 
-                                                        required = True, )
-                                                    ], 
-                                                oneofs = [
-                                                    
-                                                    ], 
-                                                real_oneofs = [
-                                                    
-                                                    ], 
-                                                extendable = True, 
+                                                closed = True, 
                                                 name = '', 
-                                                options = buybtcpay.models.message_options.MessageOptions(
-                                                    map_entry = True, 
-                                                    no_standard_descriptor_accessor = True, 
+                                                options = buybtcpay.models.enum_options.EnumOptions(
                                                     deprecated_legacy_json_field_conflicts = True, 
                                                     uninterpreted_option_count = 56, 
+                                                    allow_alias = True, 
                                                     initialized = True, 
                                                     serialized_size = 56, 
                                                     deprecated = True, 
-                                                    message_set_wire_format = True, 
                                                     initialization_error_string = '', 
                                                     memoized_serialized_size = 56, ), )
-                                            ], 
-                                        enum_types = [
-                                            
                                             ], 
                                         services = [
                                             buybtcpay.models.service_descriptor.ServiceDescriptor(
@@ -1832,7 +2102,10 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     buybtcpay.models.method_descriptor.MethodDescriptor(
                                                         index = 56, 
                                                         full_name = '', 
-                                                        input_type = , 
+                                                        service = buybtcpay.models.service_descriptor.ServiceDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            name = '', ), 
                                                         output_type = , 
                                                         client_streaming = True, 
                                                         server_streaming = True, 
@@ -1841,7 +2114,38 @@ class TestMethodDescriptor(unittest.TestCase):
                                                 name = '', )
                                             ], 
                                         extensions = [
-                                            
+                                            buybtcpay.models.field_descriptor.FieldDescriptor(
+                                                index = 56, 
+                                                full_name = '', 
+                                                json_name = '', 
+                                                extension_scope = , 
+                                                message_type = , 
+                                                containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
+                                                    index = 56, 
+                                                    full_name = '', 
+                                                    field_count = 56, 
+                                                    name = '', 
+                                                    synthetic = True, ), 
+                                                enum_type = , 
+                                                default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                lite_java_type = 'INT', 
+                                                packed = True, 
+                                                packable = True, 
+                                                real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
+                                                    index = 56, 
+                                                    full_name = '', 
+                                                    field_count = 56, 
+                                                    name = '', 
+                                                    synthetic = True, ), 
+                                                java_type = 'INT', 
+                                                name = '', 
+                                                number = 56, 
+                                                optional = True, 
+                                                extension = True, 
+                                                lite_type = 'DOUBLE', 
+                                                repeated = True, 
+                                                map_field = True, 
+                                                required = True, )
                                             ], 
                                         dependencies = [
                                             buybtcpay.models.file_descriptor.FileDescriptor(
@@ -1904,11 +2208,31 @@ class TestMethodDescriptor(unittest.TestCase):
                                     nested_types = [
                                         
                                         ], 
-                                    enum_types = , 
-                                    fields = [
+                                    enum_types = [
                                         
                                         ], 
-                                    extensions = , 
+                                    fields = [
+                                        buybtcpay.models.field_descriptor.FieldDescriptor(
+                                            index = 56, 
+                                            full_name = '', 
+                                            json_name = '', 
+                                            default_value = buybtcpay.models.default_value.defaultValue(), 
+                                            lite_java_type = 'INT', 
+                                            packed = True, 
+                                            packable = True, 
+                                            java_type = 'INT', 
+                                            name = '', 
+                                            number = 56, 
+                                            optional = True, 
+                                            extension = True, 
+                                            lite_type = 'DOUBLE', 
+                                            repeated = True, 
+                                            map_field = True, 
+                                            required = True, )
+                                        ], 
+                                    extensions = [
+                                        
+                                        ], 
                                     oneofs = [
                                         
                                         ], 
@@ -1929,533 +2253,70 @@ class TestMethodDescriptor(unittest.TestCase):
                                         initialization_error_string = '', 
                                         memoized_serialized_size = 56, ), ), 
                                 all_fields = , 
-                                initialized = True, ), 
-                            uninterpreted_option_list = [
-                                buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                    positive_int_value = 56, 
-                                    negative_int_value = 56, 
-                                    aggregate_value = '', 
-                                    double_value = 1.337, 
-                                    initialized = True, 
-                                    name_count = 56, 
-                                    serialized_size = 56, 
-                                    identifier_value = '', 
-                                    initialization_error_string = '', 
-                                    memoized_serialized_size = 56, )
-                                ], 
-                            uninterpreted_option_or_builder_list = [
-                                buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
-                                    positive_int_value = 56, 
-                                    negative_int_value = 56, 
-                                    aggregate_value = '', 
-                                    double_value = 1.337, 
-                                    name_count = 56, 
-                                    identifier_value = '', 
-                                    initialization_error_string = '', 
-                                    initialized = True, )
-                                ], 
-                            uninterpreted_option_count = 56, 
-                            features = buybtcpay.models.feature_set.FeatureSet(
-                                json_format = 'JSON_FORMAT_UNKNOWN', 
-                                repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                initialized = True, 
-                                serialized_size = 56, 
-                                message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                initialization_error_string = '', 
-                                memoized_serialized_size = 56, ), 
-                            deprecated = True, 
-                            initialization_error_string = '', 
-                            descriptor_for_type = , 
-                            all_fields = , 
-                            initialized = True, ), 
-                        method_count = 56, 
-                        method_or_builder_list = [
-                            buybtcpay.models.method_descriptor_proto_or_builder.MethodDescriptorProtoOrBuilder(
-                                input_type_bytes = , 
-                                output_type_bytes = , 
-                                client_streaming = True, 
-                                server_streaming = True, 
-                                name = '', 
-                                name_bytes = , 
-                                initialization_error_string = '', 
-                                initialized = True, )
+                                memoized_serialized_size = 56, )
                             ], 
-                        initialized = True, 
-                        name = '', 
-                        options = buybtcpay.models.service_options.ServiceOptions(
-                            uninterpreted_option_count = 56, 
-                            initialized = True, 
-                            serialized_size = 56, 
-                            deprecated = True, 
-                            initialization_error_string = '', 
-                            memoized_serialized_size = 56, ), 
-                        serialized_size = 56, 
-                        parser_for_type = buybtcpay.models.parser_service_descriptor_proto.ParserServiceDescriptorProto(), 
-                        default_instance_for_type = buybtcpay.models.service_descriptor_proto.ServiceDescriptorProto(
-                            method_count = 56, 
-                            initialized = True, 
-                            name = '', 
-                            serialized_size = 56, 
-                            method_list = [
-                                buybtcpay.models.method_descriptor_proto.MethodDescriptorProto(
-                                    client_streaming = True, 
-                                    server_streaming = True, 
-                                    initialized = True, 
-                                    name = '', 
-                                    serialized_size = 56, 
+                        reserved_name_list = [
+                            ''
+                            ], 
+                        extension_range_list = [
+                            buybtcpay.models.extension_range.ExtensionRange(
+                                options_or_builder = buybtcpay.models.extension_range_options_or_builder.ExtensionRangeOptionsOrBuilder(
+                                    uninterpreted_option_count = 56, 
+                                    declaration_list = [
+                                        buybtcpay.models.declaration.Declaration(
+                                            full_name_bytes = , 
+                                            type_bytes = , 
+                                            reserved = True, 
+                                            initialized = True, 
+                                            number = 56, 
+                                            full_name = '', 
+                                            serialized_size = 56, 
+                                            repeated = True, 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, )
+                                        ], 
+                                    declaration_count = 56, 
+                                    declaration_or_builder_list = [
+                                        buybtcpay.models.declaration_or_builder.DeclarationOrBuilder(
+                                            reserved = True, 
+                                            number = 56, 
+                                            full_name = '', 
+                                            repeated = True, 
+                                            initialization_error_string = '', 
+                                            initialized = True, )
+                                        ], 
+                                    verification = 'DECLARATION', 
                                     initialization_error_string = '', 
-                                    memoized_serialized_size = 56, )
-                                ], 
-                            initialization_error_string = '', 
-                            memoized_serialized_size = 56, ), 
-                        name_bytes = , 
-                        method_list = [
-                            buybtcpay.models.method_descriptor_proto.MethodDescriptorProto(
-                                client_streaming = True, 
-                                server_streaming = True, 
+                                    initialized = True, ), 
                                 initialized = True, 
-                                name = '', 
+                                start = 56, 
+                                end = 56, 
                                 serialized_size = 56, 
                                 initialization_error_string = '', 
                                 memoized_serialized_size = 56, )
                             ], 
-                        initialization_error_string = '', 
-                        descriptor_for_type = , 
-                        all_fields = , 
-                        memoized_serialized_size = 56, ), 
-                    full_name = '', 
-                    file = , 
-                    methods = [
-                        buybtcpay.models.method_descriptor.MethodDescriptor(
-                            index = 56, 
-                            full_name = '', 
-                            client_streaming = True, 
-                            server_streaming = True, 
-                            name = '', )
-                        ], 
-                    name = '', 
-                    options = buybtcpay.models.service_options.ServiceOptions(
-                        uninterpreted_option_count = 56, 
-                        initialized = True, 
-                        serialized_size = 56, 
-                        deprecated = True, 
-                        initialization_error_string = '', 
-                        memoized_serialized_size = 56, ), ),
-                input_type = buybtcpay.models.descriptor.Descriptor(
-                    index = 56, 
-                    proto = buybtcpay.models.descriptor_proto.DescriptorProto(
-                        unknown_fields = buybtcpay.models.unknown_field_set.UnknownFieldSet(
-                            serialized_size_as_message_set = 56, 
-                            initialized = True, 
-                            serialized_size = 56, 
-                            parser_for_type = buybtcpay.models.parser.Parser(), 
-                            default_instance_for_type = buybtcpay.models.unknown_field_set.UnknownFieldSet(
-                                serialized_size_as_message_set = 56, 
-                                initialized = True, 
-                                serialized_size = 56, ), ), 
+                        oneof_decl_count = 56, 
+                        nested_type_count = 56, 
+                        enum_type_count = 56, 
+                        extension_count = 56, 
+                        extension_range_count = 56, 
                         field_or_builder_list = [
                             buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
-                                options_or_builder = buybtcpay.models.field_options_or_builder.FieldOptionsOrBuilder(
-                                    packed = True, 
-                                    features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
-                                        json_format = 'JSON_FORMAT_UNKNOWN', 
-                                        repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                        utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                        enum_type = 'ENUM_TYPE_UNKNOWN', 
-                                        message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                        initialization_error_string = '', 
-                                        descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
-                                            index = 56, 
-                                            full_name = '', 
-                                            file = buybtcpay.models.file_descriptor.FileDescriptor(
-                                                message_types = [
-                                                    
-                                                    ], 
-                                                enum_types = [
-                                                    buybtcpay.models.enum_descriptor.EnumDescriptor(
-                                                        index = 56, 
-                                                        full_name = '', 
-                                                        containing_type = , 
-                                                        values = [
-                                                            buybtcpay.models.enum_value_descriptor.EnumValueDescriptor(
-                                                                index = 56, 
-                                                                full_name = '', 
-                                                                type = buybtcpay.models.enum_descriptor.EnumDescriptor(
-                                                                    index = 56, 
-                                                                    full_name = '', 
-                                                                    closed = True, 
-                                                                    name = '', 
-                                                                    options = buybtcpay.models.enum_options.EnumOptions(
-                                                                        deprecated_legacy_json_field_conflicts = True, 
-                                                                        uninterpreted_option_list = [
-                                                                            buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                                                                aggregate_value_bytes = buybtcpay.models.byte_string.ByteString(
-                                                                                    empty = True, 
-                                                                                    valid_utf8 = True, ), 
-                                                                                name_list = [
-                                                                                    buybtcpay.models.name_part.NamePart(
-                                                                                        is_extension = True, 
-                                                                                        name_part = '', 
-                                                                                        name_part_bytes = buybtcpay.models.byte_string.ByteString(
-                                                                                            empty = True, 
-                                                                                            valid_utf8 = True, ), 
-                                                                                        initialized = True, 
-                                                                                        serialized_size = 56, 
-                                                                                        initialization_error_string = '', 
-                                                                                        all_fields = {
-                                                                                            'key' : None
-                                                                                            }, 
-                                                                                        memoized_serialized_size = 56, )
-                                                                                    ], 
-                                                                                name_or_builder_list = [
-                                                                                    buybtcpay.models.name_part_or_builder.NamePartOrBuilder(
-                                                                                        is_extension = True, 
-                                                                                        name_part = '', 
-                                                                                        initialization_error_string = '', 
-                                                                                        initialized = True, )
-                                                                                    ], 
-                                                                                identifier_value_bytes = , 
-                                                                                positive_int_value = 56, 
-                                                                                negative_int_value = 56, 
-                                                                                aggregate_value = '', 
-                                                                                double_value = 1.337, 
-                                                                                initialized = True, 
-                                                                                name_count = 56, 
-                                                                                serialized_size = 56, 
-                                                                                string_value = , 
-                                                                                identifier_value = '', 
-                                                                                initialization_error_string = '', 
-                                                                                all_fields = {
-                                                                                    'key' : None
-                                                                                    }, 
-                                                                                memoized_serialized_size = 56, )
-                                                                            ], 
-                                                                        uninterpreted_option_or_builder_list = [
-                                                                            buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
-                                                                                positive_int_value = 56, 
-                                                                                negative_int_value = 56, 
-                                                                                aggregate_value = '', 
-                                                                                double_value = 1.337, 
-                                                                                name_count = 56, 
-                                                                                identifier_value = '', 
-                                                                                initialization_error_string = '', 
-                                                                                initialized = True, )
-                                                                            ], 
-                                                                        uninterpreted_option_count = 56, 
-                                                                        allow_alias = True, 
-                                                                        features = buybtcpay.models.feature_set.FeatureSet(
-                                                                            json_format = 'JSON_FORMAT_UNKNOWN', 
-                                                                            repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                                                            utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                                                            initialized = True, 
-                                                                            enum_type = 'ENUM_TYPE_UNKNOWN', 
-                                                                            serialized_size = 56, 
-                                                                            message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                                                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                                                            all_fields_raw = {
-                                                                                'key' : None
-                                                                                }, 
-                                                                            initialization_error_string = '', 
-                                                                            memoized_serialized_size = 56, ), 
-                                                                        initialized = True, 
-                                                                        serialized_size = 56, 
-                                                                        deprecated = True, 
-                                                                        all_fields = , 
-                                                                        all_fields_raw = {
-                                                                            'key' : None
-                                                                            }, 
-                                                                        initialization_error_string = '', 
-                                                                        memoized_serialized_size = 56, ), ), 
-                                                                name = '', 
-                                                                number = 56, 
-                                                                options = buybtcpay.models.enum_value_options.EnumValueOptions(
-                                                                    uninterpreted_option_count = 56, 
-                                                                    debug_redact = True, 
-                                                                    initialized = True, 
-                                                                    serialized_size = 56, 
-                                                                    deprecated = True, 
-                                                                    initialization_error_string = '', 
-                                                                    memoized_serialized_size = 56, ), )
-                                                            ], 
-                                                        closed = True, 
-                                                        name = '', 
-                                                        options = buybtcpay.models.enum_options.EnumOptions(
-                                                            deprecated_legacy_json_field_conflicts = True, 
-                                                            uninterpreted_option_count = 56, 
-                                                            allow_alias = True, 
-                                                            initialized = True, 
-                                                            serialized_size = 56, 
-                                                            deprecated = True, 
-                                                            initialization_error_string = '', 
-                                                            memoized_serialized_size = 56, ), )
-                                                    ], 
-                                                services = [
-                                                    buybtcpay.models.service_descriptor.ServiceDescriptor(
-                                                        index = 56, 
-                                                        full_name = '', 
-                                                        methods = [
-                                                            buybtcpay.models.method_descriptor.MethodDescriptor(
-                                                                index = 56, 
-                                                                full_name = '', 
-                                                                service = buybtcpay.models.service_descriptor.ServiceDescriptor(
-                                                                    index = 56, 
-                                                                    full_name = '', 
-                                                                    name = '', ), 
-                                                                output_type = , 
-                                                                client_streaming = True, 
-                                                                server_streaming = True, 
-                                                                name = '', )
-                                                            ], 
-                                                        name = '', )
-                                                    ], 
-                                                extensions = [
-                                                    buybtcpay.models.field_descriptor.FieldDescriptor(
-                                                        index = 56, 
-                                                        full_name = '', 
-                                                        json_name = '', 
-                                                        extension_scope = , 
-                                                        message_type = , 
-                                                        containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
-                                                            index = 56, 
-                                                            full_name = '', 
-                                                            field_count = 56, 
-                                                            name = '', 
-                                                            synthetic = True, ), 
-                                                        enum_type = , 
-                                                        default_value = buybtcpay.models.default_value.defaultValue(), 
-                                                        real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
-                                                            index = 56, 
-                                                            full_name = '', 
-                                                            field_count = 56, 
-                                                            name = '', 
-                                                            synthetic = True, ), 
-                                                        lite_java_type = 'INT', 
-                                                        packed = True, 
-                                                        packable = True, 
-                                                        java_type = 'INT', 
-                                                        name = '', 
-                                                        number = 56, 
-                                                        optional = True, 
-                                                        extension = True, 
-                                                        lite_type = 'DOUBLE', 
-                                                        repeated = True, 
-                                                        map_field = True, 
-                                                        required = True, )
-                                                    ], 
-                                                dependencies = [
-                                                    buybtcpay.models.file_descriptor.FileDescriptor(
-                                                        public_dependencies = [
-                                                            
-                                                            ], 
-                                                        syntax = 'UNKNOWN', 
-                                                        edition = 'EDITION_UNKNOWN', 
-                                                        edition_name = '', 
-                                                        name = '', 
-                                                        package = '', 
-                                                        full_name = '', )
-                                                    ], 
-                                                public_dependencies = [
-                                                    
-                                                    ], 
-                                                syntax = 'UNKNOWN', 
-                                                edition = 'EDITION_UNKNOWN', 
-                                                edition_name = '', 
-                                                name = '', 
-                                                package = '', 
-                                                full_name = '', 
-                                                options = buybtcpay.models.file_options.FileOptions(
-                                                    java_string_check_utf8 = True, 
-                                                    uninterpreted_option_count = 56, 
-                                                    java_package = '', 
-                                                    java_package_bytes = , 
-                                                    java_outer_classname = '', 
-                                                    java_outer_classname_bytes = , 
-                                                    java_multiple_files = True, 
-                                                    java_generate_equals_and_hash = True, 
-                                                    go_package = '', 
-                                                    go_package_bytes = , 
-                                                    cc_generic_services = True, 
-                                                    java_generic_services = True, 
-                                                    py_generic_services = True, 
-                                                    php_generic_services = True, 
-                                                    cc_enable_arenas = True, 
-                                                    objc_class_prefix = '', 
-                                                    objc_class_prefix_bytes = , 
-                                                    csharp_namespace = '', 
-                                                    csharp_namespace_bytes = , 
-                                                    swift_prefix = '', 
-                                                    swift_prefix_bytes = , 
-                                                    php_class_prefix = '', 
-                                                    php_class_prefix_bytes = , 
-                                                    php_namespace = '', 
-                                                    php_namespace_bytes = , 
-                                                    php_metadata_namespace = '', 
-                                                    php_metadata_namespace_bytes = , 
-                                                    ruby_package = '', 
-                                                    ruby_package_bytes = , 
-                                                    initialized = True, 
-                                                    serialized_size = 56, 
-                                                    deprecated = True, 
-                                                    optimize_for = 'SPEED', 
-                                                    initialization_error_string = '', 
-                                                    memoized_serialized_size = 56, ), ), 
-                                            containing_type = , 
-                                            nested_types = [
-                                                
-                                                ], 
-                                            enum_types = [
-                                                
-                                                ], 
-                                            fields = [
-                                                buybtcpay.models.field_descriptor.FieldDescriptor(
-                                                    index = 56, 
-                                                    full_name = '', 
-                                                    json_name = '', 
-                                                    default_value = buybtcpay.models.default_value.defaultValue(), 
-                                                    lite_java_type = 'INT', 
-                                                    packed = True, 
-                                                    packable = True, 
-                                                    java_type = 'INT', 
-                                                    name = '', 
-                                                    number = 56, 
-                                                    optional = True, 
-                                                    extension = True, 
-                                                    lite_type = 'DOUBLE', 
-                                                    repeated = True, 
-                                                    map_field = True, 
-                                                    required = True, )
-                                                ], 
-                                            extensions = [
-                                                
-                                                ], 
-                                            oneofs = [
-                                                
-                                                ], 
-                                            real_oneofs = [
-                                                
-                                                ], 
-                                            extendable = True, 
-                                            name = '', 
-                                            options = buybtcpay.models.message_options.MessageOptions(
-                                                map_entry = True, 
-                                                no_standard_descriptor_accessor = True, 
-                                                deprecated_legacy_json_field_conflicts = True, 
-                                                uninterpreted_option_count = 56, 
-                                                initialized = True, 
-                                                serialized_size = 56, 
-                                                deprecated = True, 
-                                                message_set_wire_format = True, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, ), ), 
-                                        all_fields = , 
-                                        initialized = True, ), 
-                                    uninterpreted_option_list = [
-                                        buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                            positive_int_value = 56, 
-                                            negative_int_value = 56, 
-                                            aggregate_value = '', 
-                                            double_value = 1.337, 
-                                            initialized = True, 
-                                            name_count = 56, 
-                                            serialized_size = 56, 
-                                            identifier_value = '', 
-                                            initialization_error_string = '', 
-                                            memoized_serialized_size = 56, )
-                                        ], 
-                                    uninterpreted_option_or_builder_list = [
-                                        buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
-                                            positive_int_value = 56, 
-                                            negative_int_value = 56, 
-                                            aggregate_value = '', 
-                                            double_value = 1.337, 
-                                            name_count = 56, 
-                                            identifier_value = '', 
-                                            initialization_error_string = '', 
-                                            initialized = True, )
-                                        ], 
-                                    uninterpreted_option_count = 56, 
-                                    ctype = 'STRING', 
-                                    jstype = 'JS_NORMAL', 
-                                    lazy = True, 
-                                    unverified_lazy = True, 
-                                    weak = True, 
-                                    debug_redact = True, 
-                                    targets_list = [
-                                        'TARGET_TYPE_UNKNOWN'
-                                        ], 
-                                    targets_count = 56, 
-                                    edition_defaults_list = [
-                                        buybtcpay.models.edition_default.EditionDefault(
-                                            edition = 'EDITION_UNKNOWN', 
-                                            value_bytes = , 
-                                            initialized = True, 
-                                            value = '', 
-                                            serialized_size = 56, 
-                                            initialization_error_string = '', 
-                                            memoized_serialized_size = 56, )
-                                        ], 
-                                    edition_defaults_count = 56, 
-                                    edition_defaults_or_builder_list = [
-                                        buybtcpay.models.edition_default_or_builder.EditionDefaultOrBuilder(
-                                            edition = 'EDITION_UNKNOWN', 
-                                            value = '', 
-                                            initialization_error_string = '', 
-                                            initialized = True, )
-                                        ], 
-                                    features = buybtcpay.models.feature_set.FeatureSet(
-                                        json_format = 'JSON_FORMAT_UNKNOWN', 
-                                        repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                        utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                        initialized = True, 
-                                        serialized_size = 56, 
-                                        message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, ), 
-                                    deprecated = True, 
-                                    retention = 'RETENTION_UNKNOWN', 
-                                    initialization_error_string = '', 
-                                    descriptor_for_type = , 
-                                    all_fields = , 
-                                    initialized = True, ), 
                                 json_name = '', 
                                 proto3_optional = True, 
                                 oneof_index = 56, 
                                 extendee = '', 
                                 extendee_bytes = , 
-                                json_name_bytes = , 
                                 default_value_bytes = , 
+                                json_name_bytes = , 
                                 type_name_bytes = , 
                                 name = '', 
                                 type_name = '', 
-                                type = 'TYPE_DOUBLE', 
                                 default_value = '', 
                                 number = 56, 
-                                options = buybtcpay.models.field_options.FieldOptions(
-                                    packed = True, 
-                                    uninterpreted_option_count = 56, 
-                                    ctype = 'STRING', 
-                                    jstype = 'JS_NORMAL', 
-                                    lazy = True, 
-                                    unverified_lazy = True, 
-                                    weak = True, 
-                                    debug_redact = True, 
-                                    targets_count = 56, 
-                                    edition_defaults_count = 56, 
-                                    initialized = True, 
-                                    serialized_size = 56, 
-                                    deprecated = True, 
-                                    retention = 'RETENTION_UNKNOWN', 
-                                    initialization_error_string = '', 
-                                    memoized_serialized_size = 56, ), 
                                 label = 'LABEL_OPTIONAL', 
                                 name_bytes = , 
                                 initialization_error_string = '', 
-                                descriptor_for_type = , 
-                                all_fields = , 
                                 initialized = True, )
                             ], 
                         extension_list = [
@@ -2490,8 +2351,18 @@ class TestMethodDescriptor(unittest.TestCase):
                             ], 
                         nested_type_list = [
                             buybtcpay.models.descriptor_proto.DescriptorProto(
+                                oneof_decl_count = 56, 
+                                nested_type_count = 56, 
+                                enum_type_count = 56, 
+                                extension_count = 56, 
+                                extension_range_count = 56, 
                                 nested_type_or_builder_list = [
                                     buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
+                                        oneof_decl_count = 56, 
+                                        nested_type_count = 56, 
+                                        enum_type_count = 56, 
+                                        extension_count = 56, 
+                                        extension_range_count = 56, 
                                         enum_type_list = [
                                             buybtcpay.models.enum_descriptor_proto.EnumDescriptorProto(
                                                 reserved_range_or_builder_list = [
@@ -2503,18 +2374,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     ], 
                                                 reserved_range_count = 56, 
                                                 reserved_name_count = 56, 
-                                                reserved_range_list = [
-                                                    buybtcpay.models.enum_reserved_range.EnumReservedRange(
-                                                        initialized = True, 
-                                                        start = 56, 
-                                                        end = 56, 
-                                                        serialized_size = 56, 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                reserved_name_list = [
-                                                    ''
-                                                    ], 
                                                 value_count = 56, 
                                                 value_list = [
                                                     buybtcpay.models.enum_value_descriptor_proto.EnumValueDescriptorProto(
@@ -2577,32 +2436,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                             ], 
                                         reserved_range_count = 56, 
                                         reserved_name_count = 56, 
-                                        reserved_range_list = [
-                                            buybtcpay.models.reserved_range.ReservedRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        reserved_name_list = [
-                                            ''
-                                            ], 
-                                        extension_range_list = [
-                                            buybtcpay.models.extension_range.ExtensionRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        oneof_decl_count = 56, 
-                                        nested_type_count = 56, 
-                                        enum_type_count = 56, 
-                                        extension_count = 56, 
-                                        extension_range_count = 56, 
                                         field_count = 56, 
                                         name = '', 
                                         field_list = [
@@ -2674,32 +2507,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                     ], 
                                 reserved_range_count = 56, 
                                 reserved_name_count = 56, 
-                                reserved_range_list = [
-                                    buybtcpay.models.reserved_range.ReservedRange(
-                                        initialized = True, 
-                                        start = 56, 
-                                        end = 56, 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                reserved_name_list = [
-                                    ''
-                                    ], 
-                                extension_range_list = [
-                                    buybtcpay.models.extension_range.ExtensionRange(
-                                        initialized = True, 
-                                        start = 56, 
-                                        end = 56, 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                oneof_decl_count = 56, 
-                                nested_type_count = 56, 
-                                enum_type_count = 56, 
-                                extension_count = 56, 
-                                extension_range_count = 56, 
                                 field_count = 56, 
                                 initialized = True, 
                                 name = '', 
@@ -2712,13 +2519,13 @@ class TestMethodDescriptor(unittest.TestCase):
                             ], 
                         nested_type_or_builder_list = [
                             buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
-                                reserved_range_count = 56, 
-                                reserved_name_count = 56, 
                                 oneof_decl_count = 56, 
                                 nested_type_count = 56, 
                                 enum_type_count = 56, 
                                 extension_count = 56, 
                                 extension_range_count = 56, 
+                                reserved_range_count = 56, 
+                                reserved_name_count = 56, 
                                 field_count = 56, 
                                 name = '', 
                                 initialization_error_string = '', 
@@ -2741,14 +2548,6 @@ class TestMethodDescriptor(unittest.TestCase):
                         reserved_range_or_builder_list = , 
                         reserved_range_count = 56, 
                         reserved_name_count = 56, 
-                        reserved_range_list = , 
-                        reserved_name_list = , 
-                        extension_range_list = , 
-                        oneof_decl_count = 56, 
-                        nested_type_count = 56, 
-                        enum_type_count = 56, 
-                        extension_count = 56, 
-                        extension_range_count = 56, 
                         field_count = 56, 
                         initialized = True, 
                         name = '', 
@@ -2804,208 +2603,201 @@ class TestMethodDescriptor(unittest.TestCase):
                                 serialized_size_as_message_set = 56, 
                                 initialized = True, 
                                 serialized_size = 56, ), ), 
-                        field_or_builder_list = [
-                            buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
-                                options_or_builder = buybtcpay.models.field_options_or_builder.FieldOptionsOrBuilder(
-                                    packed = True, 
-                                    features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
-                                        json_format = 'JSON_FORMAT_UNKNOWN', 
-                                        repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                        utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                        enum_type = 'ENUM_TYPE_UNKNOWN', 
-                                        message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                        initialization_error_string = '', 
-                                        descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
-                                            index = 56, 
-                                            full_name = '', 
-                                            file = buybtcpay.models.file_descriptor.FileDescriptor(
-                                                message_types = [
-                                                    
-                                                    ], 
-                                                enum_types = [
-                                                    buybtcpay.models.enum_descriptor.EnumDescriptor(
+                        reserved_range_list = [
+                            buybtcpay.models.reserved_range.ReservedRange(
+                                initialized = True, 
+                                start = 56, 
+                                end = 56, 
+                                serialized_size = 56, 
+                                initialization_error_string = '', 
+                                descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
+                                    index = 56, 
+                                    full_name = '', 
+                                    file = buybtcpay.models.file_descriptor.FileDescriptor(
+                                        message_types = [
+                                            
+                                            ], 
+                                        enum_types = [
+                                            buybtcpay.models.enum_descriptor.EnumDescriptor(
+                                                index = 56, 
+                                                full_name = '', 
+                                                containing_type = , 
+                                                values = [
+                                                    buybtcpay.models.enum_value_descriptor.EnumValueDescriptor(
                                                         index = 56, 
                                                         full_name = '', 
-                                                        containing_type = , 
-                                                        values = [
-                                                            buybtcpay.models.enum_value_descriptor.EnumValueDescriptor(
-                                                                index = 56, 
-                                                                full_name = '', 
-                                                                type = buybtcpay.models.enum_descriptor.EnumDescriptor(
-                                                                    index = 56, 
-                                                                    full_name = '', 
-                                                                    closed = True, 
-                                                                    name = '', 
-                                                                    options = buybtcpay.models.enum_options.EnumOptions(
-                                                                        deprecated_legacy_json_field_conflicts = True, 
-                                                                        uninterpreted_option_list = [
-                                                                            buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                                                                aggregate_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                        type = buybtcpay.models.enum_descriptor.EnumDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            closed = True, 
+                                                            name = '', 
+                                                            options = buybtcpay.models.enum_options.EnumOptions(
+                                                                deprecated_legacy_json_field_conflicts = True, 
+                                                                features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
+                                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                                                    repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
+                                                                    utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                                    enum_type = 'ENUM_TYPE_UNKNOWN', 
+                                                                    message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
+                                                                    initialization_error_string = '', 
+                                                                    all_fields = {
+                                                                        'key' : None
+                                                                        }, 
+                                                                    initialized = True, ), 
+                                                                uninterpreted_option_list = [
+                                                                    buybtcpay.models.uninterpreted_option.UninterpretedOption(
+                                                                        name_list = [
+                                                                            buybtcpay.models.name_part.NamePart(
+                                                                                name_part_bytes = buybtcpay.models.byte_string.ByteString(
                                                                                     empty = True, 
                                                                                     valid_utf8 = True, ), 
-                                                                                name_list = [
-                                                                                    buybtcpay.models.name_part.NamePart(
-                                                                                        is_extension = True, 
-                                                                                        name_part = '', 
-                                                                                        name_part_bytes = buybtcpay.models.byte_string.ByteString(
-                                                                                            empty = True, 
-                                                                                            valid_utf8 = True, ), 
-                                                                                        initialized = True, 
-                                                                                        serialized_size = 56, 
-                                                                                        initialization_error_string = '', 
-                                                                                        all_fields = {
-                                                                                            'key' : None
-                                                                                            }, 
-                                                                                        memoized_serialized_size = 56, )
-                                                                                    ], 
-                                                                                name_or_builder_list = [
-                                                                                    buybtcpay.models.name_part_or_builder.NamePartOrBuilder(
-                                                                                        is_extension = True, 
-                                                                                        name_part = '', 
-                                                                                        initialization_error_string = '', 
-                                                                                        initialized = True, )
-                                                                                    ], 
-                                                                                identifier_value_bytes = , 
-                                                                                positive_int_value = 56, 
-                                                                                negative_int_value = 56, 
-                                                                                aggregate_value = '', 
-                                                                                double_value = 1.337, 
+                                                                                is_extension = True, 
+                                                                                name_part = '', 
                                                                                 initialized = True, 
-                                                                                name_count = 56, 
                                                                                 serialized_size = 56, 
-                                                                                string_value = , 
-                                                                                identifier_value = '', 
                                                                                 initialization_error_string = '', 
-                                                                                all_fields = {
-                                                                                    'key' : None
-                                                                                    }, 
                                                                                 memoized_serialized_size = 56, )
                                                                             ], 
-                                                                        uninterpreted_option_or_builder_list = [
-                                                                            buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
-                                                                                positive_int_value = 56, 
-                                                                                negative_int_value = 56, 
-                                                                                aggregate_value = '', 
-                                                                                double_value = 1.337, 
-                                                                                name_count = 56, 
-                                                                                identifier_value = '', 
+                                                                        name_or_builder_list = [
+                                                                            buybtcpay.models.name_part_or_builder.NamePartOrBuilder(
+                                                                                is_extension = True, 
+                                                                                name_part = '', 
                                                                                 initialization_error_string = '', 
                                                                                 initialized = True, )
                                                                             ], 
-                                                                        uninterpreted_option_count = 56, 
-                                                                        allow_alias = True, 
-                                                                        features = buybtcpay.models.feature_set.FeatureSet(
-                                                                            json_format = 'JSON_FORMAT_UNKNOWN', 
-                                                                            repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                                                            utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
-                                                                            initialized = True, 
-                                                                            enum_type = 'ENUM_TYPE_UNKNOWN', 
-                                                                            serialized_size = 56, 
-                                                                            message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                                                            field_presence = 'FIELD_PRESENCE_UNKNOWN', 
-                                                                            all_fields_raw = {
-                                                                                'key' : None
-                                                                                }, 
-                                                                            initialization_error_string = '', 
-                                                                            memoized_serialized_size = 56, ), 
+                                                                        identifier_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                                            empty = True, 
+                                                                            valid_utf8 = True, ), 
+                                                                        positive_int_value = 56, 
+                                                                        negative_int_value = 56, 
+                                                                        aggregate_value = '', 
+                                                                        aggregate_value_bytes = , 
+                                                                        double_value = 1.337, 
                                                                         initialized = True, 
+                                                                        name_count = 56, 
                                                                         serialized_size = 56, 
-                                                                        deprecated = True, 
-                                                                        all_fields = , 
-                                                                        all_fields_raw = {
-                                                                            'key' : None
-                                                                            }, 
+                                                                        string_value = , 
+                                                                        identifier_value = '', 
                                                                         initialization_error_string = '', 
-                                                                        memoized_serialized_size = 56, ), ), 
-                                                                name = '', 
-                                                                number = 56, 
-                                                                options = buybtcpay.models.enum_value_options.EnumValueOptions(
-                                                                    uninterpreted_option_count = 56, 
-                                                                    debug_redact = True, 
+                                                                        memoized_serialized_size = 56, )
+                                                                    ], 
+                                                                uninterpreted_option_or_builder_list = [
+                                                                    buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
+                                                                        positive_int_value = 56, 
+                                                                        negative_int_value = 56, 
+                                                                        aggregate_value = '', 
+                                                                        double_value = 1.337, 
+                                                                        name_count = 56, 
+                                                                        identifier_value = '', 
+                                                                        initialization_error_string = '', 
+                                                                        initialized = True, )
+                                                                    ], 
+                                                                uninterpreted_option_count = 56, 
+                                                                allow_alias = True, 
+                                                                features = buybtcpay.models.feature_set.FeatureSet(
+                                                                    field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                                                    repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
+                                                                    utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                                    json_format = 'JSON_FORMAT_UNKNOWN', 
                                                                     initialized = True, 
+                                                                    enum_type = 'ENUM_TYPE_UNKNOWN', 
                                                                     serialized_size = 56, 
-                                                                    deprecated = True, 
+                                                                    message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
+                                                                    all_fields_raw = {
+                                                                        'key' : None
+                                                                        }, 
                                                                     initialization_error_string = '', 
-                                                                    memoized_serialized_size = 56, ), )
-                                                            ], 
-                                                        closed = True, 
+                                                                    memoized_serialized_size = 56, ), 
+                                                                initialized = True, 
+                                                                serialized_size = 56, 
+                                                                deprecated = True, 
+                                                                all_fields = {
+                                                                    'key' : None
+                                                                    }, 
+                                                                all_fields_raw = {
+                                                                    'key' : None
+                                                                    }, 
+                                                                initialization_error_string = '', 
+                                                                memoized_serialized_size = 56, ), ), 
                                                         name = '', 
-                                                        options = buybtcpay.models.enum_options.EnumOptions(
-                                                            deprecated_legacy_json_field_conflicts = True, 
+                                                        number = 56, 
+                                                        options = buybtcpay.models.enum_value_options.EnumValueOptions(
                                                             uninterpreted_option_count = 56, 
-                                                            allow_alias = True, 
+                                                            debug_redact = True, 
                                                             initialized = True, 
                                                             serialized_size = 56, 
                                                             deprecated = True, 
                                                             initialization_error_string = '', 
                                                             memoized_serialized_size = 56, ), )
                                                     ], 
-                                                services = [
-                                                    buybtcpay.models.service_descriptor.ServiceDescriptor(
+                                                closed = True, 
+                                                name = '', 
+                                                options = buybtcpay.models.enum_options.EnumOptions(
+                                                    deprecated_legacy_json_field_conflicts = True, 
+                                                    uninterpreted_option_count = 56, 
+                                                    allow_alias = True, 
+                                                    initialized = True, 
+                                                    serialized_size = 56, 
+                                                    deprecated = True, 
+                                                    initialization_error_string = '', 
+                                                    memoized_serialized_size = 56, ), )
+                                            ], 
+                                        services = [
+                                            buybtcpay.models.service_descriptor.ServiceDescriptor(
+                                                index = 56, 
+                                                full_name = '', 
+                                                methods = [
+                                                    buybtcpay.models.method_descriptor.MethodDescriptor(
                                                         index = 56, 
                                                         full_name = '', 
-                                                        methods = [
-                                                            buybtcpay.models.method_descriptor.MethodDescriptor(
-                                                                index = 56, 
-                                                                full_name = '', 
-                                                                service = buybtcpay.models.service_descriptor.ServiceDescriptor(
-                                                                    index = 56, 
-                                                                    full_name = '', 
-                                                                    name = '', ), 
-                                                                input_type = , 
-                                                                client_streaming = True, 
-                                                                server_streaming = True, 
-                                                                name = '', )
-                                                            ], 
+                                                        service = buybtcpay.models.service_descriptor.ServiceDescriptor(
+                                                            index = 56, 
+                                                            full_name = '', 
+                                                            name = '', ), 
+                                                        input_type = , 
+                                                        client_streaming = True, 
+                                                        server_streaming = True, 
                                                         name = '', )
                                                     ], 
-                                                extensions = [
-                                                    buybtcpay.models.field_descriptor.FieldDescriptor(
-                                                        index = 56, 
-                                                        full_name = '', 
-                                                        json_name = '', 
-                                                        extension_scope = , 
-                                                        message_type = , 
-                                                        containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
-                                                            index = 56, 
-                                                            full_name = '', 
-                                                            field_count = 56, 
-                                                            name = '', 
-                                                            synthetic = True, ), 
-                                                        enum_type = , 
-                                                        default_value = buybtcpay.models.default_value.defaultValue(), 
-                                                        real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
-                                                            index = 56, 
-                                                            full_name = '', 
-                                                            field_count = 56, 
-                                                            name = '', 
-                                                            synthetic = True, ), 
-                                                        lite_java_type = 'INT', 
-                                                        packed = True, 
-                                                        packable = True, 
-                                                        java_type = 'INT', 
-                                                        name = '', 
-                                                        number = 56, 
-                                                        optional = True, 
-                                                        extension = True, 
-                                                        lite_type = 'DOUBLE', 
-                                                        repeated = True, 
-                                                        map_field = True, 
-                                                        required = True, )
-                                                    ], 
-                                                dependencies = [
-                                                    buybtcpay.models.file_descriptor.FileDescriptor(
-                                                        public_dependencies = [
-                                                            
-                                                            ], 
-                                                        syntax = 'UNKNOWN', 
-                                                        edition = 'EDITION_UNKNOWN', 
-                                                        edition_name = '', 
-                                                        name = '', 
-                                                        package = '', 
-                                                        full_name = '', )
-                                                    ], 
+                                                name = '', )
+                                            ], 
+                                        extensions = [
+                                            buybtcpay.models.field_descriptor.FieldDescriptor(
+                                                index = 56, 
+                                                full_name = '', 
+                                                json_name = '', 
+                                                extension_scope = , 
+                                                message_type = , 
+                                                containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
+                                                    index = 56, 
+                                                    full_name = '', 
+                                                    field_count = 56, 
+                                                    name = '', 
+                                                    synthetic = True, ), 
+                                                enum_type = , 
+                                                default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                lite_java_type = 'INT', 
+                                                packed = True, 
+                                                packable = True, 
+                                                real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
+                                                    index = 56, 
+                                                    full_name = '', 
+                                                    field_count = 56, 
+                                                    name = '', 
+                                                    synthetic = True, ), 
+                                                java_type = 'INT', 
+                                                name = '', 
+                                                number = 56, 
+                                                optional = True, 
+                                                extension = True, 
+                                                lite_type = 'DOUBLE', 
+                                                repeated = True, 
+                                                map_field = True, 
+                                                required = True, )
+                                            ], 
+                                        dependencies = [
+                                            buybtcpay.models.file_descriptor.FileDescriptor(
                                                 public_dependencies = [
                                                     
                                                     ], 
@@ -3014,197 +2806,166 @@ class TestMethodDescriptor(unittest.TestCase):
                                                 edition_name = '', 
                                                 name = '', 
                                                 package = '', 
-                                                full_name = '', 
-                                                options = buybtcpay.models.file_options.FileOptions(
-                                                    java_string_check_utf8 = True, 
-                                                    uninterpreted_option_count = 56, 
-                                                    java_package = '', 
-                                                    java_package_bytes = , 
-                                                    java_outer_classname = '', 
-                                                    java_outer_classname_bytes = , 
-                                                    java_multiple_files = True, 
-                                                    java_generate_equals_and_hash = True, 
-                                                    go_package = '', 
-                                                    go_package_bytes = , 
-                                                    cc_generic_services = True, 
-                                                    java_generic_services = True, 
-                                                    py_generic_services = True, 
-                                                    php_generic_services = True, 
-                                                    cc_enable_arenas = True, 
-                                                    objc_class_prefix = '', 
-                                                    objc_class_prefix_bytes = , 
-                                                    csharp_namespace = '', 
-                                                    csharp_namespace_bytes = , 
-                                                    swift_prefix = '', 
-                                                    swift_prefix_bytes = , 
-                                                    php_class_prefix = '', 
-                                                    php_class_prefix_bytes = , 
-                                                    php_namespace = '', 
-                                                    php_namespace_bytes = , 
-                                                    php_metadata_namespace = '', 
-                                                    php_metadata_namespace_bytes = , 
-                                                    ruby_package = '', 
-                                                    ruby_package_bytes = , 
-                                                    initialized = True, 
-                                                    serialized_size = 56, 
-                                                    deprecated = True, 
-                                                    optimize_for = 'SPEED', 
-                                                    initialization_error_string = '', 
-                                                    memoized_serialized_size = 56, ), ), 
-                                            containing_type = , 
-                                            nested_types = [
-                                                
-                                                ], 
-                                            enum_types = [
-                                                
-                                                ], 
-                                            fields = [
-                                                buybtcpay.models.field_descriptor.FieldDescriptor(
-                                                    index = 56, 
-                                                    full_name = '', 
-                                                    json_name = '', 
-                                                    default_value = buybtcpay.models.default_value.defaultValue(), 
-                                                    lite_java_type = 'INT', 
-                                                    packed = True, 
-                                                    packable = True, 
-                                                    java_type = 'INT', 
-                                                    name = '', 
-                                                    number = 56, 
-                                                    optional = True, 
-                                                    extension = True, 
-                                                    lite_type = 'DOUBLE', 
-                                                    repeated = True, 
-                                                    map_field = True, 
-                                                    required = True, )
-                                                ], 
-                                            extensions = [
-                                                
-                                                ], 
-                                            oneofs = [
-                                                
-                                                ], 
-                                            real_oneofs = [
-                                                
-                                                ], 
-                                            extendable = True, 
+                                                full_name = '', )
+                                            ], 
+                                        public_dependencies = [
+                                            
+                                            ], 
+                                        syntax = 'UNKNOWN', 
+                                        edition = 'EDITION_UNKNOWN', 
+                                        edition_name = '', 
+                                        name = '', 
+                                        package = '', 
+                                        full_name = '', 
+                                        options = buybtcpay.models.file_options.FileOptions(
+                                            java_string_check_utf8 = True, 
+                                            uninterpreted_option_count = 56, 
+                                            java_package = '', 
+                                            java_package_bytes = , 
+                                            java_outer_classname = '', 
+                                            java_outer_classname_bytes = , 
+                                            java_multiple_files = True, 
+                                            java_generate_equals_and_hash = True, 
+                                            go_package = '', 
+                                            go_package_bytes = , 
+                                            cc_generic_services = True, 
+                                            java_generic_services = True, 
+                                            py_generic_services = True, 
+                                            php_generic_services = True, 
+                                            cc_enable_arenas = True, 
+                                            objc_class_prefix = '', 
+                                            objc_class_prefix_bytes = , 
+                                            csharp_namespace = '', 
+                                            csharp_namespace_bytes = , 
+                                            swift_prefix = '', 
+                                            swift_prefix_bytes = , 
+                                            php_class_prefix = '', 
+                                            php_class_prefix_bytes = , 
+                                            php_namespace = '', 
+                                            php_namespace_bytes = , 
+                                            php_metadata_namespace = '', 
+                                            php_metadata_namespace_bytes = , 
+                                            ruby_package = '', 
+                                            ruby_package_bytes = , 
+                                            initialized = True, 
+                                            serialized_size = 56, 
+                                            deprecated = True, 
+                                            optimize_for = 'SPEED', 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, ), ), 
+                                    containing_type = , 
+                                    nested_types = [
+                                        
+                                        ], 
+                                    enum_types = [
+                                        
+                                        ], 
+                                    fields = [
+                                        buybtcpay.models.field_descriptor.FieldDescriptor(
+                                            index = 56, 
+                                            full_name = '', 
+                                            json_name = '', 
+                                            default_value = buybtcpay.models.default_value.defaultValue(), 
+                                            lite_java_type = 'INT', 
+                                            packed = True, 
+                                            packable = True, 
+                                            java_type = 'INT', 
                                             name = '', 
-                                            options = buybtcpay.models.message_options.MessageOptions(
-                                                map_entry = True, 
-                                                no_standard_descriptor_accessor = True, 
-                                                deprecated_legacy_json_field_conflicts = True, 
-                                                uninterpreted_option_count = 56, 
-                                                initialized = True, 
-                                                serialized_size = 56, 
-                                                deprecated = True, 
-                                                message_set_wire_format = True, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, ), ), 
-                                        all_fields = , 
-                                        initialized = True, ), 
-                                    uninterpreted_option_list = [
-                                        buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                            positive_int_value = 56, 
-                                            negative_int_value = 56, 
-                                            aggregate_value = '', 
-                                            double_value = 1.337, 
-                                            initialized = True, 
-                                            name_count = 56, 
-                                            serialized_size = 56, 
-                                            identifier_value = '', 
-                                            initialization_error_string = '', 
-                                            memoized_serialized_size = 56, )
+                                            number = 56, 
+                                            optional = True, 
+                                            extension = True, 
+                                            lite_type = 'DOUBLE', 
+                                            repeated = True, 
+                                            map_field = True, 
+                                            required = True, )
                                         ], 
-                                    uninterpreted_option_or_builder_list = [
-                                        buybtcpay.models.uninterpreted_option_or_builder.UninterpretedOptionOrBuilder(
-                                            positive_int_value = 56, 
-                                            negative_int_value = 56, 
-                                            aggregate_value = '', 
-                                            double_value = 1.337, 
-                                            name_count = 56, 
-                                            identifier_value = '', 
-                                            initialization_error_string = '', 
-                                            initialized = True, )
+                                    extensions = [
+                                        
                                         ], 
-                                    uninterpreted_option_count = 56, 
-                                    ctype = 'STRING', 
-                                    jstype = 'JS_NORMAL', 
-                                    lazy = True, 
-                                    unverified_lazy = True, 
-                                    weak = True, 
-                                    debug_redact = True, 
-                                    targets_list = [
-                                        'TARGET_TYPE_UNKNOWN'
+                                    oneofs = [
+                                        
                                         ], 
-                                    targets_count = 56, 
-                                    edition_defaults_list = [
-                                        buybtcpay.models.edition_default.EditionDefault(
-                                            edition = 'EDITION_UNKNOWN', 
-                                            value_bytes = , 
-                                            initialized = True, 
-                                            value = '', 
-                                            serialized_size = 56, 
-                                            initialization_error_string = '', 
-                                            memoized_serialized_size = 56, )
+                                    real_oneofs = [
+                                        
                                         ], 
-                                    edition_defaults_count = 56, 
-                                    edition_defaults_or_builder_list = [
-                                        buybtcpay.models.edition_default_or_builder.EditionDefaultOrBuilder(
-                                            edition = 'EDITION_UNKNOWN', 
-                                            value = '', 
-                                            initialization_error_string = '', 
-                                            initialized = True, )
-                                        ], 
-                                    features = buybtcpay.models.feature_set.FeatureSet(
-                                        json_format = 'JSON_FORMAT_UNKNOWN', 
-                                        repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
-                                        utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                    extendable = True, 
+                                    name = '', 
+                                    options = buybtcpay.models.message_options.MessageOptions(
+                                        map_entry = True, 
+                                        no_standard_descriptor_accessor = True, 
+                                        deprecated_legacy_json_field_conflicts = True, 
+                                        uninterpreted_option_count = 56, 
                                         initialized = True, 
                                         serialized_size = 56, 
-                                        message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
+                                        deprecated = True, 
+                                        message_set_wire_format = True, 
                                         initialization_error_string = '', 
-                                        memoized_serialized_size = 56, ), 
-                                    deprecated = True, 
-                                    retention = 'RETENTION_UNKNOWN', 
+                                        memoized_serialized_size = 56, ), ), 
+                                all_fields = , 
+                                memoized_serialized_size = 56, )
+                            ], 
+                        reserved_name_list = [
+                            ''
+                            ], 
+                        extension_range_list = [
+                            buybtcpay.models.extension_range.ExtensionRange(
+                                options_or_builder = buybtcpay.models.extension_range_options_or_builder.ExtensionRangeOptionsOrBuilder(
+                                    uninterpreted_option_count = 56, 
+                                    declaration_list = [
+                                        buybtcpay.models.declaration.Declaration(
+                                            full_name_bytes = , 
+                                            type_bytes = , 
+                                            reserved = True, 
+                                            initialized = True, 
+                                            number = 56, 
+                                            full_name = '', 
+                                            serialized_size = 56, 
+                                            repeated = True, 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, )
+                                        ], 
+                                    declaration_count = 56, 
+                                    declaration_or_builder_list = [
+                                        buybtcpay.models.declaration_or_builder.DeclarationOrBuilder(
+                                            reserved = True, 
+                                            number = 56, 
+                                            full_name = '', 
+                                            repeated = True, 
+                                            initialization_error_string = '', 
+                                            initialized = True, )
+                                        ], 
+                                    verification = 'DECLARATION', 
                                     initialization_error_string = '', 
-                                    descriptor_for_type = , 
-                                    all_fields = , 
                                     initialized = True, ), 
+                                initialized = True, 
+                                start = 56, 
+                                end = 56, 
+                                serialized_size = 56, 
+                                initialization_error_string = '', 
+                                memoized_serialized_size = 56, )
+                            ], 
+                        oneof_decl_count = 56, 
+                        nested_type_count = 56, 
+                        enum_type_count = 56, 
+                        extension_count = 56, 
+                        extension_range_count = 56, 
+                        field_or_builder_list = [
+                            buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
                                 json_name = '', 
                                 proto3_optional = True, 
                                 oneof_index = 56, 
                                 extendee = '', 
                                 extendee_bytes = , 
-                                json_name_bytes = , 
                                 default_value_bytes = , 
+                                json_name_bytes = , 
                                 type_name_bytes = , 
                                 name = '', 
                                 type_name = '', 
-                                type = 'TYPE_DOUBLE', 
                                 default_value = '', 
                                 number = 56, 
-                                options = buybtcpay.models.field_options.FieldOptions(
-                                    packed = True, 
-                                    uninterpreted_option_count = 56, 
-                                    ctype = 'STRING', 
-                                    jstype = 'JS_NORMAL', 
-                                    lazy = True, 
-                                    unverified_lazy = True, 
-                                    weak = True, 
-                                    debug_redact = True, 
-                                    targets_count = 56, 
-                                    edition_defaults_count = 56, 
-                                    initialized = True, 
-                                    serialized_size = 56, 
-                                    deprecated = True, 
-                                    retention = 'RETENTION_UNKNOWN', 
-                                    initialization_error_string = '', 
-                                    memoized_serialized_size = 56, ), 
                                 label = 'LABEL_OPTIONAL', 
                                 name_bytes = , 
                                 initialization_error_string = '', 
-                                descriptor_for_type = , 
-                                all_fields = , 
                                 initialized = True, )
                             ], 
                         extension_list = [
@@ -3239,8 +3000,18 @@ class TestMethodDescriptor(unittest.TestCase):
                             ], 
                         nested_type_list = [
                             buybtcpay.models.descriptor_proto.DescriptorProto(
+                                oneof_decl_count = 56, 
+                                nested_type_count = 56, 
+                                enum_type_count = 56, 
+                                extension_count = 56, 
+                                extension_range_count = 56, 
                                 nested_type_or_builder_list = [
                                     buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
+                                        oneof_decl_count = 56, 
+                                        nested_type_count = 56, 
+                                        enum_type_count = 56, 
+                                        extension_count = 56, 
+                                        extension_range_count = 56, 
                                         enum_type_list = [
                                             buybtcpay.models.enum_descriptor_proto.EnumDescriptorProto(
                                                 reserved_range_or_builder_list = [
@@ -3252,18 +3023,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     ], 
                                                 reserved_range_count = 56, 
                                                 reserved_name_count = 56, 
-                                                reserved_range_list = [
-                                                    buybtcpay.models.enum_reserved_range.EnumReservedRange(
-                                                        initialized = True, 
-                                                        start = 56, 
-                                                        end = 56, 
-                                                        serialized_size = 56, 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                reserved_name_list = [
-                                                    ''
-                                                    ], 
                                                 value_count = 56, 
                                                 value_list = [
                                                     buybtcpay.models.enum_value_descriptor_proto.EnumValueDescriptorProto(
@@ -3326,32 +3085,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                             ], 
                                         reserved_range_count = 56, 
                                         reserved_name_count = 56, 
-                                        reserved_range_list = [
-                                            buybtcpay.models.reserved_range.ReservedRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        reserved_name_list = [
-                                            ''
-                                            ], 
-                                        extension_range_list = [
-                                            buybtcpay.models.extension_range.ExtensionRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        oneof_decl_count = 56, 
-                                        nested_type_count = 56, 
-                                        enum_type_count = 56, 
-                                        extension_count = 56, 
-                                        extension_range_count = 56, 
                                         field_count = 56, 
                                         name = '', 
                                         field_list = [
@@ -3423,32 +3156,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                     ], 
                                 reserved_range_count = 56, 
                                 reserved_name_count = 56, 
-                                reserved_range_list = [
-                                    buybtcpay.models.reserved_range.ReservedRange(
-                                        initialized = True, 
-                                        start = 56, 
-                                        end = 56, 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                reserved_name_list = [
-                                    ''
-                                    ], 
-                                extension_range_list = [
-                                    buybtcpay.models.extension_range.ExtensionRange(
-                                        initialized = True, 
-                                        start = 56, 
-                                        end = 56, 
-                                        serialized_size = 56, 
-                                        initialization_error_string = '', 
-                                        memoized_serialized_size = 56, )
-                                    ], 
-                                oneof_decl_count = 56, 
-                                nested_type_count = 56, 
-                                enum_type_count = 56, 
-                                extension_count = 56, 
-                                extension_range_count = 56, 
                                 field_count = 56, 
                                 initialized = True, 
                                 name = '', 
@@ -3461,13 +3168,13 @@ class TestMethodDescriptor(unittest.TestCase):
                             ], 
                         nested_type_or_builder_list = [
                             buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
-                                reserved_range_count = 56, 
-                                reserved_name_count = 56, 
                                 oneof_decl_count = 56, 
                                 nested_type_count = 56, 
                                 enum_type_count = 56, 
                                 extension_count = 56, 
                                 extension_range_count = 56, 
+                                reserved_range_count = 56, 
+                                reserved_name_count = 56, 
                                 field_count = 56, 
                                 name = '', 
                                 initialization_error_string = '', 
@@ -3490,14 +3197,6 @@ class TestMethodDescriptor(unittest.TestCase):
                         reserved_range_or_builder_list = , 
                         reserved_range_count = 56, 
                         reserved_name_count = 56, 
-                        reserved_range_list = , 
-                        reserved_name_list = , 
-                        extension_range_list = , 
-                        oneof_decl_count = 56, 
-                        nested_type_count = 56, 
-                        enum_type_count = 56, 
-                        extension_count = 56, 
-                        extension_range_count = 56, 
                         field_count = 56, 
                         initialized = True, 
                         name = '', 
@@ -3555,38 +3254,46 @@ class TestMethodDescriptor(unittest.TestCase):
                             initialized = True, 
                             serialized_size = 56, ), ), 
                     features_or_builder = buybtcpay.models.feature_set_or_builder.FeatureSetOrBuilder(
-                        json_format = 'JSON_FORMAT_UNKNOWN', 
+                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                         repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                         utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                        json_format = 'JSON_FORMAT_UNKNOWN', 
                         enum_type = 'ENUM_TYPE_UNKNOWN', 
                         message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                         initialization_error_string = '', 
                         descriptor_for_type = buybtcpay.models.descriptor.Descriptor(
                             index = 56, 
                             proto = buybtcpay.models.descriptor_proto.DescriptorProto(
-                                field_or_builder_list = [
-                                    buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
-                                        options_or_builder = buybtcpay.models.field_options_or_builder.FieldOptionsOrBuilder(
-                                            packed = True, 
+                                reserved_range_list = [
+                                    buybtcpay.models.reserved_range.ReservedRange(
+                                        initialized = True, 
+                                        start = 56, 
+                                        end = 56, 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        all_fields = {
+                                            'key' : None
+                                            }, 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                reserved_name_list = [
+                                    ''
+                                    ], 
+                                extension_range_list = [
+                                    buybtcpay.models.extension_range.ExtensionRange(
+                                        options_or_builder = buybtcpay.models.extension_range_options_or_builder.ExtensionRangeOptionsOrBuilder(
                                             uninterpreted_option_list = [
                                                 buybtcpay.models.uninterpreted_option.UninterpretedOption(
-                                                    aggregate_value_bytes = buybtcpay.models.byte_string.ByteString(
-                                                        empty = True, 
-                                                        valid_utf8 = True, ), 
                                                     name_list = [
                                                         buybtcpay.models.name_part.NamePart(
-                                                            is_extension = True, 
-                                                            name_part = '', 
                                                             name_part_bytes = buybtcpay.models.byte_string.ByteString(
                                                                 empty = True, 
                                                                 valid_utf8 = True, ), 
+                                                            is_extension = True, 
+                                                            name_part = '', 
                                                             initialized = True, 
                                                             serialized_size = 56, 
                                                             initialization_error_string = '', 
-                                                            all_fields = {
-                                                                'key' : None
-                                                                }, 
                                                             memoized_serialized_size = 56, )
                                                         ], 
                                                     name_or_builder_list = [
@@ -3596,10 +3303,13 @@ class TestMethodDescriptor(unittest.TestCase):
                                                             initialization_error_string = '', 
                                                             initialized = True, )
                                                         ], 
-                                                    identifier_value_bytes = , 
+                                                    identifier_value_bytes = buybtcpay.models.byte_string.ByteString(
+                                                        empty = True, 
+                                                        valid_utf8 = True, ), 
                                                     positive_int_value = 56, 
                                                     negative_int_value = 56, 
                                                     aggregate_value = '', 
+                                                    aggregate_value_bytes = , 
                                                     double_value = 1.337, 
                                                     initialized = True, 
                                                     name_count = 56, 
@@ -3607,9 +3317,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     string_value = , 
                                                     identifier_value = '', 
                                                     initialization_error_string = '', 
-                                                    all_fields = {
-                                                        'key' : None
-                                                        }, 
                                                     memoized_serialized_size = 56, )
                                                 ], 
                                             uninterpreted_option_or_builder_list = [
@@ -3624,87 +3331,86 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     initialized = True, )
                                                 ], 
                                             uninterpreted_option_count = 56, 
-                                            ctype = 'STRING', 
-                                            jstype = 'JS_NORMAL', 
-                                            lazy = True, 
-                                            unverified_lazy = True, 
-                                            weak = True, 
-                                            debug_redact = True, 
-                                            targets_list = [
-                                                'TARGET_TYPE_UNKNOWN'
-                                                ], 
-                                            targets_count = 56, 
-                                            edition_defaults_list = [
-                                                buybtcpay.models.edition_default.EditionDefault(
-                                                    edition = 'EDITION_UNKNOWN', 
-                                                    value_bytes = , 
+                                            declaration_list = [
+                                                buybtcpay.models.declaration.Declaration(
+                                                    full_name_bytes = , 
+                                                    type_bytes = , 
+                                                    reserved = True, 
                                                     initialized = True, 
-                                                    value = '', 
+                                                    type = '', 
+                                                    number = 56, 
+                                                    full_name = '', 
                                                     serialized_size = 56, 
+                                                    repeated = True, 
                                                     initialization_error_string = '', 
                                                     memoized_serialized_size = 56, )
                                                 ], 
-                                            edition_defaults_count = 56, 
-                                            edition_defaults_or_builder_list = [
-                                                buybtcpay.models.edition_default_or_builder.EditionDefaultOrBuilder(
-                                                    edition = 'EDITION_UNKNOWN', 
-                                                    value = '', 
+                                            declaration_count = 56, 
+                                            declaration_or_builder_list = [
+                                                buybtcpay.models.declaration_or_builder.DeclarationOrBuilder(
+                                                    reserved = True, 
+                                                    type = '', 
+                                                    number = 56, 
+                                                    full_name = '', 
+                                                    repeated = True, 
                                                     initialization_error_string = '', 
                                                     initialized = True, )
                                                 ], 
                                             features = buybtcpay.models.feature_set.FeatureSet(
-                                                json_format = 'JSON_FORMAT_UNKNOWN', 
+                                                field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                                 repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                                                 utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                                                json_format = 'JSON_FORMAT_UNKNOWN', 
                                                 initialized = True, 
                                                 enum_type = 'ENUM_TYPE_UNKNOWN', 
                                                 serialized_size = 56, 
                                                 message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                                                field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                                                 all_fields_raw = {
                                                     'key' : None
                                                     }, 
                                                 initialization_error_string = '', 
                                                 memoized_serialized_size = 56, ), 
-                                            deprecated = True, 
-                                            retention = 'RETENTION_UNKNOWN', 
+                                            verification = 'DECLARATION', 
                                             initialization_error_string = '', 
-                                            all_fields = , 
                                             initialized = True, ), 
+                                        initialized = True, 
+                                        options = buybtcpay.models.extension_range_options.ExtensionRangeOptions(
+                                            uninterpreted_option_count = 56, 
+                                            declaration_count = 56, 
+                                            initialized = True, 
+                                            verification = 'DECLARATION', 
+                                            serialized_size = 56, 
+                                            initialization_error_string = '', 
+                                            memoized_serialized_size = 56, ), 
+                                        start = 56, 
+                                        end = 56, 
+                                        serialized_size = 56, 
+                                        initialization_error_string = '', 
+                                        memoized_serialized_size = 56, )
+                                    ], 
+                                oneof_decl_count = 56, 
+                                nested_type_count = 56, 
+                                enum_type_count = 56, 
+                                extension_count = 56, 
+                                extension_range_count = 56, 
+                                field_or_builder_list = [
+                                    buybtcpay.models.field_descriptor_proto_or_builder.FieldDescriptorProtoOrBuilder(
                                         json_name = '', 
                                         proto3_optional = True, 
                                         oneof_index = 56, 
                                         extendee = '', 
                                         extendee_bytes = , 
-                                        json_name_bytes = , 
                                         default_value_bytes = , 
+                                        json_name_bytes = , 
                                         type_name_bytes = , 
                                         name = '', 
                                         type_name = '', 
                                         type = 'TYPE_DOUBLE', 
                                         default_value = '', 
                                         number = 56, 
-                                        options = buybtcpay.models.field_options.FieldOptions(
-                                            packed = True, 
-                                            uninterpreted_option_count = 56, 
-                                            ctype = 'STRING', 
-                                            jstype = 'JS_NORMAL', 
-                                            lazy = True, 
-                                            unverified_lazy = True, 
-                                            weak = True, 
-                                            debug_redact = True, 
-                                            targets_count = 56, 
-                                            edition_defaults_count = 56, 
-                                            initialized = True, 
-                                            serialized_size = 56, 
-                                            deprecated = True, 
-                                            retention = 'RETENTION_UNKNOWN', 
-                                            initialization_error_string = '', 
-                                            memoized_serialized_size = 56, ), 
                                         label = 'LABEL_OPTIONAL', 
                                         name_bytes = , 
                                         initialization_error_string = '', 
-                                        all_fields = , 
                                         initialized = True, )
                                     ], 
                                 extension_list = [
@@ -3741,8 +3447,18 @@ class TestMethodDescriptor(unittest.TestCase):
                                     ], 
                                 nested_type_list = [
                                     buybtcpay.models.descriptor_proto.DescriptorProto(
+                                        oneof_decl_count = 56, 
+                                        nested_type_count = 56, 
+                                        enum_type_count = 56, 
+                                        extension_count = 56, 
+                                        extension_range_count = 56, 
                                         nested_type_or_builder_list = [
                                             buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
+                                                oneof_decl_count = 56, 
+                                                nested_type_count = 56, 
+                                                enum_type_count = 56, 
+                                                extension_count = 56, 
+                                                extension_range_count = 56, 
                                                 enum_type_list = [
                                                     buybtcpay.models.enum_descriptor_proto.EnumDescriptorProto(
                                                         reserved_range_or_builder_list = [
@@ -3754,18 +3470,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                             ], 
                                                         reserved_range_count = 56, 
                                                         reserved_name_count = 56, 
-                                                        reserved_range_list = [
-                                                            buybtcpay.models.enum_reserved_range.EnumReservedRange(
-                                                                initialized = True, 
-                                                                start = 56, 
-                                                                end = 56, 
-                                                                serialized_size = 56, 
-                                                                initialization_error_string = '', 
-                                                                memoized_serialized_size = 56, )
-                                                            ], 
-                                                        reserved_name_list = [
-                                                            ''
-                                                            ], 
                                                         value_count = 56, 
                                                         value_list = [
                                                             buybtcpay.models.enum_value_descriptor_proto.EnumValueDescriptorProto(
@@ -3828,32 +3532,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     ], 
                                                 reserved_range_count = 56, 
                                                 reserved_name_count = 56, 
-                                                reserved_range_list = [
-                                                    buybtcpay.models.reserved_range.ReservedRange(
-                                                        initialized = True, 
-                                                        start = 56, 
-                                                        end = 56, 
-                                                        serialized_size = 56, 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                reserved_name_list = [
-                                                    ''
-                                                    ], 
-                                                extension_range_list = [
-                                                    buybtcpay.models.extension_range.ExtensionRange(
-                                                        initialized = True, 
-                                                        start = 56, 
-                                                        end = 56, 
-                                                        serialized_size = 56, 
-                                                        initialization_error_string = '', 
-                                                        memoized_serialized_size = 56, )
-                                                    ], 
-                                                oneof_decl_count = 56, 
-                                                nested_type_count = 56, 
-                                                enum_type_count = 56, 
-                                                extension_count = 56, 
-                                                extension_range_count = 56, 
                                                 field_count = 56, 
                                                 name = '', 
                                                 field_list = [
@@ -3926,32 +3604,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                             ], 
                                         reserved_range_count = 56, 
                                         reserved_name_count = 56, 
-                                        reserved_range_list = [
-                                            buybtcpay.models.reserved_range.ReservedRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        reserved_name_list = [
-                                            ''
-                                            ], 
-                                        extension_range_list = [
-                                            buybtcpay.models.extension_range.ExtensionRange(
-                                                initialized = True, 
-                                                start = 56, 
-                                                end = 56, 
-                                                serialized_size = 56, 
-                                                initialization_error_string = '', 
-                                                memoized_serialized_size = 56, )
-                                            ], 
-                                        oneof_decl_count = 56, 
-                                        nested_type_count = 56, 
-                                        enum_type_count = 56, 
-                                        extension_count = 56, 
-                                        extension_range_count = 56, 
                                         field_count = 56, 
                                         initialized = True, 
                                         name = '', 
@@ -3964,13 +3616,13 @@ class TestMethodDescriptor(unittest.TestCase):
                                     ], 
                                 nested_type_or_builder_list = [
                                     buybtcpay.models.descriptor_proto_or_builder.DescriptorProtoOrBuilder(
-                                        reserved_range_count = 56, 
-                                        reserved_name_count = 56, 
                                         oneof_decl_count = 56, 
                                         nested_type_count = 56, 
                                         enum_type_count = 56, 
                                         extension_count = 56, 
                                         extension_range_count = 56, 
+                                        reserved_range_count = 56, 
+                                        reserved_name_count = 56, 
                                         field_count = 56, 
                                         name = '', 
                                         initialization_error_string = '', 
@@ -3993,14 +3645,6 @@ class TestMethodDescriptor(unittest.TestCase):
                                 reserved_range_or_builder_list = , 
                                 reserved_range_count = 56, 
                                 reserved_name_count = 56, 
-                                reserved_range_list = , 
-                                reserved_name_list = , 
-                                extension_range_list = , 
-                                oneof_decl_count = 56, 
-                                nested_type_count = 56, 
-                                enum_type_count = 56, 
-                                extension_count = 56, 
-                                extension_range_count = 56, 
                                 field_count = 56, 
                                 initialized = True, 
                                 name = '', 
@@ -4019,7 +3663,9 @@ class TestMethodDescriptor(unittest.TestCase):
                                 serialized_size = 56, 
                                 name_bytes = , 
                                 initialization_error_string = '', 
-                                all_fields = , 
+                                all_fields = {
+                                    'key' : None
+                                    }, 
                                 memoized_serialized_size = 56, ), 
                             full_name = '', 
                             file = buybtcpay.models.file_descriptor.FileDescriptor(
@@ -4065,15 +3711,15 @@ class TestMethodDescriptor(unittest.TestCase):
                                                     synthetic = True, ), 
                                                 enum_type = , 
                                                 default_value = buybtcpay.models.default_value.defaultValue(), 
+                                                lite_java_type = 'INT', 
+                                                packed = True, 
+                                                packable = True, 
                                                 real_containing_oneof = buybtcpay.models.oneof_descriptor.OneofDescriptor(
                                                     index = 56, 
                                                     full_name = '', 
                                                     field_count = 56, 
                                                     name = '', 
                                                     synthetic = True, ), 
-                                                lite_java_type = 'INT', 
-                                                packed = True, 
-                                                packable = True, 
                                                 java_type = 'INT', 
                                                 name = '', 
                                                 number = 56, 
@@ -4216,13 +3862,13 @@ class TestMethodDescriptor(unittest.TestCase):
                     uninterpreted_option_count = 56, 
                     idempotency_level = 'IDEMPOTENCY_UNKNOWN', 
                     features = buybtcpay.models.feature_set.FeatureSet(
-                        json_format = 'JSON_FORMAT_UNKNOWN', 
+                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                         repeated_field_encoding = 'REPEATED_FIELD_ENCODING_UNKNOWN', 
                         utf8_validation = 'UTF8_VALIDATION_UNKNOWN', 
+                        json_format = 'JSON_FORMAT_UNKNOWN', 
                         initialized = True, 
                         serialized_size = 56, 
                         message_encoding = 'MESSAGE_ENCODING_UNKNOWN', 
-                        field_presence = 'FIELD_PRESENCE_UNKNOWN', 
                         initialization_error_string = '', 
                         memoized_serialized_size = 56, ), 
                     initialized = True, 

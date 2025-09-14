@@ -29,12 +29,12 @@ class EnumDescriptorProto(BaseModel):
     EnumDescriptorProto
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
+    reserved_range_list: Optional[List[EnumReservedRange]] = Field(default=None, alias="reservedRangeList")
+    reserved_name_list: Optional[List[str]] = Field(default=None, alias="reservedNameList")
     options_or_builder: Optional[EnumOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
     reserved_range_or_builder_list: Optional[List[EnumReservedRangeOrBuilder]] = Field(default=None, alias="reservedRangeOrBuilderList")
     reserved_range_count: Optional[StrictInt] = Field(default=None, alias="reservedRangeCount")
     reserved_name_count: Optional[StrictInt] = Field(default=None, alias="reservedNameCount")
-    reserved_range_list: Optional[List[EnumReservedRange]] = Field(default=None, alias="reservedRangeList")
-    reserved_name_list: Optional[List[str]] = Field(default=None, alias="reservedNameList")
     value_count: Optional[StrictInt] = Field(default=None, alias="valueCount")
     value_list: Optional[List[EnumValueDescriptorProto]] = Field(default=None, alias="valueList")
     value_or_builder_list: Optional[List[EnumValueDescriptorProtoOrBuilder]] = Field(default=None, alias="valueOrBuilderList")
@@ -49,7 +49,7 @@ class EnumDescriptorProto(BaseModel):
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "optionsOrBuilder", "reservedRangeOrBuilderList", "reservedRangeCount", "reservedNameCount", "reservedRangeList", "reservedNameList", "valueCount", "valueList", "valueOrBuilderList", "initialized", "name", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "reservedRangeList", "reservedNameList", "optionsOrBuilder", "reservedRangeOrBuilderList", "reservedRangeCount", "reservedNameCount", "valueCount", "valueList", "valueOrBuilderList", "initialized", "name", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +93,13 @@ class EnumDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in reserved_range_list (list)
+        _items = []
+        if self.reserved_range_list:
+            for _item_reserved_range_list in self.reserved_range_list:
+                if _item_reserved_range_list:
+                    _items.append(_item_reserved_range_list.to_dict())
+            _dict['reservedRangeList'] = _items
         # override the default output from pydantic by calling `to_dict()` of options_or_builder
         if self.options_or_builder:
             _dict['optionsOrBuilder'] = self.options_or_builder.to_dict()
@@ -103,13 +110,6 @@ class EnumDescriptorProto(BaseModel):
                 if _item_reserved_range_or_builder_list:
                     _items.append(_item_reserved_range_or_builder_list.to_dict())
             _dict['reservedRangeOrBuilderList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in reserved_range_list (list)
-        _items = []
-        if self.reserved_range_list:
-            for _item_reserved_range_list in self.reserved_range_list:
-                if _item_reserved_range_list:
-                    _items.append(_item_reserved_range_list.to_dict())
-            _dict['reservedRangeList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in value_list (list)
         _items = []
         if self.value_list:
@@ -149,11 +149,11 @@ class EnumDescriptorProto(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
+            "reservedRangeList": [EnumReservedRange.from_dict(_item) for _item in obj["reservedRangeList"]] if obj.get("reservedRangeList") is not None else None,
             "optionsOrBuilder": EnumOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
             "reservedRangeOrBuilderList": [EnumReservedRangeOrBuilder.from_dict(_item) for _item in obj["reservedRangeOrBuilderList"]] if obj.get("reservedRangeOrBuilderList") is not None else None,
             "reservedRangeCount": obj.get("reservedRangeCount"),
             "reservedNameCount": obj.get("reservedNameCount"),
-            "reservedRangeList": [EnumReservedRange.from_dict(_item) for _item in obj["reservedRangeList"]] if obj.get("reservedRangeList") is not None else None,
             "valueCount": obj.get("valueCount"),
             "valueList": [EnumValueDescriptorProto.from_dict(_item) for _item in obj["valueList"]] if obj.get("valueList") is not None else None,
             "valueOrBuilderList": [EnumValueDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["valueOrBuilderList"]] if obj.get("valueOrBuilderList") is not None else None,

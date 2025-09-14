@@ -28,6 +28,14 @@ class DescriptorProtoOrBuilder(BaseModel):
     """
     DescriptorProtoOrBuilder
     """ # noqa: E501
+    reserved_range_list: Optional[List[ReservedRange]] = Field(default=None, alias="reservedRangeList")
+    reserved_name_list: Optional[List[StrictStr]] = Field(default=None, alias="reservedNameList")
+    extension_range_list: Optional[List[ExtensionRange]] = Field(default=None, alias="extensionRangeList")
+    oneof_decl_count: Optional[StrictInt] = Field(default=None, alias="oneofDeclCount")
+    nested_type_count: Optional[StrictInt] = Field(default=None, alias="nestedTypeCount")
+    enum_type_count: Optional[StrictInt] = Field(default=None, alias="enumTypeCount")
+    extension_count: Optional[StrictInt] = Field(default=None, alias="extensionCount")
+    extension_range_count: Optional[StrictInt] = Field(default=None, alias="extensionRangeCount")
     field_or_builder_list: Optional[List[FieldDescriptorProtoOrBuilder]] = Field(default=None, alias="fieldOrBuilderList")
     extension_list: Optional[List[FieldDescriptorProto]] = Field(default=None, alias="extensionList")
     extension_or_builder_list: Optional[List[FieldDescriptorProtoOrBuilder]] = Field(default=None, alias="extensionOrBuilderList")
@@ -41,14 +49,6 @@ class DescriptorProtoOrBuilder(BaseModel):
     reserved_range_or_builder_list: Optional[List[ReservedRangeOrBuilder]] = Field(default=None, alias="reservedRangeOrBuilderList")
     reserved_range_count: Optional[StrictInt] = Field(default=None, alias="reservedRangeCount")
     reserved_name_count: Optional[StrictInt] = Field(default=None, alias="reservedNameCount")
-    reserved_range_list: Optional[List[ReservedRange]] = Field(default=None, alias="reservedRangeList")
-    reserved_name_list: Optional[List[StrictStr]] = Field(default=None, alias="reservedNameList")
-    extension_range_list: Optional[List[ExtensionRange]] = Field(default=None, alias="extensionRangeList")
-    oneof_decl_count: Optional[StrictInt] = Field(default=None, alias="oneofDeclCount")
-    nested_type_count: Optional[StrictInt] = Field(default=None, alias="nestedTypeCount")
-    enum_type_count: Optional[StrictInt] = Field(default=None, alias="enumTypeCount")
-    extension_count: Optional[StrictInt] = Field(default=None, alias="extensionCount")
-    extension_range_count: Optional[StrictInt] = Field(default=None, alias="extensionRangeCount")
     field_count: Optional[StrictInt] = Field(default=None, alias="fieldCount")
     name: Optional[StrictStr] = None
     options: Optional[MessageOptions] = None
@@ -60,7 +60,7 @@ class DescriptorProtoOrBuilder(BaseModel):
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["fieldOrBuilderList", "extensionList", "extensionOrBuilderList", "nestedTypeList", "enumTypeList", "enumTypeOrBuilderList", "extensionRangeOrBuilderList", "oneofDeclList", "oneofDeclOrBuilderList", "optionsOrBuilder", "reservedRangeOrBuilderList", "reservedRangeCount", "reservedNameCount", "reservedRangeList", "reservedNameList", "extensionRangeList", "oneofDeclCount", "nestedTypeCount", "enumTypeCount", "extensionCount", "extensionRangeCount", "fieldCount", "name", "options", "fieldList", "nameBytes", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["reservedRangeList", "reservedNameList", "extensionRangeList", "oneofDeclCount", "nestedTypeCount", "enumTypeCount", "extensionCount", "extensionRangeCount", "fieldOrBuilderList", "extensionList", "extensionOrBuilderList", "nestedTypeList", "enumTypeList", "enumTypeOrBuilderList", "extensionRangeOrBuilderList", "oneofDeclList", "oneofDeclOrBuilderList", "optionsOrBuilder", "reservedRangeOrBuilderList", "reservedRangeCount", "reservedNameCount", "fieldCount", "name", "options", "fieldList", "nameBytes", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,6 +101,20 @@ class DescriptorProtoOrBuilder(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in reserved_range_list (list)
+        _items = []
+        if self.reserved_range_list:
+            for _item_reserved_range_list in self.reserved_range_list:
+                if _item_reserved_range_list:
+                    _items.append(_item_reserved_range_list.to_dict())
+            _dict['reservedRangeList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in extension_range_list (list)
+        _items = []
+        if self.extension_range_list:
+            for _item_extension_range_list in self.extension_range_list:
+                if _item_extension_range_list:
+                    _items.append(_item_extension_range_list.to_dict())
+            _dict['extensionRangeList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in field_or_builder_list (list)
         _items = []
         if self.field_or_builder_list:
@@ -174,20 +188,6 @@ class DescriptorProtoOrBuilder(BaseModel):
                 if _item_reserved_range_or_builder_list:
                     _items.append(_item_reserved_range_or_builder_list.to_dict())
             _dict['reservedRangeOrBuilderList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in reserved_range_list (list)
-        _items = []
-        if self.reserved_range_list:
-            for _item_reserved_range_list in self.reserved_range_list:
-                if _item_reserved_range_list:
-                    _items.append(_item_reserved_range_list.to_dict())
-            _dict['reservedRangeList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in extension_range_list (list)
-        _items = []
-        if self.extension_range_list:
-            for _item_extension_range_list in self.extension_range_list:
-                if _item_extension_range_list:
-                    _items.append(_item_extension_range_list.to_dict())
-            _dict['extensionRangeList'] = _items
         # override the default output from pydantic by calling `to_dict()` of options
         if self.options:
             _dict['options'] = self.options.to_dict()
@@ -222,6 +222,14 @@ class DescriptorProtoOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "reservedRangeList": [ReservedRange.from_dict(_item) for _item in obj["reservedRangeList"]] if obj.get("reservedRangeList") is not None else None,
+            "reservedNameList": obj.get("reservedNameList"),
+            "extensionRangeList": [ExtensionRange.from_dict(_item) for _item in obj["extensionRangeList"]] if obj.get("extensionRangeList") is not None else None,
+            "oneofDeclCount": obj.get("oneofDeclCount"),
+            "nestedTypeCount": obj.get("nestedTypeCount"),
+            "enumTypeCount": obj.get("enumTypeCount"),
+            "extensionCount": obj.get("extensionCount"),
+            "extensionRangeCount": obj.get("extensionRangeCount"),
             "fieldOrBuilderList": [FieldDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["fieldOrBuilderList"]] if obj.get("fieldOrBuilderList") is not None else None,
             "extensionList": [FieldDescriptorProto.from_dict(_item) for _item in obj["extensionList"]] if obj.get("extensionList") is not None else None,
             "extensionOrBuilderList": [FieldDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["extensionOrBuilderList"]] if obj.get("extensionOrBuilderList") is not None else None,
@@ -235,14 +243,6 @@ class DescriptorProtoOrBuilder(BaseModel):
             "reservedRangeOrBuilderList": [ReservedRangeOrBuilder.from_dict(_item) for _item in obj["reservedRangeOrBuilderList"]] if obj.get("reservedRangeOrBuilderList") is not None else None,
             "reservedRangeCount": obj.get("reservedRangeCount"),
             "reservedNameCount": obj.get("reservedNameCount"),
-            "reservedRangeList": [ReservedRange.from_dict(_item) for _item in obj["reservedRangeList"]] if obj.get("reservedRangeList") is not None else None,
-            "reservedNameList": obj.get("reservedNameList"),
-            "extensionRangeList": [ExtensionRange.from_dict(_item) for _item in obj["extensionRangeList"]] if obj.get("extensionRangeList") is not None else None,
-            "oneofDeclCount": obj.get("oneofDeclCount"),
-            "nestedTypeCount": obj.get("nestedTypeCount"),
-            "enumTypeCount": obj.get("enumTypeCount"),
-            "extensionCount": obj.get("extensionCount"),
-            "extensionRangeCount": obj.get("extensionRangeCount"),
             "fieldCount": obj.get("fieldCount"),
             "name": obj.get("name"),
             "options": MessageOptions.from_dict(obj["options"]) if obj.get("options") is not None else None,

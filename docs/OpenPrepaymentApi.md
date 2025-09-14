@@ -6,10 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**close**](OpenPrepaymentApi.md#close) | **POST** /v1/open/prepayment/close/{businessId} | 关闭预付订单
 [**create_prepayment_order**](OpenPrepaymentApi.md#create_prepayment_order) | **POST** /v1/open/prepayment | 创建预付订单
+[**currency_conversion**](OpenPrepaymentApi.md#currency_conversion) | **POST** /v1/open/prepayment/currency/conversion | 币种转换
 [**pagination4**](OpenPrepaymentApi.md#pagination4) | **POST** /v1/open/prepayment/pagination | 查询预付订单
 [**payment_aggregation**](OpenPrepaymentApi.md#payment_aggregation) | **POST** /v1/open/prepayment/payment/aggregation | 合并支付
 [**payment_merchant_to_merchant**](OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant | 商户到商户转账
-[**payment_merchant_to_merchant_by_business_id**](OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 商户到商户转账
+[**payment_merchant_to_merchant_by_business_id**](OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 基于预付单的商户到商户转账
 [**payment_ngn_currency**](OpenPrepaymentApi.md#payment_ngn_currency) | **POST** /v1/open/prepayment/payment/ngn/{businessId} | 支付NGN币种
 [**update_amount**](OpenPrepaymentApi.md#update_amount) | **POST** /v1/open/prepayment/amount | 更新预付订单金额
 
@@ -133,6 +134,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuyBtcResponsePrepaymentOrderEntity**](BuyBtcResponsePrepaymentOrderEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **currency_conversion**
+> BuyBtcResponsePaymentOrderEntity currency_conversion(currency_conversion_dto)
+
+币种转换
+
+币种转换，需要签名，签名算法见MD文档
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
+from buybtcpay.models.currency_conversion_dto import CurrencyConversionDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenPrepaymentApi(api_client)
+    currency_conversion_dto = buybtcpay.CurrencyConversionDto() # CurrencyConversionDto | 
+
+    try:
+        # 币种转换
+        api_response = api_instance.currency_conversion(currency_conversion_dto)
+        print("The response of OpenPrepaymentApi->currency_conversion:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPrepaymentApi->currency_conversion: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currency_conversion_dto** | [**CurrencyConversionDto**](CurrencyConversionDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponsePaymentOrderEntity**](BuyBtcResponsePaymentOrderEntity.md)
 
 ### Authorization
 
@@ -361,7 +431,7 @@ No authorization required
 # **payment_merchant_to_merchant_by_business_id**
 > BuyBtcResponsePaymentOrderEntity payment_merchant_to_merchant_by_business_id(business_id, merchant_to_merchant_params)
 
-商户到商户转账
+基于预付单的商户到商户转账
 
 商户到商户转账，同商户不同钱包互转也可以使用这个接口。需要签名，签名算法见MD文档
 
@@ -390,7 +460,7 @@ with buybtcpay.ApiClient(configuration) as api_client:
     merchant_to_merchant_params = buybtcpay.MerchantToMerchantParams() # MerchantToMerchantParams | 
 
     try:
-        # 商户到商户转账
+        # 基于预付单的商户到商户转账
         api_response = api_instance.payment_merchant_to_merchant_by_business_id(business_id, merchant_to_merchant_params)
         print("The response of OpenPrepaymentApi->payment_merchant_to_merchant_by_business_id:\n")
         pprint(api_response)

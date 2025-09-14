@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unknown_fields** | [**UnknownFieldSet**](UnknownFieldSet.md) |  | [optional] 
+**name_part_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **is_extension** | **bool** |  | [optional] 
 **name_part** | **str** |  | [optional] 
-**name_part_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **initialized** | **bool** |  | [optional] 
 **serialized_size** | **int** |  | [optional] 
 **parser_for_type** | **object** |  | [optional] 

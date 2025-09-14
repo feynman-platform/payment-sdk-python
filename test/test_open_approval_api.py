@@ -47,8 +47,8 @@ class TestOpenApprovalApi(unittest.TestCase):
         """
         pass
 
-    def test_create_platfrom_recharge_approval(self) -> None:
-        """Test case for create_platfrom_recharge_approval
+    def test_create_platform_recharge_approval(self) -> None:
+        """Test case for create_platform_recharge_approval
 
         创建平台充值审批单
         """

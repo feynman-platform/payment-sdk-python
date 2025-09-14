@@ -38,7 +38,7 @@ class OpenExchangeRateApi:
 
 
     @validate_call
-    def currency_conversion(
+    def currency_conversion1(
         self,
         currency_conversion_request_dto: CurrencyConversionRequestDto,
         _request_timeout: Union[
@@ -82,7 +82,7 @@ class OpenExchangeRateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._currency_conversion_serialize(
+        _param = self._currency_conversion1_serialize(
             currency_conversion_request_dto=currency_conversion_request_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -105,7 +105,7 @@ class OpenExchangeRateApi:
 
 
     @validate_call
-    def currency_conversion_with_http_info(
+    def currency_conversion1_with_http_info(
         self,
         currency_conversion_request_dto: CurrencyConversionRequestDto,
         _request_timeout: Union[
@@ -149,7 +149,7 @@ class OpenExchangeRateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._currency_conversion_serialize(
+        _param = self._currency_conversion1_serialize(
             currency_conversion_request_dto=currency_conversion_request_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -172,7 +172,7 @@ class OpenExchangeRateApi:
 
 
     @validate_call
-    def currency_conversion_without_preload_content(
+    def currency_conversion1_without_preload_content(
         self,
         currency_conversion_request_dto: CurrencyConversionRequestDto,
         _request_timeout: Union[
@@ -216,7 +216,7 @@ class OpenExchangeRateApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._currency_conversion_serialize(
+        _param = self._currency_conversion1_serialize(
             currency_conversion_request_dto=currency_conversion_request_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -234,7 +234,7 @@ class OpenExchangeRateApi:
         return response_data.response
 
 
-    def _currency_conversion_serialize(
+    def _currency_conversion1_serialize(
         self,
         currency_conversion_request_dto,
         _request_auth,

@@ -31,9 +31,9 @@ class ExtensionRangeOptionsOrBuilder(BaseModel):
     uninterpreted_option_list: Optional[List[UninterpretedOption]] = Field(default=None, alias="uninterpretedOptionList")
     uninterpreted_option_or_builder_list: Optional[List[UninterpretedOptionOrBuilder]] = Field(default=None, alias="uninterpretedOptionOrBuilderList")
     uninterpreted_option_count: Optional[StrictInt] = Field(default=None, alias="uninterpretedOptionCount")
+    declaration_list: Optional[List[Declaration]] = Field(default=None, alias="declarationList")
     declaration_count: Optional[StrictInt] = Field(default=None, alias="declarationCount")
     declaration_or_builder_list: Optional[List[DeclarationOrBuilder]] = Field(default=None, alias="declarationOrBuilderList")
-    declaration_list: Optional[List[Declaration]] = Field(default=None, alias="declarationList")
     features: Optional[FeatureSet] = None
     verification: Optional[StrictStr] = None
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
@@ -42,7 +42,7 @@ class ExtensionRangeOptionsOrBuilder(BaseModel):
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "declarationCount", "declarationOrBuilderList", "declarationList", "features", "verification", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["featuresOrBuilder", "uninterpretedOptionList", "uninterpretedOptionOrBuilderList", "uninterpretedOptionCount", "declarationList", "declarationCount", "declarationOrBuilderList", "features", "verification", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     @field_validator('verification')
     def verification_validate_enum(cls, value):
@@ -110,13 +110,6 @@ class ExtensionRangeOptionsOrBuilder(BaseModel):
                 if _item_uninterpreted_option_or_builder_list:
                     _items.append(_item_uninterpreted_option_or_builder_list.to_dict())
             _dict['uninterpretedOptionOrBuilderList'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in declaration_or_builder_list (list)
-        _items = []
-        if self.declaration_or_builder_list:
-            for _item_declaration_or_builder_list in self.declaration_or_builder_list:
-                if _item_declaration_or_builder_list:
-                    _items.append(_item_declaration_or_builder_list.to_dict())
-            _dict['declarationOrBuilderList'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in declaration_list (list)
         _items = []
         if self.declaration_list:
@@ -124,6 +117,13 @@ class ExtensionRangeOptionsOrBuilder(BaseModel):
                 if _item_declaration_list:
                     _items.append(_item_declaration_list.to_dict())
             _dict['declarationList'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in declaration_or_builder_list (list)
+        _items = []
+        if self.declaration_or_builder_list:
+            for _item_declaration_or_builder_list in self.declaration_or_builder_list:
+                if _item_declaration_or_builder_list:
+                    _items.append(_item_declaration_or_builder_list.to_dict())
+            _dict['declarationOrBuilderList'] = _items
         # override the default output from pydantic by calling `to_dict()` of features
         if self.features:
             _dict['features'] = self.features.to_dict()
@@ -152,9 +152,9 @@ class ExtensionRangeOptionsOrBuilder(BaseModel):
             "uninterpretedOptionList": [UninterpretedOption.from_dict(_item) for _item in obj["uninterpretedOptionList"]] if obj.get("uninterpretedOptionList") is not None else None,
             "uninterpretedOptionOrBuilderList": [UninterpretedOptionOrBuilder.from_dict(_item) for _item in obj["uninterpretedOptionOrBuilderList"]] if obj.get("uninterpretedOptionOrBuilderList") is not None else None,
             "uninterpretedOptionCount": obj.get("uninterpretedOptionCount"),
+            "declarationList": [Declaration.from_dict(_item) for _item in obj["declarationList"]] if obj.get("declarationList") is not None else None,
             "declarationCount": obj.get("declarationCount"),
             "declarationOrBuilderList": [DeclarationOrBuilder.from_dict(_item) for _item in obj["declarationOrBuilderList"]] if obj.get("declarationOrBuilderList") is not None else None,
-            "declarationList": [Declaration.from_dict(_item) for _item in obj["declarationList"]] if obj.get("declarationList") is not None else None,
             "features": FeatureSet.from_dict(obj["features"]) if obj.get("features") is not None else None,
             "verification": obj.get("verification"),
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,

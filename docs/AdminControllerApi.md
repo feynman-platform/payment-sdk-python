@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_platform_wallet**](AdminControllerApi.md#create_platform_wallet) | **GET** /v1/admin/create/platform/wallets | 为平台账户创建各币种的钱包、手续费钱包
 [**create_wallet_for_each_merchant**](AdminControllerApi.md#create_wallet_for_each_merchant) | **GET** /v1/admin/create/wallets | 为所有的商户创建各币种的钱包
+[**send_payout_notify**](AdminControllerApi.md#send_payout_notify) | **POST** /v1/admin/send/payout/notify | 
 
 
 # **create_platform_wallet**
@@ -122,6 +123,70 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **send_payout_notify**
+> BuyBtcResponsePalmPayNotifyResponse send_payout_notify(send_payout_notify_dto)
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_palm_pay_notify_response import BuyBtcResponsePalmPayNotifyResponse
+from buybtcpay.models.send_payout_notify_dto import SendPayoutNotifyDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.AdminControllerApi(api_client)
+    send_payout_notify_dto = buybtcpay.SendPayoutNotifyDto() # SendPayoutNotifyDto | 
+
+    try:
+        api_response = api_instance.send_payout_notify(send_payout_notify_dto)
+        print("The response of AdminControllerApi->send_payout_notify:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AdminControllerApi->send_payout_notify: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **send_payout_notify_dto** | [**SendPayoutNotifyDto**](SendPayoutNotifyDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponsePalmPayNotifyResponse**](BuyBtcResponsePalmPayNotifyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: */*
 
 ### HTTP response details

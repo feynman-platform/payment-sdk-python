@@ -98,6 +98,7 @@ __all__ = [
     "BuyBtcResponseMerchantTransactionEntity",
     "BuyBtcResponseMerchantWalletEntity",
     "BuyBtcResponsePalmPayNotifyEntity",
+    "BuyBtcResponsePalmPayNotifyResponse",
     "BuyBtcResponsePayPaginationLedgerTransactionEntity",
     "BuyBtcResponsePayPaginationMerchantBillEntity",
     "BuyBtcResponsePayPaginationPaymentOrderEntity",
@@ -146,6 +147,7 @@ __all__ = [
     "CreateReversalPlatfromToMerchantApprovalDto",
     "CreateUnfronzenApprovalDto",
     "CreateVirtualAccountRechargeApprovalDto",
+    "CurrencyConversionDto",
     "CurrencyConversionRequestDto",
     "CurrencyConversionResponseDto",
     "DataCMRate",
@@ -236,6 +238,8 @@ __all__ = [
     "PalmPayBank",
     "PalmPayNotifyEntity",
     "PalmPayNotifyPaginationQuery",
+    "PalmPayNotifyResponse",
+    "PalmPayPlayer",
     "PalmPayVirtualAccountEntity",
     "PalmPayVirtualAccountOrderEntity",
     "PalmPayVirtualAccountOrderQuery",
@@ -320,6 +324,7 @@ __all__ = [
     "ResultOrBuilder",
     "RsaKeyPair",
     "SelfServiceApprovalSubmitedDto",
+    "SendPayoutNotifyDto",
     "SendRequest",
     "SendResponse",
     "SendTopUpNotifyDto",
@@ -433,6 +438,7 @@ from buybtcpay.models.buy_btc_response_merchant_recharge_entity import BuyBtcRes
 from buybtcpay.models.buy_btc_response_merchant_transaction_entity import BuyBtcResponseMerchantTransactionEntity as BuyBtcResponseMerchantTransactionEntity
 from buybtcpay.models.buy_btc_response_merchant_wallet_entity import BuyBtcResponseMerchantWalletEntity as BuyBtcResponseMerchantWalletEntity
 from buybtcpay.models.buy_btc_response_palm_pay_notify_entity import BuyBtcResponsePalmPayNotifyEntity as BuyBtcResponsePalmPayNotifyEntity
+from buybtcpay.models.buy_btc_response_palm_pay_notify_response import BuyBtcResponsePalmPayNotifyResponse as BuyBtcResponsePalmPayNotifyResponse
 from buybtcpay.models.buy_btc_response_pay_pagination_ledger_transaction_entity import BuyBtcResponsePayPaginationLedgerTransactionEntity as BuyBtcResponsePayPaginationLedgerTransactionEntity
 from buybtcpay.models.buy_btc_response_pay_pagination_merchant_bill_entity import BuyBtcResponsePayPaginationMerchantBillEntity as BuyBtcResponsePayPaginationMerchantBillEntity
 from buybtcpay.models.buy_btc_response_pay_pagination_payment_order_entity import BuyBtcResponsePayPaginationPaymentOrderEntity as BuyBtcResponsePayPaginationPaymentOrderEntity
@@ -481,6 +487,7 @@ from buybtcpay.models.create_reversal_merchant_to_platform_approval_dto import C
 from buybtcpay.models.create_reversal_platfrom_to_merchant_approval_dto import CreateReversalPlatfromToMerchantApprovalDto as CreateReversalPlatfromToMerchantApprovalDto
 from buybtcpay.models.create_unfronzen_approval_dto import CreateUnfronzenApprovalDto as CreateUnfronzenApprovalDto
 from buybtcpay.models.create_virtual_account_recharge_approval_dto import CreateVirtualAccountRechargeApprovalDto as CreateVirtualAccountRechargeApprovalDto
+from buybtcpay.models.currency_conversion_dto import CurrencyConversionDto as CurrencyConversionDto
 from buybtcpay.models.currency_conversion_request_dto import CurrencyConversionRequestDto as CurrencyConversionRequestDto
 from buybtcpay.models.currency_conversion_response_dto import CurrencyConversionResponseDto as CurrencyConversionResponseDto
 from buybtcpay.models.data_cm_rate import DataCMRate as DataCMRate
@@ -571,6 +578,8 @@ from buybtcpay.models.pagination_query import PaginationQuery as PaginationQuery
 from buybtcpay.models.palm_pay_bank import PalmPayBank as PalmPayBank
 from buybtcpay.models.palm_pay_notify_entity import PalmPayNotifyEntity as PalmPayNotifyEntity
 from buybtcpay.models.palm_pay_notify_pagination_query import PalmPayNotifyPaginationQuery as PalmPayNotifyPaginationQuery
+from buybtcpay.models.palm_pay_notify_response import PalmPayNotifyResponse as PalmPayNotifyResponse
+from buybtcpay.models.palm_pay_player import PalmPayPlayer as PalmPayPlayer
 from buybtcpay.models.palm_pay_virtual_account_entity import PalmPayVirtualAccountEntity as PalmPayVirtualAccountEntity
 from buybtcpay.models.palm_pay_virtual_account_order_entity import PalmPayVirtualAccountOrderEntity as PalmPayVirtualAccountOrderEntity
 from buybtcpay.models.palm_pay_virtual_account_order_query import PalmPayVirtualAccountOrderQuery as PalmPayVirtualAccountOrderQuery
@@ -655,6 +664,7 @@ from buybtcpay.models.result import Result as Result
 from buybtcpay.models.result_or_builder import ResultOrBuilder as ResultOrBuilder
 from buybtcpay.models.rsa_key_pair import RsaKeyPair as RsaKeyPair
 from buybtcpay.models.self_service_approval_submited_dto import SelfServiceApprovalSubmitedDto as SelfServiceApprovalSubmitedDto
+from buybtcpay.models.send_payout_notify_dto import SendPayoutNotifyDto as SendPayoutNotifyDto
 from buybtcpay.models.send_request import SendRequest as SendRequest
 from buybtcpay.models.send_response import SendResponse as SendResponse
 from buybtcpay.models.send_top_up_notify_dto import SendTopUpNotifyDto as SendTopUpNotifyDto

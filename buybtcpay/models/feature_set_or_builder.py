@@ -27,28 +27,28 @@ class FeatureSetOrBuilder(BaseModel):
     """
     FeatureSetOrBuilder
     """ # noqa: E501
-    json_format: Optional[StrictStr] = Field(default=None, alias="jsonFormat")
+    field_presence: Optional[StrictStr] = Field(default=None, alias="fieldPresence")
     repeated_field_encoding: Optional[StrictStr] = Field(default=None, alias="repeatedFieldEncoding")
     utf8_validation: Optional[StrictStr] = Field(default=None, alias="utf8Validation")
+    json_format: Optional[StrictStr] = Field(default=None, alias="jsonFormat")
     enum_type: Optional[StrictStr] = Field(default=None, alias="enumType")
     message_encoding: Optional[StrictStr] = Field(default=None, alias="messageEncoding")
-    field_presence: Optional[StrictStr] = Field(default=None, alias="fieldPresence")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["jsonFormat", "repeatedFieldEncoding", "utf8Validation", "enumType", "messageEncoding", "fieldPresence", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["fieldPresence", "repeatedFieldEncoding", "utf8Validation", "jsonFormat", "enumType", "messageEncoding", "defaultInstanceForType", "initializationErrorString", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
-    @field_validator('json_format')
-    def json_format_validate_enum(cls, value):
+    @field_validator('field_presence')
+    def field_presence_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['JSON_FORMAT_UNKNOWN', 'ALLOW', 'LEGACY_BEST_EFFORT']):
-            raise ValueError("must be one of enum values ('JSON_FORMAT_UNKNOWN', 'ALLOW', 'LEGACY_BEST_EFFORT')")
+        if value not in set(['FIELD_PRESENCE_UNKNOWN', 'EXPLICIT', 'IMPLICIT', 'LEGACY_REQUIRED']):
+            raise ValueError("must be one of enum values ('FIELD_PRESENCE_UNKNOWN', 'EXPLICIT', 'IMPLICIT', 'LEGACY_REQUIRED')")
         return value
 
     @field_validator('repeated_field_encoding')
@@ -71,6 +71,16 @@ class FeatureSetOrBuilder(BaseModel):
             raise ValueError("must be one of enum values ('UTF8_VALIDATION_UNKNOWN', 'NONE', 'VERIFY')")
         return value
 
+    @field_validator('json_format')
+    def json_format_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['JSON_FORMAT_UNKNOWN', 'ALLOW', 'LEGACY_BEST_EFFORT']):
+            raise ValueError("must be one of enum values ('JSON_FORMAT_UNKNOWN', 'ALLOW', 'LEGACY_BEST_EFFORT')")
+        return value
+
     @field_validator('enum_type')
     def enum_type_validate_enum(cls, value):
         """Validates the enum"""
@@ -89,16 +99,6 @@ class FeatureSetOrBuilder(BaseModel):
 
         if value not in set(['MESSAGE_ENCODING_UNKNOWN', 'LENGTH_PREFIXED', 'DELIMITED']):
             raise ValueError("must be one of enum values ('MESSAGE_ENCODING_UNKNOWN', 'LENGTH_PREFIXED', 'DELIMITED')")
-        return value
-
-    @field_validator('field_presence')
-    def field_presence_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['FIELD_PRESENCE_UNKNOWN', 'EXPLICIT', 'IMPLICIT', 'LEGACY_REQUIRED']):
-            raise ValueError("must be one of enum values ('FIELD_PRESENCE_UNKNOWN', 'EXPLICIT', 'IMPLICIT', 'LEGACY_REQUIRED')")
         return value
 
     model_config = ConfigDict(
@@ -161,12 +161,12 @@ class FeatureSetOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "jsonFormat": obj.get("jsonFormat"),
+            "fieldPresence": obj.get("fieldPresence"),
             "repeatedFieldEncoding": obj.get("repeatedFieldEncoding"),
             "utf8Validation": obj.get("utf8Validation"),
+            "jsonFormat": obj.get("jsonFormat"),
             "enumType": obj.get("enumType"),
             "messageEncoding": obj.get("messageEncoding"),
-            "fieldPresence": obj.get("fieldPresence"),
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,

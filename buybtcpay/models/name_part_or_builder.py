@@ -28,16 +28,16 @@ class NamePartOrBuilder(BaseModel):
     """
     NamePartOrBuilder
     """ # noqa: E501
+    name_part_bytes: Optional[ByteString] = Field(default=None, alias="namePartBytes")
     is_extension: Optional[StrictBool] = Field(default=None, alias="isExtension")
     name_part: Optional[StrictStr] = Field(default=None, alias="namePart")
-    name_part_bytes: Optional[ByteString] = Field(default=None, alias="namePartBytes")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["isExtension", "namePart", "namePartBytes", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["namePartBytes", "isExtension", "namePart", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,9 +102,9 @@ class NamePartOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "namePartBytes": ByteString.from_dict(obj["namePartBytes"]) if obj.get("namePartBytes") is not None else None,
             "isExtension": obj.get("isExtension"),
             "namePart": obj.get("namePart"),
-            "namePartBytes": ByteString.from_dict(obj["namePartBytes"]) if obj.get("namePartBytes") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,

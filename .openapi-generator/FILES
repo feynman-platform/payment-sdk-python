@@ -82,6 +82,7 @@ buybtcpay/models/buy_btc_response_merchant_recharge_entity.py
 buybtcpay/models/buy_btc_response_merchant_transaction_entity.py
 buybtcpay/models/buy_btc_response_merchant_wallet_entity.py
 buybtcpay/models/buy_btc_response_palm_pay_notify_entity.py
+buybtcpay/models/buy_btc_response_palm_pay_notify_response.py
 buybtcpay/models/buy_btc_response_pay_pagination_ledger_transaction_entity.py
 buybtcpay/models/buy_btc_response_pay_pagination_merchant_bill_entity.py
 buybtcpay/models/buy_btc_response_pay_pagination_payment_order_entity.py
@@ -130,6 +131,7 @@ buybtcpay/models/create_reversal_merchant_to_platform_approval_dto.py
 buybtcpay/models/create_reversal_platfrom_to_merchant_approval_dto.py
 buybtcpay/models/create_unfronzen_approval_dto.py
 buybtcpay/models/create_virtual_account_recharge_approval_dto.py
+buybtcpay/models/currency_conversion_dto.py
 buybtcpay/models/currency_conversion_request_dto.py
 buybtcpay/models/currency_conversion_response_dto.py
 buybtcpay/models/data_cm_rate.py
@@ -220,6 +222,8 @@ buybtcpay/models/pagination_query.py
 buybtcpay/models/palm_pay_bank.py
 buybtcpay/models/palm_pay_notify_entity.py
 buybtcpay/models/palm_pay_notify_pagination_query.py
+buybtcpay/models/palm_pay_notify_response.py
+buybtcpay/models/palm_pay_player.py
 buybtcpay/models/palm_pay_virtual_account_entity.py
 buybtcpay/models/palm_pay_virtual_account_order_entity.py
 buybtcpay/models/palm_pay_virtual_account_order_query.py
@@ -304,6 +308,7 @@ buybtcpay/models/result.py
 buybtcpay/models/result_or_builder.py
 buybtcpay/models/rsa_key_pair.py
 buybtcpay/models/self_service_approval_submited_dto.py
+buybtcpay/models/send_payout_notify_dto.py
 buybtcpay/models/send_request.py
 buybtcpay/models/send_response.py
 buybtcpay/models/send_top_up_notify_dto.py
@@ -366,6 +371,7 @@ docs/BuyBtcResponseMerchantRechargeEntity.md
 docs/BuyBtcResponseMerchantTransactionEntity.md
 docs/BuyBtcResponseMerchantWalletEntity.md
 docs/BuyBtcResponsePalmPayNotifyEntity.md
+docs/BuyBtcResponsePalmPayNotifyResponse.md
 docs/BuyBtcResponsePayPaginationLedgerTransactionEntity.md
 docs/BuyBtcResponsePayPaginationMerchantBillEntity.md
 docs/BuyBtcResponsePayPaginationPaymentOrderEntity.md
@@ -414,6 +420,7 @@ docs/CreateReversalMerchantToPlatformApprovalDto.md
 docs/CreateReversalPlatfromToMerchantApprovalDto.md
 docs/CreateUnfronzenApprovalDto.md
 docs/CreateVirtualAccountRechargeApprovalDto.md
+docs/CurrencyConversionDto.md
 docs/CurrencyConversionRequestDto.md
 docs/CurrencyConversionResponseDto.md
 docs/DataCMRate.md
@@ -530,6 +537,8 @@ docs/PalmPayControllerApi.md
 docs/PalmPayNotifyControllerApi.md
 docs/PalmPayNotifyEntity.md
 docs/PalmPayNotifyPaginationQuery.md
+docs/PalmPayNotifyResponse.md
+docs/PalmPayPlayer.md
 docs/PalmPayVirtualAccountApi.md
 docs/PalmPayVirtualAccountEntity.md
 docs/PalmPayVirtualAccountOrderEntity.md
@@ -622,6 +631,7 @@ docs/Result.md
 docs/ResultOrBuilder.md
 docs/RsaKeyPair.md
 docs/SelfServiceApprovalSubmitedDto.md
+docs/SendPayoutNotifyDto.md
 docs/SendRequest.md
 docs/SendResponse.md
 docs/SendTopUpNotifyDto.md
@@ -692,6 +702,7 @@ test/test_buy_btc_response_merchant_recharge_entity.py
 test/test_buy_btc_response_merchant_transaction_entity.py
 test/test_buy_btc_response_merchant_wallet_entity.py
 test/test_buy_btc_response_palm_pay_notify_entity.py
+test/test_buy_btc_response_palm_pay_notify_response.py
 test/test_buy_btc_response_pay_pagination_ledger_transaction_entity.py
 test/test_buy_btc_response_pay_pagination_merchant_bill_entity.py
 test/test_buy_btc_response_pay_pagination_payment_order_entity.py
@@ -740,6 +751,7 @@ test/test_create_reversal_merchant_to_platform_approval_dto.py
 test/test_create_reversal_platfrom_to_merchant_approval_dto.py
 test/test_create_unfronzen_approval_dto.py
 test/test_create_virtual_account_recharge_approval_dto.py
+test/test_currency_conversion_dto.py
 test/test_currency_conversion_request_dto.py
 test/test_currency_conversion_response_dto.py
 test/test_data_cm_rate.py
@@ -856,6 +868,8 @@ test/test_palm_pay_controller_api.py
 test/test_palm_pay_notify_controller_api.py
 test/test_palm_pay_notify_entity.py
 test/test_palm_pay_notify_pagination_query.py
+test/test_palm_pay_notify_response.py
+test/test_palm_pay_player.py
 test/test_palm_pay_virtual_account_api.py
 test/test_palm_pay_virtual_account_entity.py
 test/test_palm_pay_virtual_account_order_entity.py
@@ -948,6 +962,7 @@ test/test_result.py
 test/test_result_or_builder.py
 test/test_rsa_key_pair.py
 test/test_self_service_approval_submited_dto.py
+test/test_send_payout_notify_dto.py
 test/test_send_request.py
 test/test_send_response.py
 test/test_send_top_up_notify_dto.py

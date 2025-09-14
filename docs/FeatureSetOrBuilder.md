@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**json_format** | **str** |  | [optional] 
+**field_presence** | **str** |  | [optional] 
 **repeated_field_encoding** | **str** |  | [optional] 
 **utf8_validation** | **str** |  | [optional] 
+**json_format** | **str** |  | [optional] 
 **enum_type** | **str** |  | [optional] 
 **message_encoding** | **str** |  | [optional] 
-**field_presence** | **str** |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 

@@ -28,12 +28,12 @@ class LocationOrBuilder(BaseModel):
     """
     LocationOrBuilder
     """ # noqa: E501
-    leading_comments_bytes: Optional[ByteString] = Field(default=None, alias="leadingCommentsBytes")
     path_list: Optional[List[StrictInt]] = Field(default=None, alias="pathList")
     path_count: Optional[StrictInt] = Field(default=None, alias="pathCount")
     span_list: Optional[List[StrictInt]] = Field(default=None, alias="spanList")
     span_count: Optional[StrictInt] = Field(default=None, alias="spanCount")
     leading_comments: Optional[StrictStr] = Field(default=None, alias="leadingComments")
+    leading_comments_bytes: Optional[ByteString] = Field(default=None, alias="leadingCommentsBytes")
     trailing_comments: Optional[StrictStr] = Field(default=None, alias="trailingComments")
     trailing_comments_bytes: Optional[ByteString] = Field(default=None, alias="trailingCommentsBytes")
     leading_detached_comments_list: Optional[List[StrictStr]] = Field(default=None, alias="leadingDetachedCommentsList")
@@ -44,7 +44,7 @@ class LocationOrBuilder(BaseModel):
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["leadingCommentsBytes", "pathList", "pathCount", "spanList", "spanCount", "leadingComments", "trailingComments", "trailingCommentsBytes", "leadingDetachedCommentsList", "leadingDetachedCommentsCount", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["pathList", "pathCount", "spanList", "spanCount", "leadingComments", "leadingCommentsBytes", "trailingComments", "trailingCommentsBytes", "leadingDetachedCommentsList", "leadingDetachedCommentsCount", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,12 +112,12 @@ class LocationOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "leadingCommentsBytes": ByteString.from_dict(obj["leadingCommentsBytes"]) if obj.get("leadingCommentsBytes") is not None else None,
             "pathList": obj.get("pathList"),
             "pathCount": obj.get("pathCount"),
             "spanList": obj.get("spanList"),
             "spanCount": obj.get("spanCount"),
             "leadingComments": obj.get("leadingComments"),
+            "leadingCommentsBytes": ByteString.from_dict(obj["leadingCommentsBytes"]) if obj.get("leadingCommentsBytes") is not None else None,
             "trailingComments": obj.get("trailingComments"),
             "trailingCommentsBytes": ByteString.from_dict(obj["trailingCommentsBytes"]) if obj.get("trailingCommentsBytes") is not None else None,
             "leadingDetachedCommentsList": obj.get("leadingDetachedCommentsList"),

@@ -28,20 +28,20 @@ class ServiceDescriptorProtoOrBuilder(BaseModel):
     """
     ServiceDescriptorProtoOrBuilder
     """ # noqa: E501
+    method_list: Optional[List[MethodDescriptorProto]] = Field(default=None, alias="methodList")
     options_or_builder: Optional[ServiceOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
     method_count: Optional[StrictInt] = Field(default=None, alias="methodCount")
     method_or_builder_list: Optional[List[MethodDescriptorProtoOrBuilder]] = Field(default=None, alias="methodOrBuilderList")
     name: Optional[StrictStr] = None
     options: Optional[ServiceOptions] = None
     name_bytes: Optional[ByteString] = Field(default=None, alias="nameBytes")
-    method_list: Optional[List[MethodDescriptorProto]] = Field(default=None, alias="methodList")
     initialization_error_string: Optional[StrictStr] = Field(default=None, alias="initializationErrorString")
     default_instance_for_type: Optional[Message] = Field(default=None, alias="defaultInstanceForType")
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
     initialized: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["optionsOrBuilder", "methodCount", "methodOrBuilderList", "name", "options", "nameBytes", "methodList", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
+    __properties: ClassVar[List[str]] = ["methodList", "optionsOrBuilder", "methodCount", "methodOrBuilderList", "name", "options", "nameBytes", "initializationErrorString", "defaultInstanceForType", "descriptorForType", "allFields", "unknownFields", "initialized"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +82,13 @@ class ServiceDescriptorProtoOrBuilder(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in method_list (list)
+        _items = []
+        if self.method_list:
+            for _item_method_list in self.method_list:
+                if _item_method_list:
+                    _items.append(_item_method_list.to_dict())
+            _dict['methodList'] = _items
         # override the default output from pydantic by calling `to_dict()` of options_or_builder
         if self.options_or_builder:
             _dict['optionsOrBuilder'] = self.options_or_builder.to_dict()
@@ -98,13 +105,6 @@ class ServiceDescriptorProtoOrBuilder(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of name_bytes
         if self.name_bytes:
             _dict['nameBytes'] = self.name_bytes.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in method_list (list)
-        _items = []
-        if self.method_list:
-            for _item_method_list in self.method_list:
-                if _item_method_list:
-                    _items.append(_item_method_list.to_dict())
-            _dict['methodList'] = _items
         # override the default output from pydantic by calling `to_dict()` of default_instance_for_type
         if self.default_instance_for_type:
             _dict['defaultInstanceForType'] = self.default_instance_for_type.to_dict()
@@ -126,13 +126,13 @@ class ServiceDescriptorProtoOrBuilder(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "methodList": [MethodDescriptorProto.from_dict(_item) for _item in obj["methodList"]] if obj.get("methodList") is not None else None,
             "optionsOrBuilder": ServiceOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
             "methodCount": obj.get("methodCount"),
             "methodOrBuilderList": [MethodDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["methodOrBuilderList"]] if obj.get("methodOrBuilderList") is not None else None,
             "name": obj.get("name"),
             "options": ServiceOptions.from_dict(obj["options"]) if obj.get("options") is not None else None,
             "nameBytes": ByteString.from_dict(obj["nameBytes"]) if obj.get("nameBytes") is not None else None,
-            "methodList": [MethodDescriptorProto.from_dict(_item) for _item in obj["methodList"]] if obj.get("methodList") is not None else None,
             "initializationErrorString": obj.get("initializationErrorString"),
             "defaultInstanceForType": Message.from_dict(obj["defaultInstanceForType"]) if obj.get("defaultInstanceForType") is not None else None,
             "descriptorForType": Descriptor.from_dict(obj["descriptorForType"]) if obj.get("descriptorForType") is not None else None,

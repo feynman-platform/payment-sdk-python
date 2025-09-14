@@ -34,7 +34,7 @@ class PalmPayNotifyEntity(BaseModel):
     merchant_id: Optional[StrictStr] = Field(default=None, alias="merchantId")
     order_id: Optional[StrictStr] = Field(default=None, alias="orderId")
     order_no: Optional[StrictStr] = Field(default=None, alias="orderNo")
-    amount: Optional[StrictInt] = None
+    amount: Optional[StrictStr] = Field(default=None, description="交易金额")
     currency: Optional[StrictStr] = Field(default=None, description="NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether")
     order_status: Optional[StrictInt] = Field(default=None, description="0: UNPAID, 1: PAYING, 2: SUCCESS, 3: FAIL, 4: CLOSE, 20: REFUNDED", alias="orderStatus")
     complete_time: Optional[datetime] = Field(default=None, alias="completeTime")

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type_url_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **type_url** | **str** |  | [optional] 
+**type_url_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **value** | [**ByteString**](ByteString.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 

@@ -50,47 +50,33 @@ Execute `pytest` to run the tests.
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
-from buybtcpay.api.open_payout_api import OpenPayoutApi, OpenPayoutRequestDto
-from buybtcpay.app.buybtc_api_client import BuyBtcApiClient
-from buybtcpay.app.buybtc_payment_config import BuyBtcPaymentConfig
-from buybtcpay.app.buybtc_sign_util import BuyBtcRequestBodyBase
-from sonyflake import Sonyflake
-import datetime
+
+import buybtcpay
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
 
 
-if __name__ == '__main__':
-    start_time = datetime.datetime(2025, 1, 1, 0, 0, 0, 0, datetime.UTC)
-    sf = Sonyflake(start_time=start_time, machine_id=1)
 
-    PrivateKey = "your merchant private key"
-    PublicKey = "your merchant public key"
-    BuyBtcPublickKey = "buybtc payment public key"
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.ExchangeRateApi(api_client)
+    rate_list_request_query = buybtcpay.RateListRequestQuery() # RateListRequestQuery | 
 
-    config = BuyBtcPaymentConfig(
-        base_url="https://pay.api.dev.buybtc.com",
-        merchant_id="your merchant id",
-        private_key=PrivateKey,
-        buy_btc_pay_public_key=BuyBtcPublickKey
-    )
-    api_client = BuyBtcApiClient(config)
-    api = OpenPayoutApi(api_client)
-    payload = BuyBtcRequestBodyBase.attach({
-        "orderId": str(sf.next_id()),
-        "title": "test payout",
-        "description": "test payout",
-        "payeeName": "zhang san",
-        "payeeBankCode": "01050000",
-        "payeeBankAccNo": "6217000000000000018",
-        "amount": "100",
-        "currency": "NGN",
-        "notifyUrl": None,
-        "remark": "test"
-    }, True)
-    dto = OpenPayoutRequestDto.from_dict(payload)
+    try:
+        # 分页查询汇率列表
+        api_response = api_instance.get_rate_list(rate_list_request_query)
+        print("The response of ExchangeRateApi->get_rate_list:\n")
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ExchangeRateApi->get_rate_list: %s\n" % e)
 
-    if dto is not None:
-        resp = api.payout1(dto)
-        print(resp)
 ```
 
 ## Documentation for API Endpoints
@@ -103,7 +89,7 @@ Class | Method | HTTP request | Description
 *OpenApprovalApi* | [**create_frozen_approval**](docs/OpenApprovalApi.md#create_frozen_approval) | **POST** /v1/open/approval/frozen | 创建冻结审批单
 *OpenApprovalApi* | [**create_merchant_recharge_approval**](docs/OpenApprovalApi.md#create_merchant_recharge_approval) | **POST** /v1/open/approval/merchant/recharge | 创建商户充值审批单
 *OpenApprovalApi* | [**create_merchant_self_service_recharge_approval**](docs/OpenApprovalApi.md#create_merchant_self_service_recharge_approval) | **POST** /v1/open/approval/merchant/self/service/recharge | 创建商户自助充值审批单
-*OpenApprovalApi* | [**create_platfrom_recharge_approval**](docs/OpenApprovalApi.md#create_platfrom_recharge_approval) | **POST** /v1/open/approval/platform/recharge | 创建平台充值审批单
+*OpenApprovalApi* | [**create_platform_recharge_approval**](docs/OpenApprovalApi.md#create_platform_recharge_approval) | **POST** /v1/open/approval/platform/recharge | 创建平台充值审批单
 *OpenApprovalApi* | [**create_refund_approval**](docs/OpenApprovalApi.md#create_refund_approval) | **POST** /v1/open/approval/refund | 创建退款审批单
 *OpenApprovalApi* | [**create_reversal_merchant_to_merchant_approval**](docs/OpenApprovalApi.md#create_reversal_merchant_to_merchant_approval) | **POST** /v1/open/approval/reversal/merchant/to/merchant | 创建商户到商户转账审批单
 *OpenApprovalApi* | [**create_reversal_merchant_to_platfrom_approval**](docs/OpenApprovalApi.md#create_reversal_merchant_to_platfrom_approval) | **POST** /v1/open/approval/reversal/merchant/to/platform | 创建商户到平台转账审批单
@@ -115,7 +101,7 @@ Class | Method | HTTP request | Description
 *OpenApprovalApi* | [**update_self_service_approval_recevied**](docs/OpenApprovalApi.md#update_self_service_approval_recevied) | **POST** /v1/open/approval/self/service/recharge/received | 更新自助充值审批单用户是否已经收款
 *OpenApprovalApi* | [**update_self_service_approval_submited**](docs/OpenApprovalApi.md#update_self_service_approval_submited) | **POST** /v1/open/approval/self/service/recharge/submited | 更新自助充值审批单用户是否已经转账
 *OpenBankAccountApi* | [**query_bank_account**](docs/OpenBankAccountApi.md#query_bank_account) | **POST** /v1/open/bank/account/query | 查询银行账户信息
-*OpenExchangeRateApi* | [**currency_conversion**](docs/OpenExchangeRateApi.md#currency_conversion) | **POST** /v1/open/exchange/rate/currency/conversion | 币种转换
+*OpenExchangeRateApi* | [**currency_conversion1**](docs/OpenExchangeRateApi.md#currency_conversion1) | **POST** /v1/open/exchange/rate/currency/conversion | 币种转换
 *OpenLedgerApi* | [**aggration**](docs/OpenLedgerApi.md#aggration) | **POST** /v1/open/ledger/transaction/aggration/{merchantId} | 账本
 *OpenLedgerApi* | [**merchant_in_and_out**](docs/OpenLedgerApi.md#merchant_in_and_out) | **POST** /v1/open/ledger/transaction/io/{merchantId} | 商户收支查询
 *OpenMerchantApi* | [**active**](docs/OpenMerchantApi.md#active) | **POST** /v1/open/merchant/active/{merchantId} | 激活商户
@@ -133,10 +119,11 @@ Class | Method | HTTP request | Description
 *OpenPayoutResponseApi* | [**pagination5**](docs/OpenPayoutResponseApi.md#pagination5) | **POST** /v1/open/payout/response/pagination | 分页查询商户的支付响应数据
 *OpenPrepaymentApi* | [**close**](docs/OpenPrepaymentApi.md#close) | **POST** /v1/open/prepayment/close/{businessId} | 关闭预付订单
 *OpenPrepaymentApi* | [**create_prepayment_order**](docs/OpenPrepaymentApi.md#create_prepayment_order) | **POST** /v1/open/prepayment | 创建预付订单
+*OpenPrepaymentApi* | [**currency_conversion**](docs/OpenPrepaymentApi.md#currency_conversion) | **POST** /v1/open/prepayment/currency/conversion | 币种转换
 *OpenPrepaymentApi* | [**pagination4**](docs/OpenPrepaymentApi.md#pagination4) | **POST** /v1/open/prepayment/pagination | 查询预付订单
 *OpenPrepaymentApi* | [**payment_aggregation**](docs/OpenPrepaymentApi.md#payment_aggregation) | **POST** /v1/open/prepayment/payment/aggregation | 合并支付
 *OpenPrepaymentApi* | [**payment_merchant_to_merchant**](docs/OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant | 商户到商户转账
-*OpenPrepaymentApi* | [**payment_merchant_to_merchant_by_business_id**](docs/OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 商户到商户转账
+*OpenPrepaymentApi* | [**payment_merchant_to_merchant_by_business_id**](docs/OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 基于预付单的商户到商户转账
 *OpenPrepaymentApi* | [**payment_ngn_currency**](docs/OpenPrepaymentApi.md#payment_ngn_currency) | **POST** /v1/open/prepayment/payment/ngn/{businessId} | 支付NGN币种
 *OpenPrepaymentApi* | [**update_amount**](docs/OpenPrepaymentApi.md#update_amount) | **POST** /v1/open/prepayment/amount | 更新预付订单金额
 *OpenQueryPayStatusApi* | [**query_check_order_data**](docs/OpenQueryPayStatusApi.md#query_check_order_data) | **POST** /v1/open/pay/status/{orderId}/order/data | 代付银行查询交易单状态
@@ -182,6 +169,7 @@ Class | Method | HTTP request | Description
 *USDTAddressApi* | [**insert_address**](docs/USDTAddressApi.md#insert_address) | **POST** /v1/usdt/address | 新增地址
 *AdminControllerApi* | [**create_platform_wallet**](docs/AdminControllerApi.md#create_platform_wallet) | **GET** /v1/admin/create/platform/wallets | 为平台账户创建各币种的钱包、手续费钱包
 *AdminControllerApi* | [**create_wallet_for_each_merchant**](docs/AdminControllerApi.md#create_wallet_for_each_merchant) | **GET** /v1/admin/create/wallets | 为所有的商户创建各币种的钱包
+*AdminControllerApi* | [**send_payout_notify**](docs/AdminControllerApi.md#send_payout_notify) | **POST** /v1/admin/send/payout/notify | 
 *LedgerTransactionControllerApi* | [**aggration1**](docs/LedgerTransactionControllerApi.md#aggration1) | **POST** /v1/ledger/transaction/aggregation | 
 *LedgerTransactionControllerApi* | [**pagination13**](docs/LedgerTransactionControllerApi.md#pagination13) | **POST** /v1/ledger/transaction/pagination | 
 *LedgerTransactionControllerApi* | [**virtual_account_aggregation**](docs/LedgerTransactionControllerApi.md#virtual_account_aggregation) | **POST** /v1/ledger/transaction/virtual/account/aggregation | 
@@ -251,6 +239,7 @@ Class | Method | HTTP request | Description
  - [BuyBtcResponseMerchantTransactionEntity](docs/BuyBtcResponseMerchantTransactionEntity.md)
  - [BuyBtcResponseMerchantWalletEntity](docs/BuyBtcResponseMerchantWalletEntity.md)
  - [BuyBtcResponsePalmPayNotifyEntity](docs/BuyBtcResponsePalmPayNotifyEntity.md)
+ - [BuyBtcResponsePalmPayNotifyResponse](docs/BuyBtcResponsePalmPayNotifyResponse.md)
  - [BuyBtcResponsePayPaginationLedgerTransactionEntity](docs/BuyBtcResponsePayPaginationLedgerTransactionEntity.md)
  - [BuyBtcResponsePayPaginationMerchantBillEntity](docs/BuyBtcResponsePayPaginationMerchantBillEntity.md)
  - [BuyBtcResponsePayPaginationPaymentOrderEntity](docs/BuyBtcResponsePayPaginationPaymentOrderEntity.md)
@@ -299,6 +288,7 @@ Class | Method | HTTP request | Description
  - [CreateReversalPlatfromToMerchantApprovalDto](docs/CreateReversalPlatfromToMerchantApprovalDto.md)
  - [CreateUnfronzenApprovalDto](docs/CreateUnfronzenApprovalDto.md)
  - [CreateVirtualAccountRechargeApprovalDto](docs/CreateVirtualAccountRechargeApprovalDto.md)
+ - [CurrencyConversionDto](docs/CurrencyConversionDto.md)
  - [CurrencyConversionRequestDto](docs/CurrencyConversionRequestDto.md)
  - [CurrencyConversionResponseDto](docs/CurrencyConversionResponseDto.md)
  - [DataCMRate](docs/DataCMRate.md)
@@ -389,6 +379,8 @@ Class | Method | HTTP request | Description
  - [PalmPayBank](docs/PalmPayBank.md)
  - [PalmPayNotifyEntity](docs/PalmPayNotifyEntity.md)
  - [PalmPayNotifyPaginationQuery](docs/PalmPayNotifyPaginationQuery.md)
+ - [PalmPayNotifyResponse](docs/PalmPayNotifyResponse.md)
+ - [PalmPayPlayer](docs/PalmPayPlayer.md)
  - [PalmPayVirtualAccountEntity](docs/PalmPayVirtualAccountEntity.md)
  - [PalmPayVirtualAccountOrderEntity](docs/PalmPayVirtualAccountOrderEntity.md)
  - [PalmPayVirtualAccountOrderQuery](docs/PalmPayVirtualAccountOrderQuery.md)
@@ -473,6 +465,7 @@ Class | Method | HTTP request | Description
  - [ResultOrBuilder](docs/ResultOrBuilder.md)
  - [RsaKeyPair](docs/RsaKeyPair.md)
  - [SelfServiceApprovalSubmitedDto](docs/SelfServiceApprovalSubmitedDto.md)
+ - [SendPayoutNotifyDto](docs/SendPayoutNotifyDto.md)
  - [SendRequest](docs/SendRequest.md)
  - [SendResponse](docs/SendResponse.md)
  - [SendTopUpNotifyDto](docs/SendTopUpNotifyDto.md)

@@ -29,14 +29,15 @@ class FileDescriptorProto(BaseModel):
     FileDescriptorProto
     """ # noqa: E501
     unknown_fields: Optional[UnknownFieldSet] = Field(default=None, alias="unknownFields")
+    source_code_info_or_builder: Optional[SourceCodeInfoOrBuilder] = Field(default=None, alias="sourceCodeInfoOrBuilder")
+    enum_type_count: Optional[StrictInt] = Field(default=None, alias="enumTypeCount")
+    extension_count: Optional[StrictInt] = Field(default=None, alias="extensionCount")
+    syntax: Optional[StrictStr] = None
     extension_list: Optional[List[FieldDescriptorProto]] = Field(default=None, alias="extensionList")
     extension_or_builder_list: Optional[List[FieldDescriptorProtoOrBuilder]] = Field(default=None, alias="extensionOrBuilderList")
     enum_type_list: Optional[List[EnumDescriptorProto]] = Field(default=None, alias="enumTypeList")
     enum_type_or_builder_list: Optional[List[EnumDescriptorProtoOrBuilder]] = Field(default=None, alias="enumTypeOrBuilderList")
     options_or_builder: Optional[FileOptionsOrBuilder] = Field(default=None, alias="optionsOrBuilder")
-    enum_type_count: Optional[StrictInt] = Field(default=None, alias="enumTypeCount")
-    extension_count: Optional[StrictInt] = Field(default=None, alias="extensionCount")
-    syntax: Optional[StrictStr] = None
     public_dependency_count: Optional[StrictInt] = Field(default=None, alias="publicDependencyCount")
     dependency_count: Optional[StrictInt] = Field(default=None, alias="dependencyCount")
     message_type_count: Optional[StrictInt] = Field(default=None, alias="messageTypeCount")
@@ -52,7 +53,6 @@ class FileDescriptorProto(BaseModel):
     service_list: Optional[List[ServiceDescriptorProto]] = Field(default=None, alias="serviceList")
     service_or_builder_list: Optional[List[ServiceDescriptorProtoOrBuilder]] = Field(default=None, alias="serviceOrBuilderList")
     source_code_info: Optional[SourceCodeInfo] = Field(default=None, alias="sourceCodeInfo")
-    source_code_info_or_builder: Optional[SourceCodeInfoOrBuilder] = Field(default=None, alias="sourceCodeInfoOrBuilder")
     syntax_bytes: Optional[ByteString] = Field(default=None, alias="syntaxBytes")
     initialized: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
@@ -66,7 +66,7 @@ class FileDescriptorProto(BaseModel):
     descriptor_for_type: Optional[Descriptor] = Field(default=None, alias="descriptorForType")
     all_fields: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, alias="allFields")
     memoized_serialized_size: Optional[StrictInt] = Field(default=None, alias="memoizedSerializedSize")
-    __properties: ClassVar[List[str]] = ["unknownFields", "extensionList", "extensionOrBuilderList", "enumTypeList", "enumTypeOrBuilderList", "optionsOrBuilder", "enumTypeCount", "extensionCount", "syntax", "publicDependencyCount", "dependencyCount", "messageTypeCount", "serviceCount", "edition", "packageBytes", "dependencyList", "publicDependencyList", "weakDependencyList", "weakDependencyCount", "messageTypeList", "messageTypeOrBuilderList", "serviceList", "serviceOrBuilderList", "sourceCodeInfo", "sourceCodeInfoOrBuilder", "syntaxBytes", "initialized", "name", "package", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
+    __properties: ClassVar[List[str]] = ["unknownFields", "sourceCodeInfoOrBuilder", "enumTypeCount", "extensionCount", "syntax", "extensionList", "extensionOrBuilderList", "enumTypeList", "enumTypeOrBuilderList", "optionsOrBuilder", "publicDependencyCount", "dependencyCount", "messageTypeCount", "serviceCount", "edition", "packageBytes", "dependencyList", "publicDependencyList", "weakDependencyList", "weakDependencyCount", "messageTypeList", "messageTypeOrBuilderList", "serviceList", "serviceOrBuilderList", "sourceCodeInfo", "syntaxBytes", "initialized", "name", "package", "options", "serializedSize", "parserForType", "defaultInstanceForType", "nameBytes", "initializationErrorString", "descriptorForType", "allFields", "memoizedSerializedSize"]
 
     @field_validator('edition')
     def edition_validate_enum(cls, value):
@@ -120,6 +120,9 @@ class FileDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of unknown_fields
         if self.unknown_fields:
             _dict['unknownFields'] = self.unknown_fields.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of source_code_info_or_builder
+        if self.source_code_info_or_builder:
+            _dict['sourceCodeInfoOrBuilder'] = self.source_code_info_or_builder.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in extension_list (list)
         _items = []
         if self.extension_list:
@@ -185,9 +188,6 @@ class FileDescriptorProto(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of source_code_info
         if self.source_code_info:
             _dict['sourceCodeInfo'] = self.source_code_info.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of source_code_info_or_builder
-        if self.source_code_info_or_builder:
-            _dict['sourceCodeInfoOrBuilder'] = self.source_code_info_or_builder.to_dict()
         # override the default output from pydantic by calling `to_dict()` of syntax_bytes
         if self.syntax_bytes:
             _dict['syntaxBytes'] = self.syntax_bytes.to_dict()
@@ -216,14 +216,15 @@ class FileDescriptorProto(BaseModel):
 
         _obj = cls.model_validate({
             "unknownFields": UnknownFieldSet.from_dict(obj["unknownFields"]) if obj.get("unknownFields") is not None else None,
+            "sourceCodeInfoOrBuilder": SourceCodeInfoOrBuilder.from_dict(obj["sourceCodeInfoOrBuilder"]) if obj.get("sourceCodeInfoOrBuilder") is not None else None,
+            "enumTypeCount": obj.get("enumTypeCount"),
+            "extensionCount": obj.get("extensionCount"),
+            "syntax": obj.get("syntax"),
             "extensionList": [FieldDescriptorProto.from_dict(_item) for _item in obj["extensionList"]] if obj.get("extensionList") is not None else None,
             "extensionOrBuilderList": [FieldDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["extensionOrBuilderList"]] if obj.get("extensionOrBuilderList") is not None else None,
             "enumTypeList": [EnumDescriptorProto.from_dict(_item) for _item in obj["enumTypeList"]] if obj.get("enumTypeList") is not None else None,
             "enumTypeOrBuilderList": [EnumDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["enumTypeOrBuilderList"]] if obj.get("enumTypeOrBuilderList") is not None else None,
             "optionsOrBuilder": FileOptionsOrBuilder.from_dict(obj["optionsOrBuilder"]) if obj.get("optionsOrBuilder") is not None else None,
-            "enumTypeCount": obj.get("enumTypeCount"),
-            "extensionCount": obj.get("extensionCount"),
-            "syntax": obj.get("syntax"),
             "publicDependencyCount": obj.get("publicDependencyCount"),
             "dependencyCount": obj.get("dependencyCount"),
             "messageTypeCount": obj.get("messageTypeCount"),
@@ -238,7 +239,6 @@ class FileDescriptorProto(BaseModel):
             "serviceList": [ServiceDescriptorProto.from_dict(_item) for _item in obj["serviceList"]] if obj.get("serviceList") is not None else None,
             "serviceOrBuilderList": [ServiceDescriptorProtoOrBuilder.from_dict(_item) for _item in obj["serviceOrBuilderList"]] if obj.get("serviceOrBuilderList") is not None else None,
             "sourceCodeInfo": SourceCodeInfo.from_dict(obj["sourceCodeInfo"]) if obj.get("sourceCodeInfo") is not None else None,
-            "sourceCodeInfoOrBuilder": SourceCodeInfoOrBuilder.from_dict(obj["sourceCodeInfoOrBuilder"]) if obj.get("sourceCodeInfoOrBuilder") is not None else None,
             "syntaxBytes": ByteString.from_dict(obj["syntaxBytes"]) if obj.get("syntaxBytes") is not None else None,
             "initialized": obj.get("initialized"),
             "name": obj.get("name"),

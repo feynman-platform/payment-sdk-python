@@ -42,7 +42,7 @@ class TestPalmPayNotifyEntity(unittest.TestCase):
                 merchant_id = '',
                 order_id = '',
                 order_no = '',
-                amount = 56,
+                amount = '',
                 currency = 'NGN',
                 order_status = 0,
                 complete_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

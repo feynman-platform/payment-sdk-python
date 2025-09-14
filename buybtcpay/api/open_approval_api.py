@@ -872,7 +872,7 @@ class OpenApprovalApi:
 
 
     @validate_call
-    def create_platfrom_recharge_approval(
+    def create_platform_recharge_approval(
         self,
         create_approval_dto_create_platform_recharge_approval_dto: CreateApprovalDtoCreatePlatformRechargeApprovalDto,
         _request_timeout: Union[
@@ -916,7 +916,7 @@ class OpenApprovalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_platfrom_recharge_approval_serialize(
+        _param = self._create_platform_recharge_approval_serialize(
             create_approval_dto_create_platform_recharge_approval_dto=create_approval_dto_create_platform_recharge_approval_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -939,7 +939,7 @@ class OpenApprovalApi:
 
 
     @validate_call
-    def create_platfrom_recharge_approval_with_http_info(
+    def create_platform_recharge_approval_with_http_info(
         self,
         create_approval_dto_create_platform_recharge_approval_dto: CreateApprovalDtoCreatePlatformRechargeApprovalDto,
         _request_timeout: Union[
@@ -983,7 +983,7 @@ class OpenApprovalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_platfrom_recharge_approval_serialize(
+        _param = self._create_platform_recharge_approval_serialize(
             create_approval_dto_create_platform_recharge_approval_dto=create_approval_dto_create_platform_recharge_approval_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1006,7 +1006,7 @@ class OpenApprovalApi:
 
 
     @validate_call
-    def create_platfrom_recharge_approval_without_preload_content(
+    def create_platform_recharge_approval_without_preload_content(
         self,
         create_approval_dto_create_platform_recharge_approval_dto: CreateApprovalDtoCreatePlatformRechargeApprovalDto,
         _request_timeout: Union[
@@ -1050,7 +1050,7 @@ class OpenApprovalApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._create_platfrom_recharge_approval_serialize(
+        _param = self._create_platform_recharge_approval_serialize(
             create_approval_dto_create_platform_recharge_approval_dto=create_approval_dto_create_platform_recharge_approval_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1068,7 +1068,7 @@ class OpenApprovalApi:
         return response_data.response
 
 
-    def _create_platfrom_recharge_approval_serialize(
+    def _create_platform_recharge_approval_serialize(
         self,
         create_approval_dto_create_platform_recharge_approval_dto,
         _request_auth,

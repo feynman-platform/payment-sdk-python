@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_frozen_approval**](OpenApprovalApi.md#create_frozen_approval) | **POST** /v1/open/approval/frozen | 创建冻结审批单
 [**create_merchant_recharge_approval**](OpenApprovalApi.md#create_merchant_recharge_approval) | **POST** /v1/open/approval/merchant/recharge | 创建商户充值审批单
 [**create_merchant_self_service_recharge_approval**](OpenApprovalApi.md#create_merchant_self_service_recharge_approval) | **POST** /v1/open/approval/merchant/self/service/recharge | 创建商户自助充值审批单
-[**create_platfrom_recharge_approval**](OpenApprovalApi.md#create_platfrom_recharge_approval) | **POST** /v1/open/approval/platform/recharge | 创建平台充值审批单
+[**create_platform_recharge_approval**](OpenApprovalApi.md#create_platform_recharge_approval) | **POST** /v1/open/approval/platform/recharge | 创建平台充值审批单
 [**create_refund_approval**](OpenApprovalApi.md#create_refund_approval) | **POST** /v1/open/approval/refund | 创建退款审批单
 [**create_reversal_merchant_to_merchant_approval**](OpenApprovalApi.md#create_reversal_merchant_to_merchant_approval) | **POST** /v1/open/approval/reversal/merchant/to/merchant | 创建商户到商户转账审批单
 [**create_reversal_merchant_to_platfrom_approval**](OpenApprovalApi.md#create_reversal_merchant_to_platfrom_approval) | **POST** /v1/open/approval/reversal/merchant/to/platform | 创建商户到平台转账审批单
@@ -229,8 +229,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_platfrom_recharge_approval**
-> BuyBtcResponseApprovalEntity create_platfrom_recharge_approval(create_approval_dto_create_platform_recharge_approval_dto)
+# **create_platform_recharge_approval**
+> BuyBtcResponseApprovalEntity create_platform_recharge_approval(create_approval_dto_create_platform_recharge_approval_dto)
 
 创建平台充值审批单
 
@@ -261,11 +261,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
     try:
         # 创建平台充值审批单
-        api_response = api_instance.create_platfrom_recharge_approval(create_approval_dto_create_platform_recharge_approval_dto)
-        print("The response of OpenApprovalApi->create_platfrom_recharge_approval:\n")
+        api_response = api_instance.create_platform_recharge_approval(create_approval_dto_create_platform_recharge_approval_dto)
+        print("The response of OpenApprovalApi->create_platform_recharge_approval:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenApprovalApi->create_platfrom_recharge_approval: %s\n" % e)
+        print("Exception when calling OpenApprovalApi->create_platform_recharge_approval: %s\n" % e)
 ```
 
 

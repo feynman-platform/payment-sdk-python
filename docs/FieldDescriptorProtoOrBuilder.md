@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**options_or_builder** | [**FieldOptionsOrBuilder**](FieldOptionsOrBuilder.md) |  | [optional] 
 **json_name** | **str** |  | [optional] 
 **proto3_optional** | **bool** |  | [optional] 
 **oneof_index** | **int** |  | [optional] 
 **extendee** | **str** |  | [optional] 
+**options_or_builder** | [**FieldOptionsOrBuilder**](FieldOptionsOrBuilder.md) |  | [optional] 
 **extendee_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
-**json_name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **default_value_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
+**json_name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **type_name_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **type_name** | **str** |  | [optional] 

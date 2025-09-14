@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name_part_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **is_extension** | **bool** |  | [optional] 
 **name_part** | **str** |  | [optional] 
-**name_part_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **initialization_error_string** | **str** |  | [optional] 
 **default_instance_for_type** | [**Message**](Message.md) |  | [optional] 
 **descriptor_for_type** | [**Descriptor**](Descriptor.md) |  | [optional] 

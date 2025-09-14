@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**leading_comments_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **path_list** | **List[int]** |  | [optional] 
 **path_count** | **int** |  | [optional] 
 **span_list** | **List[int]** |  | [optional] 
 **span_count** | **int** |  | [optional] 
 **leading_comments** | **str** |  | [optional] 
+**leading_comments_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **trailing_comments** | **str** |  | [optional] 
 **trailing_comments_bytes** | [**ByteString**](ByteString.md) |  | [optional] 
 **leading_detached_comments_list** | **List[str]** |  | [optional] 
