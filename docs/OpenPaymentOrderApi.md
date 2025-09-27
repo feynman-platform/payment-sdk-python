@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost:9030*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**find_by_order_id**](OpenPaymentOrderApi.md#find_by_order_id) | **POST** /v1/open/payment/order/{orderId} | 查询支付单
-[**pagination6**](OpenPaymentOrderApi.md#pagination6) | **POST** /v1/open/payment/order/pagination | 分页查询支付单
+[**pagination7**](OpenPaymentOrderApi.md#pagination7) | **POST** /v1/open/payment/order/pagination | 分页查询支付单
 
 
 # **find_by_order_id**
@@ -76,8 +76,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **pagination6**
-> BuyBtcResponsePayPaginationPaymentOrderEntity pagination6(pay_pagination_query_payment_order_pagination_query)
+# **pagination7**
+> BuyBtcResponsePayPaginationPaymentOrderEntity pagination7(pay_pagination_query_payment_order_pagination_query)
 
 分页查询支付单
 
@@ -108,11 +108,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
     try:
         # 分页查询支付单
-        api_response = api_instance.pagination6(pay_pagination_query_payment_order_pagination_query)
-        print("The response of OpenPaymentOrderApi->pagination6:\n")
+        api_response = api_instance.pagination7(pay_pagination_query_payment_order_pagination_query)
+        print("The response of OpenPaymentOrderApi->pagination7:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPaymentOrderApi->pagination6: %s\n" % e)
+        print("Exception when calling OpenPaymentOrderApi->pagination7: %s\n" % e)
 ```
 
 

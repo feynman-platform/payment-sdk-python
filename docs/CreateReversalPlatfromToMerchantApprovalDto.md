@@ -1,5 +1,6 @@
 # CreateReversalPlatfromToMerchantApprovalDto
 
+冲销：平台到商户资金钱包
 
 ## Properties
 

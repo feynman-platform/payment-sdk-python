@@ -10,10 +10,12 @@ Name | Type | Description | Notes
 **order_by_create_at** | **str** |  | [optional] 
 **create_at_since** | **str** |  | [optional] 
 **create_at_until** | **str** |  | [optional] 
+**from_channel** | **str** | 查询渠道 | [optional] 
+**operator** | **str** | 发起查询的商户ID | [optional] 
 **business_ids** | **List[str]** | 商户账单ID列表 | [optional] 
 **business_id** | **str** | 业务ID | [optional] 
 **channel_id** | **str** | 支付路ID | [optional] 
-**merchant_id** | **str** | 商户ID | [optional] 
+**merchant_id** | **List[str]** | 商户ID列表 | [optional] 
 **business_type** | **List[int]** | 业务类型 | [optional] 
 **account_type** | **List[int]** | 账户类型 | [optional] 
 **counterparty_account_type** | **List[int]** | 交易对方账户类型 | [optional] 
@@ -23,6 +25,8 @@ Name | Type | Description | Notes
 **bill_status** | **List[int]** | 交易状态 | [optional] 
 **currency** | **List[str]** | 币种 | [optional] 
 **amount** | **List[str]** | 金额，需要与币种一起使用 | [optional] 
+**wallet_type** | **str** | 钱包类型 | [optional] 
+**wallet_id** | **List[str]** | 钱包ID | [optional] 
 
 ## Example
 

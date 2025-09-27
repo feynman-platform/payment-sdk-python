@@ -6,7 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **int** |  | [optional] 
+**fee** | **int** |  | [optional] 
+**vat** | **str** |  | [optional] 
 
 ## Example
 

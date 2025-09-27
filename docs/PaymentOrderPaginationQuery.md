@@ -13,12 +13,14 @@ Name | Type | Description | Notes
 **order_id** | **str** | 订单号 | [optional] 
 **merchant_id** | **str** | 所属商户ID | [optional] 
 **channel_id** | **str** | 支付链路ID | [optional] 
-**type** | **int** | 0: Merchant to merchant, 1: Withdrawal | [optional] 
+**type** | **int** | 0: Merchant to merchant, 1: Payout, 2: Withdrawal, 3: Trade transfer | [optional] 
 **currency** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | [optional] 
 **amount** | **List[str]** | 支付金额区间 | [optional] 
 **fee** | **List[str]** | 手续费 | [optional] 
 **order_status** | **int** | 0: UNPAID, 1: PAYING, 2: SUCCESS, 3: FAIL, 4: CLOSE, 20: REFUNDED | [optional] 
 **prepayment_order_id** | **str** | 预付单号 | [optional] 
+**wallet_id** | **str** | 支付钱包ID | [optional] 
+**wallet_type** | **str** | 钱包类型 | [optional] 
 
 ## Example
 

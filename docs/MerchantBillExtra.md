@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **int** | 1: Payment NGN, 2: Payment Merchant to Merchant, 3: Merchant Recharge, 4: Virtual account recharge, 5: Refund by system, 51: Refund by approval, 6: Frozen by system, 61: Frozen by approval, 7: Unfrozen by system, 71: Unfrozen by approval, 8: Reversal Platform to Merchant, 81: Reversal Merchant to Merchant, 82: Reversal Merchant to Platform, 999: Unknown | [optional] 
+**type** | **int** | 1: Payment NGN, 10: Payment NGN, 2: Payment Merchant to Merchant, 3: Merchant Recharge, 4: Virtual account recharge, 5: Refund by system, 51: Refund by approval, 6: Frozen by system, 61: Frozen by approval, 7: Unfrozen by system, 71: Unfrozen by approval, 8: Reversal Platform to Merchant, 81: Reversal Merchant to Merchant, 82: Reversal Merchant to Platform, 83: Reversal Platform to Bank, 90: currency conversion, 999: Unknown | [optional] 
 **extra** | **Dict[str, object]** | 额外参数，不同的type对应不同的参数 | [optional] 
 
 ## Example

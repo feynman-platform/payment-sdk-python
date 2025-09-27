@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**merchant_id** | **str** | 要冻结的商户ID | 
 **amount** | **str** | 货币标准计量单位，注意，此处是字符类型 | 
-**currency_type** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | 
+**wallet_id** | **str** | 商户钱包ID | 
 **note** | **str** | 可选 | [optional] 
+**dmerchant_id** | **str** |  | [optional] 
+**dcurrency_type** | **str** | 货币类型 | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # CreateVirtualAccountRechargeApprovalDto
 
-如果主商户余额不够，则无法充值
+如果主商户资金账户余额不够，则无法充值
 
 ## Properties
 
@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** | 货币标准计量单位，注意，此处是字符类型 | 
 **currency_type** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | 
-**merchant_id** | **str** | 虚拟商户ID | 
+**wallet_id** | **str** | 商户钱包ID，要求为资金账户 | 
 **note** | **str** | 可选 | [optional] 
+**dmerchant_id** | **str** |  | [optional] 
 
 ## Example
 

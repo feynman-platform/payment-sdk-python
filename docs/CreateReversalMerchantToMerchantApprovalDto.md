@@ -1,5 +1,6 @@
 # CreateReversalMerchantToMerchantApprovalDto
 
+冲销：商户资金钱包到商户资金钱包
 
 ## Properties
 

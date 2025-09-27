@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:9030*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**currency_conversion1**](OpenExchangeRateApi.md#currency_conversion1) | **POST** /v1/open/exchange/rate/currency/conversion | 币种转换
+[**currency_conversion1**](OpenExchangeRateApi.md#currency_conversion1) | **POST** /v1/open/exchange/rate/currency/conversion | 汇率转换
 
 
 # **currency_conversion1**
 > BuyBtcResponseCurrencyConversionResponseDto currency_conversion1(currency_conversion_request_dto)
 
-币种转换
+汇率转换
 
 将源币种金额转换为目标币种金额
 
@@ -38,7 +38,7 @@ with buybtcpay.ApiClient(configuration) as api_client:
     currency_conversion_request_dto = buybtcpay.CurrencyConversionRequestDto() # CurrencyConversionRequestDto | 
 
     try:
-        # 币种转换
+        # 汇率转换
         api_response = api_instance.currency_conversion1(currency_conversion_request_dto)
         print("The response of OpenExchangeRateApi->currency_conversion1:\n")
         pprint(api_response)

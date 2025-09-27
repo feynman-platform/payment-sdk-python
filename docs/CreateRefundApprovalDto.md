@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **str** | 货币标准计量单位，注意，此处是字符类型 | 
-**currency_type** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | 
 **note** | **str** | 可选 | [optional] 
+**damount** | **str** |  | [optional] 
+**dcurrency_type** | **str** | 货币类型 | [optional] 
 
 ## Example
 

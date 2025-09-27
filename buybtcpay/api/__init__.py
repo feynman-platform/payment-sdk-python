@@ -19,6 +19,7 @@ from buybtcpay.api.open_testing_api import OpenTestingApi
 from buybtcpay.api.open_transaction_api import OpenTransactionApi
 from buybtcpay.api.open_virtual_account_api import OpenVirtualAccountApi
 from buybtcpay.api.open_wallet_api import OpenWalletApi
+from buybtcpay.api.open_wallet_permission_api import OpenWalletPermissionApi
 from buybtcpay.api.open_statistics_api import OpenStatisticsApi
 from buybtcpay.api.palm_pay_virtual_account_api import PalmPayVirtualAccountApi
 from buybtcpay.api.payment_order_api import PaymentOrderApi

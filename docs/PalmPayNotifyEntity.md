@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **id** | **str** | ID | [optional] 
 **create_at** | **datetime** |  | [optional] 
 **update_at** | **datetime** |  | [optional] 
-**status** | **int** | 0: NORMAL, 1: DELETE | [optional] 
 **merchant_id** | **str** |  | [optional] 
 **order_id** | **str** |  | [optional] 
 **order_no** | **str** |  | [optional] 

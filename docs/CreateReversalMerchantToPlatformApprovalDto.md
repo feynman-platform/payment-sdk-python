@@ -1,5 +1,6 @@
 # CreateReversalMerchantToPlatformApprovalDto
 
+冲销：商户到平台
 
 ## Properties
 

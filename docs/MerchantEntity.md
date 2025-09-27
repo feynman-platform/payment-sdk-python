@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **palm_pay_virtual_account_no** | **str** | PalmPay虚拟账户 | [optional] 
 **note** | **str** |  | [optional] 
 **virtual_account_id** | **int** |  | [optional] 
+**virtual_account_id_backup** | **int** |  | [optional] 
 **tag** | **str** | 商户标签，可以为空 | [optional] 
 **version** | **int** |  | [optional] 
 

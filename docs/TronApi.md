@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**close_approval_record**](TronApi.md#close_approval_record) | **POST** /v1/tron/close/approval/record | 关闭充值审批
 [**get_address_and_amount**](TronApi.md#get_address_and_amount) | **POST** /v1/tron/amount | 获取交易地址和交易金额
-[**get_transaction_trxby_id**](TronApi.md#get_transaction_trxby_id) | **GET** /v1/tron/trx/{txId} | 根据交易id查询TRX详情
 [**get_transaction_usdtby_id**](TronApi.md#get_transaction_usdtby_id) | **GET** /v1/tron/usdt/{txId} | 根据交易id查询USDT详情
 [**save_approval_record**](TronApi.md#save_approval_record) | **POST** /v1/tron/save/approval/record | 保存充值审批记录
 [**send_trx**](TronApi.md#send_trx) | **POST** /v1/tron/trx/send | 发送TRX
@@ -136,72 +135,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_transaction_trxby_id**
-> Transaction get_transaction_trxby_id(tx_id)
-
-根据交易id查询TRX详情
-
-### Example
-
-
-```python
-import buybtcpay
-from buybtcpay.models.transaction import Transaction
-from buybtcpay.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost:9030
-# See configuration.py for a list of all supported configuration parameters.
-configuration = buybtcpay.Configuration(
-    host = "http://localhost:9030"
-)
-
-
-# Enter a context with an instance of the API client
-with buybtcpay.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = buybtcpay.TronApi(api_client)
-    tx_id = 'tx_id_example' # str | 
-
-    try:
-        # 根据交易id查询TRX详情
-        api_response = api_instance.get_transaction_trxby_id(tx_id)
-        print("The response of TronApi->get_transaction_trxby_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TronApi->get_transaction_trxby_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tx_id** | **str**|  | 
-
-### Return type
-
-[**Transaction**](Transaction.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: */*
 
 ### HTTP response details

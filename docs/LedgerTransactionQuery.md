@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **order_by_create_at** | **str** |  | [optional] 
 **create_at_since** | **str** |  | [optional] 
 **create_at_until** | **str** |  | [optional] 
+**merchant_tag** | **List[str]** | 商户标签 | [optional] 
 **business_id** | **str** |  | [optional] 
 **channel_id** | **str** |  | [optional] 
 **business_type** | **List[int]** | 业务类型 | [optional] 
@@ -20,6 +21,8 @@ Name | Type | Description | Notes
 **currency** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | [optional] 
 **amount** | **List[str]** | 金额，需要与币种一起使用 | [optional] 
 **balance** | **List[str]** | 余额，需要与币种一起使用 | [optional] 
+**wallet_id** | **str** | 钱包ID | [optional] 
+**wallet_type** | **str** | 钱包类型 | [optional] 
 
 ## Example
 

@@ -4,24 +4,22 @@ All URIs are relative to *http://localhost:9030*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**open_payout**](PayoutApi.md#open_payout) | **POST** /v1/payment/open/payout | 商户开放API发起支付
+[**open_payout**](PayoutApi.md#open_payout) | **POST** /v1/payment/dev/payout | 
 [**pagination2**](PayoutApi.md#pagination2) | **POST** /v1/payment/pagination | 
 [**payout**](PayoutApi.md#payout) | **POST** /v1/payment/payout | 登录商户发起支付
-[**test**](PayoutApi.md#test) | **GET** /v1/payment/test | 
+[**withdraw**](PayoutApi.md#withdraw) | **POST** /v1/payment/withdraw | 登录商户发起提现
 
 
 # **open_payout**
-> BuyBtcResponsePayoutOpenApiResponseDto open_payout(payout_request_dto)
-
-商户开放API发起支付
+> BuyBtcResponsePayoutResponseEntity open_payout(merchant_payout_request_dto)
 
 ### Example
 
 
 ```python
 import buybtcpay
-from buybtcpay.models.buy_btc_response_payout_open_api_response_dto import BuyBtcResponsePayoutOpenApiResponseDto
-from buybtcpay.models.payout_request_dto import PayoutRequestDto
+from buybtcpay.models.buy_btc_response_payout_response_entity import BuyBtcResponsePayoutResponseEntity
+from buybtcpay.models.merchant_payout_request_dto import MerchantPayoutRequestDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -36,11 +34,10 @@ configuration = buybtcpay.Configuration(
 with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.PayoutApi(api_client)
-    payout_request_dto = buybtcpay.PayoutRequestDto() # PayoutRequestDto | 
+    merchant_payout_request_dto = buybtcpay.MerchantPayoutRequestDto() # MerchantPayoutRequestDto | 
 
     try:
-        # 商户开放API发起支付
-        api_response = api_instance.open_payout(payout_request_dto)
+        api_response = api_instance.open_payout(merchant_payout_request_dto)
         print("The response of PayoutApi->open_payout:\n")
         pprint(api_response)
     except Exception as e:
@@ -54,11 +51,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payout_request_dto** | [**PayoutRequestDto**](PayoutRequestDto.md)|  | 
+ **merchant_payout_request_dto** | [**MerchantPayoutRequestDto**](MerchantPayoutRequestDto.md)|  | 
 
 ### Return type
 
-[**BuyBtcResponsePayoutOpenApiResponseDto**](BuyBtcResponsePayoutOpenApiResponseDto.md)
+[**BuyBtcResponsePayoutResponseEntity**](BuyBtcResponsePayoutResponseEntity.md)
 
 ### Authorization
 
@@ -208,8 +205,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **test**
-> BuyBtcResponsePayoutResponseEntity test()
+# **withdraw**
+> BuyBtcResponsePayoutResponseEntity withdraw(merchant_payout_request_dto)
+
+登录商户发起提现
 
 ### Example
 
@@ -217,6 +216,7 @@ No authorization required
 ```python
 import buybtcpay
 from buybtcpay.models.buy_btc_response_payout_response_entity import BuyBtcResponsePayoutResponseEntity
+from buybtcpay.models.merchant_payout_request_dto import MerchantPayoutRequestDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -231,20 +231,25 @@ configuration = buybtcpay.Configuration(
 with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.PayoutApi(api_client)
+    merchant_payout_request_dto = buybtcpay.MerchantPayoutRequestDto() # MerchantPayoutRequestDto | 
 
     try:
-        api_response = api_instance.test()
-        print("The response of PayoutApi->test:\n")
+        # 登录商户发起提现
+        api_response = api_instance.withdraw(merchant_payout_request_dto)
+        print("The response of PayoutApi->withdraw:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PayoutApi->test: %s\n" % e)
+        print("Exception when calling PayoutApi->withdraw: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_payout_request_dto** | [**MerchantPayoutRequestDto**](MerchantPayoutRequestDto.md)|  | 
 
 ### Return type
 
@@ -256,7 +261,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

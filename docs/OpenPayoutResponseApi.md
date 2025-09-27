@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost:9030*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**pagination5**](OpenPayoutResponseApi.md#pagination5) | **POST** /v1/open/payout/response/pagination | 分页查询商户的支付响应数据
+[**pagination6**](OpenPayoutResponseApi.md#pagination6) | **POST** /v1/open/payout/response/pagination | 分页查询商户的支付响应数据
 
 
-# **pagination5**
-> BuyBtcResponsePayPaginationPayoutResponseEntity pagination5(pay_pagination_query_pagination_query)
+# **pagination6**
+> BuyBtcResponsePayPaginationPayoutResponseEntity pagination6(pay_pagination_query_pagination_query)
 
 分页查询商户的支付响应数据
 
@@ -39,11 +39,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
     try:
         # 分页查询商户的支付响应数据
-        api_response = api_instance.pagination5(pay_pagination_query_pagination_query)
-        print("The response of OpenPayoutResponseApi->pagination5:\n")
+        api_response = api_instance.pagination6(pay_pagination_query_pagination_query)
+        print("The response of OpenPayoutResponseApi->pagination6:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPayoutResponseApi->pagination5: %s\n" % e)
+        print("Exception when calling OpenPayoutResponseApi->pagination6: %s\n" % e)
 ```
 
 

@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **currency** | **str** | 货币类型 | [optional] 
 **order_status** | **str** | 预付款订单状态 | [optional] 
 **payment_order_id** | **str** | 支付订单ID | [optional] 
+**wallet_type** | **str** | 钱包类型 | [optional] 
+**wallet_id** | **str** | 钱包ID | [optional] 
 
 ## Example
 

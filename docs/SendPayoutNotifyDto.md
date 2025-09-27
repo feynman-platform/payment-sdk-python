@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**verify_code** | **str** |  | 
 **order_id** | **str** |  | 
 **currency** | **str** |  | 
 **order_status** | **int** |  | 
-**verify_code** | **str** |  | 
 
 ## Example
 

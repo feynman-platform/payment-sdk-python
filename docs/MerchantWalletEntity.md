@@ -1,5 +1,6 @@
 # MerchantWalletEntity
 
+商户钱包
 
 ## Properties
 
@@ -9,6 +10,7 @@ Name | Type | Description | Notes
 **create_at** | **datetime** |  | [optional] 
 **update_at** | **datetime** |  | [optional] 
 **merchant_id** | **str** |  | [optional] 
+**type** | **str** | 钱包类型 | [optional] 
 **available** | [**BuyBtcMoneyJsonValue**](BuyBtcMoneyJsonValue.md) |  | [optional] 
 **frozen** | [**BuyBtcMoneyJsonValue**](BuyBtcMoneyJsonValue.md) |  | [optional] 
 **version** | **int** |  | [optional] 

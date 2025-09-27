@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **approval_status** | **int** | 0: Awaiting Approval, 1: Approved, 2: Rejected, 3: Canceled | [optional] 
 **approval_time_since** | **str** |  | [optional] 
 **approval_time_until** | **str** |  | [optional] 
-**approval_type** | **int** | 0: Platform Recharge, 1: Merchant Recharge, 11: Virtual Account Recharge, 12: Merchant Self Service Recharge, 13: Virtual Account Self Service Recharge, 14: Merchant Self Service Recharge by PalmPay Virtual Account, 15: Virtual merchant Self Service Recharge by PalmPay Virtual Account, 2: Refund, 3: Frozen, 4: Unfrozen, 100: Reversal platform to merchant, 101: Reversal merchant to platform, 102: Reversal merchant to merchant | [optional] 
+**approval_type** | **int** | 0: Platform Recharge, 1: Merchant Recharge, 11: Virtual Account Recharge, 12: Merchant Self Service Recharge, 13: Virtual Account Self Service Recharge, 14: Merchant Self Service Recharge by PalmPay Virtual Account, 15: Virtual merchant Self Service Recharge by PalmPay Virtual Account, 2: Refund, 3: Frozen, 4: Unfrozen, 100: Reversal platform to merchant, 101: Reversal merchant to platform, 102: Reversal merchant to merchant, 103: Reversal platform to bank, 200: Reversal platform to wallet, 201: Reversal wallet to platform, 202: Reversal wallet to wallet | [optional] 
 **approval_types** | **List[int]** |  | [optional] 
 **business_id** | **str** |  | [optional] 
 

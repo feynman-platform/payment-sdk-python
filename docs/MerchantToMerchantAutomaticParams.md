@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **request_time** | **str** | 请注意，此处是字符类型，不是数值 | 
 **version** | **str** | 保留字段，暂时无用 | 
 **nonce** | **str** | 最大32位，用于防止重放攻击 | 
-**payer** | **str** | 付款方，邮箱或merchantId | 
-**payee** | **str** | 收款方，邮箱或merchantId | 
-**time_id** | **str** | 汇率timeId，交易发生时使用的汇率记录 | 
-**currency** | **str** | 货币类型 | 
-**amount** | **str** |  | [optional] 
+**payer** | **str** | 付款方商户ID或邮箱 | 
+**payee** | **str** | 收款方商户ID或邮箱 | 
+**payee_operator_id** | **str** | 如果不传，就使用钱包的拥有者 | [optional] 
+**amount** | **str** | 转账金额 | 
+**currency** | **str** | NGN: Nigerian Naira, GHS: Ghanaian Cedi, ETH: Ethereum, BTC: Bitcoin, USDT: Tether | 
 
 ## Example
 

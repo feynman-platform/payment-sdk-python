@@ -6,6 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**verification** | [**Verification**](Verification.md) |  | [optional] 
 **payee_name** | **str** | 收款方姓名（如果不传，默认为值是unknown） | [optional] 
 **payee_bank_code** | **str** | 收款方银行或MMO编码 | 
 **payee_bank_acc_no** | **str** | 收款方银行账户或MoMo账户账号为纯数字，不能带空格或特殊符号 | 

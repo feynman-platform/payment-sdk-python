@@ -6,17 +6,21 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_frozen_approval**](OpenApprovalApi.md#create_frozen_approval) | **POST** /v1/open/approval/frozen | 创建冻结审批单
 [**create_merchant_recharge_approval**](OpenApprovalApi.md#create_merchant_recharge_approval) | **POST** /v1/open/approval/merchant/recharge | 创建商户充值审批单
-[**create_merchant_self_service_recharge_approval**](OpenApprovalApi.md#create_merchant_self_service_recharge_approval) | **POST** /v1/open/approval/merchant/self/service/recharge | 创建商户自助充值审批单
+[**create_merchant_usdt_self_service_recharge_approval**](OpenApprovalApi.md#create_merchant_usdt_self_service_recharge_approval) | **POST** /v1/open/approval/merchant/usdt/self/service/recharge | 创建商户USDT充值审批单
 [**create_platform_recharge_approval**](OpenApprovalApi.md#create_platform_recharge_approval) | **POST** /v1/open/approval/platform/recharge | 创建平台充值审批单
 [**create_refund_approval**](OpenApprovalApi.md#create_refund_approval) | **POST** /v1/open/approval/refund | 创建退款审批单
 [**create_reversal_merchant_to_merchant_approval**](OpenApprovalApi.md#create_reversal_merchant_to_merchant_approval) | **POST** /v1/open/approval/reversal/merchant/to/merchant | 创建商户到商户转账审批单
-[**create_reversal_merchant_to_platfrom_approval**](OpenApprovalApi.md#create_reversal_merchant_to_platfrom_approval) | **POST** /v1/open/approval/reversal/merchant/to/platform | 创建商户到平台转账审批单
+[**create_reversal_merchant_to_platform_approval**](OpenApprovalApi.md#create_reversal_merchant_to_platform_approval) | **POST** /v1/open/approval/reversal/merchant/to/platform | 创建商户到平台转账审批单
+[**create_reversal_platform_to_bank_approval**](OpenApprovalApi.md#create_reversal_platform_to_bank_approval) | **POST** /v1/open/approval/reversal/platform/to/bank | 创建平台转账到银行审批单
 [**create_reversal_platform_to_merchant_approval**](OpenApprovalApi.md#create_reversal_platform_to_merchant_approval) | **POST** /v1/open/approval/reversal/platform/to/merchant | 创建平台转账到商户审批单
+[**create_reversal_platform_to_wallet_approval**](OpenApprovalApi.md#create_reversal_platform_to_wallet_approval) | **POST** /v1/open/approval/reversal/platform/to/wallet | 创建平台转账到钱包审批单
+[**create_reversal_wallet_to_platform_approval**](OpenApprovalApi.md#create_reversal_wallet_to_platform_approval) | **POST** /v1/open/approval/reversal/wallet/to/platform | 创建钱包到平台转账审批单
+[**create_reversal_wallet_to_wallet_approval**](OpenApprovalApi.md#create_reversal_wallet_to_wallet_approval) | **POST** /v1/open/approval/reversal/wallet/to/wallet | 创建钱包到钱包转账审批单
 [**create_unfrozen_approval**](OpenApprovalApi.md#create_unfrozen_approval) | **POST** /v1/open/approval/unfrozen | 创建解冻审批单
 [**create_virtual_account_recharge_approval**](OpenApprovalApi.md#create_virtual_account_recharge_approval) | **POST** /v1/open/approval/virtual/account/recharge | 创建虚拟账户充值审批单
 [**pagination9**](OpenApprovalApi.md#pagination9) | **POST** /v1/open/approval/pagination | 分页查询审批单
 [**processing_approval**](OpenApprovalApi.md#processing_approval) | **POST** /v1/open/approval/processing | 处理审批单
-[**update_self_service_approval_recevied**](OpenApprovalApi.md#update_self_service_approval_recevied) | **POST** /v1/open/approval/self/service/recharge/received | 更新自助充值审批单用户是否已经收款
+[**update_self_service_approval_received**](OpenApprovalApi.md#update_self_service_approval_received) | **POST** /v1/open/approval/self/service/recharge/received | 更新自助充值审批单用户是否已经收款
 [**update_self_service_approval_submited**](OpenApprovalApi.md#update_self_service_approval_submited) | **POST** /v1/open/approval/self/service/recharge/submited | 更新自助充值审批单用户是否已经转账
 
 
@@ -158,13 +162,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_merchant_self_service_recharge_approval**
-> BuyBtcResponseApprovalEntity create_merchant_self_service_recharge_approval(create_approval_dto_create_merchant_self_recharge_dto)
+# **create_merchant_usdt_self_service_recharge_approval**
+> BuyBtcResponseApprovalEntity create_merchant_usdt_self_service_recharge_approval(create_approval_dto_create_usdt_self_recharge_approval_dto)
 
-创建商户自助充值审批单
+创建商户USDT充值审批单
 
-用户手动充值，系统检测到收款后，自动审批。
-管理员可以给所有的商户创建，主账户可以给子账户创建，其他用户只能给自己创建。
+用户手动充值，系统检测到收款后，自动审批。管理员可以给所有的商户创建。
 
 
 ### Example
@@ -173,7 +176,7 @@ No authorization required
 ```python
 import buybtcpay
 from buybtcpay.models.buy_btc_response_approval_entity import BuyBtcResponseApprovalEntity
-from buybtcpay.models.create_approval_dto_create_merchant_self_recharge_dto import CreateApprovalDtoCreateMerchantSelfRechargeDto
+from buybtcpay.models.create_approval_dto_create_usdt_self_recharge_approval_dto import CreateApprovalDtoCreateUSDTSelfRechargeApprovalDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -188,15 +191,15 @@ configuration = buybtcpay.Configuration(
 with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.OpenApprovalApi(api_client)
-    create_approval_dto_create_merchant_self_recharge_dto = buybtcpay.CreateApprovalDtoCreateMerchantSelfRechargeDto() # CreateApprovalDtoCreateMerchantSelfRechargeDto | 
+    create_approval_dto_create_usdt_self_recharge_approval_dto = buybtcpay.CreateApprovalDtoCreateUSDTSelfRechargeApprovalDto() # CreateApprovalDtoCreateUSDTSelfRechargeApprovalDto | 
 
     try:
-        # 创建商户自助充值审批单
-        api_response = api_instance.create_merchant_self_service_recharge_approval(create_approval_dto_create_merchant_self_recharge_dto)
-        print("The response of OpenApprovalApi->create_merchant_self_service_recharge_approval:\n")
+        # 创建商户USDT充值审批单
+        api_response = api_instance.create_merchant_usdt_self_service_recharge_approval(create_approval_dto_create_usdt_self_recharge_approval_dto)
+        print("The response of OpenApprovalApi->create_merchant_usdt_self_service_recharge_approval:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenApprovalApi->create_merchant_self_service_recharge_approval: %s\n" % e)
+        print("Exception when calling OpenApprovalApi->create_merchant_usdt_self_service_recharge_approval: %s\n" % e)
 ```
 
 
@@ -206,7 +209,7 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_approval_dto_create_merchant_self_recharge_dto** | [**CreateApprovalDtoCreateMerchantSelfRechargeDto**](CreateApprovalDtoCreateMerchantSelfRechargeDto.md)|  | 
+ **create_approval_dto_create_usdt_self_recharge_approval_dto** | [**CreateApprovalDtoCreateUSDTSelfRechargeApprovalDto**](CreateApprovalDtoCreateUSDTSelfRechargeApprovalDto.md)|  | 
 
 ### Return type
 
@@ -372,6 +375,8 @@ No authorization required
 
 创建商户到商户转账审批单
 
+管理员权限
+
 ### Example
 
 
@@ -434,12 +439,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_reversal_merchant_to_platfrom_approval**
-> BuyBtcResponseApprovalEntity create_reversal_merchant_to_platfrom_approval(create_approval_dto_create_reversal_merchant_to_platform_approval_dto)
+# **create_reversal_merchant_to_platform_approval**
+> BuyBtcResponseApprovalEntity create_reversal_merchant_to_platform_approval(create_approval_dto_create_reversal_merchant_to_platform_approval_dto)
 
 创建商户到平台转账审批单
 
-只有管理员才有权限创建商户到平台转账审批单
+管理员权限
 
 ### Example
 
@@ -466,11 +471,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
     try:
         # 创建商户到平台转账审批单
-        api_response = api_instance.create_reversal_merchant_to_platfrom_approval(create_approval_dto_create_reversal_merchant_to_platform_approval_dto)
-        print("The response of OpenApprovalApi->create_reversal_merchant_to_platfrom_approval:\n")
+        api_response = api_instance.create_reversal_merchant_to_platform_approval(create_approval_dto_create_reversal_merchant_to_platform_approval_dto)
+        print("The response of OpenApprovalApi->create_reversal_merchant_to_platform_approval:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenApprovalApi->create_reversal_merchant_to_platfrom_approval: %s\n" % e)
+        print("Exception when calling OpenApprovalApi->create_reversal_merchant_to_platform_approval: %s\n" % e)
 ```
 
 
@@ -481,6 +486,75 @@ with buybtcpay.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_approval_dto_create_reversal_merchant_to_platform_approval_dto** | [**CreateApprovalDtoCreateReversalMerchantToPlatformApprovalDto**](CreateApprovalDtoCreateReversalMerchantToPlatformApprovalDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponseApprovalEntity**](BuyBtcResponseApprovalEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_reversal_platform_to_bank_approval**
+> BuyBtcResponseApprovalEntity create_reversal_platform_to_bank_approval(create_approval_dto_create_reversal_platform_to_bank_approval_dto)
+
+创建平台转账到银行审批单
+
+只有管理员才有权限
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_approval_entity import BuyBtcResponseApprovalEntity
+from buybtcpay.models.create_approval_dto_create_reversal_platform_to_bank_approval_dto import CreateApprovalDtoCreateReversalPlatformToBankApprovalDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenApprovalApi(api_client)
+    create_approval_dto_create_reversal_platform_to_bank_approval_dto = buybtcpay.CreateApprovalDtoCreateReversalPlatformToBankApprovalDto() # CreateApprovalDtoCreateReversalPlatformToBankApprovalDto | 
+
+    try:
+        # 创建平台转账到银行审批单
+        api_response = api_instance.create_reversal_platform_to_bank_approval(create_approval_dto_create_reversal_platform_to_bank_approval_dto)
+        print("The response of OpenApprovalApi->create_reversal_platform_to_bank_approval:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenApprovalApi->create_reversal_platform_to_bank_approval: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_approval_dto_create_reversal_platform_to_bank_approval_dto** | [**CreateApprovalDtoCreateReversalPlatformToBankApprovalDto**](CreateApprovalDtoCreateReversalPlatformToBankApprovalDto.md)|  | 
 
 ### Return type
 
@@ -550,6 +624,213 @@ with buybtcpay.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_approval_dto_create_reversal_platfrom_to_merchant_approval_dto** | [**CreateApprovalDtoCreateReversalPlatfromToMerchantApprovalDto**](CreateApprovalDtoCreateReversalPlatfromToMerchantApprovalDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponseApprovalEntity**](BuyBtcResponseApprovalEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_reversal_platform_to_wallet_approval**
+> BuyBtcResponseApprovalEntity create_reversal_platform_to_wallet_approval(create_approval_dto_create_reversal_platfrom_to_wallet_approval_dto)
+
+创建平台转账到钱包审批单
+
+管理员权限
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_approval_entity import BuyBtcResponseApprovalEntity
+from buybtcpay.models.create_approval_dto_create_reversal_platfrom_to_wallet_approval_dto import CreateApprovalDtoCreateReversalPlatfromToWalletApprovalDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenApprovalApi(api_client)
+    create_approval_dto_create_reversal_platfrom_to_wallet_approval_dto = buybtcpay.CreateApprovalDtoCreateReversalPlatfromToWalletApprovalDto() # CreateApprovalDtoCreateReversalPlatfromToWalletApprovalDto | 
+
+    try:
+        # 创建平台转账到钱包审批单
+        api_response = api_instance.create_reversal_platform_to_wallet_approval(create_approval_dto_create_reversal_platfrom_to_wallet_approval_dto)
+        print("The response of OpenApprovalApi->create_reversal_platform_to_wallet_approval:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenApprovalApi->create_reversal_platform_to_wallet_approval: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_approval_dto_create_reversal_platfrom_to_wallet_approval_dto** | [**CreateApprovalDtoCreateReversalPlatfromToWalletApprovalDto**](CreateApprovalDtoCreateReversalPlatfromToWalletApprovalDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponseApprovalEntity**](BuyBtcResponseApprovalEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_reversal_wallet_to_platform_approval**
+> BuyBtcResponseApprovalEntity create_reversal_wallet_to_platform_approval(create_approval_dto_create_reversal_wallet_to_platform_approval_dto)
+
+创建钱包到平台转账审批单
+
+管理员权限
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_approval_entity import BuyBtcResponseApprovalEntity
+from buybtcpay.models.create_approval_dto_create_reversal_wallet_to_platform_approval_dto import CreateApprovalDtoCreateReversalWalletToPlatformApprovalDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenApprovalApi(api_client)
+    create_approval_dto_create_reversal_wallet_to_platform_approval_dto = buybtcpay.CreateApprovalDtoCreateReversalWalletToPlatformApprovalDto() # CreateApprovalDtoCreateReversalWalletToPlatformApprovalDto | 
+
+    try:
+        # 创建钱包到平台转账审批单
+        api_response = api_instance.create_reversal_wallet_to_platform_approval(create_approval_dto_create_reversal_wallet_to_platform_approval_dto)
+        print("The response of OpenApprovalApi->create_reversal_wallet_to_platform_approval:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenApprovalApi->create_reversal_wallet_to_platform_approval: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_approval_dto_create_reversal_wallet_to_platform_approval_dto** | [**CreateApprovalDtoCreateReversalWalletToPlatformApprovalDto**](CreateApprovalDtoCreateReversalWalletToPlatformApprovalDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponseApprovalEntity**](BuyBtcResponseApprovalEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_reversal_wallet_to_wallet_approval**
+> BuyBtcResponseApprovalEntity create_reversal_wallet_to_wallet_approval(create_approval_dto_create_reversal_wallet_to_wallet_approval_dto)
+
+创建钱包到钱包转账审批单
+
+管理员权限
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_approval_entity import BuyBtcResponseApprovalEntity
+from buybtcpay.models.create_approval_dto_create_reversal_wallet_to_wallet_approval_dto import CreateApprovalDtoCreateReversalWalletToWalletApprovalDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenApprovalApi(api_client)
+    create_approval_dto_create_reversal_wallet_to_wallet_approval_dto = buybtcpay.CreateApprovalDtoCreateReversalWalletToWalletApprovalDto() # CreateApprovalDtoCreateReversalWalletToWalletApprovalDto | 
+
+    try:
+        # 创建钱包到钱包转账审批单
+        api_response = api_instance.create_reversal_wallet_to_wallet_approval(create_approval_dto_create_reversal_wallet_to_wallet_approval_dto)
+        print("The response of OpenApprovalApi->create_reversal_wallet_to_wallet_approval:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenApprovalApi->create_reversal_wallet_to_wallet_approval: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_approval_dto_create_reversal_wallet_to_wallet_approval_dto** | [**CreateApprovalDtoCreateReversalWalletToWalletApprovalDto**](CreateApprovalDtoCreateReversalWalletToWalletApprovalDto.md)|  | 
 
 ### Return type
 
@@ -848,8 +1129,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_self_service_approval_recevied**
-> BuyBtcResponseBoolean update_self_service_approval_recevied(update_self_service_approval_recevied_dto)
+# **update_self_service_approval_received**
+> BuyBtcResponseBoolean update_self_service_approval_received(update_self_service_approval_received_dto)
 
 更新自助充值审批单用户是否已经收款
 
@@ -861,7 +1142,7 @@ No authorization required
 ```python
 import buybtcpay
 from buybtcpay.models.buy_btc_response_boolean import BuyBtcResponseBoolean
-from buybtcpay.models.update_self_service_approval_recevied_dto import UpdateSelfServiceApprovalReceviedDto
+from buybtcpay.models.update_self_service_approval_received_dto import UpdateSelfServiceApprovalReceivedDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -876,15 +1157,15 @@ configuration = buybtcpay.Configuration(
 with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.OpenApprovalApi(api_client)
-    update_self_service_approval_recevied_dto = buybtcpay.UpdateSelfServiceApprovalReceviedDto() # UpdateSelfServiceApprovalReceviedDto | 
+    update_self_service_approval_received_dto = buybtcpay.UpdateSelfServiceApprovalReceivedDto() # UpdateSelfServiceApprovalReceivedDto | 
 
     try:
         # 更新自助充值审批单用户是否已经收款
-        api_response = api_instance.update_self_service_approval_recevied(update_self_service_approval_recevied_dto)
-        print("The response of OpenApprovalApi->update_self_service_approval_recevied:\n")
+        api_response = api_instance.update_self_service_approval_received(update_self_service_approval_received_dto)
+        print("The response of OpenApprovalApi->update_self_service_approval_received:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenApprovalApi->update_self_service_approval_recevied: %s\n" % e)
+        print("Exception when calling OpenApprovalApi->update_self_service_approval_received: %s\n" % e)
 ```
 
 
@@ -894,7 +1175,7 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **update_self_service_approval_recevied_dto** | [**UpdateSelfServiceApprovalReceviedDto**](UpdateSelfServiceApprovalReceviedDto.md)|  | 
+ **update_self_service_approval_received_dto** | [**UpdateSelfServiceApprovalReceivedDto**](UpdateSelfServiceApprovalReceivedDto.md)|  | 
 
 ### Return type
 

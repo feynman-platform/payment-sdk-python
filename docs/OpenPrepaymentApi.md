@@ -6,12 +6,14 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**close**](OpenPrepaymentApi.md#close) | **POST** /v1/open/prepayment/close/{businessId} | 关闭预付订单
 [**create_prepayment_order**](OpenPrepaymentApi.md#create_prepayment_order) | **POST** /v1/open/prepayment | 创建预付订单
+[**create_trade_prepayment_order**](OpenPrepaymentApi.md#create_trade_prepayment_order) | **POST** /v1/open/prepayment/trade | 创建C站业务交易预付订单
 [**currency_conversion**](OpenPrepaymentApi.md#currency_conversion) | **POST** /v1/open/prepayment/currency/conversion | 币种转换
-[**pagination4**](OpenPrepaymentApi.md#pagination4) | **POST** /v1/open/prepayment/pagination | 查询预付订单
-[**payment_aggregation**](OpenPrepaymentApi.md#payment_aggregation) | **POST** /v1/open/prepayment/payment/aggregation | 合并支付
-[**payment_merchant_to_merchant**](OpenPrepaymentApi.md#payment_merchant_to_merchant) | **POST** /v1/open/prepayment/payment/merchant/to/merchant | 商户到商户转账
-[**payment_merchant_to_merchant_by_business_id**](OpenPrepaymentApi.md#payment_merchant_to_merchant_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 基于预付单的商户到商户转账
-[**payment_ngn_currency**](OpenPrepaymentApi.md#payment_ngn_currency) | **POST** /v1/open/prepayment/payment/ngn/{businessId} | 支付NGN币种
+[**find_merchant_max_available_wallet**](OpenPrepaymentApi.md#find_merchant_max_available_wallet) | **POST** /v1/open/prepayment/merchant/max/available/wallet | 查找商户可用余额最多的钱包
+[**merchant_trade_transfer**](OpenPrepaymentApi.md#merchant_trade_transfer) | **POST** /v1/open/prepayment/payment/merchant/to/merchant | 商户到商户转账
+[**merchant_trade_transfer_by_business_id**](OpenPrepaymentApi.md#merchant_trade_transfer_by_business_id) | **POST** /v1/open/prepayment/payment/merchant/to/merchant/{businessId} | 基于预付单的商户到商户转账
+[**merchant_wallet_transfer**](OpenPrepaymentApi.md#merchant_wallet_transfer) | **POST** /v1/open/prepayment/merchant/transfer | 商户自己不同类型的钱包互转
+[**pagination5**](OpenPrepaymentApi.md#pagination5) | **POST** /v1/open/prepayment/pagination | 查询预付订单
+[**trade_transfer_aggregation**](OpenPrepaymentApi.md#trade_transfer_aggregation) | **POST** /v1/open/prepayment/trade/transfer/aggregation | 交易支付中的合并支付
 [**update_amount**](OpenPrepaymentApi.md#update_amount) | **POST** /v1/open/prepayment/amount | 更新预付订单金额
 
 
@@ -152,8 +154,77 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_trade_prepayment_order**
+> BuyBtcResponsePrepaymentOrderEntity create_trade_prepayment_order(create_trade_prepayment_order_dto)
+
+创建C站业务交易预付订单
+
+请求参数需要签名，签名算法见MD文档
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_prepayment_order_entity import BuyBtcResponsePrepaymentOrderEntity
+from buybtcpay.models.create_trade_prepayment_order_dto import CreateTradePrepaymentOrderDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenPrepaymentApi(api_client)
+    create_trade_prepayment_order_dto = buybtcpay.CreateTradePrepaymentOrderDto() # CreateTradePrepaymentOrderDto | 
+
+    try:
+        # 创建C站业务交易预付订单
+        api_response = api_instance.create_trade_prepayment_order(create_trade_prepayment_order_dto)
+        print("The response of OpenPrepaymentApi->create_trade_prepayment_order:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPrepaymentApi->create_trade_prepayment_order: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_trade_prepayment_order_dto** | [**CreateTradePrepaymentOrderDto**](CreateTradePrepaymentOrderDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponsePrepaymentOrderEntity**](BuyBtcResponsePrepaymentOrderEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **currency_conversion**
-> BuyBtcResponsePaymentOrderEntity currency_conversion(currency_conversion_dto)
+> BuyBtcResponseListMerchantWalletEntity currency_conversion(currency_conversion_dto)
 
 币种转换
 
@@ -164,7 +235,7 @@ No authorization required
 
 ```python
 import buybtcpay
-from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
+from buybtcpay.models.buy_btc_response_list_merchant_wallet_entity import BuyBtcResponseListMerchantWalletEntity
 from buybtcpay.models.currency_conversion_dto import CurrencyConversionDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
@@ -202,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuyBtcResponsePaymentOrderEntity**](BuyBtcResponsePaymentOrderEntity.md)
+[**BuyBtcResponseListMerchantWalletEntity**](BuyBtcResponseListMerchantWalletEntity.md)
 
 ### Authorization
 
@@ -221,20 +292,18 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **pagination4**
-> BuyBtcResponsePayPaginationPrepaymentOrderEntity pagination4(pay_pagination_query_prepayment_order_pagination_query)
+# **find_merchant_max_available_wallet**
+> BuyBtcResponseMerchantWalletEntity find_merchant_max_available_wallet(find_merchant_max_available_wallet_dto)
 
-查询预付订单
-
-分页查询预付订单
+查找商户可用余额最多的钱包
 
 ### Example
 
 
 ```python
 import buybtcpay
-from buybtcpay.models.buy_btc_response_pay_pagination_prepayment_order_entity import BuyBtcResponsePayPaginationPrepaymentOrderEntity
-from buybtcpay.models.pay_pagination_query_prepayment_order_pagination_query import PayPaginationQueryPrepaymentOrderPaginationQuery
+from buybtcpay.models.buy_btc_response_merchant_wallet_entity import BuyBtcResponseMerchantWalletEntity
+from buybtcpay.models.find_merchant_max_available_wallet_dto import FindMerchantMaxAvailableWalletDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -249,15 +318,15 @@ configuration = buybtcpay.Configuration(
 with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.OpenPrepaymentApi(api_client)
-    pay_pagination_query_prepayment_order_pagination_query = buybtcpay.PayPaginationQueryPrepaymentOrderPaginationQuery() # PayPaginationQueryPrepaymentOrderPaginationQuery | 
+    find_merchant_max_available_wallet_dto = buybtcpay.FindMerchantMaxAvailableWalletDto() # FindMerchantMaxAvailableWalletDto | 
 
     try:
-        # 查询预付订单
-        api_response = api_instance.pagination4(pay_pagination_query_prepayment_order_pagination_query)
-        print("The response of OpenPrepaymentApi->pagination4:\n")
+        # 查找商户可用余额最多的钱包
+        api_response = api_instance.find_merchant_max_available_wallet(find_merchant_max_available_wallet_dto)
+        print("The response of OpenPrepaymentApi->find_merchant_max_available_wallet:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPrepaymentApi->pagination4: %s\n" % e)
+        print("Exception when calling OpenPrepaymentApi->find_merchant_max_available_wallet: %s\n" % e)
 ```
 
 
@@ -267,11 +336,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pay_pagination_query_prepayment_order_pagination_query** | [**PayPaginationQueryPrepaymentOrderPaginationQuery**](PayPaginationQueryPrepaymentOrderPaginationQuery.md)|  | 
+ **find_merchant_max_available_wallet_dto** | [**FindMerchantMaxAvailableWalletDto**](FindMerchantMaxAvailableWalletDto.md)|  | 
 
 ### Return type
 
-[**BuyBtcResponsePayPaginationPrepaymentOrderEntity**](BuyBtcResponsePayPaginationPrepaymentOrderEntity.md)
+[**BuyBtcResponseMerchantWalletEntity**](BuyBtcResponseMerchantWalletEntity.md)
 
 ### Authorization
 
@@ -280,7 +349,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: */*
 
 ### HTTP response details
 
@@ -290,77 +359,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **payment_aggregation**
-> BuyBtcResponsePaymentOrderEntity payment_aggregation(prepayment_aggregation_dto)
-
-合并支付
-
-合并支付，只支持商户到商户的支付，接口参数需要签名
-
-### Example
-
-
-```python
-import buybtcpay
-from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
-from buybtcpay.models.prepayment_aggregation_dto import PrepaymentAggregationDto
-from buybtcpay.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost:9030
-# See configuration.py for a list of all supported configuration parameters.
-configuration = buybtcpay.Configuration(
-    host = "http://localhost:9030"
-)
-
-
-# Enter a context with an instance of the API client
-with buybtcpay.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = buybtcpay.OpenPrepaymentApi(api_client)
-    prepayment_aggregation_dto = buybtcpay.PrepaymentAggregationDto() # PrepaymentAggregationDto | 
-
-    try:
-        # 合并支付
-        api_response = api_instance.payment_aggregation(prepayment_aggregation_dto)
-        print("The response of OpenPrepaymentApi->payment_aggregation:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OpenPrepaymentApi->payment_aggregation: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **prepayment_aggregation_dto** | [**PrepaymentAggregationDto**](PrepaymentAggregationDto.md)|  | 
-
-### Return type
-
-[**BuyBtcResponsePaymentOrderEntity**](BuyBtcResponsePaymentOrderEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **payment_merchant_to_merchant**
-> BuyBtcResponsePaymentOrderEntity payment_merchant_to_merchant(merchant_to_merchant_automatic_params)
+# **merchant_trade_transfer**
+> BuyBtcResponsePaymentOrderEntity merchant_trade_transfer(merchant_to_merchant_automatic_params)
 
 商户到商户转账
 
@@ -391,11 +391,11 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
     try:
         # 商户到商户转账
-        api_response = api_instance.payment_merchant_to_merchant(merchant_to_merchant_automatic_params)
-        print("The response of OpenPrepaymentApi->payment_merchant_to_merchant:\n")
+        api_response = api_instance.merchant_trade_transfer(merchant_to_merchant_automatic_params)
+        print("The response of OpenPrepaymentApi->merchant_trade_transfer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPrepaymentApi->payment_merchant_to_merchant: %s\n" % e)
+        print("Exception when calling OpenPrepaymentApi->merchant_trade_transfer: %s\n" % e)
 ```
 
 
@@ -428,8 +428,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **payment_merchant_to_merchant_by_business_id**
-> BuyBtcResponsePaymentOrderEntity payment_merchant_to_merchant_by_business_id(business_id, merchant_to_merchant_params)
+# **merchant_trade_transfer_by_business_id**
+> BuyBtcResponsePaymentOrderEntity merchant_trade_transfer_by_business_id(business_id, merchant_trade_transfer_by_business_id_dto)
 
 基于预付单的商户到商户转账
 
@@ -441,7 +441,7 @@ No authorization required
 ```python
 import buybtcpay
 from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
-from buybtcpay.models.merchant_to_merchant_params import MerchantToMerchantParams
+from buybtcpay.models.merchant_trade_transfer_by_business_id_dto import MerchantTradeTransferByBusinessIdDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -457,15 +457,15 @@ with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.OpenPrepaymentApi(api_client)
     business_id = 'business_id_example' # str | 
-    merchant_to_merchant_params = buybtcpay.MerchantToMerchantParams() # MerchantToMerchantParams | 
+    merchant_trade_transfer_by_business_id_dto = buybtcpay.MerchantTradeTransferByBusinessIdDto() # MerchantTradeTransferByBusinessIdDto | 
 
     try:
         # 基于预付单的商户到商户转账
-        api_response = api_instance.payment_merchant_to_merchant_by_business_id(business_id, merchant_to_merchant_params)
-        print("The response of OpenPrepaymentApi->payment_merchant_to_merchant_by_business_id:\n")
+        api_response = api_instance.merchant_trade_transfer_by_business_id(business_id, merchant_trade_transfer_by_business_id_dto)
+        print("The response of OpenPrepaymentApi->merchant_trade_transfer_by_business_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPrepaymentApi->payment_merchant_to_merchant_by_business_id: %s\n" % e)
+        print("Exception when calling OpenPrepaymentApi->merchant_trade_transfer_by_business_id: %s\n" % e)
 ```
 
 
@@ -476,7 +476,7 @@ with buybtcpay.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **business_id** | **str**|  | 
- **merchant_to_merchant_params** | [**MerchantToMerchantParams**](MerchantToMerchantParams.md)|  | 
+ **merchant_trade_transfer_by_business_id_dto** | [**MerchantTradeTransferByBusinessIdDto**](MerchantTradeTransferByBusinessIdDto.md)|  | 
 
 ### Return type
 
@@ -499,20 +499,20 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **payment_ngn_currency**
-> BuyBtcResponsePaymentOrderEntity payment_ngn_currency(business_id, payment_palm_pay_param)
+# **merchant_wallet_transfer**
+> BuyBtcResponseListMerchantWalletEntity merchant_wallet_transfer(merchant_wallet_transfer_dto)
 
-支付NGN币种
+商户自己不同类型的钱包互转
 
-支付NGN币种
+要求同币种
 
 ### Example
 
 
 ```python
 import buybtcpay
-from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
-from buybtcpay.models.payment_palm_pay_param import PaymentPalmPayParam
+from buybtcpay.models.buy_btc_response_list_merchant_wallet_entity import BuyBtcResponseListMerchantWalletEntity
+from buybtcpay.models.merchant_wallet_transfer_dto import MerchantWalletTransferDto
 from buybtcpay.rest import ApiException
 from pprint import pprint
 
@@ -527,16 +527,15 @@ configuration = buybtcpay.Configuration(
 with buybtcpay.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = buybtcpay.OpenPrepaymentApi(api_client)
-    business_id = 'business_id_example' # str | 
-    payment_palm_pay_param = buybtcpay.PaymentPalmPayParam() # PaymentPalmPayParam | 
+    merchant_wallet_transfer_dto = buybtcpay.MerchantWalletTransferDto() # MerchantWalletTransferDto | 
 
     try:
-        # 支付NGN币种
-        api_response = api_instance.payment_ngn_currency(business_id, payment_palm_pay_param)
-        print("The response of OpenPrepaymentApi->payment_ngn_currency:\n")
+        # 商户自己不同类型的钱包互转
+        api_response = api_instance.merchant_wallet_transfer(merchant_wallet_transfer_dto)
+        print("The response of OpenPrepaymentApi->merchant_wallet_transfer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenPrepaymentApi->payment_ngn_currency: %s\n" % e)
+        print("Exception when calling OpenPrepaymentApi->merchant_wallet_transfer: %s\n" % e)
 ```
 
 
@@ -546,8 +545,145 @@ with buybtcpay.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **business_id** | **str**|  | 
- **payment_palm_pay_param** | [**PaymentPalmPayParam**](PaymentPalmPayParam.md)|  | 
+ **merchant_wallet_transfer_dto** | [**MerchantWalletTransferDto**](MerchantWalletTransferDto.md)|  | 
+
+### Return type
+
+[**BuyBtcResponseListMerchantWalletEntity**](BuyBtcResponseListMerchantWalletEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pagination5**
+> BuyBtcResponsePayPaginationPrepaymentOrderEntity pagination5(pay_pagination_query_prepayment_order_pagination_query)
+
+查询预付订单
+
+分页查询预付订单
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_pay_pagination_prepayment_order_entity import BuyBtcResponsePayPaginationPrepaymentOrderEntity
+from buybtcpay.models.pay_pagination_query_prepayment_order_pagination_query import PayPaginationQueryPrepaymentOrderPaginationQuery
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenPrepaymentApi(api_client)
+    pay_pagination_query_prepayment_order_pagination_query = buybtcpay.PayPaginationQueryPrepaymentOrderPaginationQuery() # PayPaginationQueryPrepaymentOrderPaginationQuery | 
+
+    try:
+        # 查询预付订单
+        api_response = api_instance.pagination5(pay_pagination_query_prepayment_order_pagination_query)
+        print("The response of OpenPrepaymentApi->pagination5:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPrepaymentApi->pagination5: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pay_pagination_query_prepayment_order_pagination_query** | [**PayPaginationQueryPrepaymentOrderPaginationQuery**](PayPaginationQueryPrepaymentOrderPaginationQuery.md)|  | 
+
+### Return type
+
+[**BuyBtcResponsePayPaginationPrepaymentOrderEntity**](BuyBtcResponsePayPaginationPrepaymentOrderEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **trade_transfer_aggregation**
+> BuyBtcResponsePaymentOrderEntity trade_transfer_aggregation(trade_transfer_aggregation_dto)
+
+交易支付中的合并支付
+
+合并支付，只支持商户到商户的支付，接口参数需要签名
+
+### Example
+
+
+```python
+import buybtcpay
+from buybtcpay.models.buy_btc_response_payment_order_entity import BuyBtcResponsePaymentOrderEntity
+from buybtcpay.models.trade_transfer_aggregation_dto import TradeTransferAggregationDto
+from buybtcpay.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost:9030
+# See configuration.py for a list of all supported configuration parameters.
+configuration = buybtcpay.Configuration(
+    host = "http://localhost:9030"
+)
+
+
+# Enter a context with an instance of the API client
+with buybtcpay.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = buybtcpay.OpenPrepaymentApi(api_client)
+    trade_transfer_aggregation_dto = buybtcpay.TradeTransferAggregationDto() # TradeTransferAggregationDto | 
+
+    try:
+        # 交易支付中的合并支付
+        api_response = api_instance.trade_transfer_aggregation(trade_transfer_aggregation_dto)
+        print("The response of OpenPrepaymentApi->trade_transfer_aggregation:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OpenPrepaymentApi->trade_transfer_aggregation: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **trade_transfer_aggregation_dto** | [**TradeTransferAggregationDto**](TradeTransferAggregationDto.md)|  | 
 
 ### Return type
 
