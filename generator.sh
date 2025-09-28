@@ -22,3 +22,5 @@ echo "sonyflake >= 2.0" >> $root_dir/requirements.txt
 echo "cryptography >= 45.0" >> $root_dir/requirements.txt
 
 rm -rf $output_dir
+
+echo "Update license and version in pyprpoject.toml"

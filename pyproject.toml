@@ -1,11 +1,11 @@
 [project]
 name = "buybtcpay"
-version = "0.3.0"
+version = "0.4.0"
 description = "pay.buybtc123.com"
 authors = [
   {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
-license = "NoLicense"
+license = "MIT"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "pay.buybtc123.com"]
 requires-python = ">=3.9"
